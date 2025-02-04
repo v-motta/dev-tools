@@ -32,7 +32,7 @@ export default function CPFGeneratorPage() {
   }
 
   return (
-    <div className="space-y-8 w-1/3">
+    <div className="space-y-8 w-full lg:w-1/2 2xl:w-1/3">
       <div className="space-y-3">
         <h1 className="text-2xl font-bold font-mono">Gerador de CPF</h1>
 
