@@ -24,20 +24,22 @@ export default function Home() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
         {featuredTools.map((tool) => (
-          <Link key={tool.title} href={tool.href}>
-            <div className="bg-white dark:bg-zinc-800 hover:dark:bg-zinc-700/60 border border-zinc-500 p-4 space-y-4 rounded-lg shadow hover:border-zinc-300 transition">
-              <Image
-                src={tool.image}
-                alt=""
-                width={1280}
-                height={1024}
-                className="h-40 object-cover rounded-md"
-              />
+          <Link
+            key={tool.title}
+            href={tool.href}
+            className="bg-white dark:bg-zinc-800 h-full hover:dark:bg-zinc-700/60 border border-zinc-500 p-4 space-y-4 rounded-lg shadow hover:border-zinc-300 transition"
+          >
+            <Image
+              src={tool.image}
+              alt=""
+              width={1280}
+              height={1024}
+              className="h-40 object-cover rounded-md"
+            />
 
-              <div className="space-y-2">
-                <h2 className="text-xl font-bold font-mono">{tool.title}</h2>
-                <p className="text-zinc-400 text-balance">{tool.description}</p>
-              </div>
+            <div className="space-y-2">
+              <h2 className="text-xl font-bold font-mono">{tool.title}</h2>
+              <p className="text-zinc-400 text-balance">{tool.description}</p>
             </div>
           </Link>
         ))}
