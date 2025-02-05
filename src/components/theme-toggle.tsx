@@ -1,10 +1,8 @@
 'use client'
 
-import { ChevronsUpDown, Moon, Sun } from 'lucide-react'
+import { ChevronsUpDown, Monitor, Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
-import * as React from 'react'
 
-import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -21,7 +19,7 @@ export function ThemeToggle() {
       <SidebarMenuItem>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <SidebarMenuButton size="lg" variant="outline">
+            <SidebarMenuButton size="lg">
               <span className="sr-only">Toggle theme</span>
               <div className="flex aspect-square size-8 items-center justify-center rounded-md bg-blue-700 text-zinc-200">
                 <Sun className="size-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
@@ -32,15 +30,20 @@ export function ThemeToggle() {
               <ChevronsUpDown className="ml-auto" />
             </SidebarMenuButton>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
+          <DropdownMenuContent
+            className="w-[--radix-dropdown-menu-trigger-width] rounded-lg"
+            align="end"
+            side="top"
+            sideOffset={12}
+          >
             <DropdownMenuItem onClick={() => setTheme('light')}>
-              Light
+              <Sun /> Light
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => setTheme('dark')}>
-              Dark
+              <Moon /> Dark
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => setTheme('system')}>
-              System
+              <Monitor /> System
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
