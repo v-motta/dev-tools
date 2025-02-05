@@ -19,8 +19,14 @@ export default function Home() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
         {featuredTools.map((tool) => (
           <Link key={tool.title} href={tool.href}>
-            <div className="bg-white dark:bg-zinc-800 border border-zinc-500 px-5 py-4 space-y-4 rounded-lg shadow hover:border-zinc-300 transition">
-              <Image src={tool.image} alt="" width={400} height={200} />
+            <div className="bg-white dark:bg-zinc-800 hover:dark:bg-zinc-700/60 border border-zinc-500 px-5 py-4 space-y-4 rounded-lg shadow hover:border-zinc-300 transition">
+              <Image
+                src={tool.image}
+                alt=""
+                width={400}
+                height={200}
+                className="h-44 object-cover"
+              />
 
               <div className="space-y-2">
                 <h2 className="text-xl font-bold font-mono">Gerador de CPF</h2>

@@ -25,7 +25,14 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from '@/components/ui/sidebar'
-import { Drill, Factory, Home, IdCard, Inbox } from 'lucide-react'
+import {
+  Drill,
+  Factory,
+  Home,
+  IdCard,
+  Inbox,
+  UserRoundCheck,
+} from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React from 'react'
@@ -51,22 +58,22 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
         // },
       ],
     },
-    // {
-    //   title: 'Validators',
-    //   url: '/validators',
-    //   items: [
-    //     {
-    //       title: 'Home',
-    //       url: '#',
-    //       icon: Home,
-    //     },
-    //     {
-    //       title: 'Inbox',
-    //       url: '#',
-    //       icon: Inbox,
-    //     },
-    //   ],
-    // },
+    {
+      title: 'Validadores',
+      url: '/validators',
+      items: [
+        {
+          title: 'Validador de CPF',
+          url: '/validators/cpf',
+          icon: UserRoundCheck,
+        },
+        // {
+        //   title: 'Inbox',
+        //   url: '#',
+        //   icon: Inbox,
+        // },
+      ],
+    },
   ]
 
   return (

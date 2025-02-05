@@ -46,7 +46,7 @@ export default function CPFGeneratorPage() {
         <div className="space-y-1">
           <Label htmlFor="generated_cpf">CPF Gerado</Label>
           <div className="relative">
-            <div className="h-12 font-mono border border-zinc-200 dark:border-zinc-500 px-3 flex items-center text-xl rounded-md">
+            <div className="h-10 font-mono border border-zinc-200 dark:border-zinc-500 px-3 flex items-center text-xl rounded-md">
               <p>
                 {isLoading && <LoaderCircle className="animate-spin" />}
                 {isSuccess && data.cpf}
@@ -56,7 +56,7 @@ export default function CPFGeneratorPage() {
             <Button
               size="icon"
               variant="ghost"
-              className="absolute [&_svg]:size-6 right-1 top-1/2 -translate-y-1/2 text-zinc-500"
+              className="absolute [&_svg]:size-5 right-1 top-1/2 -translate-y-1/2 text-zinc-500"
               onClick={handleCopyCPF}
             >
               {isCopied ? <Check className="text-emerald-500" /> : <Copy />}
