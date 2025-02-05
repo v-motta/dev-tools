@@ -16,6 +16,13 @@ export default function Home() {
       image: '/validate-cpf-2.png',
       href: '/validators/cpf',
     },
+    {
+      title: 'Calculador de IMC',
+      description:
+        'Calcule o Índice de Massa Corporal com nosso calculador de IMC.',
+      image: '/calculate-bmi.png',
+      href: '/calculators/bmi',
+    },
   ]
 
   return (
