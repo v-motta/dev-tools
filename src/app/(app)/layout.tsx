@@ -141,6 +141,19 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
 
                   return (
                     <React.Fragment key={path}>
+                      {index === 0 && (
+                        <>
+                          <BreadcrumbItem>
+                            <BreadcrumbLink asChild>
+                              <Link href="/">
+                                <Home className="size-4" />
+                              </Link>
+                            </BreadcrumbLink>
+                          </BreadcrumbItem>
+
+                          <BreadcrumbSeparator />
+                        </>
+                      )}
                       <BreadcrumbItem>
                         <BreadcrumbLink asChild>
                           <Link href={href}>{pageTitle}</Link>
