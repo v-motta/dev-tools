@@ -82,7 +82,7 @@ export default function CPFValidatorPage() {
             <TooltipProvider>
               <Tooltip delayDuration={0}>
                 <TooltipTrigger asChild>
-                  {validationStatus?.status ? (
+                  {!validationStatus ? null : validationStatus.status ? (
                     <Check className="absolute right-2 top-2 text-emerald-500" />
                   ) : (
                     <X className="absolute right-2 top-2 text-red-500" />
