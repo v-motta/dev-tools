@@ -44,29 +44,29 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
           url: '/generators/cpf',
           icon: IdCard,
         },
-        {
-          title: 'Gerador de CNPJ',
-          url: '/generators/cnpj',
-          icon: Factory,
-        },
+        // {
+        //   title: 'Gerador de CNPJ',
+        //   url: '/generators/cnpj',
+        //   icon: Factory,
+        // },
       ],
     },
-    {
-      title: 'Validators',
-      url: '/validators',
-      items: [
-        {
-          title: 'Home',
-          url: '#',
-          icon: Home,
-        },
-        {
-          title: 'Inbox',
-          url: '#',
-          icon: Inbox,
-        },
-      ],
-    },
+    // {
+    //   title: 'Validators',
+    //   url: '/validators',
+    //   items: [
+    //     {
+    //       title: 'Home',
+    //       url: '#',
+    //       icon: Home,
+    //     },
+    //     {
+    //       title: 'Inbox',
+    //       url: '#',
+    //       icon: Inbox,
+    //     },
+    //   ],
+    // },
   ]
 
   return (
