@@ -22,15 +22,20 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarMenuSub,
   SidebarProvider,
   SidebarTrigger,
 } from '@/components/ui/sidebar'
 import {
+  Calculator,
+  CheckCircle,
   Drill,
+  Dumbbell,
   Factory,
   Home,
   IdCard,
   Inbox,
+  ServerCog,
   UserRoundCheck,
 } from 'lucide-react'
 import Link from 'next/link'
@@ -45,6 +50,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
     {
       title: 'Geradores',
       url: '/generators',
+      icon: ServerCog,
       items: [
         {
           title: 'Gerador de CPF',
@@ -61,17 +67,25 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
     {
       title: 'Validadores',
       url: '/validators',
+      icon: CheckCircle,
       items: [
         {
           title: 'Validador de CPF',
           url: '/validators/cpf',
           icon: UserRoundCheck,
         },
-        // {
-        //   title: 'Inbox',
-        //   url: '#',
-        //   icon: Inbox,
-        // },
+      ],
+    },
+    {
+      title: 'Calculadores',
+      url: '/calculators',
+      icon: Calculator,
+      items: [
+        {
+          title: 'Calculadora de IMC',
+          url: '/calculators/bmi',
+          icon: Dumbbell,
+        },
       ],
     },
   ]
@@ -99,26 +113,32 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
         </SidebarHeader>
 
         <SidebarContent>
-          {groups.map(({ title, items }) => (
-            <SidebarGroup key={title}>
-              <SidebarGroupLabel>{title}</SidebarGroupLabel>
-
-              <SidebarGroupContent>
-                <SidebarMenu>
-                  {items.map((item) => (
-                    <SidebarMenuItem key={item.title}>
-                      <SidebarMenuButton asChild>
-                        <Link href={item.url}>
-                          <item.icon />
-                          <span>{item.title}</span>
-                        </Link>
-                      </SidebarMenuButton>
-                    </SidebarMenuItem>
+          <SidebarGroup>
+            <SidebarMenu>
+              {groups.map((group) => (
+                <SidebarMenuItem key={group.url} className="mb-4 last:mb-0">
+                  <SidebarMenuButton asChild>
+                    <Link href={group.url}>
+                      <group.icon className="size-4" />
+                      {group.title}
+                    </Link>
+                  </SidebarMenuButton>
+                  {group.items.map((item) => (
+                    <SidebarMenuSub key={item.url}>
+                      <SidebarMenuItem>
+                        <SidebarMenuButton asChild>
+                          <Link href={item.url}>
+                            <item.icon className="size-4" />
+                            <span>{item.title}</span>
+                          </Link>
+                        </SidebarMenuButton>
+                      </SidebarMenuItem>
+                    </SidebarMenuSub>
                   ))}
-                </SidebarMenu>
-              </SidebarGroupContent>
-            </SidebarGroup>
-          ))}
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroup>
         </SidebarContent>
 
         <SidebarFooter>
