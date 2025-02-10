@@ -9,30 +9,16 @@ import {
   SidebarContent,
   SidebarFooter,
   SidebarGroup,
-  SidebarGroupContent,
-  SidebarGroupLabel,
   SidebarHeader,
   SidebarInset,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarMenuSub,
-  SidebarProvider,
   SidebarTrigger,
   useSidebar,
 } from '@/components/ui/sidebar'
-import {
-  Calculator,
-  CheckCircle,
-  Drill,
-  Dumbbell,
-  Factory,
-  Home,
-  IdCard,
-  Inbox,
-  ServerCog,
-  UserRoundCheck,
-} from 'lucide-react'
+import { Drill } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import type React from 'react'

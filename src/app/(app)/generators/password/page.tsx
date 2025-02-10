@@ -7,8 +7,8 @@ import { Label } from '@/components/ui/label'
 import { queryClient } from '@/lib/query-client'
 import { useQuery } from '@tanstack/react-query'
 import ky from 'ky'
-import { Check, Copy, LoaderCircle, PawPrint } from 'lucide-react'
-import { useCallback, useState } from 'react'
+import { Check, Copy, LoaderCircle } from 'lucide-react'
+import { useState } from 'react'
 
 export default function PasswordGeneratorPage() {
   const [lengthError, setLengthError] = useState('')
