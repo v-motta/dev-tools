@@ -38,7 +38,7 @@ export function ToolCard({
       </CardHeader>
 
       <CardContent>
-        <div className="relative h-52 w-full overflow-hidden rounded-lg">
+        <div className="relative h-52 w-full overflow-hidden rounded-lg bg-white">
           <Image
             src={image}
             alt={`${title} preview`}
