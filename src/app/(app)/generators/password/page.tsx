@@ -173,6 +173,36 @@ export default function PasswordGeneratorPage() {
           Gerar senha
         </Button>
       </form>
+
+      <div>
+        <h2 className="text-lg font-medium mb-2">Como isso funciona</h2>
+
+        <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+          <li>
+            A senha é gerada no servidor e não é armazenada em nenhum lugar.
+          </li>
+          <li>
+            O gerador de senha gera uma senha aleatória com base nas opções
+            selecionadas.
+          </li>
+          <li>
+            A senha terá no mínimo 4 caracteres (1 caractere minúsculo, 1
+            caractere maiúsculo, 1 número e 1 símbolo)
+          </li>
+          <li>
+            Sempre existira um caractere minúsculo, um caractere maiúsculo, um
+            número e um símbolo, se as opções estiverem marcadas.
+          </li>
+          <li>
+            Por padrão, a senha contém apenas letras minúsculas se nenhuma opção
+            adicional for selecionada.
+          </li>
+          <li>
+            Você pode copiar a senha gerada clicando no ícone de cópia ao lado
+            dela.
+          </li>
+        </ul>
+      </div>
     </div>
   )
 }
