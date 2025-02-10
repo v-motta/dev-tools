@@ -11,7 +11,7 @@ import { useState } from 'react'
 export default function CPFGeneratorPage() {
   const [isCopied, setIsCopied] = useState(false)
 
-  const { data, isLoading, isSuccess } = useQuery({
+  const { data, isFetching, isSuccess } = useQuery({
     queryKey: ['cpf'],
     queryFn: async () => {
       return await ky.get('/api/generators/cpf').json<{ cpf: string }>()
@@ -28,7 +28,7 @@ export default function CPFGeneratorPage() {
   }
 
   async function handleGenerateCPF() {
-    await queryClient.refetchQueries()
+    await queryClient.refetchQueries({ queryKey: ['cpf'] })
   }
 
   return (
@@ -47,10 +47,11 @@ export default function CPFGeneratorPage() {
           <Label htmlFor="generated_cpf">CPF Gerado</Label>
           <div className="relative">
             <div className="h-10 font-mono border border-border px-3 flex items-center text-xl rounded-md">
-              <p>
-                {isLoading && <LoaderCircle className="animate-spin" />}
-                {isSuccess && data.cpf}
-              </p>
+              {isSuccess ? (
+                <p>{data.cpf}</p>
+              ) : (
+                <LoaderCircle className="animate-spin text-muted-foreground" />
+              )}
             </div>
 
             <Button
@@ -64,7 +65,12 @@ export default function CPFGeneratorPage() {
           </div>
         </div>
 
-        <Button type="submit" className="w-full" onClick={handleGenerateCPF}>
+        <Button
+          type="submit"
+          className="w-full"
+          onClick={handleGenerateCPF}
+          isPending={isFetching}
+        >
           Gerar CPF
         </Button>
       </div>
