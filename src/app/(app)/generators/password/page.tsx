@@ -12,6 +12,7 @@ import { useCallback, useState } from 'react'
 
 export default function PasswordGeneratorPage() {
   const [lengthError, setLengthError] = useState('')
+  const [isCopied, setIsCopied] = useState(false)
   const [urlParams, setUrlParams] = useState({
     length: '12',
     uppercase: false,
@@ -59,6 +60,14 @@ export default function PasswordGeneratorPage() {
     setLengthError('')
 
     await queryClient.refetchQueries()
+  }
+
+  async function handleCopyCPF() {
+    if (isSuccess) {
+      navigator.clipboard.writeText(generatedPassword.password)
+      setIsCopied(true)
+      setTimeout(() => setIsCopied(false), 2000)
+    }
   }
 
   return (
@@ -152,11 +161,9 @@ export default function PasswordGeneratorPage() {
                 variant="ghost"
                 type="button"
                 className="absolute [&_svg]:size-5 right-0.5 top-0.5 text-muted-foreground"
-                onClick={() =>
-                  navigator.clipboard.writeText(generatedPassword.password)
-                }
+                onClick={handleCopyCPF}
               >
-                <Copy />
+                {isCopied ? <Check className="text-emerald-500" /> : <Copy />}
               </Button>
             )}
           </div>

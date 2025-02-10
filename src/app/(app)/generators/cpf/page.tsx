@@ -57,7 +57,7 @@ export default function CPFGeneratorPage() {
             <Button
               size="icon"
               variant="ghost"
-              className="absolute [&_svg]:size-5 right-1 top-1/2 -translate-y-1/2 text-zinc-500"
+              className="absolute [&_svg]:size-5 right-0.5 top-0.5 text-muted-foreground"
               onClick={handleCopyCPF}
             >
               {isCopied ? <Check className="text-emerald-500" /> : <Copy />}
