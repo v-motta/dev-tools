@@ -138,9 +138,9 @@ export default function PasswordGeneratorPage() {
         <div className="space-y-1">
           <Label htmlFor="generated_cpf">Senha gerada</Label>
           <div className="relative">
-            <div className="h-10 font-mono border border-border px-3 flex items-center text-xl rounded-md">
+            <div className="min-h-10 font-mono border border-border px-3 flex items-center text-xl rounded-md pr-10">
               {isSuccess ? (
-                <p>{generatedPassword.password}</p>
+                <p className="break-all">{generatedPassword.password}</p>
               ) : (
                 <LoaderCircle className="animate-spin text-muted-foreground" />
               )}
@@ -151,7 +151,7 @@ export default function PasswordGeneratorPage() {
                 size="icon"
                 variant="ghost"
                 type="button"
-                className="absolute [&_svg]:size-5 right-0.5 top-1/2 -translate-y-1/2 text-muted-foreground"
+                className="absolute [&_svg]:size-5 right-0.5 top-0.5 text-muted-foreground"
                 onClick={() =>
                   navigator.clipboard.writeText(generatedPassword.password)
                 }
