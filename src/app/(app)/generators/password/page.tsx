@@ -150,6 +150,7 @@ export default function PasswordGeneratorPage() {
               <Button
                 size="icon"
                 variant="ghost"
+                type="button"
                 className="absolute [&_svg]:size-5 right-0.5 top-1/2 -translate-y-1/2 text-muted-foreground"
                 onClick={() =>
                   navigator.clipboard.writeText(generatedPassword.password)
