@@ -16,7 +16,6 @@ export default function CPFGeneratorPage() {
     queryFn: async () => {
       return await ky.get('/api/generators/cpf').json<{ cpf: string }>()
     },
-    staleTime: 1000 * 60 * 60 * 24,
   })
 
   async function handleCopyCPF() {
@@ -45,8 +44,8 @@ export default function CPFGeneratorPage() {
       <div className="space-y-4">
         <div className="space-y-1">
           <Label htmlFor="generated_cpf">CPF Gerado</Label>
-          <div className="relative">
-            <div className="h-10 font-mono border border-border px-3 flex items-center text-xl rounded-md">
+          <div className="flex gap-2">
+            <div className="h-9 flex-1 font-mono border border-border px-3 flex items-center text-xl rounded-md">
               {isSuccess ? (
                 <p>{data.cpf}</p>
               ) : (
@@ -56,8 +55,8 @@ export default function CPFGeneratorPage() {
 
             <Button
               size="icon"
-              variant="ghost"
-              className="absolute [&_svg]:size-5 right-0.5 top-0.5 text-muted-foreground"
+              variant="outline"
+              className="[&_svg]:size-5 text-muted-foreground"
               onClick={handleCopyCPF}
             >
               {isCopied ? <Check className="text-emerald-500" /> : <Copy />}
@@ -73,6 +72,32 @@ export default function CPFGeneratorPage() {
         >
           Gerar CPF
         </Button>
+      </div>
+
+      <div>
+        <h2 className="text-lg font-medium mb-2">Como isso funciona</h2>
+
+        <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+          <li>
+            O CPF é gerado no servidor e não é armazenado em nenhum lugar.
+          </li>
+          <li>
+            O gerador cria um número de CPF válido seguindo as regras da Receita
+            Federal.
+          </li>
+          <li>
+            O CPF gerado possui os dígitos verificadores calculados
+            corretamente.
+          </li>
+          <li>
+            O número gerado é apenas para fins de teste e não pertence a nenhuma
+            pessoa real.
+          </li>
+          <li>
+            Você pode copiar o CPF gerado clicando no ícone de cópia ao lado
+            dele.
+          </li>
+        </ul>
       </div>
     </div>
   )

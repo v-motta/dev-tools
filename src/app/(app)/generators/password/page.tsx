@@ -38,7 +38,6 @@ export default function PasswordGeneratorPage() {
 
       return await ky.get(url).json<{ password: string }>()
     },
-    staleTime: 1000 * 60 * 60 * 24,
   })
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -146,8 +145,8 @@ export default function PasswordGeneratorPage() {
 
         <div className="space-y-1">
           <Label htmlFor="generated_cpf">Senha gerada</Label>
-          <div className="relative">
-            <div className="min-h-10 font-mono border border-border px-3 flex items-center text-xl rounded-md pr-10">
+          <div className="flex gap-2">
+            <div className="min-h-9 flex-1 font-mono border border-border px-3 py-1 flex items-center text-xl rounded-md">
               {isSuccess ? (
                 <p className="break-all">{generatedPassword.password}</p>
               ) : (
@@ -158,9 +157,9 @@ export default function PasswordGeneratorPage() {
             {isSuccess && (
               <Button
                 size="icon"
-                variant="ghost"
+                variant="outline"
                 type="button"
-                className="absolute [&_svg]:size-5 right-0.5 top-0.5 text-muted-foreground"
+                className="[&_svg]:size-5 text-muted-foreground"
                 onClick={handleCopyCPF}
               >
                 {isCopied ? <Check className="text-emerald-500" /> : <Copy />}
