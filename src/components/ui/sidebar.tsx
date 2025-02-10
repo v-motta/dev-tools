@@ -15,7 +15,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
-import { useIsMobile } from '@/hooks/use-mobile'
+import { useMediaQuery } from '@/hooks/use-media-query'
 import { cn } from '@/lib/utils'
 import {
   type CSSProperties,
@@ -78,7 +78,7 @@ const SidebarProvider = forwardRef<
     },
     ref
   ) => {
-    const isMobile = useIsMobile()
+    const isMobile = useMediaQuery('(max-width: 767px)')
     const [openMobile, setOpenMobile] = useState(false)
 
     // This is the internal state of the sidebar.

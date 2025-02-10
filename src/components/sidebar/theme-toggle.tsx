@@ -9,7 +9,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import { SidebarMenu, SidebarMenuButton, SidebarMenuItem } from './ui/sidebar'
+import { SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '../ui/sidebar'
 
 export function ThemeToggle() {
   const { setTheme, theme } = useTheme()
