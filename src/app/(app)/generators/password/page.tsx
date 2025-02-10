@@ -51,8 +51,8 @@ export default function PasswordGeneratorPage() {
       return
     }
 
-    if (Number(result.length) < 3) {
-      setLengthError('O máximo de caracteres é 3 (999)')
+    if (Number(result.length) <= 3) {
+      setLengthError('O mínimo de caracteres é 3')
       return
     }
 
