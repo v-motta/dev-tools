@@ -52,7 +52,7 @@ export default function PasswordGeneratorPage() {
     }
 
     if (Number(result.length) <= 3) {
-      setLengthError('O mínimo de caracteres é 3')
+      setLengthError('O mínimo de caracteres é 4')
       return
     }
 
