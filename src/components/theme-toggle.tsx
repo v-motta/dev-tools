@@ -12,7 +12,7 @@ import {
 import { SidebarMenu, SidebarMenuButton, SidebarMenuItem } from './ui/sidebar'
 
 export function ThemeToggle() {
-  const { setTheme } = useTheme()
+  const { setTheme, theme } = useTheme()
 
   return (
     <SidebarMenu>
@@ -22,8 +22,14 @@ export function ThemeToggle() {
             <SidebarMenuButton size="lg">
               <span className="sr-only">Toggle theme</span>
               <div className="flex aspect-square size-6 items-center justify-center rounded-md text-foreground">
-                <Sun className="size-6 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                <Moon className="absolute size-6 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                {theme && theme === 'system' ? (
+                  <Monitor className="absolute size-6" />
+                ) : (
+                  <>
+                    <Sun className="size-6 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                    <Moon className="absolute size-6 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                  </>
+                )}
               </div>
               <span className="hidden dark:block">Dark</span>
               <span className="block dark:hidden">Light</span>
