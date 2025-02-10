@@ -43,13 +43,13 @@ export const tools: Tools[] = [
         href: '/generators/cpf',
         icon: IdCard,
       },
-      // {
-      //   title: 'Gerador de senha',
-      //   description: 'Gere senhas seguras com nosso gerador de senha.',
-      //   image: calculateBmi,
-      //   href: '/generators/password',
-      //   icon: KeyRound,
-      // },
+      {
+        title: 'Gerador de senha',
+        description: 'Gere senhas seguras com nosso gerador de senha.',
+        image: calculateBmi,
+        href: '/generators/password',
+        icon: KeyRound,
+      },
     ],
   },
   {
