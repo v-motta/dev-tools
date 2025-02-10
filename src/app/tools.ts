@@ -1,10 +1,13 @@
 import calculateBmi from '@/../public/calculate-bmi.png'
 import generateCpf2 from '@/../public/generate-cpf-2.png'
+import generatePassword from '@/../public/generate-password.png'
+import generateUUID from '@/../public/generate-uuid.png'
 import validateCpf2 from '@/../public/validate-cpf-2.png'
 import {
   Calculator,
   CheckCircle,
   Dumbbell,
+  Fingerprint,
   IdCard,
   KeyRound,
   ServerCog,
@@ -46,9 +49,16 @@ export const tools: Tools[] = [
       {
         title: 'Gerador de senha',
         description: 'Gere senhas seguras com nosso gerador de senha.',
-        image: calculateBmi,
+        image: generatePassword,
         href: '/generators/password',
         icon: KeyRound,
+      },
+      {
+        title: 'Gerador de UUID',
+        description: 'Gere UUIDs únicos com nosso gerador de UUID.',
+        image: generateUUID,
+        href: '/generators/uuid',
+        icon: Fingerprint,
       },
     ],
   },
