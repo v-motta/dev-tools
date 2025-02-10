@@ -9,10 +9,16 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import { SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '../ui/sidebar'
+import {
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  useSidebar,
+} from '../ui/sidebar'
 
 export function ThemeToggle() {
   const { setTheme, theme } = useTheme()
+  const { open } = useSidebar()
 
   return (
     <SidebarMenu>
@@ -21,7 +27,7 @@ export function ThemeToggle() {
           <DropdownMenuTrigger asChild>
             <SidebarMenuButton size="lg">
               <span className="sr-only">Toggle theme</span>
-              <div className="flex aspect-square size-6 items-center justify-center rounded-md text-foreground">
+              <div className="flex aspect-square size-6 pl-2 items-center justify-center rounded-md text-foreground">
                 {theme && theme === 'system' ? (
                   <Monitor className="absolute size-6" />
                 ) : (
@@ -31,6 +37,7 @@ export function ThemeToggle() {
                   </>
                 )}
               </div>
+
               <span className="hidden dark:block">Dark</span>
               <span className="block dark:hidden">Light</span>
               <ChevronsUpDown className="ml-auto" />
