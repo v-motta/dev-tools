@@ -1,6 +1,7 @@
 'use client'
 
 import { ThemeProvider } from '@/components/theme-provider'
+import { SidebarProvider } from '@/components/ui/sidebar'
 import { queryClient } from '@/lib/query-client'
 import { QueryClientProvider } from '@tanstack/react-query'
 
@@ -13,7 +14,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
         enableSystem
         disableTransitionOnChange
       >
-        {children}
+        <SidebarProvider>{children}</SidebarProvider>
       </ThemeProvider>
     </QueryClientProvider>
   )

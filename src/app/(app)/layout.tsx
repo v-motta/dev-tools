@@ -1,5 +1,6 @@
 'use client'
 
+import { tools } from '@/app/tools'
 import { ThemeToggle } from '@/components/theme-toggle'
 import {
   Breadcrumb,
@@ -25,6 +26,7 @@ import {
   SidebarMenuSub,
   SidebarProvider,
   SidebarTrigger,
+  useSidebar,
 } from '@/components/ui/sidebar'
 import {
   Calculator,
@@ -46,67 +48,31 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
   const paths = pathname.split('/').filter(Boolean)
 
-  const groups = [
-    {
-      title: 'Geradores',
-      url: '/generators',
-      icon: ServerCog,
-      items: [
-        {
-          title: 'Gerador de CPF',
-          url: '/generators/cpf',
-          icon: IdCard,
-        },
-        // {
-        //   title: 'Gerador de CNPJ',
-        //   url: '/generators/cnpj',
-        //   icon: Factory,
-        // },
-      ],
-    },
-    {
-      title: 'Validadores',
-      url: '/validators',
-      icon: CheckCircle,
-      items: [
-        {
-          title: 'Validador de CPF',
-          url: '/validators/cpf',
-          icon: UserRoundCheck,
-        },
-      ],
-    },
-    {
-      title: 'Calculadores',
-      url: '/calculators',
-      icon: Calculator,
-      items: [
-        {
-          title: 'Calculadora de IMC',
-          url: '/calculators/bmi',
-          icon: Dumbbell,
-        },
-      ],
-    },
-  ]
+  const { open } = useSidebar()
 
   return (
-    <SidebarProvider>
-      <Sidebar collapsible="icon">
+    <>
+      <Sidebar collapsible="icon" variant="floating">
         <SidebarHeader>
-          <SidebarMenuButton size="lg" asChild>
-            <Link href="/">
-              <div className="flex aspect-square p-1.5 size-8 items-center justify-center text-zinc-200 rounded-md bg-blue-700">
-                <Drill className="size-full" />
+          <SidebarMenuButton size="lg">
+            <Link
+              href="/"
+              className="flex items-center gap-3 p-1 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground group-data-[collapsible=icon]/35 rounded-lg"
+            >
+              <div
+                className={`flex aspect-square items-center justify-center transition-all ${open ? 'size-9' : 'size-6'}`}
+              >
+                <Drill
+                  className={`transition-all ${open ? 'size-9' : 'size-6'}`}
+                  strokeWidth={1.5}
+                />
               </div>
 
-              <div className="flex flex-col flex-1 text-left text-sm leading-tight">
-                <span className="truncate font-semibold">
-                  The powerful tools
-                </span>
-                <span className="truncate text-xs text-zinc-600 dark:text-zinc-400">
+              <div className="text-left text-sm leading-tight group-data-[state=open]/collapsible:rotate-90">
+                <p className="truncate font-semibold">The powerful tools</p>
+                <p className="truncate text-xs text-muted-foreground">
                   by Mottinha
-                </span>
+                </p>
               </div>
             </Link>
           </SidebarMenuButton>
@@ -115,19 +81,19 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
         <SidebarContent>
           <SidebarGroup>
             <SidebarMenu>
-              {groups.map((group) => (
-                <SidebarMenuItem key={group.url} className="mb-4 last:mb-0">
+              {tools.map((group) => (
+                <SidebarMenuItem key={group.href} className="mb-4 last:mb-0">
                   <SidebarMenuButton asChild>
-                    <Link href={group.url}>
+                    <Link href={group.href}>
                       <group.icon className="size-4" />
                       {group.title}
                     </Link>
                   </SidebarMenuButton>
                   {group.items.map((item) => (
-                    <SidebarMenuSub key={item.url}>
+                    <SidebarMenuSub key={item.href}>
                       <SidebarMenuItem>
                         <SidebarMenuButton asChild>
-                          <Link href={item.url}>
+                          <Link href={item.href}>
                             <item.icon className="size-4" />
                             <span>{item.title}</span>
                           </Link>
@@ -160,11 +126,11 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
                 {paths.map((path, index) => {
                   const href = `/${paths.slice(0, index + 1).join('/')}`
 
-                  const pageTitle =
-                    groups.find((group) => group.url === href)?.title ||
-                    groups
+                  const item =
+                    tools.find((group) => group.href === href) ||
+                    tools
                       .flatMap((group) => group.items)
-                      .find((item) => item.url === href)?.title
+                      .find((item) => item.href === href)
 
                   return (
                     <React.Fragment key={path}>
@@ -183,7 +149,10 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
                       )}
                       <BreadcrumbItem>
                         <BreadcrumbLink asChild>
-                          <Link href={href}>{pageTitle}</Link>
+                          <Link href={href} className="flex items-center gap-2">
+                            {item && <item.icon className="size-4" />}
+                            <span className="text-base">{item?.title}</span>
+                          </Link>
                         </BreadcrumbLink>
                       </BreadcrumbItem>
                       {index < paths.length - 1 && <BreadcrumbSeparator />}
@@ -197,6 +166,6 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
 
         <div className="flex flex-1 flex-col gap-4 p-4">{children}</div>
       </SidebarInset>
-    </SidebarProvider>
+    </>
   )
 }
