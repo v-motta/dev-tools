@@ -58,10 +58,10 @@ export default function PasswordGeneratorPage() {
 
     setLengthError('')
 
-    await queryClient.refetchQueries()
+    await queryClient.refetchQueries({ queryKey: ['password'] })
   }
 
-  async function handleCopyCPF() {
+  async function handleCopyPassword() {
     if (isSuccess) {
       navigator.clipboard.writeText(generatedPassword.password)
       setIsCopied(true)
@@ -144,7 +144,7 @@ export default function PasswordGeneratorPage() {
         </div>
 
         <div className="space-y-1">
-          <Label htmlFor="generated_cpf">Senha gerada</Label>
+          <Label htmlFor="generated_password">Senha gerada</Label>
           <div className="flex gap-2">
             <div className="min-h-9 flex-1 font-mono border border-border px-3 py-1 flex items-center text-xl rounded-md">
               {isSuccess ? (
@@ -160,7 +160,7 @@ export default function PasswordGeneratorPage() {
                 variant="outline"
                 type="button"
                 className="[&_svg]:size-5 text-muted-foreground"
-                onClick={handleCopyCPF}
+                onClick={handleCopyPassword}
               >
                 {isCopied ? <Check className="text-emerald-500" /> : <Copy />}
               </Button>
