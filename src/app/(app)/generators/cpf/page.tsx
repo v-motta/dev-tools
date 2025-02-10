@@ -46,7 +46,7 @@ export default function CPFGeneratorPage() {
         <div className="space-y-1">
           <Label htmlFor="generated_cpf">CPF Gerado</Label>
           <div className="relative">
-            <div className="h-10 font-mono border border-zinc-200 dark:border-zinc-500 px-3 flex items-center text-xl rounded-md">
+            <div className="h-10 font-mono border border-border px-3 flex items-center text-xl rounded-md">
               <p>
                 {isLoading && <LoaderCircle className="animate-spin" />}
                 {isSuccess && data.cpf}
