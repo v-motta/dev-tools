@@ -8,7 +8,7 @@ import { useState } from 'react'
 export default function BMIPage() {
   const [bmi, setBmi] = useState<number>()
 
-  function handleOnSubmit(event: React.FormEvent<HTMLFormElement>) {
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
 
     const data = new FormData(event.currentTarget)
@@ -51,7 +51,7 @@ export default function BMIPage() {
         </p>
       </div>
 
-      <form onSubmit={handleOnSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-4">
         <div className="space-y-1">
           <Label htmlFor="weight">Digite o seu peso (kg)</Label>
           <Input type="text" id="weight" name="weight" maxLength={3} />
