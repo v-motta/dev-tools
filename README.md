@@ -1,6 +1,7 @@
-# Dev Tools
-
-A collection of useful developer tools built with Next.js, featuring generators, validators, and calculators.
+<p align="center">
+  <a href="https://devtools.vmotta.dev"><img src="https://devtools.vmotta.dev/logo.png" alt="Logo" height=170></a>
+</p>
+<h1 align="center">Dev Tools</h1>
 
 <p align="center">
 <img src="https://img.shields.io/github/stars/v-motta/dev-tools" alt="stars">
