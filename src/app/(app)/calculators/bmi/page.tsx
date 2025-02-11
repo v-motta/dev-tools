@@ -14,6 +14,10 @@ export default function BMIPage() {
     const data = new FormData(event.currentTarget)
     const result = Object.fromEntries(data)
 
+    if (!result.weight || !result.height) {
+      return
+    }
+
     const weight = Number.parseFloat(result.weight as string)
     const height = Number.parseFloat(result.height as string) / 100
 
@@ -23,12 +27,12 @@ export default function BMIPage() {
   }
 
   const bmiStatus: Record<string, string> = {
-    underweight: 'Abaixo do peso 🏃‍♀️🍏',
-    normal: 'Peso normal ⚖️😊',
-    overweight: 'Sobrepeso 🍔🍟',
-    obesity1: 'Obesidade Grau 1 🍕🍦',
-    obesity2: 'Obesidade Grau 2 🍩🍔',
-    obesity3: 'Obesidade Grau 3 (mórbida) 🚑⚠️',
+    underweight: 'Underweight 🏃‍♀️🍏',
+    normal: 'Normal weight ⚖️😊',
+    overweight: 'Overweight 🍔🍟',
+    obesity1: 'Obesity Grade 1 🍕🍦',
+    obesity2: 'Obesity Grade 2 🍩🍔',
+    obesity3: 'Obesity Grade 3 (morbid) 🚑⚠️',
   }
 
   function getBmiStatus(bmi: number): string {
@@ -44,21 +48,21 @@ export default function BMIPage() {
   return (
     <div className="space-y-8 w-full lg:w-1/2 2xl:w-1/3">
       <div className="space-y-3">
-        <h1 className="text-2xl font-bold font-mono">Calculador de IMC</h1>
+        <h1 className="text-2xl font-bold font-mono">BMI Calculator</h1>
 
         <p className="text-muted-foreground text-balance">
-          Use nossa calculadora para descobrir seu Índice de Massa Corporal.
+          Use our calculator to discover your Body Mass Index.
         </p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="space-y-1">
-          <Label htmlFor="weight">Digite o seu peso (kg)</Label>
+          <Label htmlFor="weight">Enter your weight (kg)</Label>
           <Input type="text" id="weight" name="weight" maxLength={3} />
         </div>
 
         <div className="space-y-1">
-          <Label htmlFor="height">Digite a sua altura (cm)</Label>
+          <Label htmlFor="height">Enter your height (cm)</Label>
           <Input type="text" id="height" name="height" maxLength={3} />
         </div>
 
@@ -71,7 +75,7 @@ export default function BMIPage() {
           </p>
         )}
 
-        <Button className="w-full">Calcular IMC</Button>
+        <Button className="w-full">Calculate BMI</Button>
       </form>
     </div>
   )
