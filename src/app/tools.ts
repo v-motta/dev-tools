@@ -1,4 +1,5 @@
 import calculateBmi from '@/../public/calculate-bmi.png'
+import calculateBmr from '@/../public/calculate-bmr.jpg'
 import generateCnpj from '@/../public/generate-cnpj.jpg'
 import generateCpf2 from '@/../public/generate-cpf-2.png'
 import generatePassword from '@/../public/generate-password.png'
@@ -16,6 +17,7 @@ import {
   LaptopMinimalCheck,
   ServerCog,
   UserRoundCheck,
+  Weight,
 } from 'lucide-react'
 import type { StaticImageData } from 'next/image'
 
@@ -106,6 +108,14 @@ export const tools: Tools[] = [
         image: calculateBmi,
         href: '/calculators/bmi',
         icon: Dumbbell,
+      },
+      {
+        title: 'BMR Calculator',
+        description:
+          'Calculate the Basal Metabolic Rate with our BMR calculator.',
+        image: calculateBmr,
+        href: '/calculators/bmr',
+        icon: Weight,
       },
     ],
   },
