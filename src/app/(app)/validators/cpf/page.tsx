@@ -109,6 +109,30 @@ export default function CPFValidatorPage() {
         <Button className="w-full">Validar CPF</Button>
       </form>
 
+      <div>
+        <h2 className="text-lg font-medium mb-2">Como isso funciona</h2>
+
+        <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+          <li>
+            A validação é feita no servidor e não armazena nenhuma informação.
+          </li>
+          <li>
+            O validador verifica se o CPF segue as regras da Receita Federal.
+          </li>
+          <li>
+            São verificados o formato do CPF e seus dígitos verificadores.
+          </li>
+          <li>
+            O sistema aceita CPFs com ou sem pontuação (123.456.789-10 ou
+            12345678910).
+          </li>
+          <li>
+            O resultado da validação é exibido através de um ícone verde
+            (válido) ou vermelho (inválido).
+          </li>
+        </ul>
+      </div>
+
       <div className="space-y-4">
         <div className="space-y-2">
           <h2 className="text-xl font-bold font-mono">Como usar nossa API</h2>
