@@ -28,5 +28,7 @@ export async function GET() {
       : cpfCompleto
   }
 
-  return NextResponse.json({ cpf: generateCPF() })
+  const generatedCPF = generateCPF()
+
+  return NextResponse.json({ cpf: generatedCPF })
 }
