@@ -28,7 +28,6 @@ export default function CPFValidatorPage() {
 
     const cpf = result.cpf as string
 
-    // const status = validateCPF(cpf)
     const { status } = await ky
       .post('/api/validators/cpf', { json: { cpf } })
       .json<{ status: boolean }>()
@@ -109,6 +108,37 @@ export default function CPFValidatorPage() {
 
         <Button className="w-full">Validar CPF</Button>
       </form>
+
+      <div className="space-y-4">
+        <div className="space-y-2">
+          <h2 className="text-xl font-bold font-mono">Como usar nossa API</h2>
+          <p className="text-zinc-400 text-balance">
+            Você pode integrar nosso validador de CPF em sua aplicação usando
+            nossa API REST.
+          </p>
+        </div>
+
+        <div className="space-y-2">
+          <p className="text-sm font-medium">Endpoint</p>
+          <pre className="p-4 rounded-lg bg-zinc-900 font-mono text-sm">
+            POST https://devtools.vmotta.dev/api/validators/cpf
+          </pre>
+        </div>
+
+        <div className="space-y-2">
+          <p className="text-sm font-medium">Exemplo de requisição</p>
+          <pre className="p-4 rounded-lg bg-zinc-900 font-mono text-sm">
+            {JSON.stringify({ cpf: '123.456.789-10' }, null, 2)}
+          </pre>
+        </div>
+
+        <div className="space-y-2">
+          <p className="text-sm font-medium">Resposta</p>
+          <pre className="p-4 rounded-lg bg-zinc-900 font-mono text-sm">
+            {JSON.stringify({ status: false }, null, 2)}
+          </pre>
+        </div>
+      </div>
     </div>
   )
 }
