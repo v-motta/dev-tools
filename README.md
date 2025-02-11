@@ -63,13 +63,13 @@ pnpm dev
 
 ```
 src/
-└── __tests__/         # Test files
-├── app/                 # App router pages
-├── components/          # React components
-├── hooks/              # Custom hooks
-├── lib/                # Utility functions
+├── __tests__/         # Test files
+├── app/               # App router pages
+├── components/        # React components
+├── hooks/             # Custom hooks
+├── lib/               # Utility functions
 ├── LICENSE             
-├── README.md           
+└── README.md           
 ```
 
 ## Contributing
