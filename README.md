@@ -2,6 +2,10 @@
 
 A collection of useful developer tools built with Next.js, featuring generators, validators, and calculators.
 
+<p align="center">
+<img src="https://img.shields.io/github/stars/v-motta/dev-tools" alt="stars">
+</p>
+
 ## Features
 
 ### Generators
@@ -18,14 +22,16 @@ A collection of useful developer tools built with Next.js, featuring generators,
 - [x] **BMI Calculator**: Calculate Body Mass Index (BMI)
 
 ## Tech Stack
-- [Next.js](https://nextjs.org/) - React framework
-- [TypeScript](https://www.typescriptlang.org/) - Type safety
-- [Tailwind CSS](https://tailwindcss.com/) - Styling
-- [Radix UI](https://www.radix-ui.com/) - Accessible UI components
-- [React Query](https://tanstack.com/query/latest) - Data fetching
-- [Biome](https://biomejs.dev/) - Code formatting and linting
-- [Jest](https://jestjs.io/) - Testing
-- [Lucide Icons](https://lucide.dev/) - Icons
+* [![Next](https://img.shields.io/badge/next.js-black?style=for-the-badge&logo=nextdotjs)](https://nextjs.org/)
+* [![TypeScript](https://img.shields.io/badge/typescript-black?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+* [![React](https://img.shields.io/badge/react-black?style=for-the-badge&logo=react)](https://reactjs.org/)
+* [![Tailwind CSS](https://img.shields.io/badge/tailwindcss-black?style=for-the-badge&logo=tailwindcss)](https://tailwindcss.com/)
+* [![Radix UI](https://img.shields.io/badge/radix%20ui-black?style=for-the-badge&logo=radixui)](https://www.radix-ui.com/)
+* [![React Query](https://img.shields.io/badge/react%20query-black?style=for-the-badge&logo=reactquery)](https://tanstack.com/query/latest)
+* [![Jest](https://img.shields.io/badge/jest-black?style=for-the-badge&logo=jest)](https://jestjs.io/)
+* [![React Testing Library](https://img.shields.io/badge/react%20testing%20library-black?style=for-the-badge&logo=testinglibrary)](https://testing-library.com/docs/react-testing-library/intro)
+* [![Biome](https://img.shields.io/badge/biome-black?style=for-the-badge&logo=biome)](https://biomejs.dev/)
+* [![Lucide Icons](https://img.shields.io/badge/lucide%20icons-black?style=for-the-badge&logo=lucide)](https://lucide.dev/)
 
 ### Prerequisites
 - Node.js 18+ 
@@ -79,3 +85,10 @@ src/
 3. Commit your changes (`git commit -am 'Add new feature'`)
 4. Push to the branch (`git push origin feature`)
 5. Create a new Pull Request
+
+[Next.js]: https://img.shields.io/badge/next.js-black?style=for-the-badge&logo=nextdotjs
+[Next-url]: https://nextjs.org/
+[TypeScript.io]: https://img.shields.io/badge/typescript-black?style=for-the-badge&logo=typescript
+[TypeScript-url]: https://www.typescriptlang.org/
+[React.js]: https://img.shields.io/badge/react-black?style=for-the-badge&logo=react
+[React-url]: https://reactjs.org/
