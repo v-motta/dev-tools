@@ -47,12 +47,12 @@ export default function PasswordGeneratorPage() {
     const result = Object.fromEntries(data)
 
     if (!result.length) {
-      setLengthError('O campo é obrigatório')
+      setLengthError('This field is required')
       return
     }
 
     if (Number(result.length) <= 3) {
-      setLengthError('O mínimo de caracteres é 4')
+      setLengthError('The length must be greater than 3')
       return
     }
 
@@ -72,16 +72,16 @@ export default function PasswordGeneratorPage() {
   return (
     <div className="space-y-8 w-full lg:w-1/2 2xl:w-1/3">
       <div className="space-y-3">
-        <h1 className="text-2xl font-bold font-mono">Gerador de senha</h1>
+        <h1 className="text-2xl font-bold font-mono">Password Generator</h1>
 
         <p className="text-muted-foreground text-balance">
-          Use nosso gerador de senha para criar uma senha segura.
+          Use our password generator to create a secure password.
         </p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="space-y-1">
-          <Label htmlFor="length">Tamanho máximo de caracteres</Label>
+          <Label htmlFor="length">Maximum character length</Label>
           <Input
             id="length"
             name="length"
@@ -111,7 +111,7 @@ export default function PasswordGeneratorPage() {
                 }))
               }}
             />
-            <Label htmlFor="uppercase">Letras maiúsculas</Label>
+            <Label htmlFor="uppercase">Uppercase letters</Label>
           </div>
 
           <div className="flex items-center gap-2">
@@ -125,7 +125,7 @@ export default function PasswordGeneratorPage() {
                 }))
               }}
             />
-            <Label htmlFor="numbers">Números</Label>
+            <Label htmlFor="numbers">Numbers</Label>
           </div>
 
           <div className="flex items-center gap-2">
@@ -139,7 +139,7 @@ export default function PasswordGeneratorPage() {
                 }))
               }}
             />
-            <Label htmlFor="symbols">Símbolos</Label>
+            <Label htmlFor="symbols">Symbols</Label>
           </div>
         </div>
 
@@ -169,36 +169,36 @@ export default function PasswordGeneratorPage() {
         </div>
 
         <Button className="w-full" isPending={isFetching}>
-          Gerar senha
+          Generate password
         </Button>
       </form>
 
       <div>
-        <h2 className="text-lg font-medium mb-2">Como isso funciona</h2>
+        <h2 className="text-lg font-medium mb-2">How it works</h2>
 
         <ul className="list-disc list-inside space-y-2 text-muted-foreground">
           <li>
-            A senha é gerada no servidor e não é armazenada em nenhum lugar.
+            The password is generated on the server and is not stored anywhere.
           </li>
           <li>
-            O gerador de senha gera uma senha aleatória com base nas opções
-            selecionadas.
+            The password generator creates a random password based on the
+            selected options.
           </li>
           <li>
-            A senha terá no mínimo 4 caracteres (1 caractere minúsculo, 1
-            caractere maiúsculo, 1 número e 1 símbolo)
+            The password will have at least 4 characters (1 lowercase letter, 1
+            uppercase letter, 1 number, and 1 symbol).
           </li>
           <li>
-            Sempre existira um caractere minúsculo, um caractere maiúsculo, um
-            número e um símbolo, se as opções estiverem marcadas.
+            There will always be one lowercase letter, one uppercase letter, one
+            number, and one symbol if the options are selected.
           </li>
           <li>
-            Por padrão, a senha contém apenas letras minúsculas se nenhuma opção
-            adicional for selecionada.
+            By default, the password contains only lowercase letters if no
+            additional options are selected.
           </li>
           <li>
-            Você pode copiar a senha gerada clicando no ícone de cópia ao lado
-            dela.
+            You can copy the generated password by clicking the copy icon next
+            to it.
           </li>
         </ul>
       </div>

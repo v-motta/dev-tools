@@ -37,36 +37,34 @@ interface Tools {
 
 export const tools: Tools[] = [
   {
-    title: 'Geradores',
+    title: 'Generators',
     href: '/generators',
     icon: ServerCog,
     category: 'generators',
     items: [
       {
-        title: 'Gerador de CPF',
-        description:
-          'Facilite a geração de CPFs válidos com nosso gerador de CPF.',
+        title: 'CPF Generator',
+        description: 'Easily generate valid CPFs with our CPF generator.',
         image: generateCpf2,
         href: '/generators/cpf',
         icon: IdCard,
       },
       {
-        title: 'Gerador de CNPJ',
-        description:
-          'Facilite a geração de CNPJs válidos com nosso gerador de CNPJ.',
+        title: 'CNPJ Generator',
+        description: 'Easily generate valid CNPJs with our CNPJ generator.',
         image: generateCnpj,
         href: '/generators/cnpj',
         icon: Landmark,
       },
       {
-        title: 'Gerador de senha',
-        description: 'Gere senhas seguras com nosso gerador de senha.',
+        title: 'Password Generator',
+        description: 'Generate secure passwords with our password generator.',
         image: generatePassword,
         href: '/generators/password',
         icon: KeyRound,
       },
       {
-        title: 'Gerador de UUID',
+        title: 'UUID Generator',
         description: 'Gere UUIDs únicos com nosso gerador de UUID.',
         image: generateUUID,
         href: '/generators/uuid',
@@ -75,22 +73,21 @@ export const tools: Tools[] = [
     ],
   },
   {
-    title: 'Validadores',
+    title: 'Validators',
     href: '/validators',
     icon: CheckCircle,
     category: 'validators',
     items: [
       {
-        title: 'Validador de CPF',
-        description: 'Verifique se um CPF é válido com nosso validador de CPF.',
+        title: 'CPF Validator',
+        description: 'Check if a CPF is valid with our CPF validator.',
         image: validateCpf2,
         href: '/validators/cpf',
         icon: UserRoundCheck,
       },
       {
-        title: 'Validador de CNPJ',
-        description:
-          'Verifique se um CNPJ é válido com nosso validador de CNPJ.',
+        title: 'CNPJ Validator',
+        description: 'Check if a CNPJ is valid with our CNPJ validator.',
         image: validateCnpj,
         href: '/validators/cnpj',
         icon: LaptopMinimalCheck,
@@ -98,15 +95,14 @@ export const tools: Tools[] = [
     ],
   },
   {
-    title: 'Calculadores',
+    title: 'Calculators',
     href: '/calculators',
     icon: Calculator,
     category: 'calculators',
     items: [
       {
-        title: 'Calculador de IMC',
-        description:
-          'Calcule o Índice de Massa Corporal com nosso calculador de IMC.',
+        title: 'BMI Calculator',
+        description: 'Calculate the Body Mass Index with our BMI calculator.',
         image: calculateBmi,
         href: '/calculators/bmi',
         icon: Dumbbell,

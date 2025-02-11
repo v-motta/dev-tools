@@ -33,17 +33,17 @@ export default function CNPJGeneratorPage() {
   return (
     <div className="space-y-8 w-full lg:w-1/2 2xl:w-1/3">
       <div className="space-y-3">
-        <h1 className="text-2xl font-bold font-mono">Gerador de CNPJ</h1>
+        <h1 className="text-2xl font-bold font-mono">CNPJ Generator</h1>
 
         <p className="text-muted-foreground text-balance">
-          Use nosso gerador de CNPJ! Basta clicar em "Gerar CNPJ" e, em
-          instantes, um novo número válido será criado.
+          Use our CNPJ generator! Just click on "Generate CNPJ" and, in a few
+          moments, a new valid number will be created.
         </p>
       </div>
 
       <div className="space-y-4">
         <div className="space-y-1">
-          <Label htmlFor="generated_cnpj">CNPJ Gerado</Label>
+          <Label htmlFor="generated_cnpj">Generated CNPJ</Label>
           <div className="flex gap-2">
             <div className="min-h-9 flex-1 font-mono border border-border px-3 flex items-center text-xl rounded-md">
               {isSuccess ? (
@@ -70,32 +70,29 @@ export default function CNPJGeneratorPage() {
           onClick={handleGenerateCNPJ}
           isPending={isFetching}
         >
-          Gerar CNPJ
+          Generate CNPJ
         </Button>
       </div>
 
       <div>
-        <h2 className="text-lg font-medium mb-2">Como isso funciona</h2>
+        <h2 className="text-lg font-medium mb-2">How it works</h2>
 
         <ul className="list-disc list-inside space-y-2 text-muted-foreground">
           <li>
-            O CNPJ é gerado no servidor e não é armazenado em nenhum lugar.
+            The CNPJ is generated on the server and is not stored anywhere.
           </li>
           <li>
-            O gerador cria um número de CNPJ válido seguindo as regras da
-            Receita Federal.
+            The generator creates a valid CNPJ number following the rules of the
+            Federal Revenue Service.
+          </li>
+          <li>The generated CNPJ has correctly calculated check digits.</li>
+          <li>
+            The generated number is for testing purposes only and does not
+            belong to any real person.
           </li>
           <li>
-            O CNPJ gerado possui os dígitos verificadores calculados
-            corretamente.
-          </li>
-          <li>
-            O número gerado é apenas para fins de teste e não pertence a nenhuma
-            pessoa real.
-          </li>
-          <li>
-            Você pode copiar o CNPJ gerado clicando no ícone de cópia ao lado
-            dele.
+            You can copy the generated CNPJ by clicking the copy icon next to
+            it.
           </li>
         </ul>
       </div>

@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 
 export const metadata: Metadata = {
-  title: 'Gerador de CNPJ',
-  description: 'Gere um número de CNPJ válido instantaneamente.',
+  title: 'CNPJ Generator',
+  description: 'Generate a valid CNPJ number instantly.',
   keywords: [
     'gerador de cnpj',
     'gerador de cnpj online',

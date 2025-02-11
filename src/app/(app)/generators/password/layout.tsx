@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 
 export const metadata: Metadata = {
-  title: 'Gerador de Senha',
+  title: 'Password Generator',
   description:
-    'Gere senhas seguras e aleatórias com diferentes combinações de caracteres, incluindo letras maiúsculas, números e símbolos especiais.',
+    'Generate secure and random passwords with different combinations of characters, including uppercase letters, numbers, and special symbols.',
   keywords: [
     'gerador de senha',
     'gerador de senha online',

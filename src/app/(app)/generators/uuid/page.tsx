@@ -37,16 +37,16 @@ export default function UUIDGeneratorPage() {
   return (
     <div className="space-y-8 w-full lg:w-1/2 2xl:w-1/3">
       <div className="space-y-3">
-        <h1 className="text-2xl font-bold font-mono">Gerador de UUID</h1>
+        <h1 className="text-2xl font-bold font-mono">UUID Generator</h1>
 
         <p className="text-muted-foreground text-balance">
-          Use nosso gerador de UUID para criar um identificador único.
+          Use our UUID generator to create a unique identifier.
         </p>
       </div>
 
       <div className="space-y-4">
         <div className="space-y-1">
-          <Label htmlFor="generated_uuid">UUID Gerado</Label>
+          <Label htmlFor="generated_uuid">UUID Generator</Label>
           <div className="flex gap-2">
             <div className="min-h-9 flex-1 font-mono border border-border px-3 flex items-center text-xl rounded-md">
               {isSuccess ? (
@@ -73,30 +73,32 @@ export default function UUIDGeneratorPage() {
           onClick={handleGenerateUUID}
           isPending={isFetching}
         >
-          Gerar UUID
+          Generate UUID
         </Button>
       </div>
 
       <div>
-        <h2 className="text-lg font-medium mb-2">Como isso funciona</h2>
+        <h2 className="text-lg font-medium mb-2">How it works</h2>
 
         <ul className="list-disc list-inside space-y-2 text-muted-foreground">
           <li>
-            O UUID é gerado no servidor e não é armazenado em nenhum lugar.
+            The UUID is generated on the server and is not stored anywhere.
           </li>
           <li>
-            O gerador cria um UUID v4 que garante um identificador único
-            universal.
+            The generator creates a v4 UUID that ensures a unique universal
+            identifier.
           </li>
           <li>
-            O UUID gerado segue o padrão 8-4-4-4-12 caracteres hexadecimais.
+            The generated UUID follows the 8-4-4-4-12 hexadecimal character
+            format.
           </li>
           <li>
-            A chance de gerar dois UUIDs iguais é praticamente impossível.
+            The chance of generating two identical UUIDs is practically
+            impossible.
           </li>
           <li>
-            Você pode copiar o UUID gerado clicando no ícone de cópia ao lado
-            dele.
+            You can copy the generated UUID by clicking the copy icon next to
+            it.
           </li>
         </ul>
       </div>

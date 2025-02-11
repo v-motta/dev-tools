@@ -34,7 +34,7 @@ export default function CPFValidatorPage() {
 
     setValidationStatus({
       isValid,
-      message: isValid ? 'CPF válido' : 'CPF inválido',
+      message: isValid ? 'Valid CPF' : 'Invalid CPF',
     })
   }
 
@@ -52,17 +52,17 @@ export default function CPFValidatorPage() {
   return (
     <div className="space-y-8 w-full lg:w-1/2 2xl:w-1/3">
       <div className="space-y-3">
-        <h1 className="text-2xl font-bold font-mono">Validador de CPF</h1>
+        <h1 className="text-2xl font-bold font-mono">CPF Validator</h1>
 
         <p className="text-muted-foreground text-balance">
-          Use nosso validador de CPF! Basta inserir um número de CPF e clicar em
-          "Validar CPF" para verificar se ele é válido.
+          Use our CPF validator! Just enter a CPF number and click on 'Validate
+          CPF' to check if it is valid.
         </p>
       </div>
 
       <form onSubmit={handleOnSubmit} className="space-y-4">
         <div className="space-y-1">
-          <Label htmlFor="cpf">Digite o CPF</Label>
+          <Label htmlFor="cpf">Enter the CPF</Label>
           <div className="relative">
             <Input
               type="text"
@@ -106,39 +106,39 @@ export default function CPFValidatorPage() {
           </div>
         </div>
 
-        <Button className="w-full">Validar CPF</Button>
+        <Button className="w-full">Validate CPF</Button>
       </form>
 
       <div>
-        <h2 className="text-lg font-medium mb-2">Como isso funciona</h2>
+        <h2 className="text-lg font-medium mb-2">How it works</h2>
 
         <ul className="list-disc list-inside space-y-2 text-muted-foreground">
           <li>
-            A validação é feita no servidor e não armazena nenhuma informação.
+            The validation is done on the server and does not store any
+            information.
           </li>
           <li>
-            O validador verifica se o CPF segue as regras da Receita Federal.
+            The validator checks if the CPF follows the rules of the Federal
+            Revenue Service.
+          </li>
+          <li>The format of the CPF and its check digits are verified.</li>
+          <li>
+            The system accepts CPFs with or without punctuation (123.456.789-10
+            or 12345678910).
           </li>
           <li>
-            São verificados o formato do CPF e seus dígitos verificadores.
-          </li>
-          <li>
-            O sistema aceita CPFs com ou sem pontuação (123.456.789-10 ou
-            12345678910).
-          </li>
-          <li>
-            O resultado da validação é exibido através de um ícone verde
-            (válido) ou vermelho (inválido).
+            The validation result is displayed through a green icon (valid) or a
+            red icon (invalid).
           </li>
         </ul>
       </div>
 
       <div className="space-y-4">
         <div className="space-y-2">
-          <h2 className="text-xl font-bold font-mono">Como usar nossa API</h2>
+          <h2 className="text-xl font-bold font-mono">How to use the API</h2>
           <p className="text-muted-foreground text-balance">
-            Você pode integrar nosso validador de CPF em sua aplicação usando
-            nossa API REST.
+            You can integrate our CPF validator into your application using our
+            REST API.
           </p>
         </div>
 
@@ -150,14 +150,14 @@ export default function CPFValidatorPage() {
         </div>
 
         <div className="space-y-2">
-          <p className="text-sm font-medium">Exemplo de requisição</p>
+          <p className="text-sm font-medium">Request example</p>
           <pre className="p-4 rounded-lg bg-sidebar font-mono text-sm">
             {JSON.stringify({ cpf: '123.456.789-10' }, null, 2)}
           </pre>
         </div>
 
         <div className="space-y-2">
-          <p className="text-sm font-medium">Resposta</p>
+          <p className="text-sm font-medium">Response</p>
           <pre className="p-4 rounded-lg bg-sidebar font-mono text-sm">
             {JSON.stringify({ isValid: false }, null, 2)}
           </pre>

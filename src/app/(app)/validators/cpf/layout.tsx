@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 
 export const metadata: Metadata = {
-  title: 'Validador de CPF',
-  description: 'Valide um número de CPF instantaneamente.',
+  title: 'CPF Validator',
+  description: 'Validate a CPF number instantly.',
   keywords: [
     'validador de cpf',
     'validador de cpf online',

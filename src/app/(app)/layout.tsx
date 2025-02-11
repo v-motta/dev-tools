@@ -31,7 +31,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
 
   const { open } = useSidebar()
 
-  const { data, isFetching, isSuccess } = useQuery({
+  const { data, isSuccess } = useQuery({
     queryKey: ['github-stars'],
     queryFn: async () => {
       return await ky
