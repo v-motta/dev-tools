@@ -45,7 +45,7 @@ export default function CPFGeneratorPage() {
         <div className="space-y-1">
           <Label htmlFor="generated_cpf">CPF Gerado</Label>
           <div className="flex gap-2">
-            <div className="h-9 flex-1 font-mono border border-border px-3 flex items-center text-xl rounded-md">
+            <div className="min-h-9 flex-1 font-mono border border-border px-3 flex items-center text-xl rounded-md">
               {isSuccess ? (
                 <p>{data.cpf}</p>
               ) : (
