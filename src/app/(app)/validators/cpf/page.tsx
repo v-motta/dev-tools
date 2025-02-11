@@ -9,7 +9,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip'
-import { validateCPF } from '@/lib/validate-cpf'
+import ky from 'ky'
 import { Check, X } from 'lucide-react'
 import { type FormEvent, useState } from 'react'
 
@@ -20,7 +20,7 @@ export default function CPFValidatorPage() {
     message: string
   }>()
 
-  function handleOnSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleOnSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
 
     const data = new FormData(event.currentTarget)
@@ -28,7 +28,10 @@ export default function CPFValidatorPage() {
 
     const cpf = result.cpf as string
 
-    const status = validateCPF(cpf)
+    // const status = validateCPF(cpf)
+    const { status } = await ky
+      .post('/api/validators/cpf', { json: { cpf } })
+      .json<{ status: boolean }>()
 
     setValidationStatus({
       status,
