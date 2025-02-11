@@ -9,20 +9,20 @@
 
 ## 🚀 Features
 
-### ⚙️ Generators
+### Generators
 - [x] **CPF Generator**: Generate valid Brazilian CPF numbers
 - [ ] **CNPJ Generator**: Generate valid Brazilian CNPJ numbers
 - [x] **Password Generator**: Create secure passwords with customizable options
 - [x] **UUID Generator**: Generate unique UUIDs (v4)
 
-### ✔️ Validators
+### Validators
 - [x] **CPF Validator**: Validate Brazilian CPF numbers
 - [ ] **CNPJ Validator**: Validate Brazilian CNPJ numbers
 
-### 🧮 Calculators
+### Calculators
 - [x] **BMI Calculator**: Calculate Body Mass Index (BMI)
 
-## Tech Stack
+## 📚 Tech Stack
 [![Next](https://img.shields.io/badge/next.js-black?style=for-the-badge&logo=nextdotjs)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/typescript-black?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/react-black?style=for-the-badge&logo=react)](https://reactjs.org/)
@@ -34,39 +34,8 @@
 [![Biome](https://img.shields.io/badge/biome-black?style=for-the-badge&logo=biome)](https://biomejs.dev/)
 [![Lucide Icons](https://img.shields.io/badge/lucide%20icons-black?style=for-the-badge&logo=lucide)](https://lucide.dev/)
 
-### Prerequisites
-- Node.js 18+ 
-- npm or yarn or pnpm
 
-### Installation
-
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/dev-tools.git
-cd dev-tools
-```
-
-2. Install dependencies:
-
-```bash
-npm install
-# or
-yarn install
-# or
-pnpm install
-```
-
-3. Run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
-
-## Project Structure
+## 📂 Project Structure
 
 ```
 src/
@@ -79,7 +48,7 @@ src/
 └── README.md           
 ```
 
-## Contributing
+## ❤️ Contributing
 
 1. Fork the repository
 2. Create a new branch (`git checkout -b feature`)
