@@ -3,6 +3,7 @@ import generateCnpj from '@/../public/generate-cnpj.jpg'
 import generateCpf2 from '@/../public/generate-cpf-2.png'
 import generatePassword from '@/../public/generate-password.png'
 import generateUUID from '@/../public/generate-uuid.png'
+import validateCnpj from '@/../public/validate-cnpj.jpg'
 import validateCpf2 from '@/../public/validate-cpf-2.png'
 import {
   Calculator,
@@ -12,6 +13,7 @@ import {
   IdCard,
   KeyRound,
   Landmark,
+  LaptopMinimalCheck,
   ServerCog,
   UserRoundCheck,
 } from 'lucide-react'
@@ -84,6 +86,14 @@ export const tools: Tools[] = [
         image: validateCpf2,
         href: '/validators/cpf',
         icon: UserRoundCheck,
+      },
+      {
+        title: 'Validador de CNPJ',
+        description:
+          'Verifique se um CNPJ é válido com nosso validador de CNPJ.',
+        image: validateCnpj,
+        href: '/validators/cnpj',
+        icon: LaptopMinimalCheck,
       },
     ],
   },

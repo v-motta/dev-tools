@@ -1,3 +1,4 @@
+import { validateCNPJ } from '@/lib/validate-cnpj'
 import { validateCPF } from '@/lib/validate-cpf'
 import '@testing-library/jest-dom'
 
@@ -43,5 +44,50 @@ describe('Validate CPF', () => {
     const validatedCPF = validateCPF('197.337.730-69')
 
     expect(validatedCPF).toBe(true)
+  })
+})
+
+describe('Validate CNPJ', () => {
+  it('should returns false for CNPJ with incorrect length', () => {
+    const validatedCNPJ = validateCNPJ('123')
+
+    expect(validatedCNPJ).toBe(false)
+  })
+
+  it('should returns false for CNPJ with all same digits', () => {
+    expect(validateCNPJ('00000000000000')).toBe(false)
+    expect(validateCNPJ('11111111111111')).toBe(false)
+    expect(validateCNPJ('22222222222222')).toBe(false)
+    expect(validateCNPJ('33333333333333')).toBe(false)
+    expect(validateCNPJ('44444444444444')).toBe(false)
+    expect(validateCNPJ('55555555555555')).toBe(false)
+    expect(validateCNPJ('66666666666666')).toBe(false)
+    expect(validateCNPJ('77777777777777')).toBe(false)
+    expect(validateCNPJ('88888888888888')).toBe(false)
+    expect(validateCNPJ('99999999999999')).toBe(false)
+  })
+
+  it('should returns false for an invalid CNPJ', () => {
+    const validatedCNPJ = validateCNPJ('12792888095001')
+
+    expect(validatedCNPJ).toBe(false)
+  })
+
+  it('should returns false for an invalid CNPJ with mask', () => {
+    const validatedCNPJ = validateCNPJ('12.792.888/0001-95')
+
+    expect(validatedCNPJ).toBe(false)
+  })
+
+  it('should returns true for a valid CNPJ', () => {
+    const validatedCNPJ = validateCNPJ('04252011000110')
+
+    expect(validatedCNPJ).toBe(true)
+  })
+
+  it('should returns true for a valid CNPJ with mask', () => {
+    const validatedCNPJ = validateCNPJ('04.252.011/0001-10')
+
+    expect(validatedCNPJ).toBe(true)
   })
 })

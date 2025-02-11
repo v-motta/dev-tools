@@ -1,0 +1,169 @@
+'use client'
+
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from '@/components/ui/tooltip'
+import ky from 'ky'
+import { Check, X } from 'lucide-react'
+import { type FormEvent, useState } from 'react'
+
+export default function CNPJValidatorPage() {
+  const [cnpj, setCnpj] = useState('')
+  const [validationStatus, setValidationStatus] = useState<{
+    isValid: boolean
+    message: string
+  }>()
+
+  async function handleOnSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+
+    const data = new FormData(event.currentTarget)
+    const result = Object.fromEntries(data)
+
+    const cnpj = result.cnpj as string
+
+    const { isValid } = await ky
+      .post('/api/validators/cnpj', { json: { cnpj } })
+      .json<{ isValid: boolean }>()
+
+    setValidationStatus({
+      isValid,
+      message: isValid ? 'CNPJ válido' : 'CNPJ inválido',
+    })
+  }
+
+  function handleOnChange(event: FormEvent<HTMLInputElement>) {
+    let { value } = event.currentTarget
+
+    value = value.replace(/\D/g, '')
+    value = value.replace(/^(\d{2})(\d)/, '$1.$2')
+    value = value.replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3')
+    value = value.replace(/\.(\d{3})(\d)/, '.$1/$2')
+    value = value.replace(/(\d{4})(\d)/, '$1-$2')
+
+    setCnpj(value)
+  }
+
+  return (
+    <div className="space-y-8 w-full lg:w-1/2 2xl:w-1/3">
+      <div className="space-y-3">
+        <h1 className="text-2xl font-bold font-mono">Validador de CNPJ</h1>
+
+        <p className="text-muted-foreground text-balance">
+          Use nosso validador de CNPJ! Basta inserir um número de CNPJ e clicar
+          em "Validar CNPJ" para verificar se ele é válido.
+        </p>
+      </div>
+
+      <form onSubmit={handleOnSubmit} className="space-y-4">
+        <div className="space-y-1">
+          <Label htmlFor="cnpj">Digite o CNPJ</Label>
+          <div className="relative">
+            <Input
+              type="text"
+              id="cnpj"
+              name="cnpj"
+              value={cnpj}
+              onChange={handleOnChange}
+              placeholder="00.623.904/0001-73"
+              maxLength={18}
+              className={
+                !validationStatus
+                  ? undefined
+                  : validationStatus.isValid
+                    ? '!border-emerald-500'
+                    : '!border-red-500'
+              }
+            />
+
+            <TooltipProvider>
+              <Tooltip delayDuration={0}>
+                <TooltipTrigger asChild>
+                  {!validationStatus ? null : validationStatus.isValid ? (
+                    <Check className="absolute right-2 top-2 text-emerald-500" />
+                  ) : (
+                    <X className="absolute right-2 top-2 text-red-500" />
+                  )}
+                </TooltipTrigger>
+                <TooltipContent
+                  className={
+                    !validationStatus
+                      ? undefined
+                      : validationStatus.isValid
+                        ? '!bg-emerald-500'
+                        : '!bg-red-500'
+                  }
+                >
+                  {validationStatus?.message}
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          </div>
+        </div>
+
+        <Button className="w-full">Validar CNPJ</Button>
+      </form>
+
+      <div>
+        <h2 className="text-lg font-medium mb-2">Como isso funciona</h2>
+
+        <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+          <li>
+            A validação é feita no servidor e não armazena nenhuma informação.
+          </li>
+          <li>
+            O validador verifica se o CNPJ segue as regras da Receita Federal.
+          </li>
+          <li>
+            São verificados o formato do CNPJ e seus dígitos verificadores.
+          </li>
+          <li>
+            O sistema aceita CNPJs com ou sem pontuação (00.000.000/0001-00 ou
+            00000000000100).
+          </li>
+          <li>
+            O resultado da validação é exibido através de um ícone verde
+            (válido) ou vermelho (inválido).
+          </li>
+        </ul>
+      </div>
+
+      <div className="space-y-4">
+        <div className="space-y-2">
+          <h2 className="text-xl font-bold font-mono">Como usar nossa API</h2>
+          <p className="text-muted-foreground text-balance">
+            Você pode integrar nosso validador de CNPJ em sua aplicação usando
+            nossa API REST.
+          </p>
+        </div>
+
+        <div className="space-y-2">
+          <p className="text-sm font-medium">Endpoint</p>
+          <pre className="p-4 rounded-lg bg-sidebar font-mono text-sm">
+            POST /api/validators/cnpj
+          </pre>
+        </div>
+
+        <div className="space-y-2">
+          <p className="text-sm font-medium">Exemplo de requisição</p>
+          <pre className="p-4 rounded-lg bg-sidebar font-mono text-sm">
+            {JSON.stringify({ cnpj: '00.111.222/0000-00' }, null, 2)}
+          </pre>
+        </div>
+
+        <div className="space-y-2">
+          <p className="text-sm font-medium">Resposta</p>
+          <pre className="p-4 rounded-lg bg-sidebar font-mono text-sm">
+            {JSON.stringify({ isValid: false }, null, 2)}
+          </pre>
+        </div>
+      </div>
+    </div>
+  )
+}
