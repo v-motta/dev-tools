@@ -46,7 +46,7 @@ export default function BMIPage() {
       <div className="space-y-3">
         <h1 className="text-2xl font-bold font-mono">Calculador de IMC</h1>
 
-        <p className="text-zinc-400 text-balance">
+        <p className="text-muted-foreground text-balance">
           Use nossa calculadora para descobrir seu Índice de Massa Corporal.
         </p>
       </div>

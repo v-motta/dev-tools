@@ -35,7 +35,7 @@ export default function CPFGeneratorPage() {
       <div className="space-y-3">
         <h1 className="text-2xl font-bold font-mono">Gerador de CPF</h1>
 
-        <p className="text-zinc-400 text-balance">
+        <p className="text-muted-foreground text-balance">
           Use nosso gerador de CPF! Basta clicar em "Gerar CPF" e, em instantes,
           um novo número válido será criado.
         </p>

@@ -54,7 +54,7 @@ export default function CPFValidatorPage() {
       <div className="space-y-3">
         <h1 className="text-2xl font-bold font-mono">Validador de CPF</h1>
 
-        <p className="text-zinc-400 text-balance">
+        <p className="text-muted-foreground text-balance">
           Use nosso validador de CPF! Basta inserir um número de CPF e clicar em
           "Validar CPF" para verificar se ele é válido.
         </p>
@@ -136,7 +136,7 @@ export default function CPFValidatorPage() {
       <div className="space-y-4">
         <div className="space-y-2">
           <h2 className="text-xl font-bold font-mono">Como usar nossa API</h2>
-          <p className="text-zinc-400 text-balance">
+          <p className="text-muted-foreground text-balance">
             Você pode integrar nosso validador de CPF em sua aplicação usando
             nossa API REST.
           </p>
