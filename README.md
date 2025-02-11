@@ -7,19 +7,19 @@
 <img src="https://img.shields.io/github/stars/v-motta/dev-tools" alt="stars">
 </p>
 
-## Features
+## 🚀 Features
 
-### Generators
+### ⚙️ Generators
 - [x] **CPF Generator**: Generate valid Brazilian CPF numbers
 - [ ] **CNPJ Generator**: Generate valid Brazilian CNPJ numbers
 - [x] **Password Generator**: Create secure passwords with customizable options
 - [x] **UUID Generator**: Generate unique UUIDs (v4)
 
-### Validators
+### ✔️ Validators
 - [x] **CPF Validator**: Validate Brazilian CPF numbers
 - [ ] **CNPJ Validator**: Validate Brazilian CNPJ numbers
 
-### Calculators
+### 🧮 Calculators
 - [x] **BMI Calculator**: Calculate Body Mass Index (BMI)
 
 ## Tech Stack
