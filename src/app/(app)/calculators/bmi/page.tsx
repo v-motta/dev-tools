@@ -58,12 +58,28 @@ export default function BMIPage() {
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="space-y-1">
           <Label htmlFor="weight">Enter your weight (kg)</Label>
-          <Input type="text" id="weight" name="weight" maxLength={3} />
+          <Input
+            type="number"
+            id="weight"
+            name="weight"
+            maxLength={3}
+            min="30"
+            max="300"
+            required
+          />
         </div>
 
         <div className="space-y-1">
           <Label htmlFor="height">Enter your height (cm)</Label>
-          <Input type="text" id="height" name="height" maxLength={3} />
+          <Input
+            type="text"
+            id="height"
+            name="height"
+            maxLength={3}
+            min="100"
+            max="250"
+            required
+          />
         </div>
 
         {bmi && (

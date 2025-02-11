@@ -77,7 +77,6 @@ export default function BMIPage() {
     let bmr = 10 * weight + 6.25 * height - 5 * age
     bmr = gender === 'male' ? bmr + 5 : bmr - 161
 
-    // Calculate TDEE
     const activityMultiplier =
       activityLevels.find((level) => level.value === activity)?.multiplier ||
       1.2
@@ -136,7 +135,7 @@ export default function BMIPage() {
 
         <div className="space-y-1">
           <Label htmlFor="gender">Gender</Label>
-          <Select name="gender">
+          <Select name="gender" required>
             <SelectTrigger>
               <SelectValue placeholder="Select your gender" />
             </SelectTrigger>
@@ -149,7 +148,7 @@ export default function BMIPage() {
 
         <div className="space-y-1">
           <Label htmlFor="activity">Activity Level</Label>
-          <Select name="activity">
+          <Select name="activity" required>
             <SelectTrigger>
               <SelectValue placeholder="Select your activity level" />
             </SelectTrigger>
