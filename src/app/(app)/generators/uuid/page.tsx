@@ -48,7 +48,7 @@ export default function UUIDGeneratorPage() {
         <div className="space-y-1">
           <Label htmlFor="generated_uuid">UUID Gerado</Label>
           <div className="flex gap-2">
-            <div className="h-9 flex-1 font-mono border border-border px-3 flex items-center text-xl rounded-md">
+            <div className="min-h-9 flex-1 font-mono border border-border px-3 flex items-center text-xl rounded-md">
               {isSuccess ? (
                 <p>{generatedUUID.uuid}</p>
               ) : (
