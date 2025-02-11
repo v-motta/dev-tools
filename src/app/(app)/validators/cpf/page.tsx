@@ -144,21 +144,21 @@ export default function CPFValidatorPage() {
 
         <div className="space-y-2">
           <p className="text-sm font-medium">Endpoint</p>
-          <pre className="p-4 rounded-lg bg-muted font-mono text-sm">
+          <pre className="p-4 rounded-lg bg-sidebar font-mono text-sm">
             POST https://devtools.vmotta.dev/api/validators/cpf
           </pre>
         </div>
 
         <div className="space-y-2">
           <p className="text-sm font-medium">Exemplo de requisição</p>
-          <pre className="p-4 rounded-lg bg-muted font-mono text-sm">
+          <pre className="p-4 rounded-lg bg-sidebar font-mono text-sm">
             {JSON.stringify({ cpf: '123.456.789-10' }, null, 2)}
           </pre>
         </div>
 
         <div className="space-y-2">
           <p className="text-sm font-medium">Resposta</p>
-          <pre className="p-4 rounded-lg bg-muted font-mono text-sm">
+          <pre className="p-4 rounded-lg bg-sidebar font-mono text-sm">
             {JSON.stringify({ isValid: false }, null, 2)}
           </pre>
         </div>
