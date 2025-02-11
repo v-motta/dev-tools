@@ -1,4 +1,5 @@
 import calculateBmi from '@/../public/calculate-bmi.png'
+import generateCnpj from '@/../public/generate-cnpj.jpg'
 import generateCpf2 from '@/../public/generate-cpf-2.png'
 import generatePassword from '@/../public/generate-password.png'
 import generateUUID from '@/../public/generate-uuid.png'
@@ -10,6 +11,7 @@ import {
   Fingerprint,
   IdCard,
   KeyRound,
+  Landmark,
   ServerCog,
   UserRoundCheck,
 } from 'lucide-react'
@@ -45,6 +47,14 @@ export const tools: Tools[] = [
         image: generateCpf2,
         href: '/generators/cpf',
         icon: IdCard,
+      },
+      {
+        title: 'Gerador de CNPJ',
+        description:
+          'Facilite a geração de CNPJs válidos com nosso gerador de CNPJ.',
+        image: generateCnpj,
+        href: '/generators/cnpj',
+        icon: Landmark,
       },
       {
         title: 'Gerador de senha',
