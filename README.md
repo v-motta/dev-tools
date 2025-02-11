@@ -22,16 +22,16 @@ A collection of useful developer tools built with Next.js, featuring generators,
 - [x] **BMI Calculator**: Calculate Body Mass Index (BMI)
 
 ## Tech Stack
-[![Next](https://img.shields.io/badge/next.js-black?style=for-the-badge&logo=nextdotjs)](https://nextjs.org/)
-[![TypeScript](https://img.shields.io/badge/typescript-black?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
-[![React](https://img.shields.io/badge/react-black?style=for-the-badge&logo=react)](https://reactjs.org/)
-[![Tailwind CSS](https://img.shields.io/badge/tailwindcss-black?style=for-the-badge&logo=tailwindcss)](https://tailwindcss.com/)
-[![Radix UI](https://img.shields.io/badge/radix%20ui-black?style=for-the-badge&logo=radixui)](https://www.radix-ui.com/)
-[![React Query](https://img.shields.io/badge/react%20query-black?style=for-the-badge&logo=reactquery)](https://tanstack.com/query/latest)
-[![Jest](https://img.shields.io/badge/jest-black?style=for-the-badge&logo=jest)](https://jestjs.io/)
-[![React Testing Library](https://img.shields.io/badge/react%20testing%20library-black?style=for-the-badge&logo=testinglibrary)](https://testing-library.com/docs/react-testing-library/intro)
-[![Biome](https://img.shields.io/badge/biome-black?style=for-the-badge&logo=biome)](https://biomejs.dev/)
-[![Lucide Icons](https://img.shields.io/badge/lucide%20icons-black?style=for-the-badge&logo=lucide)](https://lucide.dev/)
+[![Next](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react)](https://reactjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/tailwindcss-06B6D4?style=for-the-badge&logo=tailwindcss)](https://tailwindcss.com/)
+[![Radix UI](https://img.shields.io/badge/radix%20ui-161618?style=for-the-badge&logo=radixui)](https://www.radix-ui.com/)
+[![React Query](https://img.shields.io/badge/react%20query-FF4154?style=for-the-badge&logo=reactquery)](https://tanstack.com/query/latest)
+[![Jest](https://img.shields.io-badge/jest-C21325?style=for-the-badge&logo=jest)](https://jestjs.io/)
+[![React Testing Library](https://img.shields.io/badge/react%20testing%20library-E33332?style=for-the-badge&logo=testinglibrary)](https://testing-library.com/docs/react-testing-library/intro)
+[![Biome](https://img.shields.io-badge/biome-60A5FA?style=for-the-badge&logo=biome)](https://biomejs.dev/)
+[![Lucide Icons](https://img.shields.io-badge/lucide%20icons-7928CA?style=for-the-badge&logo=lucide)](https://lucide.dev/)
 
 ### Prerequisites
 - Node.js 18+ 
@@ -85,10 +85,3 @@ src/
 3. Commit your changes (`git commit -am 'Add new feature'`)
 4. Push to the branch (`git push origin feature`)
 5. Create a new Pull Request
-
-[Next.js]: https://img.shields.io/badge/next.js-black?style=for-the-badge&logo=nextdotjs
-[Next-url]: https://nextjs.org/
-[TypeScript.io]: https://img.shields.io/badge/typescript-black?style=for-the-badge&logo=typescript
-[TypeScript-url]: https://www.typescriptlang.org/
-[React.js]: https://img.shields.io/badge/react-black?style=for-the-badge&logo=react
-[React-url]: https://reactjs.org/
