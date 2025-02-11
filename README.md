@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://devtools.vmotta.dev"><img src="https://devtools.vmotta.dev/logo.png" alt="Logo" height=170></a>
+  <a href="https://devtools.vmotta.dev"><img src="https://devtools.vmotta.dev/logo.png" alt="Logo" height=120></a>
 </p>
 <h1 align="center">Dev Tools</h1>
 
@@ -11,13 +11,13 @@
 
 ### Generators
 - [x] **CPF Generator**: Generate valid Brazilian CPF numbers
-- [ ] **CNPJ Generator**: Generate valid Brazilian CNPJ numbers
+- [x] **CNPJ Generator**: Generate valid Brazilian CNPJ numbers
 - [x] **Password Generator**: Create secure passwords with customizable options
 - [x] **UUID Generator**: Generate unique UUIDs (v4)
 
 ### Validators
 - [x] **CPF Validator**: Validate Brazilian CPF numbers
-- [ ] **CNPJ Validator**: Validate Brazilian CNPJ numbers
+- [x] **CNPJ Validator**: Validate Brazilian CNPJ numbers
 
 ### Calculators
 - [x] **BMI Calculator**: Calculate Body Mass Index (BMI)
