@@ -145,7 +145,7 @@ export default function CPFValidatorPage() {
         <div className="space-y-2">
           <p className="text-sm font-medium">Endpoint</p>
           <pre className="p-4 rounded-lg bg-sidebar font-mono text-sm">
-            POST https://devtools.vmotta.dev/api/validators/cpf
+            POST /api/validators/cpf
           </pre>
         </div>
 
