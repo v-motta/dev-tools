@@ -4,7 +4,7 @@ import { NextResponse } from 'next/server'
 export async function POST(request: Request) {
   const { cpf } = await request.json()
 
-  const status = validateCPF(cpf)
+  const isValid = validateCPF(cpf)
 
-  return NextResponse.json({ status })
+  return NextResponse.json({ isValid })
 }

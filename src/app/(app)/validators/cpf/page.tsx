@@ -16,7 +16,7 @@ import { type FormEvent, useState } from 'react'
 export default function CPFValidatorPage() {
   const [cpf, setCpf] = useState('')
   const [validationStatus, setValidationStatus] = useState<{
-    status: boolean
+    isValid: boolean
     message: string
   }>()
 
@@ -28,13 +28,13 @@ export default function CPFValidatorPage() {
 
     const cpf = result.cpf as string
 
-    const { status } = await ky
+    const { isValid } = await ky
       .post('/api/validators/cpf', { json: { cpf } })
-      .json<{ status: boolean }>()
+      .json<{ isValid: boolean }>()
 
     setValidationStatus({
-      status,
-      message: status ? 'CPF válido' : 'CPF inválido',
+      isValid,
+      message: isValid ? 'CPF válido' : 'CPF inválido',
     })
   }
 
@@ -75,7 +75,7 @@ export default function CPFValidatorPage() {
               className={
                 !validationStatus
                   ? undefined
-                  : validationStatus.status
+                  : validationStatus.isValid
                     ? '!border-emerald-500'
                     : '!border-red-500'
               }
@@ -84,7 +84,7 @@ export default function CPFValidatorPage() {
             <TooltipProvider>
               <Tooltip delayDuration={0}>
                 <TooltipTrigger asChild>
-                  {!validationStatus ? null : validationStatus.status ? (
+                  {!validationStatus ? null : validationStatus.isValid ? (
                     <Check className="absolute right-2 top-2 text-emerald-500" />
                   ) : (
                     <X className="absolute right-2 top-2 text-red-500" />
@@ -94,7 +94,7 @@ export default function CPFValidatorPage() {
                   className={
                     !validationStatus
                       ? undefined
-                      : validationStatus.status
+                      : validationStatus.isValid
                         ? '!bg-emerald-500'
                         : '!bg-red-500'
                   }
@@ -159,7 +159,7 @@ export default function CPFValidatorPage() {
         <div className="space-y-2">
           <p className="text-sm font-medium">Resposta</p>
           <pre className="p-4 rounded-lg bg-zinc-900 font-mono text-sm">
-            {JSON.stringify({ status: false }, null, 2)}
+            {JSON.stringify({ isValid: false }, null, 2)}
           </pre>
         </div>
       </div>
