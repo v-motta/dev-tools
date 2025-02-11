@@ -62,7 +62,6 @@ export default function BMIPage() {
             type="number"
             id="weight"
             name="weight"
-            maxLength={3}
             min="30"
             max="300"
             required
@@ -75,7 +74,6 @@ export default function BMIPage() {
             type="number"
             id="height"
             name="height"
-            maxLength={3}
             min="100"
             max="250"
             required
