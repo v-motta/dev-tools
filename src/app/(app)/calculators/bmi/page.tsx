@@ -72,7 +72,7 @@ export default function BMIPage() {
         <div className="space-y-1">
           <Label htmlFor="height">Enter your height (cm)</Label>
           <Input
-            type="text"
+            type="number"
             id="height"
             name="height"
             maxLength={3}
