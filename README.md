@@ -9,23 +9,31 @@
 
 ## 🚀 Features
 
+### Calculators
+- [x] **BMI Calculator**: Calculate Body Mass Index (BMI)
+- [x] **BMR Calculator**: Calculate Basal Metabolic Rate (BMR)
+- [ ] **Age Calculator**: Calculate age based on birthdate
+- [ ] **Discount Calculator**: Calculate the discount value and final price
+- [ ] **Percentage Calculator**: Calculate percentages
+
 ### Generators
-- [x] **CPF Generator**: Generate valid Brazilian CPF numbers
 - [x] **CNPJ Generator**: Generate valid Brazilian CNPJ numbers
+- [x] **CPF Generator**: Generate valid Brazilian CPF numbers
 - [x] **Password Generator**: Create secure passwords with customizable options
 - [x] **UUID Generator**: Generate unique UUIDs (v4)
+- [ ] **QR Code Generator**: Generate QR codes with custom data
+- [ ] **Random Number Generator**: Generate random numbers with custom options
 
 ### Validators
 - [x] **CPF Validator**: Validate Brazilian CPF numbers
 - [x] **CNPJ Validator**: Validate Brazilian CNPJ numbers
 
-### Calculators
-- [x] **BMI Calculator**: Calculate Body Mass Index (BMI)
-
 ## 📚 Tech Stack
 [![Next](https://img.shields.io/badge/next.js-black?style=for-the-badge&logo=nextdotjs)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/typescript-black?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/react-black?style=for-the-badge&logo=react)](https://reactjs.org/)
+[![Vercel](https://img.shields.io/badge/vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/)
+[![Ky](https://img.shields.io/badge/ky-black?style=for-the-badge&logo=ky)](https://github.com/sindresorhus/ky)
 [![Tailwind CSS](https://img.shields.io/badge/tailwindcss-black?style=for-the-badge&logo=tailwindcss)](https://tailwindcss.com/)
 [![Radix UI](https://img.shields.io/badge/radix%20ui-black?style=for-the-badge&logo=radixui)](https://www.radix-ui.com/)
 [![React Query](https://img.shields.io/badge/react%20query-black?style=for-the-badge&logo=reactquery)](https://tanstack.com/query/latest)
