@@ -27,6 +27,8 @@
 ### Validators
 - [x] **CPF Validator**: Validate Brazilian CPF numbers
 - [x] **CNPJ Validator**: Validate Brazilian CNPJ numbers
+- [ ] **Email Validator**: Validate email addresses
+- [ ] **URL Validator**: Validate URLs
 
 ## 📚 Tech Stack
 [![Next](https://img.shields.io/badge/next.js-black?style=for-the-badge&logo=nextdotjs)](https://nextjs.org/)
