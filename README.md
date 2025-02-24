@@ -38,14 +38,49 @@
 ## 📂 Project Structure
 
 ```
-src/
-├── __tests__/         # Test files
-├── app/               # App router pages
-├── components/        # React components
-├── hooks/             # Custom hooks
-├── lib/               # Utility functions
-├── LICENSE             
-└── README.md           
+dev-tools/
+├─ biome.json
+├─ components.json
+├─ jest.config.ts
+├─ next-env.d.ts
+├─ next.config.ts
+├─ package-lock.json
+├─ package.json
+├─ postcss.config.mjs
+├─ README.md
+├─ src/
+│  ├─ app/
+│  │  ├─ (app)/
+│  │  │  ├─ calculators/
+│  │  │  │  └─ page.tsx # Calculators page
+│  │  │  ├─ generators/
+│  │  │  │  └─ page.tsx # Generators page
+│  │  │  ├─ layout.tsx
+│  │  │  ├─ page.tsx # Home page
+│  │  │  └─ validators/
+│  │  │     └─ page.tsx # Validators page
+│  │  ├─ api/
+│  │  │  ├─ generators/
+│  │  │  │  └─ route.ts # API route for generators
+│  │  │  └─ validators/
+│  │  │     └─ route.ts # API route for validators
+│  │  ├─ favicon.ico
+│  │  ├─ globals.css
+│  │  ├─ layout.tsx
+│  │  ├─ providers.tsx
+│  │  └─ tools.ts
+│  ├─ components/
+│  │  ├─ sidebar/
+│  │  │  ├─ breadcrumb.tsx
+│  │  │  └─ theme-toggle.tsx
+│  │  ├─ tool-card.tsx
+│  │  └─ ui/ # shadcn/ui components
+│  ├─ hooks/ # Custom hooks
+│  ├─ lib/ # Utility functions
+│  └─ __tests__/ # Test files
+├─ tailwind.config.ts
+└─ tsconfig.json
+
 ```
 
 ## ❤️ Contributing
