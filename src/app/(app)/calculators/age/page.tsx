@@ -51,15 +51,42 @@ export default function AgePage() {
           <DatePicker date={date} setDate={setDate} />
         </div>
 
-        {calculatedAge && (
-          <div className="p-4 bg-muted rounded-md space-y-2">
-            <p className="text-lg font-semibold">Calculated age:</p>
-            <p>{calculatedAge}</p>
-          </div>
-        )}
-
         <Button className="w-full">Calculate age</Button>
       </form>
+
+      {calculatedAge && (
+        <div className="space-y-2 p-4 border rounded-lg">
+          <p className="text-sm text-muted-foreground">Result</p>
+          <p className="font-mono">{calculatedAge}</p>
+        </div>
+      )}
+
+      <div>
+        <h2 className="text-lg font-medium mb-2">How it works</h2>
+
+        <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+          <li>
+            The age is calculated based on the difference between the selected
+            birthdate and today's date.
+          </li>
+          <li>
+            The calculator provides a precise result showing years, months, and
+            days.
+          </li>
+          <li>
+            Calculations are performed in real-time using the browser's date
+            functions.
+          </li>
+          <li>
+            The result automatically adjusts for leap years and varying month
+            lengths.
+          </li>
+          <li>
+            All calculations are done locally and no date information is stored
+            or transmitted.
+          </li>
+        </ul>
+      </div>
     </div>
   )
 }
