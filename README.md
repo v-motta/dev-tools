@@ -13,7 +13,7 @@
 - [x] **BMI Calculator**: Calculate Body Mass Index (BMI)
 - [x] **BMR Calculator**: Calculate Basal Metabolic Rate (BMR)
 - [x] **Age Calculator**: Calculate age based on birthdate
-- [ ] **Discount Calculator**: Calculate the discount value and final price
+- [x] **Discount Calculator**: Calculate the discount value and final price
 - [ ] **Percentage Calculator**: Calculate percentages
 
 ### Generators
