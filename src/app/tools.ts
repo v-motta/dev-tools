@@ -1,6 +1,7 @@
 import calculateAge from '@/../public/calculate-age.jpg'
 import calculateBmi from '@/../public/calculate-bmi.png'
 import calculateBmr from '@/../public/calculate-bmr.jpg'
+import calculateDiscount from '@/../public/calculate-discount.jpg'
 import generateCnpj from '@/../public/generate-cnpj.jpg'
 import generateCpf2 from '@/../public/generate-cpf-2.png'
 import generatePassword from '@/../public/generate-password.png'
@@ -18,6 +19,7 @@ import {
   Landmark,
   LaptopMinimalCheck,
   ServerCog,
+  TicketPercent,
   UserRoundCheck,
   Weight,
 } from 'lucide-react'
@@ -126,6 +128,14 @@ export const tools: Tools[] = [
         image: calculateAge,
         href: '/calculators/age',
         icon: CalendarDays,
+      },
+      {
+        title: 'Discount Calculator',
+        description:
+          'Calculate the discount amount and the final price after applying the discount.',
+        image: calculateDiscount,
+        href: '/calculators/discount',
+        icon: TicketPercent,
       },
     ],
   },
