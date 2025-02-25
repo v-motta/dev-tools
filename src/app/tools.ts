@@ -1,3 +1,4 @@
+import calculateAge from '@/../public/calculate-age.jpg'
 import calculateBmi from '@/../public/calculate-bmi.png'
 import calculateBmr from '@/../public/calculate-bmr.jpg'
 import generateCnpj from '@/../public/generate-cnpj.jpg'
@@ -8,6 +9,7 @@ import validateCnpj from '@/../public/validate-cnpj.jpg'
 import validateCpf2 from '@/../public/validate-cpf-2.png'
 import {
   Calculator,
+  CalendarDays,
   CheckCircle,
   Dumbbell,
   Fingerprint,
@@ -116,6 +118,14 @@ export const tools: Tools[] = [
         image: calculateBmr,
         href: '/calculators/bmr',
         icon: Weight,
+      },
+      {
+        title: 'Age Calculator',
+        description:
+          'Calculate the age based on a birthdate with our age calculator.',
+        image: calculateAge,
+        href: '/calculators/age',
+        icon: CalendarDays,
       },
     ],
   },
