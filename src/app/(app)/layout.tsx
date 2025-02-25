@@ -21,7 +21,7 @@ import {
 } from '@/components/ui/sidebar'
 import { useQuery } from '@tanstack/react-query'
 import ky from 'ky'
-import { Drill, Github, Star } from 'lucide-react'
+import { Drill, Star } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import type React from 'react'
