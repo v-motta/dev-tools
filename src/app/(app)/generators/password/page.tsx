@@ -38,6 +38,7 @@ export default function PasswordGeneratorPage() {
 
       return await ky.get(url).json<{ password: string }>()
     },
+    staleTime: 1000 * 60 * 60 * 4, // 4 hours
   })
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {

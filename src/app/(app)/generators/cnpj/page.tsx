@@ -16,6 +16,7 @@ export default function CNPJGeneratorPage() {
     queryFn: async () => {
       return await ky.get('/api/generators/cnpj').json<{ cnpj: string }>()
     },
+    staleTime: 1000 * 60 * 60 * 4, // 4 hours
   })
 
   async function handleCopyCNPJ() {

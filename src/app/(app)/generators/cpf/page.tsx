@@ -16,6 +16,7 @@ export default function CPFGeneratorPage() {
     queryFn: async () => {
       return await ky.get('/api/generators/cpf').json<{ cpf: string }>()
     },
+    staleTime: 1000 * 60 * 60 * 4, // 4 hours
   })
 
   async function handleCopyCPF() {

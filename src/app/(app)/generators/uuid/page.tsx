@@ -20,6 +20,7 @@ export default function UUIDGeneratorPage() {
     queryFn: async () => {
       return await ky.get('/api/generators/uuid').json<{ uuid: string }>()
     },
+    staleTime: 1000 * 60 * 60 * 4, // 4 hours
   })
 
   async function handleCopyUUID() {
