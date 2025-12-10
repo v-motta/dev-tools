@@ -13,7 +13,7 @@ function findMenuItemByPath(path: string) {
       }
 
       for (const subItem of menuItem.subMenuItems) {
-        if (subItem.url === path) {
+        if (subItem.url === `${menuItem.url}${path}`) {
           return {
             title: subItem.title,
             icon: subItem.icon,
