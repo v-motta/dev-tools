@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<p align="center">
+  <a href="https://devtools.vmotta.dev"><img src="https://devtools.vmotta.dev/logo.png" alt="Logo" height=120></a>
+</p>
+<h1 align="center">Dev Tools</h1>
 
-## Getting Started
+<p align="center">
+<img src="https://img.shields.io/github/stars/v-motta/dev-tools" alt="stars">
+</p>
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Calculators
+- [x] **BMI Calculator**: Calculate Body Mass Index (BMI)
+- [x] **BMR Calculator**: Calculate Basal Metabolic Rate (BMR)
+- [x] **Age Calculator**: Calculate age based on birthdate
+- [x] **Discount Calculator**: Calculate the discount value and final price
+- [ ] **Percentage Calculator**: Calculate percentages
+
+### Generators
+- [x] **CNPJ Generator**: Generate valid Brazilian CNPJ numbers
+- [x] **CPF Generator**: Generate valid Brazilian CPF numbers
+- [x] **Password Generator**: Create secure passwords with customizable options
+- [x] **UUID Generator**: Generate unique UUIDs (v4)
+- [ ] **QR Code Generator**: Generate QR codes with custom data
+- [ ] **Random Number Generator**: Generate random numbers with custom options
+
+### Validators
+- [x] **CPF Validator**: Validate Brazilian CPF numbers
+- [x] **CNPJ Validator**: Validate Brazilian CNPJ numbers
+- [ ] **Email Validator**: Validate email addresses
+- [ ] **URL Validator**: Validate URLs
+
+## 📚 Tech Stack
+[![Next](https://img.shields.io/badge/next.js-black?style=for-the-badge&logo=nextdotjs)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/typescript-black?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/react-black?style=for-the-badge&logo=react)](https://reactjs.org/)
+[![Vercel](https://img.shields.io/badge/vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/)
+[![Ky](https://img.shields.io/badge/ky-black?style=for-the-badge&logo=ky)](https://github.com/sindresorhus/ky)
+[![Tailwind CSS](https://img.shields.io/badge/tailwindcss-black?style=for-the-badge&logo=tailwindcss)](https://tailwindcss.com/)
+[![Radix UI](https://img.shields.io/badge/radix%20ui-black?style=for-the-badge&logo=radixui)](https://www.radix-ui.com/)
+[![React Query](https://img.shields.io/badge/react%20query-black?style=for-the-badge&logo=reactquery)](https://tanstack.com/query/latest)
+[![Jest](https://img.shields.io/badge/jest-black?style=for-the-badge&logo=jest)](https://jestjs.io/)
+[![React Testing Library](https://img.shields.io/badge/react%20testing%20library-black?style=for-the-badge&logo=testinglibrary)](https://testing-library.com/docs/react-testing-library/intro)
+[![Biome](https://img.shields.io/badge/biome-black?style=for-the-badge&logo=biome)](https://biomejs.dev/)
+[![Lucide Icons](https://img.shields.io/badge/lucide%20icons-black?style=for-the-badge&logo=lucide)](https://lucide.dev/)
+
+
+## 📂 Project Structure
+
+```
+dev-tools/
+├─ biome.json
+├─ components.json
+├─ jest.config.ts
+├─ next-env.d.ts
+├─ next.config.ts
+├─ package-lock.json
+├─ package.json
+├─ postcss.config.mjs
+├─ README.md
+├─ src/
+│  ├─ app/
+│  │  ├─ (app)/
+│  │  │  ├─ calculators/
+│  │  │  │  └─ page.tsx # Calculators page
+│  │  │  ├─ generators/
+│  │  │  │  └─ page.tsx # Generators page
+│  │  │  ├─ layout.tsx
+│  │  │  ├─ page.tsx # Home page
+│  │  │  └─ validators/
+│  │  │     └─ page.tsx # Validators page
+│  │  ├─ api/
+│  │  │  ├─ generators/
+│  │  │  │  └─ route.ts # API route for generators
+│  │  │  └─ validators/
+│  │  │     └─ route.ts # API route for validators
+│  │  ├─ favicon.ico
+│  │  ├─ globals.css
+│  │  ├─ layout.tsx
+│  │  ├─ providers.tsx
+│  │  └─ tools.ts
+│  ├─ components/
+│  │  ├─ sidebar/
+│  │  │  ├─ breadcrumb.tsx
+│  │  │  └─ theme-toggle.tsx
+│  │  ├─ tool-card.tsx
+│  │  └─ ui/ # shadcn/ui components
+│  ├─ hooks/ # Custom hooks
+│  ├─ lib/ # Utility functions
+│  └─ __tests__/ # Test files
+├─ tailwind.config.ts
+└─ tsconfig.json
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ❤️ Contributing
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature`)
+3. Commit your changes (`git commit -am 'Add new feature'`)
+4. Push to the branch (`git push origin feature`)
+5. Create a new Pull Request
