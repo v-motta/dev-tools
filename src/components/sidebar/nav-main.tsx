@@ -15,8 +15,6 @@ import { useActiveMenu } from '@/hooks/use-active-menu'
 export function NavMain() {
   const { activeItems } = useActiveMenu(tools)
 
-  console.log(activeItems)
-
   return (
     <>
       {activeItems.map((group) => (
