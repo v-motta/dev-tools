@@ -26,6 +26,7 @@ export function NavMain() {
                 <SidebarMenuButton isActive={item.isActive} asChild>
                   <Link href={item.url}>
                     <item.icon className="size-4" />
+
                     {item.title}
                   </Link>
                 </SidebarMenuButton>
@@ -34,8 +35,9 @@ export function NavMain() {
                   <SidebarMenuSub key={subItem.url}>
                     <SidebarMenuItem>
                       <SidebarMenuButton isActive={subItem.isActive} asChild>
-                        <Link href={`${item.url}${subItem.url}`}>
+                        <Link href={subItem.url}>
                           <subItem.icon className="size-4" />
+
                           {subItem.title}
                         </Link>
                       </SidebarMenuButton>

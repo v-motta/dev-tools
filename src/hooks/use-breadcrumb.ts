@@ -17,7 +17,7 @@ function findMenuItemByPath(path: string) {
           return {
             title: subItem.title,
             icon: subItem.icon,
-            url: `${menuItem.url}${subItem.url}`,
+            url: subItem.url,
           }
         }
       }

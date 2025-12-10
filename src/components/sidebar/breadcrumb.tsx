@@ -26,6 +26,7 @@ export function AppBreadcrumb() {
               <BreadcrumbItem key={menuItem.url}>
                 <BreadcrumbPage className="flex items-center gap-2">
                   <menuItem.icon className="size-4" />
+
                   {menuItem.title}
                 </BreadcrumbPage>
               </BreadcrumbItem>

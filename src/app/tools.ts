@@ -35,7 +35,7 @@ export interface SidebarGroup {
 export interface SidebarMenuItem {
   title: string
   url: string
-  category: string
+  category: 'generators' | 'validators' | 'online-calculators'
   icon: LucideIcon
   subMenuItems: SidebarSubMenuItem[]
   isActive?: boolean
@@ -64,7 +64,7 @@ export const tools: SidebarGroup[] = [
             title: 'CPF Generator',
             description: 'Easily generate valid CPFs with our CPF generator.',
             image: generateCpf2,
-            url: '/cpf',
+            url: '/generators/cpf',
             icon: IdCard,
           },
           {
@@ -109,14 +109,14 @@ export const tools: SidebarGroup[] = [
             title: 'CPF Validator',
             description: 'Check if a CPF is valid with our CPF validator.',
             image: validateCpf2,
-            url: '/cpf',
+            url: '/validators/cpf',
             icon: UserRoundCheck,
           },
           {
             title: 'CNPJ Validator',
             description: 'Check if a CNPJ is valid with our CNPJ validator.',
             image: validateCnpj,
-            url: '/cnpj',
+            url: '/validators/cnpj',
             icon: LaptopMinimalCheck,
           },
         ],
@@ -137,7 +137,7 @@ export const tools: SidebarGroup[] = [
             description:
               'Calculate the Body Mass Index with our BMI calculator.',
             image: calculateBmi,
-            url: '/bmi',
+            url: '/online-calculators/bmi',
             icon: Dumbbell,
           },
           {
@@ -145,7 +145,7 @@ export const tools: SidebarGroup[] = [
             description:
               'Calculate the Basal Metabolic Rate with our BMR calculator.',
             image: calculateBmr,
-            url: '/calculators/bmr',
+            url: '/online-calculators/bmr',
             icon: Weight,
           },
           {
@@ -153,7 +153,7 @@ export const tools: SidebarGroup[] = [
             description:
               'Calculate the age based on a birthdate with our age calculator.',
             image: calculateAge,
-            url: '/calculators/age',
+            url: '/online-calculators/age',
             icon: CalendarDays,
           },
           {
@@ -161,7 +161,7 @@ export const tools: SidebarGroup[] = [
             description:
               'Calculate the discount amount and the final price after applying the discount.',
             image: calculateDiscount,
-            url: '/calculators/discount',
+            url: '/online-calculators/discount',
             icon: TicketPercent,
           },
         ],

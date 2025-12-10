@@ -13,14 +13,12 @@ export function useActiveMenu(items: SidebarGroup[]) {
         (menuItem) => {
           const isMainActive = pathname === menuItem.url
           const hasActiveChild =
-            menuItem.subMenuItems.some((subItem) => {
-              const subItemUrl = `${menuItem.url}${subItem.url}`
-
-              return pathname === subItemUrl
+            menuItem.subMenuItems.some(({ url }) => {
+              return pathname === url
             }) || false
 
           const updatedSubMenuItems = menuItem.subMenuItems.map((subItem) => {
-            const subItemUrl = `${menuItem.url}${subItem.url}`
+            const subItemUrl = subItem.url
 
             return { ...subItem, isActive: pathname === subItemUrl }
           })
