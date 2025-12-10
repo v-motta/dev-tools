@@ -19,7 +19,6 @@ export function GenerateCPF() {
   const { data, isFetching, isSuccess } = useQuery({
     queryKey: ['generate-cpf'],
     queryFn: getGeneratedCPF,
-    refetchOnWindowFocus: false,
   })
 
   async function handleCopyCPF() {

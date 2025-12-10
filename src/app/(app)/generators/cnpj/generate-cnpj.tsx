@@ -19,7 +19,6 @@ export function GenerateCNPJ() {
   const { data, isFetching, isSuccess } = useQuery({
     queryKey: ['generate-cnpj'],
     queryFn: getGeneratedCNPJ,
-    refetchOnWindowFocus: false,
   })
 
   async function handleCopyCNPJ() {
