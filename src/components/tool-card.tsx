@@ -29,8 +29,9 @@ export function ToolCard(tool: SidebarSubMenuItem) {
           <Image
             src={tool.image}
             alt={`${tool.title} preview`}
-            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="object-cover"
+            fill
           />
         </div>
       </CardContent>
