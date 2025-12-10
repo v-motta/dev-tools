@@ -13,13 +13,18 @@ export function useActiveMenu(items: SidebarGroup[]) {
         (menuItem) => {
           const isMainActive = pathname === menuItem.url
           const hasActiveChild =
-            menuItem.subMenuItems?.some(
-              (subItem) => pathname === `${menuItem.url}${subItem.url}`
-            ) || false
-          const updatedSubMenuItems = menuItem.subMenuItems.map((subItem) => ({
-            ...subItem,
-            isActive: pathname === `${menuItem.url}${subItem.url}`,
-          }))
+            menuItem.subMenuItems.some((subItem) => {
+              const subItemUrl = `${menuItem.url}${subItem.url}`
+
+              return pathname === subItemUrl
+            }) || false
+
+          const updatedSubMenuItems = menuItem.subMenuItems.map((subItem) => {
+            const subItemUrl = `${menuItem.url}${subItem.url}`
+
+            return { ...subItem, isActive: pathname === subItemUrl }
+          })
+
           return {
             ...menuItem,
             isActive: isMainActive || hasActiveChild,
@@ -27,30 +32,10 @@ export function useActiveMenu(items: SidebarGroup[]) {
           }
         }
       )
-      return {
-        ...item,
-        menuItems: updatedMenuItems,
-      }
+
+      return { ...item, menuItems: updatedMenuItems }
     })
   }, [pathname, items])
-
-  // Calculate active items whenever pathname or items change
-  // const activeItems = useMemo(() => {
-  //   return items.map((item) => {
-  //     const isMainActive = pathname === item.url
-  //     const hasActiveChild =
-  //       item.items?.some((subItem) => pathname === subItem.url) || false
-
-  //     return {
-  //       ...item,
-  //       isActive: isMainActive || hasActiveChild,
-  //       items: item.items?.map((subItem) => ({
-  //         ...subItem,
-  //         isActive: pathname === subItem.url,
-  //       })),
-  //     }
-  //   })
-  // }, [pathname, items])
 
   return { activeItems }
 }
