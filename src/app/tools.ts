@@ -55,7 +55,7 @@ export const tools: SidebarGroup[] = [
     menuItems: [
       {
         title: 'Generators',
-        url: '/generators',
+        url: '/computing/generators',
         icon: ServerCog,
         category: 'generators',
         subMenuItems: [
@@ -63,14 +63,14 @@ export const tools: SidebarGroup[] = [
             title: 'CPF Generator',
             description: 'Easily generate valid CPFs with our CPF generator.',
             image: generateCpf2,
-            url: '/generators/cpf',
+            url: '/computing/generators/cpf',
             icon: IdCard,
           },
           {
             title: 'CNPJ Generator',
             description: 'Easily generate valid CNPJs with our CNPJ generator.',
             image: generateCnpj,
-            url: '/generators/cnpj',
+            url: '/computing/generators/cnpj',
             icon: Landmark,
           },
           {
@@ -78,14 +78,14 @@ export const tools: SidebarGroup[] = [
             description:
               'Generate secure passwords with our password generator.',
             image: generatePassword,
-            url: '/generators/password',
+            url: '/computing/generators/password',
             icon: KeyRound,
           },
           {
             title: 'UUID Generator',
             description: 'Generate unique UUIDs with our UUID generator.',
             image: generateUUID,
-            url: '/generators/uuid',
+            url: '/computing/generators/uuid',
             icon: Fingerprint,
           },
           // {
@@ -93,14 +93,14 @@ export const tools: SidebarGroup[] = [
           //   description:
           //     'Generate a random person with name, telephone, CPF, and birthdate.',
           //   image: generateUUID,
-          //   url: '/generators/person',
+          //   url: '/computing/generators/person',
           //   icon: User2,
           // },
         ],
       },
       {
         title: 'Validators',
-        url: '/validators',
+        url: '/computing/validators',
         icon: CheckCircle,
         category: 'validators',
         subMenuItems: [
@@ -108,14 +108,14 @@ export const tools: SidebarGroup[] = [
             title: 'CPF Validator',
             description: 'Check if a CPF is valid with our CPF validator.',
             image: validateCpf2,
-            url: '/validators/cpf',
+            url: '/computing/validators/cpf',
             icon: UserRoundCheck,
           },
           {
             title: 'CNPJ Validator',
             description: 'Check if a CNPJ is valid with our CNPJ validator.',
             image: validateCnpj,
-            url: '/validators/cnpj',
+            url: '/computing/validators/cnpj',
             icon: LaptopMinimalCheck,
           },
         ],
@@ -127,7 +127,7 @@ export const tools: SidebarGroup[] = [
     menuItems: [
       {
         title: 'Online Calculators',
-        url: '/online-calculators',
+        url: '/mathematics/online-calculators',
         icon: Calculator,
         category: 'online-calculators',
         subMenuItems: [
@@ -136,7 +136,7 @@ export const tools: SidebarGroup[] = [
             description:
               'Calculate the Body Mass Index with our BMI calculator.',
             image: calculateBmi,
-            url: '/online-calculators/bmi',
+            url: '/mathematics/online-calculators/bmi',
             icon: Dumbbell,
           },
           {
@@ -144,7 +144,7 @@ export const tools: SidebarGroup[] = [
             description:
               'Calculate the Basal Metabolic Rate with our BMR calculator.',
             image: calculateBmr,
-            url: '/online-calculators/bmr',
+            url: '/mathematics/online-calculators/bmr',
             icon: Weight,
           },
           {
@@ -152,7 +152,7 @@ export const tools: SidebarGroup[] = [
             description:
               'Calculate the age based on a birthdate with our age calculator.',
             image: calculateAge,
-            url: '/online-calculators/age',
+            url: '/mathematics/online-calculators/age',
             icon: CalendarDays,
           },
           {
@@ -160,7 +160,7 @@ export const tools: SidebarGroup[] = [
             description:
               'Calculate the discount amount and the final price after applying the discount.',
             image: calculateDiscount,
-            url: '/online-calculators/discount',
+            url: '/mathematics/online-calculators/discount',
             icon: TicketPercent,
           },
         ],
