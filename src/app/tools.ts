@@ -11,7 +11,6 @@ import {
   type LucideIcon,
   ServerCog,
   TicketPercent,
-  User2,
   UserRoundCheck,
   Weight,
 } from 'lucide-react'
@@ -89,14 +88,14 @@ export const tools: SidebarGroup[] = [
             url: '/generators/uuid',
             icon: Fingerprint,
           },
-          {
-            title: 'Person Generator',
-            description:
-              'Generate a random person with name, telephone, CPF, and birthdate.',
-            image: generateUUID,
-            url: '/generators/person',
-            icon: User2,
-          },
+          // {
+          //   title: 'Person Generator',
+          //   description:
+          //     'Generate a random person with name, telephone, CPF, and birthdate.',
+          //   image: generateUUID,
+          //   url: '/generators/person',
+          //   icon: User2,
+          // },
         ],
       },
       {
