@@ -2,6 +2,7 @@ import {
   Calculator,
   CalendarDays,
   CheckCircle,
+  Dices,
   Dumbbell,
   Fingerprint,
   IdCard,
@@ -87,6 +88,14 @@ export const tools: SidebarGroup[] = [
             image: generateUUID,
             url: '/computing/generators/uuid',
             icon: Fingerprint,
+          },
+          {
+            title: 'Random Picker',
+            description:
+              'Random pick a item whether from a list or range of numbers.',
+            image: generateUUID,
+            url: '/computing/random-picker',
+            icon: Dices,
           },
           // {
           //   title: 'Person Generator',
