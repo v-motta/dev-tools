@@ -32,13 +32,14 @@ export interface SidebarGroup {
   menuItems: SidebarMenuItem[]
 }
 
+export type ToolCategory = 'generators' | 'validators' | 'online-calculators'
+
 export interface SidebarMenuItem {
   title: string
   url: string
-  category: 'generators' | 'validators' | 'online-calculators'
+  category: ToolCategory
   icon: LucideIcon
   subMenuItems: SidebarSubMenuItem[]
-  isActive?: boolean
 }
 
 export interface SidebarSubMenuItem {
@@ -47,7 +48,6 @@ export interface SidebarSubMenuItem {
   image: StaticImageData
   url: string
   icon: LucideIcon
-  isActive?: boolean
 }
 
 export const tools: SidebarGroup[] = [
@@ -177,3 +177,35 @@ export const tools: SidebarGroup[] = [
     ],
   },
 ]
+
+const menuItems = tools.flatMap((group) => group.menuItems)
+
+export const allTools = menuItems.flatMap((menuItem) => menuItem.subMenuItems)
+
+export function getMenuItemByCategory(category: ToolCategory) {
+  const menuItem = menuItems.find((item) => item.category === category)
+  if (!menuItem) throw new Error(`Unknown tool category: ${category}`)
+
+  return menuItem
+}
+
+/** Finds the menu item or tool whose URL is exactly `url`. */
+export function findNavItemByUrl(
+  url: string
+): Pick<SidebarSubMenuItem, 'title' | 'icon' | 'url'> | null {
+  for (const menuItem of menuItems) {
+    if (menuItem.url === url) return menuItem
+
+    const subItem = menuItem.subMenuItems.find((item) => item.url === url)
+    if (subItem) return subItem
+  }
+
+  return null
+}
+
+export function isMenuItemActive(menuItem: SidebarMenuItem, pathname: string) {
+  return (
+    menuItem.url === pathname ||
+    menuItem.subMenuItems.some((item) => item.url === pathname)
+  )
+}

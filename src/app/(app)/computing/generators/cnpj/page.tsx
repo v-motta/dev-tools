@@ -1,4 +1,18 @@
-import { GenerateCNPJ } from './generate-cnpj'
+import type { Metadata } from 'next'
+import { Generator } from '@/components/generator'
+
+export const metadata: Metadata = {
+  title: 'CNPJ Generator',
+  description: 'Generate a valid CNPJ number instantly.',
+  keywords: [
+    'gerador de cnpj',
+    'gerador de cnpj online',
+    'gerador de cnpj válido',
+    'gerador de cnpj com números',
+    'gerador de cnpj com pontuação',
+    'gerador de cnpj com máscara',
+  ],
+}
 
 export default function CNPJGeneratorPage() {
   return (
@@ -12,7 +26,7 @@ export default function CNPJGeneratorPage() {
         </p>
       </div>
 
-      <GenerateCNPJ />
+      <Generator name="CNPJ" endpoint="/api/generators/cnpj" field="cnpj" />
 
       <div>
         <h2 className="text-lg font-medium mb-2">How it works</h2>

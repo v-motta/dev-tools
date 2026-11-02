@@ -3,24 +3,7 @@
 import { House } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 import { useMemo } from 'react'
-import { tools } from '@/app/tools'
-
-function findMenuItemByUrl(url: string) {
-  for (const group of tools) {
-    for (const menuItem of group.menuItems) {
-      if (menuItem.url === url) {
-        return { title: menuItem.title, icon: menuItem.icon, url: menuItem.url }
-      }
-
-      const subItem = menuItem.subMenuItems.find((item) => item.url === url)
-      if (subItem) {
-        return { title: subItem.title, icon: subItem.icon, url: subItem.url }
-      }
-    }
-  }
-
-  return null
-}
+import { findNavItemByUrl } from '@/app/tools'
 
 export function useBreadcrumb() {
   const pathname = usePathname()
@@ -33,7 +16,7 @@ export function useBreadcrumb() {
     // resolve to the right tool
     return segments.flatMap((_, index) => {
       const url = `/${segments.slice(0, index + 1).join('/')}`
-      const menuItem = findMenuItemByUrl(url)
+      const menuItem = findNavItemByUrl(url)
 
       return menuItem ? [{ menuItem }] : []
     })
