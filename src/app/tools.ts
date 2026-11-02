@@ -92,7 +92,7 @@ export const tools: SidebarGroup[] = [
           {
             title: 'Random Picker',
             description:
-              'Random pick a item whether from a list or range of numbers.',
+              'Draw random numbers within a range with our random picker.',
             image: generateUUID,
             url: '/computing/random-picker',
             icon: Dices,

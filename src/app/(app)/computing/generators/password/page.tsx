@@ -45,20 +45,17 @@ export default function PasswordGeneratorPage() {
             The password is generated on the server and is not stored anywhere.
           </li>
           <li>
-            The password generator creates a random password based on the
-            selected options.
+            The password is generated with a cryptographically secure random
+            number generator.
           </li>
           <li>
-            The password will have at least 4 characters (1 lowercase letter, 1
-            uppercase letter, 1 number, and 1 symbol).
+            It has 18 characters split into three groups of six separated by
+            hyphens (e.g. abcdef-ghiJkl-mn4opq), which makes it easy to read and
+            type.
           </li>
           <li>
-            There will always be one lowercase letter, one uppercase letter, one
-            number, and one symbol if the options are selected.
-          </li>
-          <li>
-            By default, the password contains only lowercase letters if no
-            additional options are selected.
+            It always contains exactly one uppercase letter and one number; the
+            other characters are lowercase letters.
           </li>
           <li>
             You can copy the generated password by clicking the copy icon next

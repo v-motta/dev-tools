@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "biome check",
-    "format": "biome format --write"
+    "format": "biome format --write",
+    "bench:password": "bun scripts/benchmark-password.ts"
   },
   "dependencies": {
     "@faker-js/faker": "^10.6.0",
