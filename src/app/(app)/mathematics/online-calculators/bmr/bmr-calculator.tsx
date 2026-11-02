@@ -70,7 +70,7 @@ export function BMRCalculator() {
 
     const weight = Number.parseFloat(result.weight as string)
     const height = Number.parseFloat(result.height as string)
-    const age = Number.parseInt(result.age as string)
+    const age = Number.parseInt(result.age as string, 10)
     const gender = result.gender as string
     const activity = result.activity as string
 
