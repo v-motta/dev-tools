@@ -1,7 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { tools } from '@/app/tools'
+import { usePathname } from 'next/navigation'
+import { isMenuItemActive, tools } from '@/app/tools'
 import {
   SidebarGroup,
   SidebarGroupLabel,
@@ -10,20 +11,22 @@ import {
   SidebarMenuItem,
   SidebarMenuSub,
 } from '@/components/ui/sidebar'
-import { useActiveMenu } from '@/hooks/use-active-menu'
 
 export function NavMain() {
-  const { activeItems } = useActiveMenu(tools)
+  const pathname = usePathname()
 
   return (
     <>
-      {activeItems.map((group) => (
+      {tools.map((group) => (
         <SidebarGroup key={group.label}>
           <SidebarGroupLabel>{group.label}</SidebarGroupLabel>
           <SidebarMenu>
             {group.menuItems.map((item) => (
               <SidebarMenuItem key={item.url}>
-                <SidebarMenuButton isActive={item.isActive} asChild>
+                <SidebarMenuButton
+                  isActive={isMenuItemActive(item, pathname)}
+                  asChild
+                >
                   <Link href={item.url}>
                     <item.icon className="size-4" />
 
@@ -34,7 +37,10 @@ export function NavMain() {
                 {item.subMenuItems.map((subItem) => (
                   <SidebarMenuSub key={subItem.url}>
                     <SidebarMenuItem>
-                      <SidebarMenuButton isActive={subItem.isActive} asChild>
+                      <SidebarMenuButton
+                        isActive={pathname === subItem.url}
+                        asChild
+                      >
                         <Link href={subItem.url}>
                           <subItem.icon className="size-4" />
 

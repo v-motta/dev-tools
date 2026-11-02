@@ -22,20 +22,20 @@ export function validateCPF(cpf: string): boolean {
   let weight = 10
 
   for (let i = 0; i < 9; i++) {
-    sum += Number.parseInt(cpfNumbers[i]) * weight
+    sum += Number.parseInt(cpfNumbers[i], 10) * weight
     weight--
   }
 
   let firstDigitResult = (sum * 10) % 11
   if (firstDigitResult === 10 || firstDigitResult === 11) firstDigitResult = 0
 
-  if (firstDigitResult !== Number.parseInt(cpfNumbers[9])) return false
+  if (firstDigitResult !== Number.parseInt(cpfNumbers[9], 10)) return false
 
   sum = 0
   weight = 11
 
   for (let i = 0; i < 10; i++) {
-    sum += Number.parseInt(cpfNumbers[i]) * weight
+    sum += Number.parseInt(cpfNumbers[i], 10) * weight
     weight--
   }
 
@@ -43,7 +43,7 @@ export function validateCPF(cpf: string): boolean {
   if (secondDigitResult === 10 || secondDigitResult === 11)
     secondDigitResult = 0
 
-  if (secondDigitResult !== Number.parseInt(cpfNumbers[10])) return false
+  if (secondDigitResult !== Number.parseInt(cpfNumbers[10], 10)) return false
 
   return true
 }

@@ -3,40 +3,22 @@
 import { House } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 import { useMemo } from 'react'
-import { tools } from '@/app/tools'
-
-function findMenuItemByPath(path: string) {
-  for (const group of tools) {
-    for (const menuItem of group.menuItems) {
-      if (menuItem.url === path) {
-        return { title: menuItem.title, icon: menuItem.icon, url: menuItem.url }
-      }
-
-      for (const subItem of menuItem.subMenuItems) {
-        if (subItem.url === `${menuItem.url}${path}`) {
-          return {
-            title: subItem.title,
-            icon: subItem.icon,
-            url: subItem.url,
-          }
-        }
-      }
-    }
-  }
-
-  return null
-}
+import { findNavItemByUrl } from '@/app/tools'
 
 export function useBreadcrumb() {
   const pathname = usePathname()
 
   const breadcrumb = useMemo(() => {
-    const paths = pathname.split('/').filter(Boolean)
+    const segments = pathname.split('/').filter(Boolean)
 
-    return paths.map((path) => {
-      const menuItem = findMenuItemByPath(`/${path}`)
+    // Match each cumulative URL (/a, /a/b, /a/b/c) so that segments with the
+    // same name in different sections (e.g. generators/cpf and validators/cpf)
+    // resolve to the right tool
+    return segments.flatMap((_, index) => {
+      const url = `/${segments.slice(0, index + 1).join('/')}`
+      const menuItem = findNavItemByUrl(url)
 
-      return { menuItem }
+      return menuItem ? [{ menuItem }] : []
     })
   }, [pathname])
 

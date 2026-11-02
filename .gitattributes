@@ -1,0 +1,7 @@
+# Normalize line endings to LF in the repository and in every checkout,
+# regardless of the contributor's core.autocrlf setting (Biome expects LF)
+* text=auto eol=lf
+
+*.ico binary
+*.jpg binary
+*.png binary

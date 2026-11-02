@@ -1,6 +1,6 @@
 'use client'
 
-import ky from 'ky'
+import ky, { HTTPError } from 'ky'
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
@@ -9,17 +9,30 @@ import { Label } from '@/components/ui/label'
 
 export function RandomPicker() {
   const [drawnNumbers, setDrawnNumbers] = useState<number[]>([])
+  const [errorMessage, setErrorMessage] = useState<string>()
 
   async function drawNumbers(formData: FormData) {
     const rawFormData = Object.fromEntries(formData.entries())
 
-    const res = await ky
-      .post('/api/random-picker', {
-        json: rawFormData,
-      })
-      .json<{ randomNumber: number[] }>()
+    try {
+      const res = await ky
+        .post('/api/random-picker', {
+          json: rawFormData,
+        })
+        .json<{ randomNumber: number[] }>()
 
-    setDrawnNumbers(res.randomNumber)
+      setDrawnNumbers(res.randomNumber)
+      setErrorMessage(undefined)
+    } catch (error) {
+      const data = error instanceof HTTPError ? error.data : undefined
+      const message =
+        typeof data === 'object' && data !== null && 'message' in data
+          ? String(data.message)
+          : 'Something went wrong. Please try again.'
+
+      setDrawnNumbers([])
+      setErrorMessage(message)
+    }
   }
 
   return (
@@ -31,21 +44,41 @@ export function RandomPicker() {
             <Label htmlFor="random_count" className="sr-only">
               Count
             </Label>
-            <Input id="random_count" name="random_count" defaultValue="1" />
+            <Input
+              id="random_count"
+              name="random_count"
+              type="number"
+              min="1"
+              max="1000"
+              defaultValue="1"
+              required
+            />
           </div>
           number between
           <div>
             <Label htmlFor="random_min" className="sr-only">
               Min
             </Label>
-            <Input id="random_min" name="random_min" defaultValue="1" />
+            <Input
+              id="random_min"
+              name="random_min"
+              type="number"
+              defaultValue="1"
+              required
+            />
           </div>
           and
           <div>
             <Label htmlFor="random_max" className="sr-only">
               Max
             </Label>
-            <Input id="random_max" name="random_max" defaultValue="100" />
+            <Input
+              id="random_max"
+              name="random_max"
+              type="number"
+              defaultValue="100"
+              required
+            />
           </div>
         </div>
 
@@ -53,7 +86,9 @@ export function RandomPicker() {
       </form>
 
       <Card className="mt-4 p-4">
-        {drawnNumbers.length > 0 ? (
+        {errorMessage ? (
+          <div className="text-red-500">{errorMessage}</div>
+        ) : drawnNumbers.length > 0 ? (
           <div className="text-2xl font-mono">{drawnNumbers.join(', ')}</div>
         ) : (
           <div className="text-muted-foreground">No numbers drawn yet.</div>

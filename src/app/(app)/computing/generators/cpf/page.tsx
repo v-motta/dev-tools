@@ -1,4 +1,10 @@
-import { GenerateCPF } from './generate-cpf'
+import type { Metadata } from 'next'
+import { Generator } from '@/components/generator'
+
+export const metadata: Metadata = {
+  title: 'CPF Generator',
+  description: 'Generate a valid CPF number instantly.',
+}
 export default async function CPFGeneratorPage() {
   return (
     <div className="space-y-8 w-full lg:w-1/2 2xl:w-1/3">
@@ -11,7 +17,7 @@ export default async function CPFGeneratorPage() {
         </p>
       </div>
 
-      <GenerateCPF />
+      <Generator name="CPF" endpoint="/api/generators/cpf" field="cpf" />
 
       <div>
         <h2 className="text-lg font-medium mb-2">How it works</h2>

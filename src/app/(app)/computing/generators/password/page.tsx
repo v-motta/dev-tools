@@ -1,4 +1,24 @@
-import { GeneratePassword } from './generate-password'
+import type { Metadata } from 'next'
+import { Generator } from '@/components/generator'
+
+export const metadata: Metadata = {
+  title: 'Password Generator',
+  description:
+    'Generate secure and random passwords with different combinations of characters, including uppercase letters, numbers, and special symbols.',
+  keywords: [
+    'gerador de senha',
+    'gerador de senha online',
+    'gerador de senha segura',
+    'gerador de senha aleatória',
+    'gerador de senha forte',
+    'gerador de senha com letras e números',
+    'gerador de senha com letras maiúsculas',
+    'gerador de senha com letras minúsculas',
+    'gerador de senha com números',
+    'gerador de senha com símbolos',
+    'gerador de senha com caracteres especiais',
+  ],
+}
 
 export default function PasswordGeneratorPage() {
   return (
@@ -11,7 +31,11 @@ export default function PasswordGeneratorPage() {
         </p>
       </div>
 
-      <GeneratePassword />
+      <Generator
+        name="password"
+        endpoint="/api/generators/password"
+        field="password"
+      />
 
       <div>
         <h2 className="text-lg font-medium mb-2">How it works</h2>
@@ -21,20 +45,17 @@ export default function PasswordGeneratorPage() {
             The password is generated on the server and is not stored anywhere.
           </li>
           <li>
-            The password generator creates a random password based on the
-            selected options.
+            The password is generated with a cryptographically secure random
+            number generator.
           </li>
           <li>
-            The password will have at least 4 characters (1 lowercase letter, 1
-            uppercase letter, 1 number, and 1 symbol).
+            It has 18 characters split into three groups of six separated by
+            hyphens (e.g. abcdef-ghiJkl-mn4opq), which makes it easy to read and
+            type.
           </li>
           <li>
-            There will always be one lowercase letter, one uppercase letter, one
-            number, and one symbol if the options are selected.
-          </li>
-          <li>
-            By default, the password contains only lowercase letters if no
-            additional options are selected.
+            It always contains exactly one uppercase letter and one number; the
+            other characters are lowercase letters.
           </li>
           <li>
             You can copy the generated password by clicking the copy icon next

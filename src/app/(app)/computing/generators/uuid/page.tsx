@@ -1,4 +1,15 @@
-import { GenerateUUID } from './generate-uuid'
+import type { Metadata } from 'next'
+import { Generator } from '@/components/generator'
+
+export const metadata: Metadata = {
+  title: 'UUID Generator',
+  description: 'Generate a random v4 UUID instantly.',
+  keywords: [
+    'gerador de UUID',
+    'gerador de UUID online',
+    'gerador de UUID aleatória',
+  ],
+}
 
 export default function UUIDGeneratorPage() {
   return (
@@ -11,7 +22,7 @@ export default function UUIDGeneratorPage() {
         </p>
       </div>
 
-      <GenerateUUID />
+      <Generator name="UUID" endpoint="/api/generators/uuid" field="uuid" />
 
       <div>
         <h2 className="text-lg font-medium mb-2">How it works</h2>
