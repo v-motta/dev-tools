@@ -2,14 +2,30 @@ import { Star } from 'lucide-react'
 import { Button } from '../ui/button'
 import { SidebarFooter as Footer } from '../ui/sidebar'
 
+async function getStargazersCount(): Promise<number | null> {
+  try {
+    const response = await fetch(
+      'https://api.github.com/repos/v-motta/dev-tools',
+      { next: { revalidate: 3600 } }
+    )
+    if (!response.ok) return null
+
+    const repo: { stargazers_count?: number } = await response.json()
+
+    return repo.stargazers_count ?? null
+  } catch {
+    // GitHub being down or rate limiting must not break the whole layout
+    return null
+  }
+}
+
 export async function SidebarFooter() {
-  const data = await fetch('https://api.github.com/repos/v-motta/dev-tools')
-  const repo = await data.json()
+  const stargazersCount = await getStargazersCount()
 
   const starsCount =
-    repo.stargazers_count > 999
-      ? `${(repo.stargazers_count / 1000).toFixed(1)}k`
-      : repo.stargazers_count
+    stargazersCount !== null && stargazersCount > 999
+      ? `${(stargazersCount / 1000).toFixed(1)}k`
+      : stargazersCount
 
   return (
     <Footer>
@@ -36,11 +52,13 @@ export async function SidebarFooter() {
             <span>v-motta/dev-tools</span>
           </div>
 
-          <span className="flex items-center gap-2 font-mono font-bold">
-            <Star className="size-4 text-yellow-600" />
+          {starsCount !== null && (
+            <span className="flex items-center gap-2 font-mono font-bold">
+              <Star className="size-4 text-yellow-600" />
 
-            {starsCount}
-          </span>
+              {starsCount}
+            </span>
+          )}
         </a>
       </Button>
     </Footer>

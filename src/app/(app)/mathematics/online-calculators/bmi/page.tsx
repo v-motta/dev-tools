@@ -37,10 +37,10 @@ export default function BMIPage() {
 
   function getBmiStatus(bmi: number): string {
     if (bmi < 18.5) return bmiStatus.underweight
-    if (bmi >= 18.5 && bmi < 24.9) return bmiStatus.normal
-    if (bmi >= 25 && bmi < 29.9) return bmiStatus.overweight
-    if (bmi >= 30 && bmi < 34.9) return bmiStatus.obesity1
-    if (bmi >= 35 && bmi < 39.9) return bmiStatus.obesity2
+    if (bmi < 25) return bmiStatus.normal
+    if (bmi < 30) return bmiStatus.overweight
+    if (bmi < 35) return bmiStatus.obesity1
+    if (bmi < 40) return bmiStatus.obesity2
 
     return bmiStatus.obesity3
   }
@@ -82,10 +82,8 @@ export default function BMIPage() {
 
         {bmi && (
           <p>
-            IMC: <span className="font-bold">( {bmi.toFixed(2)} )</span> -{' '}
-            <span className="font-bold">
-              ( {getBmiStatus(Number(bmi.toFixed(2)))} )
-            </span>
+            BMI: <span className="font-bold">( {bmi.toFixed(2)} )</span> -{' '}
+            <span className="font-bold">( {getBmiStatus(bmi)} )</span>
           </p>
         )}
 

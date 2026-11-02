@@ -18,8 +18,6 @@ export function AppBreadcrumb() {
     <Breadcrumb>
       <BreadcrumbList>
         {breadcrumb.map(({ menuItem }) => {
-          if (!menuItem) return null
-
           const isLast = breadcrumb[breadcrumb.length - 1].menuItem === menuItem
           if (isLast) {
             return (
