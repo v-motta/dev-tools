@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { ApiUsage } from '@/components/api-usage'
 import { RandomPicker } from './random-picker'
 
 export const metadata: Metadata = {
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function RandomPickerPage() {
   return (
-    <div className="space-y-8 w-full lg:w-1/2 2xl:w-1/3">
+    <div className="w-full max-w-2xl space-y-8">
       <div className="space-y-3">
         <h1 className="text-2xl font-bold font-mono">Sorteador de números</h1>
 
@@ -38,6 +39,28 @@ export default function RandomPickerPage() {
           </li>
         </ul>
       </div>
+
+      <ApiUsage
+        name="sorteador de números"
+        method="POST"
+        path="/api/random-picker"
+        body={{ random_count: 3, random_min: 1, random_max: 60 }}
+        parameters={[
+          {
+            name: 'random_count',
+            description: 'Obrigatório. Quantos números sortear, de 1 a 1000.',
+          },
+          {
+            name: 'random_min',
+            description: 'Obrigatório. O menor número possível (incluído).',
+          },
+          {
+            name: 'random_max',
+            description: 'Obrigatório. O maior número possível (incluído).',
+          },
+        ]}
+        response={{ randomNumber: [7, 42, 18] }}
+      />
     </div>
   )
 }

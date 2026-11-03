@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function CNPJValidatorPage() {
   return (
-    <div className="space-y-8 w-full lg:w-1/2 2xl:w-1/3">
+    <div className="w-full max-w-2xl space-y-8">
       <div className="space-y-3">
         <h1 className="text-2xl font-bold font-mono">Validador de CNPJ</h1>
 
@@ -47,8 +47,15 @@ export default function CNPJValidatorPage() {
 
       <ApiUsage
         name="validador de CNPJ"
-        endpoint="POST /api/validators/cnpj"
-        request={{ cnpj: '00.111.222/0000-00' }}
+        method="POST"
+        path="/api/validators/cnpj"
+        body={{ cnpj: '00.111.222/0000-00' }}
+        parameters={[
+          {
+            name: 'cnpj',
+            description: 'Obrigatório. O número com ou sem pontuação.',
+          },
+        ]}
         response={{ isValid: false }}
       />
     </div>

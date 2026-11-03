@@ -1,64 +1,206 @@
 'use client'
 
-import { useQuery } from '@tanstack/react-query'
+import { keepPreviousData, useQuery } from '@tanstack/react-query'
 import ky from 'ky'
-import { Check, Copy, LoaderCircle } from 'lucide-react'
-import { useId, useState } from 'react'
+import { LoaderCircle } from 'lucide-react'
+import { useEffect, useId, useState } from 'react'
+import { CopyButton } from '@/components/copy-button'
 import { Button } from '@/components/ui/button'
+import { Checkbox } from '@/components/ui/checkbox'
 import { Label } from '@/components/ui/label'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
+
+export type GeneratorOption =
+  | { type: 'boolean'; name: string; label: string; defaultValue: boolean }
+  | {
+      type: 'range'
+      name: string
+      label: string
+      defaultValue: number
+      min: number
+      max: number
+    }
 
 interface GeneratorProps {
   /** Name of the generated value, e.g. "CPF" or "senha" */
   name: string
-  /** Label of the output, e.g. "CPF gerado" (Portuguese inflects it by gender) */
+  /** Output labels, e.g. "CPF gerado"/"CPFs gerados" (Portuguese inflects them) */
   label: string
-  /** API route that responds with `{ [field]: string }` */
+  pluralLabel: string
+  /** API route that responds with `{ [field + 's']: string[] }` */
   endpoint: string
-  /** Response field that holds the generated value */
   field: string
+  options?: GeneratorOption[]
 }
 
-export function Generator({ name, label, endpoint, field }: GeneratorProps) {
+const QUANTITIES = [1, 5, 10, 25, 50]
+const HISTORY_SIZE = 10
+
+function useDebouncedValue<T>(value: T, delay: number) {
+  const [debounced, setDebounced] = useState(value)
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setDebounced(value), delay)
+    return () => clearTimeout(timeout)
+  }, [value, delay])
+
+  return debounced
+}
+
+export function Generator({
+  name,
+  label,
+  pluralLabel,
+  endpoint,
+  field,
+  options = [],
+}: GeneratorProps) {
   const id = useId()
-  const [isCopied, setIsCopied] = useState(false)
+  const [quantity, setQuantity] = useState(1)
+  const [optionValues, setOptionValues] = useState(() =>
+    Object.fromEntries(
+      options.map((option) => [option.name, option.defaultValue])
+    )
+  )
+  // Dragging the length slider would otherwise fire a request per step
+  const params = useDebouncedValue(optionValues, 250)
+  const [history, setHistory] = useState<string[]>([])
 
   const { data, isError, isFetching, isSuccess, refetch } = useQuery({
-    queryKey: ['generator', endpoint],
+    queryKey: ['generator', endpoint, quantity, params],
     queryFn: async () => {
-      const response = await ky.get(endpoint).json<Record<string, string>>()
-      return response[field]
+      const response = await ky
+        .get(endpoint, { searchParams: { quantity, ...params } })
+        .json<Record<string, string[]>>()
+      const values = response[`${field}s`]
+
+      setHistory((previous) => [...values, ...previous].slice(0, 50))
+      return values
     },
     // Every visit should show a new value instead of the cached one
     staleTime: 0,
     gcTime: 0,
     retry: 1,
+    // Keeps the current values on screen while new options are fetched
+    placeholderData: keepPreviousData,
   })
 
-  async function handleCopy() {
-    if (!isSuccess) return
-
-    try {
-      await navigator.clipboard.writeText(data)
-    } catch {
-      // Clipboard access can be denied; the value is still selectable
-      return
-    }
-
-    setIsCopied(true)
-    setTimeout(() => setIsCopied(false), 2000)
-  }
+  // The newest values are on screen, so the history starts after them
+  const previousValues = isSuccess
+    ? history.slice(data.length, data.length + HISTORY_SIZE)
+    : []
 
   return (
-    <div className="flex flex-col gap-y-4">
+    <div className="flex flex-col gap-y-6">
+      <div className="grid gap-4 sm:grid-cols-[auto_1fr] sm:items-start sm:gap-x-8">
+        <div className="space-y-1">
+          <Label htmlFor={`${id}-quantity`}>Quantidade</Label>
+          <Select
+            value={String(quantity)}
+            onValueChange={(value) => setQuantity(Number(value))}
+          >
+            <SelectTrigger id={`${id}-quantity`} className="w-24">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              {QUANTITIES.map((value) => (
+                <SelectItem key={value} value={String(value)}>
+                  {value}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+
+        {options.length > 0 && (
+          <fieldset className="space-y-3">
+            <legend className="mb-2 text-sm font-medium">Opções</legend>
+
+            {options.map((option) =>
+              option.type === 'boolean' ? (
+                <div key={option.name} className="flex items-center gap-2">
+                  <Checkbox
+                    id={`${id}-${option.name}`}
+                    checked={Boolean(optionValues[option.name])}
+                    onCheckedChange={(checked) =>
+                      setOptionValues((values) => ({
+                        ...values,
+                        [option.name]: checked === true,
+                      }))
+                    }
+                  />
+                  <Label
+                    htmlFor={`${id}-${option.name}`}
+                    className="font-normal"
+                  >
+                    {option.label}
+                  </Label>
+                </div>
+              ) : (
+                <div key={option.name} className="space-y-2">
+                  <Label
+                    htmlFor={`${id}-${option.name}`}
+                    className="font-normal"
+                  >
+                    {option.label}:{' '}
+                    <span className="font-mono font-medium">
+                      {optionValues[option.name]}
+                    </span>
+                  </Label>
+                  <input
+                    type="range"
+                    id={`${id}-${option.name}`}
+                    min={option.min}
+                    max={option.max}
+                    value={Number(optionValues[option.name])}
+                    onChange={(event) =>
+                      setOptionValues((values) => ({
+                        ...values,
+                        [option.name]: Number(event.target.value),
+                      }))
+                    }
+                    className="w-full max-w-xs accent-primary"
+                  />
+                </div>
+              )
+            )}
+          </fieldset>
+        )}
+      </div>
+
       <div className="space-y-1">
-        <Label htmlFor={id}>{label}</Label>
-        <div className="flex gap-2">
+        <Label htmlFor={id}>{quantity > 1 ? pluralLabel : label}</Label>
+
+        <div className="flex items-start gap-2">
           <output
             id={id}
+            aria-busy={isFetching}
             className="min-h-9 flex-1 font-mono border border-border px-3 py-1 flex items-center text-xl rounded-md dark:bg-input/30"
           >
-            {isSuccess ? (
-              <p className="break-all">{data}</p>
+            {isSuccess && data.length === 1 ? (
+              <p className="break-all">{data[0]}</p>
+            ) : isSuccess ? (
+              <ul className="w-full divide-y text-base">
+                {data.map((value, index) => (
+                  <li
+                    key={value}
+                    className="flex items-center justify-between gap-2 py-1"
+                  >
+                    <span className="break-all">{value}</span>
+                    <CopyButton
+                      value={value}
+                      label={`Copiar ${name} ${index + 1}`}
+                      className="size-7 border-0 shadow-none"
+                    />
+                  </li>
+                ))}
+              </ul>
             ) : isError && !isFetching ? (
               <p className="text-base font-sans text-red-500">
                 Não foi possível gerar. Tente novamente.
@@ -72,16 +214,11 @@ export function Generator({ name, label, endpoint, field }: GeneratorProps) {
           </output>
 
           {isSuccess && (
-            <Button
-              size="icon"
-              variant="outline"
-              type="button"
-              className="[&_svg]:size-5 text-muted-foreground"
-              aria-label={isCopied ? 'Copiado' : `Copiar ${name}`}
-              onClick={handleCopy}
-            >
-              {isCopied ? <Check className="text-emerald-500" /> : <Copy />}
-            </Button>
+            <CopyButton
+              value={data.join('\n')}
+              label={data.length > 1 ? 'Copiar todos' : `Copiar ${name}`}
+              showText
+            />
           )}
         </div>
       </div>
@@ -99,6 +236,38 @@ export function Generator({ name, label, endpoint, field }: GeneratorProps) {
           `Gerar ${name}`
         )}
       </Button>
+
+      {previousValues.length > 0 && (
+        <div className="space-y-2">
+          <div className="flex items-center justify-between">
+            <h2 className="text-sm font-medium">Gerados anteriormente</h2>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="text-muted-foreground"
+              onClick={() => setHistory(isSuccess ? data : [])}
+            >
+              Limpar
+            </Button>
+          </div>
+
+          <ul className="divide-y rounded-md border font-mono text-sm">
+            {previousValues.map((value, index) => (
+              <li
+                key={value}
+                className="flex items-center justify-between gap-2 px-3 py-1"
+              >
+                <span className="break-all text-muted-foreground">{value}</span>
+                <CopyButton
+                  value={value}
+                  label={`Copiar ${name} anterior ${index + 1}`}
+                  className="size-7 border-0 shadow-none"
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   )
 }
