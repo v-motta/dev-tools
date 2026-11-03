@@ -82,7 +82,7 @@ export function ToolSearch() {
 
               {menuItems.map((menuItem) => (
                 <Command.Group
-                  key={menuItem.url}
+                  key={menuItem.title}
                   heading={menuItem.title}
                   className="**:[[cmdk-group-heading]]:px-2 **:[[cmdk-group-heading]]:py-1.5 **:[[cmdk-group-heading]]:text-xs **:[[cmdk-group-heading]]:font-medium **:[[cmdk-group-heading]]:text-muted-foreground"
                 >
@@ -90,7 +90,11 @@ export function ToolSearch() {
                     <Command.Item
                       key={tool.url}
                       value={tool.title}
-                      keywords={[tool.description, menuItem.title]}
+                      keywords={[
+                        tool.description,
+                        menuItem.title,
+                        ...(tool.keywords ?? []),
+                      ]}
                       onSelect={() => {
                         setOpen(false)
                         router.push(tool.url)

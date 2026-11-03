@@ -105,12 +105,13 @@ dev-tools/
 └─ src/
    ├─ app/
    │  ├─ (app)/              # Pages rendered inside the sidebar layout
-   │  │  ├─ computing/
-   │  │  │  ├─ generators/   # CPF, CNPJ, password and UUID generators
-   │  │  │  ├─ random-picker/
-   │  │  │  └─ validators/   # CPF and CNPJ validators
-   │  │  ├─ mathematics/
-   │  │  │  └─ online-calculators/  # Age, BMI, BMR and discount calculators
+   │  │  ├─ brazil/
+   │  │  │  └─ documents/    # CPF and CNPJ, each one generates and validates
+   │  │  ├─ development/
+   │  │  │  └─ generators/   # Password and UUID generators
+   │  │  ├─ utilities/
+   │  │  │  ├─ calculators/  # Age, BMI, BMR and discount calculators
+   │  │  │  └─ draws/        # Random number picker
    │  │  ├─ layout.tsx       # Sidebar + breadcrumb layout
    │  │  └─ page.tsx         # Home page
    │  ├─ api/                # REST endpoints used by the tools
