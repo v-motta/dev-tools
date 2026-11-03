@@ -48,12 +48,12 @@ export default function PasswordGeneratorPage() {
         field="password"
         options={[
           {
-            type: 'select',
+            type: 'toggle',
             name: 'style',
             label: 'Estilo',
             defaultValue: 'apple',
             choices: [
-              { value: 'apple', label: 'Apple (abcdef-ghiJkl-mn4opq)' },
+              { value: 'apple', label: 'Apple' },
               { value: 'custom', label: 'Personalizado' },
             ],
           },

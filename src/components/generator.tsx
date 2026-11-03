@@ -5,6 +5,7 @@ import ky from 'ky'
 import { LoaderCircle } from 'lucide-react'
 import { useEffect, useId, useState } from 'react'
 import { CopyButton } from '@/components/copy-button'
+import { SegmentedControl } from '@/components/segmented-control'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Label } from '@/components/ui/label'
@@ -27,7 +28,7 @@ export type GeneratorOption = (
       max: number
     }
   | {
-      type: 'select'
+      type: 'toggle'
       name: string
       label: string
       defaultValue: string
@@ -121,10 +122,20 @@ export function Generator({
     ? history.slice(data.length, data.length + HISTORY_SIZE)
     : []
 
+  function setOption(name: string, value: string | number | boolean) {
+    setOptionValues((values) => ({ ...values, [name]: value }))
+  }
+
+  // Toggles sit next to the quantity; checkboxes and sliders go under "Opções"
+  const toggles = visibleOptions.filter((option) => option.type === 'toggle')
+  const settings = visibleOptions.filter((option) => option.type !== 'toggle')
+
   return (
     <div className="flex flex-col gap-y-6">
-      <div className="grid gap-4 sm:grid-cols-[auto_1fr] sm:items-start sm:gap-x-8">
-        <div className="space-y-1">
+      {/* Every header in this row is a leading-none text-sm label followed by
+          an 8px gap, so the controls line up */}
+      <div className="flex flex-wrap items-start gap-x-8 gap-y-4">
+        <div className="flex flex-col gap-2">
           <Label htmlFor={`${id}-quantity`}>Quantidade</Label>
           <Select
             value={String(quantity)}
@@ -143,90 +154,69 @@ export function Generator({
           </Select>
         </div>
 
-        {options.length > 0 && (
-          <fieldset className="space-y-3">
-            <legend className="mb-2 text-sm font-medium">Opções</legend>
+        {toggles.map(
+          (option) =>
+            option.type === 'toggle' && (
+              <SegmentedControl
+                key={option.name}
+                label={option.label}
+                value={String(optionValues[option.name])}
+                onChange={(value) => setOption(option.name, value)}
+                options={option.choices}
+              />
+            )
+        )}
 
-            {visibleOptions.map((option) =>
-              option.type === 'select' ? (
-                <div key={option.name} className="space-y-1">
-                  <Label
-                    htmlFor={`${id}-${option.name}`}
-                    className="font-normal"
-                  >
-                    {option.label}
-                  </Label>
-                  <Select
-                    value={String(optionValues[option.name])}
-                    onValueChange={(value) =>
-                      setOptionValues((values) => ({
-                        ...values,
-                        [option.name]: value,
-                      }))
-                    }
-                  >
-                    <SelectTrigger
+        {settings.length > 0 && (
+          <fieldset className="min-w-56 flex-1">
+            <legend className="mb-2 text-sm leading-none font-medium">
+              Opções
+            </legend>
+
+            <div className="space-y-3">
+              {settings.map((option) =>
+                option.type === 'boolean' ? (
+                  <div key={option.name} className="flex items-center gap-2">
+                    <Checkbox
                       id={`${id}-${option.name}`}
-                      className="w-full max-w-xs"
+                      checked={Boolean(optionValues[option.name])}
+                      onCheckedChange={(checked) =>
+                        setOption(option.name, checked === true)
+                      }
+                    />
+                    <Label
+                      htmlFor={`${id}-${option.name}`}
+                      className="font-normal"
                     >
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {option.choices.map((choice) => (
-                        <SelectItem key={choice.value} value={choice.value}>
-                          {choice.label}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </div>
-              ) : option.type === 'boolean' ? (
-                <div key={option.name} className="flex items-center gap-2">
-                  <Checkbox
-                    id={`${id}-${option.name}`}
-                    checked={Boolean(optionValues[option.name])}
-                    onCheckedChange={(checked) =>
-                      setOptionValues((values) => ({
-                        ...values,
-                        [option.name]: checked === true,
-                      }))
-                    }
-                  />
-                  <Label
-                    htmlFor={`${id}-${option.name}`}
-                    className="font-normal"
-                  >
-                    {option.label}
-                  </Label>
-                </div>
-              ) : (
-                <div key={option.name} className="space-y-2">
-                  <Label
-                    htmlFor={`${id}-${option.name}`}
-                    className="font-normal"
-                  >
-                    {option.label}:{' '}
-                    <span className="font-mono font-medium">
-                      {optionValues[option.name]}
-                    </span>
-                  </Label>
-                  <input
-                    type="range"
-                    id={`${id}-${option.name}`}
-                    min={option.min}
-                    max={option.max}
-                    value={Number(optionValues[option.name])}
-                    onChange={(event) =>
-                      setOptionValues((values) => ({
-                        ...values,
-                        [option.name]: Number(event.target.value),
-                      }))
-                    }
-                    className="w-full max-w-xs accent-primary"
-                  />
-                </div>
-              )
-            )}
+                      {option.label}
+                    </Label>
+                  </div>
+                ) : option.type === 'range' ? (
+                  <div key={option.name} className="space-y-2">
+                    <Label
+                      htmlFor={`${id}-${option.name}`}
+                      className="font-normal"
+                    >
+                      {option.label}:{' '}
+                      <span className="font-mono font-medium">
+                        {optionValues[option.name]}
+                      </span>
+                    </Label>
+                    <input
+                      type="range"
+                      id={`${id}-${option.name}`}
+                      min={option.min}
+                      max={option.max}
+                      value={Number(optionValues[option.name])}
+                      onChange={(event) =>
+                        setOption(option.name, Number(event.target.value))
+                      }
+                      className="w-full max-w-xs accent-primary"
+                    />
+                  </div>
+                ) : null
+              )}
+            </div>
           </fieldset>
         )}
       </div>

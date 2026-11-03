@@ -4,7 +4,7 @@ import { useId, useState } from 'react'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { formatNumber, parseDecimal } from '@/lib/locale'
-import { cn } from '@/lib/utils'
+import { SegmentedControl } from './segmented-control'
 
 type MeasurementSystem = 'metric' | 'imperial'
 
@@ -111,37 +111,17 @@ export function BodyMeasurementsFields(props: BodyMeasurementsFieldsProps) {
 
   return (
     <>
-      <fieldset className="space-y-1">
-        <legend className="mb-1 text-sm font-medium">Unidades</legend>
-        <div className="inline-flex rounded-md border p-0.5">
-          {(
-            [
-              ['metric', 'Métrico (kg, cm)'],
-              ['imperial', 'Imperial (lb, ft)'],
-            ] as const
-          ).map(([value, label]) => (
-            <label
-              key={value}
-              className={cn(
-                'cursor-pointer rounded px-3 py-1 text-sm transition-colors has-focus-visible:ring-[3px] has-focus-visible:ring-ring/50',
-                system === value
-                  ? 'bg-primary text-primary-foreground'
-                  : 'text-muted-foreground hover:text-foreground'
-              )}
-            >
-              <input
-                type="radio"
-                name={`${id}-system`}
-                value={value}
-                checked={system === value}
-                onChange={() => setSystem(value)}
-                className="sr-only"
-              />
-              {label}
-            </label>
-          ))}
-        </div>
-      </fieldset>
+      <div className="pb-4">
+        <SegmentedControl
+          label="Unidades"
+          value={system}
+          onChange={setSystem}
+          options={[
+            { value: 'metric', label: 'Métrico (kg, cm)' },
+            { value: 'imperial', label: 'Imperial (lb, ft)' },
+          ]}
+        />
+      </div>
 
       <div className="space-y-1">
         <Label htmlFor={`${id}-weight`}>
