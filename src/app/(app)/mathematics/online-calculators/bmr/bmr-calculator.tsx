@@ -1,8 +1,11 @@
 'use client'
 
 import { useState } from 'react'
+import {
+  BodyMeasurementsFields,
+  useBodyMeasurements,
+} from '@/components/body-measurements'
 import { ResultCard } from '@/components/result-card'
-import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import {
@@ -12,7 +15,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { formatNumber, parseDecimal } from '@/lib/locale'
+import { formatNumber } from '@/lib/locale'
 
 type ActivityLevel = {
   value: string
@@ -52,40 +55,39 @@ function formatCalories(calories: number) {
   return `${formatNumber(Math.round(calories))} kcal/dia`
 }
 
+const AGE_RANGE = { min: 15, max: 100 }
+
 export function BMRCalculator() {
-  const [results, setResults] = useState<{ bmr: number; tdee: number }>()
+  const body = useBodyMeasurements()
+  const [age, setAge] = useState('')
+  const [sex, setSex] = useState('')
+  const [activityValue, setActivityValue] = useState('')
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault()
+  const ageNumber = Number(age)
+  const isAgeValid =
+    age !== '' &&
+    Number.isInteger(ageNumber) &&
+    ageNumber >= AGE_RANGE.min &&
+    ageNumber <= AGE_RANGE.max
+  const ageError =
+    age === '' || isAgeValid
+      ? ''
+      : `A idade deve estar entre ${AGE_RANGE.min} e ${AGE_RANGE.max} anos.`
+  const activity = activityLevels.find((level) => level.value === activityValue)
 
-    const data = new FormData(event.currentTarget)
-    const weight = parseDecimal(String(data.get('weight')))
-    const height = parseDecimal(String(data.get('height')))
-    const age = Number.parseInt(String(data.get('age')), 10)
-    const sex = data.get('sex')
-    const activity = activityLevels.find(
-      (level) => level.value === data.get('activity')
-    )
-
-    if (
-      Number.isNaN(weight) ||
-      Number.isNaN(height) ||
-      Number.isNaN(age) ||
-      !sex ||
-      !activity
-    ) {
-      return
-    }
+  let results: { bmr: number; tdee: number } | undefined
+  if (body.values && isAgeValid && sex && activity) {
+    const { weightKg, heightCm } = body.values
 
     // Mifflin-St Jeor equation
-    let bmr = 10 * weight + 6.25 * height - 5 * age
+    let bmr = 10 * weightKg + 6.25 * heightCm - 5 * ageNumber
     bmr = sex === 'male' ? bmr + 5 : bmr - 161
 
-    setResults({ bmr, tdee: bmr * activity.multiplier })
+    results = { bmr, tdee: bmr * activity.multiplier }
   }
 
   return (
-    <div className="space-y-8 w-full lg:w-1/2 2xl:w-1/3">
+    <div className="w-full max-w-2xl space-y-8">
       <div className="space-y-3">
         <h1 className="text-2xl font-bold font-mono">Calculadora de TMB</h1>
 
@@ -96,47 +98,30 @@ export function BMRCalculator() {
       </div>
 
       <div className="space-y-4">
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="space-y-1">
-            <Label htmlFor="weight">Peso (kg)</Label>
-            <Input
-              type="number"
-              id="weight"
-              name="weight"
-              min="30"
-              max="300"
-              step="0.1"
-              required
-            />
-          </div>
-
-          <div className="space-y-1">
-            <Label htmlFor="height">Altura (cm)</Label>
-            <Input
-              type="number"
-              id="height"
-              name="height"
-              min="100"
-              max="250"
-              required
-            />
-          </div>
+        <div className="space-y-2">
+          <BodyMeasurementsFields {...body} />
 
           <div className="space-y-1">
             <Label htmlFor="age">Idade</Label>
             <Input
-              type="number"
               id="age"
-              name="age"
-              min="15"
-              max="100"
-              required
+              inputMode="numeric"
+              value={age}
+              onChange={(event) => setAge(event.target.value.trim())}
+              aria-invalid={ageError !== ''}
+              aria-describedby="age-error"
             />
+            <p
+              id="age-error"
+              className="min-h-5 text-sm font-medium text-red-500"
+            >
+              {ageError}
+            </p>
           </div>
 
-          <div className="space-y-1">
+          <div className="space-y-1 pb-4">
             <Label htmlFor="sex">Sexo</Label>
-            <Select name="sex" required>
+            <Select value={sex} onValueChange={setSex}>
               <SelectTrigger id="sex">
                 <SelectValue placeholder="Selecione" />
               </SelectTrigger>
@@ -147,9 +132,9 @@ export function BMRCalculator() {
             </Select>
           </div>
 
-          <div className="space-y-1">
+          <div className="space-y-1 pb-4">
             <Label htmlFor="activity">Nível de atividade</Label>
-            <Select name="activity" required>
+            <Select value={activityValue} onValueChange={setActivityValue}>
               <SelectTrigger id="activity">
                 <SelectValue placeholder="Selecione" />
               </SelectTrigger>
@@ -162,9 +147,7 @@ export function BMRCalculator() {
               </SelectContent>
             </Select>
           </div>
-
-          <Button className="w-full">Calcular TMB e GET</Button>
-        </form>
+        </div>
 
         <ResultCard>
           {results && (

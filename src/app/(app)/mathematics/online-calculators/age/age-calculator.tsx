@@ -12,51 +12,44 @@ import {
 } from 'date-fns'
 import { useState } from 'react'
 import { ResultCard } from '@/components/result-card'
-import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { pluralize } from '@/lib/locale'
 
-export function AgeCalculator() {
-  const [calculatedAge, setCalculatedAge] = useState('')
-  const [errorMessage, setErrorMessage] = useState('')
+const MIN_YEAR = 1900
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault()
+function calculateAge(value: string): { age?: string; error?: string } {
+  // A date input's value is always yyyy-MM-dd, whatever the display locale
+  const date = parseISO(value)
 
-    const data = new FormData(event.currentTarget)
-    // A date input's value is always yyyy-MM-dd, whatever the display locale
-    const date = parseISO(String(data.get('birthdate')))
-    const now = new Date()
+  // While the year is being typed the browser reports e.g. 0019-05-15, which
+  // is incomplete rather than wrong
+  if (!isValid(date) || date.getFullYear() < MIN_YEAR) return {}
 
-    if (!isValid(date)) {
-      setCalculatedAge('')
-      setErrorMessage('Digite uma data válida.')
-      return
-    }
-
-    if (isAfter(date, now)) {
-      setCalculatedAge('')
-      setErrorMessage('A data de nascimento não pode estar no futuro.')
-      return
-    }
-
-    const years = differenceInYears(now, date)
-
-    const afterYears = subYears(now, years)
-    const months = differenceInMonths(afterYears, date)
-
-    const afterMonths = subMonths(afterYears, months)
-    const days = differenceInDays(afterMonths, date)
-
-    setErrorMessage('')
-    setCalculatedAge(
-      `${pluralize(years, 'ano', 'anos')}, ${pluralize(months, 'mês', 'meses')} e ${pluralize(days, 'dia', 'dias')}`
-    )
+  const now = new Date()
+  if (isAfter(date, now)) {
+    return { error: 'A data de nascimento não pode estar no futuro.' }
   }
 
+  const years = differenceInYears(now, date)
+
+  const afterYears = subYears(now, years)
+  const months = differenceInMonths(afterYears, date)
+
+  const afterMonths = subMonths(afterYears, months)
+  const days = differenceInDays(afterMonths, date)
+
+  return {
+    age: `${pluralize(years, 'ano', 'anos')}, ${pluralize(months, 'mês', 'meses')} e ${pluralize(days, 'dia', 'dias')}`,
+  }
+}
+
+export function AgeCalculator() {
+  const [birthdate, setBirthdate] = useState('')
+  const { age, error = '' } = calculateAge(birthdate)
+
   return (
-    <div className="space-y-8 w-full lg:w-1/2 2xl:w-1/3">
+    <div className="w-full max-w-2xl space-y-8">
       <div className="space-y-3">
         <h1 className="text-2xl font-bold font-mono">Calculadora de idade</h1>
 
@@ -66,35 +59,29 @@ export function AgeCalculator() {
       </div>
 
       <div className="space-y-4">
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="space-y-1">
-            <Label htmlFor="birthdate">Data de nascimento</Label>
-            <Input
-              type="date"
-              id="birthdate"
-              name="birthdate"
-              min="1900-01-01"
-              required
-              aria-invalid={errorMessage !== ''}
-              aria-describedby="birthdate-error"
-              className="w-fit dark:scheme-dark"
-            />
-            <p
-              id="birthdate-error"
-              role="alert"
-              className="min-h-5 text-sm font-medium text-red-500"
-            >
-              {errorMessage}
-            </p>
-          </div>
-
-          <Button className="w-full">Calcular idade</Button>
-        </form>
+        <div className="space-y-1">
+          <Label htmlFor="birthdate">Data de nascimento</Label>
+          <Input
+            type="date"
+            id="birthdate"
+            min={`${MIN_YEAR}-01-01`}
+            value={birthdate}
+            onChange={(event) => setBirthdate(event.target.value)}
+            aria-invalid={error !== ''}
+            aria-describedby="birthdate-error"
+            className="w-fit dark:scheme-dark"
+          />
+          <p
+            id="birthdate-error"
+            role="alert"
+            className="min-h-5 text-sm font-medium text-red-500"
+          >
+            {error}
+          </p>
+        </div>
 
         <ResultCard>
-          {calculatedAge && (
-            <p className="text-2xl font-mono">{calculatedAge}</p>
-          )}
+          {age && <p className="text-2xl font-mono">{age}</p>}
         </ResultCard>
       </div>
 

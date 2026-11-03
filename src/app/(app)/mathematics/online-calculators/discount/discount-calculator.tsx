@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import { ResultCard } from '@/components/result-card'
-import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { formatCurrency, parseDecimal } from '@/lib/locale'
@@ -13,11 +12,14 @@ export function DiscountCalculator() {
   // Digits typed so far, read as cents: "1050" is 10.50
   const [priceDigits, setPriceDigits] = useState('')
   const [percentage, setPercentage] = useState('')
-  const [errorMessage, setErrorMessage] = useState('')
-  const [result, setResult] = useState<{
-    discountAmount: number
-    finalPrice: number
-  }>()
+
+  const price = Number(priceDigits) / 100
+  const percentageNum = parseDecimal(percentage)
+  const discountAmount = Math.round(price * percentageNum) / 100
+  const result =
+    priceDigits && !Number.isNaN(percentageNum)
+      ? { discountAmount, finalPrice: price - discountAmount }
+      : undefined
 
   function handlePriceChange(e: React.ChangeEvent<HTMLInputElement>) {
     const digits = e.target.value
@@ -38,26 +40,8 @@ export function DiscountCalculator() {
     setPercentage(value)
   }
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault()
-
-    const price = Number(priceDigits) / 100
-    const percentageNum = parseDecimal(percentage)
-
-    if (!priceDigits || Number.isNaN(percentageNum)) {
-      setResult(undefined)
-      setErrorMessage('Preencha o preço e a porcentagem do desconto.')
-      return
-    }
-
-    const discountAmount = Math.round(price * percentageNum) / 100
-
-    setErrorMessage('')
-    setResult({ discountAmount, finalPrice: price - discountAmount })
-  }
-
   return (
-    <div className="space-y-8 w-full lg:w-1/2 2xl:w-1/3">
+    <div className="w-full max-w-2xl space-y-8">
       <div className="space-y-3">
         <h1 className="text-2xl font-bold font-mono">
           Calculadora de desconto
@@ -69,56 +53,38 @@ export function DiscountCalculator() {
       </div>
 
       <div className="space-y-4">
-        <form onSubmit={handleSubmit} noValidate className="space-y-4">
+        <div className="flex flex-col gap-4 sm:flex-row sm:*:flex-1">
           <div className="space-y-1">
-            <div className="flex flex-col gap-4 sm:flex-row sm:*:flex-1">
-              <div className="space-y-1">
-                <Label htmlFor="price">Preço</Label>
-                <Input
-                  id="price"
-                  inputMode="numeric"
-                  value={
-                    priceDigits && formatCurrency(Number(priceDigits) / 100)
-                  }
-                  onChange={handlePriceChange}
-                  placeholder={formatCurrency(0)}
-                  aria-describedby="discount-error"
-                />
-              </div>
-
-              <div className="space-y-1">
-                <Label htmlFor="percentage">Desconto</Label>
-                <div className="relative">
-                  <Input
-                    id="percentage"
-                    inputMode="decimal"
-                    value={percentage}
-                    onChange={handlePercentageChange}
-                    className="pr-7"
-                    placeholder="0"
-                    aria-describedby="discount-error"
-                  />
-                  <span
-                    aria-hidden
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground"
-                  >
-                    %
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <p
-              id="discount-error"
-              role="alert"
-              className="min-h-5 text-sm font-medium text-red-500"
-            >
-              {errorMessage}
-            </p>
+            <Label htmlFor="price">Preço</Label>
+            <Input
+              id="price"
+              inputMode="numeric"
+              value={priceDigits && formatCurrency(Number(priceDigits) / 100)}
+              onChange={handlePriceChange}
+              placeholder={formatCurrency(0)}
+            />
           </div>
 
-          <Button className="w-full">Calcular desconto</Button>
-        </form>
+          <div className="space-y-1">
+            <Label htmlFor="percentage">Desconto</Label>
+            <div className="relative">
+              <Input
+                id="percentage"
+                inputMode="decimal"
+                value={percentage}
+                onChange={handlePercentageChange}
+                className="pr-7"
+                placeholder="0"
+              />
+              <span
+                aria-hidden
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground"
+              >
+                %
+              </span>
+            </div>
+          </div>
+        </div>
 
         <ResultCard>
           {result && (
