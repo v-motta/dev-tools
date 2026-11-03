@@ -74,7 +74,7 @@ export function generatePerson({ sex, state }: PersonOptions = {}) {
     neighborhood: address.neighborhood,
     city: address.city,
     state: address.state,
-    height: `${formatNumber(height / 100, { minimumFractionDigits: 2 })} m`,
+    height: `${formatNumber('pt-BR', height / 100, { minimumFractionDigits: 2 })} m`,
     weight: `${weight} kg`,
     bloodType: pick(BLOOD_TYPES),
   }

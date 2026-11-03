@@ -1,13 +1,21 @@
 'use client'
 
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { useId, useState } from 'react'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { formatNumber, parseDecimal } from '@/lib/locale'
+import type { Locale } from '@/i18n/routing'
+import { parseDecimal, useLocaleFormat } from '@/lib/locale'
 import { SegmentedControl } from './segmented-control'
 
 type MeasurementSystem = 'metric' | 'imperial'
+
+/** The units each language starts with; the user can still switch */
+const DEFAULT_SYSTEMS: Record<Locale, MeasurementSystem> = {
+  'pt-BR': 'metric',
+  'de-DE': 'metric',
+  'en-US': 'imperial',
+}
 
 const KG_PER_LB = 0.45359237
 const CM_PER_IN = 2.54
@@ -20,14 +28,20 @@ function round(value: number, digits = 1) {
   return Math.round(value * factor) / factor
 }
 
-function toInput(value: number) {
-  return Number.isFinite(value) ? formatNumber(round(value)) : ''
-}
-
 /** Keeps weight and height as typed and exposes them in kg and cm. */
 export function useBodyMeasurements() {
   const t = useTranslations('bodyMeasurements')
-  const [system, setSystemState] = useState<MeasurementSystem>('metric')
+  const { formatNumber } = useLocaleFormat()
+
+  // Without grouping, so the value parses back the same as if it were typed
+  function toInput(value: number) {
+    return Number.isFinite(value)
+      ? formatNumber(round(value), { useGrouping: false })
+      : ''
+  }
+
+  const locale = useLocale()
+  const [system, setSystemState] = useState(DEFAULT_SYSTEMS[locale])
   const [weight, setWeight] = useState('')
   const [heightCm, setHeightCm] = useState('')
   const [heightFt, setHeightFt] = useState('')

@@ -9,7 +9,7 @@ import { ResultCard } from '@/components/result-card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { formatNumber } from '@/lib/locale'
+import { useLocaleFormat } from '@/lib/locale'
 
 // Same limits as the API, so the browser rejects out-of-range values before
 // the request is sent
@@ -35,6 +35,7 @@ function SubmitButton() {
 
 export function RandomPicker() {
   const t = useTranslations('pages.numbers')
+  const { formatNumber } = useLocaleFormat()
   const [drawnNumbers, setDrawnNumbers] = useState<number[]>([])
   const [errorMessage, setErrorMessage] = useState('')
 
