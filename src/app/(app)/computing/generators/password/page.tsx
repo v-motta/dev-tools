@@ -25,6 +25,8 @@ export const metadata: Metadata = {
   ],
 }
 
+const CUSTOM_STYLE = { name: 'style', value: 'custom' }
+
 export default function PasswordGeneratorPage() {
   return (
     <div className="w-full max-w-2xl space-y-8">
@@ -32,8 +34,9 @@ export default function PasswordGeneratorPage() {
         <h1 className="text-2xl font-bold font-mono">Gerador de senha</h1>
 
         <p className="text-muted-foreground text-balance">
-          Escolha o tamanho e os tipos de caractere. A senha é gerada de novo a
-          cada mudança.
+          Gere uma senha no estilo da Apple, fácil de ler e digitar, ou escolha
+          o tamanho e os tipos de caractere. A senha é gerada de novo a cada
+          mudança.
         </p>
       </div>
 
@@ -45,30 +48,44 @@ export default function PasswordGeneratorPage() {
         field="password"
         options={[
           {
+            type: 'select',
+            name: 'style',
+            label: 'Estilo',
+            defaultValue: 'apple',
+            choices: [
+              { value: 'apple', label: 'Apple (abcdef-ghiJkl-mn4opq)' },
+              { value: 'custom', label: 'Personalizado' },
+            ],
+          },
+          {
             type: 'range',
             name: 'length',
             label: 'Tamanho',
             defaultValue: 16,
             min: PASSWORD_MIN_LENGTH,
             max: PASSWORD_MAX_LENGTH,
+            showWhen: CUSTOM_STYLE,
           },
           {
             type: 'boolean',
             name: 'uppercase',
             label: 'Letras maiúsculas',
             defaultValue: true,
+            showWhen: CUSTOM_STYLE,
           },
           {
             type: 'boolean',
             name: 'numbers',
             label: 'Números',
             defaultValue: true,
+            showWhen: CUSTOM_STYLE,
           },
           {
             type: 'boolean',
             name: 'symbols',
             label: 'Símbolos (!@#$%&*-_=+?)',
             defaultValue: true,
+            showWhen: CUSTOM_STYLE,
           },
         ]}
       />
@@ -85,13 +102,15 @@ export default function PasswordGeneratorPage() {
             seguro.
           </li>
           <li>
-            Letras minúsculas sempre entram. A senha tem pelo menos um caractere
-            de cada tipo escolhido.
+            O estilo Apple segue o formato das senhas fortes sugeridas pelo
+            iPhone e pelo Mac: três grupos de seis letras minúsculas separados
+            por hífens, com exatamente uma letra maiúscula e um número.
           </li>
           <li>
-            Os símbolos não incluem aspas, barras invertidas nem espaços, que
-            costumam quebrar ao colar em arquivos de configuração ou no
-            terminal.
+            No estilo personalizado, letras minúsculas sempre entram e a senha
+            tem pelo menos um caractere de cada tipo escolhido. Os símbolos não
+            incluem aspas, barras invertidas nem espaços, que costumam quebrar
+            ao colar em arquivos de configuração ou no terminal.
           </li>
           <li>
             Os últimos valores gerados ficam listados abaixo do botão até você
@@ -104,23 +123,30 @@ export default function PasswordGeneratorPage() {
         name="gerador de senha"
         method="GET"
         path="/api/generators/password"
-        query={{ length: '20', symbols: 'false' }}
+        query={{ style: 'custom', length: '20', symbols: 'false' }}
         parameters={[
           {
+            name: 'style',
+            description:
+              'Opcional. "apple" (abcdef-ghiJkl-mn4opq) ou "custom". Padrão: "apple".',
+          },
+          {
             name: 'length',
-            description: `Opcional. De ${PASSWORD_MIN_LENGTH} a ${PASSWORD_MAX_LENGTH}. Padrão: 16.`,
+            description: `Só com style=custom. De ${PASSWORD_MIN_LENGTH} a ${PASSWORD_MAX_LENGTH}. Padrão: 16.`,
           },
           {
             name: 'uppercase',
-            description: 'Opcional. Inclui letras maiúsculas. Padrão: "true".',
+            description:
+              'Só com style=custom. Inclui letras maiúsculas. Padrão: "true".',
           },
           {
             name: 'numbers',
-            description: 'Opcional. Inclui números. Padrão: "true".',
+            description: 'Só com style=custom. Inclui números. Padrão: "true".',
           },
           {
             name: 'symbols',
-            description: 'Opcional. Inclui símbolos. Padrão: "true".',
+            description:
+              'Só com style=custom. Inclui símbolos. Padrão: "true".',
           },
           {
             name: 'quantity',
@@ -128,7 +154,7 @@ export default function PasswordGeneratorPage() {
               'Opcional. De 1 a 50. Quando informado, a resposta traz a lista "passwords" em vez de "password".',
           },
         ]}
-        response={{ password: 'q7RmvKw2tLxa9bNpEc4z' }}
+        response={{ password: 'q7RmvKw2tLxa9bNpEcz4' }}
       />
     </div>
   )

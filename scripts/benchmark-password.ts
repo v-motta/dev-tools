@@ -1,17 +1,17 @@
-import { generatePassword } from '../src/utils/generate-password'
+import { generateApplePassword } from '../src/utils/generate-password'
 
 const iterations = 100000
 const start = performance.now()
 
 for (let i = 0; i < iterations; i++) {
-  generatePassword()
+  generateApplePassword()
 }
 
 const end = performance.now()
 const totalTime = end - start
 const avgTime = totalTime / iterations
 
-console.log(`Benchmarking generatePassword:`)
+console.log(`Benchmarking generateApplePassword:`)
 console.log(`Total iterations: ${iterations}`)
 console.log(`Total time: ${totalTime.toFixed(2)}ms`)
 console.log(`Average time per call: ${avgTime.toFixed(4)}ms`)

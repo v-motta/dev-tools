@@ -41,7 +41,7 @@ Every generator and validator is backed by a public REST endpoint:
 | ------ | -------------------------- | ----------------------------------------------------------------------------------------- |
 | GET    | `/api/generators/cpf`      | `{ "cpf": "123.456.789-09" }`                                                             |
 | GET    | `/api/generators/cnpj`     | `{ "cnpj": "12.345.678/0001-95" }`                                                        |
-| GET    | `/api/generators/password` | `{ "password": "q7Rm!vKw2tL-xa9b" }`                                                      |
+| GET    | `/api/generators/password` | `{ "password": "abcdef-ghiJkl-mn4opq" }`                                                  |
 | GET    | `/api/generators/uuid`     | `{ "uuid": "f1ccdc7f-1f22-474f-b29c-cb2b52498aeb" }`                                      |
 | POST   | `/api/random-picker`       | `{ "random_count": 2, "random_min": 1, "random_max": 10 }` → `{ "randomNumber": [4, 7] }` |
 | POST   | `/api/validators/cpf`      | `{ "cpf": "529.982.247-25" }` → `{ "isValid": true }`                                     |
@@ -49,12 +49,13 @@ Every generator and validator is backed by a public REST endpoint:
 
 The generators accept optional query parameters:
 
-| Parameter                          | Generators | Description                                                                                         |
-| ---------------------------------- | ---------- | --------------------------------------------------------------------------------------------------- |
-| `quantity`                         | All        | 1 to 50 values at once. The response then holds a list under the plural key, e.g. `{ "cpfs": [...] }` |
-| `formatted`                        | CPF, CNPJ  | `false` returns digits only. Defaults to `true`                                                     |
-| `length`                           | Password   | 8 to 64 characters. Defaults to 16                                                                  |
-| `uppercase`, `numbers`, `symbols` | Password   | `false` leaves that kind of character out. All default to `true`                                    |
+| Parameter                         | Generators | Description                                                                                           |
+| --------------------------------- | ---------- | ----------------------------------------------------------------------------------------------------- |
+| `quantity`                        | All        | 1 to 50 values at once. The response then holds a list under the plural key, e.g. `{ "cpfs": [...] }` |
+| `formatted`                       | CPF, CNPJ  | `false` returns digits only. Defaults to `true`                                                       |
+| `style`                           | Password   | `apple` (Apple's `abcdef-ghiJkl-mn4opq` format, the default) or `custom`                              |
+| `length`                          | Password   | With `style=custom`: 8 to 64 characters. Defaults to 16                                               |
+| `uppercase`, `numbers`, `symbols` | Password   | With `style=custom`: `false` leaves that kind of character out. All default to `true`                 |
 
 ```bash
 curl "https://devtools.vmotta.dev/api/generators/cpf?quantity=2&formatted=false"

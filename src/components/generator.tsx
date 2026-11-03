@@ -16,7 +16,7 @@ import {
   SelectValue,
 } from '@/components/ui/select'
 
-export type GeneratorOption =
+export type GeneratorOption = (
   | { type: 'boolean'; name: string; label: string; defaultValue: boolean }
   | {
       type: 'range'
@@ -26,6 +26,17 @@ export type GeneratorOption =
       min: number
       max: number
     }
+  | {
+      type: 'select'
+      name: string
+      label: string
+      defaultValue: string
+      choices: { value: string; label: string }[]
+    }
+) & {
+  /** Shows the option (and sends it) only while another option has a value */
+  showWhen?: { name: string; value: string | number | boolean }
+}
 
 interface GeneratorProps {
   /** Name of the generated value, e.g. "CPF" or "senha" */
@@ -68,13 +79,27 @@ export function Generator({
       options.map((option) => [option.name, option.defaultValue])
     )
   )
-  // Dragging the length slider would otherwise fire a request per step
-  const params = useDebouncedValue(optionValues, 250)
+  const visibleOptions = options.filter(
+    ({ showWhen }) =>
+      !showWhen || optionValues[showWhen.name] === showWhen.value
+  )
+  // Serialized so the debounce compares values, not a new object per render;
+  // without the debounce, dragging the length slider fires a request per step
+  const paramsKey = useDebouncedValue(
+    JSON.stringify(
+      Object.fromEntries(
+        visibleOptions.map((option) => [option.name, optionValues[option.name]])
+      )
+    ),
+    250
+  )
   const [history, setHistory] = useState<string[]>([])
 
   const { data, isError, isFetching, isSuccess, refetch } = useQuery({
-    queryKey: ['generator', endpoint, quantity, params],
+    queryKey: ['generator', endpoint, quantity, paramsKey],
     queryFn: async () => {
+      const params: Record<string, string | number | boolean> =
+        JSON.parse(paramsKey)
       const response = await ky
         .get(endpoint, { searchParams: { quantity, ...params } })
         .json<Record<string, string[]>>()
@@ -122,8 +147,40 @@ export function Generator({
           <fieldset className="space-y-3">
             <legend className="mb-2 text-sm font-medium">Opções</legend>
 
-            {options.map((option) =>
-              option.type === 'boolean' ? (
+            {visibleOptions.map((option) =>
+              option.type === 'select' ? (
+                <div key={option.name} className="space-y-1">
+                  <Label
+                    htmlFor={`${id}-${option.name}`}
+                    className="font-normal"
+                  >
+                    {option.label}
+                  </Label>
+                  <Select
+                    value={String(optionValues[option.name])}
+                    onValueChange={(value) =>
+                      setOptionValues((values) => ({
+                        ...values,
+                        [option.name]: value,
+                      }))
+                    }
+                  >
+                    <SelectTrigger
+                      id={`${id}-${option.name}`}
+                      className="w-full max-w-xs"
+                    >
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {option.choices.map((choice) => (
+                        <SelectItem key={choice.value} value={choice.value}>
+                          {choice.label}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+              ) : option.type === 'boolean' ? (
                 <div key={option.name} className="flex items-center gap-2">
                   <Checkbox
                     id={`${id}-${option.name}`}

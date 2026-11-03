@@ -10,6 +10,41 @@ const NUMBERS = '0123456789'
 // config files or shells
 const SYMBOLS = '!@#$%&*-_=+?'
 
+function pick(chars: string) {
+  return chars[randomInt(chars.length)]
+}
+
+function getRandomChars(length: number): string {
+  const chars = new Set<string>()
+  while (chars.size < length) chars.add(pick(LOWERCASE))
+
+  return Array.from(chars).join('')
+}
+
+/**
+ * Apple's "strong password" format, e.g. abcdef-ghiJkl-mn4opq: three groups of
+ * six lowercase letters with exactly one uppercase letter and one digit, easy
+ * to read and type on a phone.
+ */
+export function generateApplePassword() {
+  const randomPositions = new Set<number>()
+  while (randomPositions.size < 2) {
+    randomPositions.add(randomInt(18))
+  }
+
+  const [uppercasePosition, digitPosition] = Array.from(randomPositions)
+
+  const groups = new Set<string>()
+  while (groups.size < 3) groups.add(getRandomChars(6))
+
+  const pool = Array.from(groups).join('').split('')
+
+  pool[uppercasePosition] = pick(UPPERCASE)
+  pool[digitPosition] = pick(NUMBERS)
+
+  return `${pool.slice(0, 6).join('')}-${pool.slice(6, 12).join('')}-${pool.slice(12, 18).join('')}`
+}
+
 export interface PasswordOptions {
   length?: number
   uppercase?: boolean
@@ -17,11 +52,7 @@ export interface PasswordOptions {
   symbols?: boolean
 }
 
-function pick(chars: string) {
-  return chars[randomInt(chars.length)]
-}
-
-export function generatePassword({
+export function generateCustomPassword({
   length = 16,
   uppercase = true,
   numbers = true,

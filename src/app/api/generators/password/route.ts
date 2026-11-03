@@ -5,13 +5,22 @@ import {
   parseInteger,
 } from '@/lib/api'
 import {
-  generatePassword,
+  generateApplePassword,
+  generateCustomPassword,
   PASSWORD_MAX_LENGTH,
   PASSWORD_MIN_LENGTH,
 } from '@/utils/generate-password'
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
+
+  const style = searchParams.get('style') ?? 'apple'
+  if (style === 'apple') {
+    return generatorResponse(searchParams, 'password', generateApplePassword)
+  }
+  if (style !== 'custom') {
+    return badRequest('style must be "apple" or "custom".')
+  }
 
   const length = searchParams.has('length')
     ? parseInteger(searchParams.get('length'))
@@ -34,6 +43,6 @@ export async function GET(request: Request) {
   }
 
   return generatorResponse(searchParams, 'password', () =>
-    generatePassword({ length, uppercase, numbers, symbols })
+    generateCustomPassword({ length, uppercase, numbers, symbols })
   )
 }
