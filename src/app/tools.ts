@@ -1,17 +1,25 @@
 import {
   Calculator,
   CalendarDays,
+  Car,
+  Contact,
+  CreditCard,
   Dices,
   Dumbbell,
+  FileText,
   Fingerprint,
   Hash,
   IdCard,
   KeyRound,
   Landmark,
   type LucideIcon,
+  MapPin,
+  Receipt,
   ServerCog,
   TicketPercent,
+  User,
   UserRoundCheck,
+  UsersRound,
   Weight,
 } from 'lucide-react'
 
@@ -41,7 +49,7 @@ export const tools: SidebarGroup[] = [
     menuItems: [
       {
         title: 'Documentos',
-        icon: IdCard,
+        icon: FileText,
         subMenuItems: [
           {
             title: 'CPF',
@@ -52,18 +60,61 @@ export const tools: SidebarGroup[] = [
           },
           {
             title: 'CNPJ',
-            description: 'Gere CNPJs válidos para testes ou valide um CNPJ.',
+            description:
+              'Gere CNPJs ou empresas completas para testes, ou valide um CNPJ.',
             url: '/brazil/documents/cnpj',
             icon: Landmark,
-            keywords: ['gerador', 'validador'],
+            keywords: ['gerador', 'validador', 'empresa', 'razão social'],
           },
-          // {
-          //   title: 'Gerador de pessoa',
-          //   description:
-          //     'Gere uma pessoa aleatória com nome, telefone, CPF e data de nascimento.',
-          //   url: '/brazil/fake-data/person',
-          //   icon: User2,
-          // },
+          {
+            title: 'RG',
+            description: 'Gere RGs válidos para testes ou valide um RG.',
+            url: '/brazil/documents/rg',
+            icon: IdCard,
+            keywords: ['gerador', 'validador', 'identidade'],
+          },
+          {
+            title: 'CNH',
+            description: 'Gere CNHs válidas para testes ou valide uma CNH.',
+            url: '/brazil/documents/cnh',
+            icon: Contact,
+            keywords: ['gerador', 'validador', 'habilitação', 'motorista'],
+          },
+          {
+            title: 'Inscrição estadual',
+            description:
+              'Gere inscrições estaduais válidas de qualquer estado ou valide uma.',
+            url: '/brazil/documents/state-registration',
+            icon: Receipt,
+            keywords: ['gerador', 'validador', 'ie', 'sintegra'],
+          },
+        ],
+      },
+      {
+        title: 'Dados fictícios',
+        icon: UsersRound,
+        subMenuItems: [
+          {
+            title: 'Gerador de pessoa',
+            description:
+              'Gere uma pessoa com nome, documentos, contato e endereço real.',
+            url: '/brazil/fake-data/person',
+            icon: User,
+          },
+          {
+            title: 'CEP',
+            description: 'Gere CEPs reais com endereço ou consulte um CEP.',
+            url: '/brazil/fake-data/cep',
+            icon: MapPin,
+            keywords: ['gerador', 'consulta', 'endereço'],
+          },
+          {
+            title: 'Gerador de placa',
+            description: 'Gere placas de veículo no padrão Mercosul ou antigo.',
+            url: '/brazil/fake-data/license-plate',
+            icon: Car,
+            keywords: ['carro', 'moto', 'veículo', 'mercosul'],
+          },
         ],
       },
     ],
@@ -86,6 +137,14 @@ export const tools: SidebarGroup[] = [
             description: 'Gere identificadores únicos no formato UUID v4.',
             url: '/development/generators/uuid',
             icon: Fingerprint,
+          },
+          {
+            title: 'Gerador de cartão de crédito',
+            description:
+              'Gere cartões válidos para testes, com bandeira, validade e CVV.',
+            url: '/development/generators/credit-card',
+            icon: CreditCard,
+            keywords: ['visa', 'mastercard', 'elo', 'luhn'],
           },
         ],
       },

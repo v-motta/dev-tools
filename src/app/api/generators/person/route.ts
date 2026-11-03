@@ -1,24 +1,16 @@
-import { faker } from '@faker-js/faker'
-import { format } from 'date-fns'
 import { NextResponse } from 'next/server'
-import { generateCPF } from '@/utils/generate-cpf'
+import { badRequest, parseChoiceParam, parseStateParam } from '@/lib/api'
+import { generatePerson, SEXES } from '@/utils/generate-person'
 
-export async function GET() {
-  const person = {
-    name: faker.person.fullName(),
-    telephone: faker.phone.number({ style: 'international' }),
-    cpf: generateCPF(),
-    birthdate: format(faker.date.birthdate(), 'dd/MM/yyyy'),
-  }
+export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url)
 
-  const address = {
-    zipCode: faker.location.zipCode(),
-    street: faker.location.street(),
-    number: faker.location.buildingNumber(),
-    neighborhood: faker.location.county(),
-    city: faker.location.city(),
-    state: faker.location.state(),
-  }
+  const sex = parseChoiceParam(searchParams, 'sex', SEXES, undefined)
+  if (sex === null) return badRequest('sex must be "female" or "male".')
 
-  return NextResponse.json({ personalData: person, address })
+  const state = parseStateParam(searchParams)
+  if (state === null)
+    return badRequest('state must be a state code, e.g. "SP".')
+
+  return NextResponse.json({ person: generatePerson({ sex, state }) })
 }

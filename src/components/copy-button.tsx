@@ -11,6 +11,8 @@ interface CopyButtonProps {
   label: string
   /** Shows "Copiar"/"Copiado!" next to the icon instead of only the icon */
   showText?: boolean
+  /** Text shown with `showText` before copying. Defaults to "Copiar" */
+  text?: string
   className?: string
 }
 
@@ -18,6 +20,7 @@ export function CopyButton({
   value,
   label,
   showText = false,
+  text = 'Copiar',
   className,
 }: CopyButtonProps) {
   const [isCopied, setIsCopied] = useState(false)
@@ -48,7 +51,7 @@ export function CopyButton({
       onClick={handleCopy}
     >
       {isCopied ? <Check className="text-emerald-500" /> : <Copy />}
-      {showText && (isCopied ? 'Copiado!' : 'Copiar')}
+      {showText && (isCopied ? 'Copiado!' : text)}
     </Button>
   )
 }

@@ -3,11 +3,14 @@
 import { keepPreviousData, useQuery } from '@tanstack/react-query'
 import ky from 'ky'
 import { LoaderCircle } from 'lucide-react'
-import { useEffect, useId, useState } from 'react'
+import { useId, useState } from 'react'
 import { CopyButton } from '@/components/copy-button'
-import { SegmentedControl } from '@/components/segmented-control'
+import {
+  type GeneratorOption,
+  GeneratorOptions,
+  useGeneratorOptions,
+} from '@/components/generator-options'
 import { Button } from '@/components/ui/button'
-import { Checkbox } from '@/components/ui/checkbox'
 import { Label } from '@/components/ui/label'
 import {
   Select,
@@ -16,28 +19,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-
-export type GeneratorOption = (
-  | { type: 'boolean'; name: string; label: string; defaultValue: boolean }
-  | {
-      type: 'range'
-      name: string
-      label: string
-      defaultValue: number
-      min: number
-      max: number
-    }
-  | {
-      type: 'toggle'
-      name: string
-      label: string
-      defaultValue: string
-      choices: { value: string; label: string }[]
-    }
-) & {
-  /** Shows the option (and sends it) only while another option has a value */
-  showWhen?: { name: string; value: string | number | boolean }
-}
 
 interface GeneratorProps {
   /** Name of the generated value, e.g. "CPF" or "senha" */
@@ -54,17 +35,6 @@ interface GeneratorProps {
 const QUANTITIES = [1, 5, 10, 25, 50]
 const HISTORY_SIZE = 10
 
-function useDebouncedValue<T>(value: T, delay: number) {
-  const [debounced, setDebounced] = useState(value)
-
-  useEffect(() => {
-    const timeout = setTimeout(() => setDebounced(value), delay)
-    return () => clearTimeout(timeout)
-  }, [value, delay])
-
-  return debounced
-}
-
 export function Generator({
   name,
   label,
@@ -75,25 +45,8 @@ export function Generator({
 }: GeneratorProps) {
   const id = useId()
   const [quantity, setQuantity] = useState(1)
-  const [optionValues, setOptionValues] = useState(() =>
-    Object.fromEntries(
-      options.map((option) => [option.name, option.defaultValue])
-    )
-  )
-  const visibleOptions = options.filter(
-    ({ showWhen }) =>
-      !showWhen || optionValues[showWhen.name] === showWhen.value
-  )
-  // Serialized so the debounce compares values, not a new object per render;
-  // without the debounce, dragging the length slider fires a request per step
-  const paramsKey = useDebouncedValue(
-    JSON.stringify(
-      Object.fromEntries(
-        visibleOptions.map((option) => [option.name, optionValues[option.name]])
-      )
-    ),
-    250
-  )
+  const { values, setOption, visibleOptions, paramsKey } =
+    useGeneratorOptions(options)
   const [history, setHistory] = useState<string[]>([])
 
   const { data, isError, isFetching, isSuccess, refetch } = useQuery({
@@ -122,14 +75,6 @@ export function Generator({
     ? history.slice(data.length, data.length + HISTORY_SIZE)
     : []
 
-  function setOption(name: string, value: string | number | boolean) {
-    setOptionValues((values) => ({ ...values, [name]: value }))
-  }
-
-  // Toggles sit next to the quantity; checkboxes and sliders go under "Opções"
-  const toggles = visibleOptions.filter((option) => option.type === 'toggle')
-  const settings = visibleOptions.filter((option) => option.type !== 'toggle')
-
   return (
     <div className="flex flex-col gap-y-6">
       {/* Every header in this row is a leading-none text-sm label followed by
@@ -154,71 +99,11 @@ export function Generator({
           </Select>
         </div>
 
-        {toggles.map(
-          (option) =>
-            option.type === 'toggle' && (
-              <SegmentedControl
-                key={option.name}
-                label={option.label}
-                value={String(optionValues[option.name])}
-                onChange={(value) => setOption(option.name, value)}
-                options={option.choices}
-              />
-            )
-        )}
-
-        {settings.length > 0 && (
-          <fieldset className="min-w-56 flex-1">
-            <legend className="mb-2 text-sm leading-none font-medium">
-              Opções
-            </legend>
-
-            <div className="space-y-3">
-              {settings.map((option) =>
-                option.type === 'boolean' ? (
-                  <div key={option.name} className="flex items-center gap-2">
-                    <Checkbox
-                      id={`${id}-${option.name}`}
-                      checked={Boolean(optionValues[option.name])}
-                      onCheckedChange={(checked) =>
-                        setOption(option.name, checked === true)
-                      }
-                    />
-                    <Label
-                      htmlFor={`${id}-${option.name}`}
-                      className="font-normal"
-                    >
-                      {option.label}
-                    </Label>
-                  </div>
-                ) : option.type === 'range' ? (
-                  <div key={option.name} className="space-y-2">
-                    <Label
-                      htmlFor={`${id}-${option.name}`}
-                      className="font-normal"
-                    >
-                      {option.label}:{' '}
-                      <span className="font-mono font-medium">
-                        {optionValues[option.name]}
-                      </span>
-                    </Label>
-                    <input
-                      type="range"
-                      id={`${id}-${option.name}`}
-                      min={option.min}
-                      max={option.max}
-                      value={Number(optionValues[option.name])}
-                      onChange={(event) =>
-                        setOption(option.name, Number(event.target.value))
-                      }
-                      className="w-full max-w-xs accent-primary"
-                    />
-                  </div>
-                ) : null
-              )}
-            </div>
-          </fieldset>
-        )}
+        <GeneratorOptions
+          options={visibleOptions}
+          values={values}
+          onChange={setOption}
+        />
       </div>
 
       <div className="space-y-1">
