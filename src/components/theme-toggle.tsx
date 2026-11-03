@@ -1,6 +1,6 @@
 'use client'
 
-import { Moon, Sun } from 'lucide-react'
+import { Monitor, Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { Button } from '@/components/ui/button'
 import {
@@ -27,9 +27,18 @@ export function ThemeToggle() {
 
       <DropdownMenuContent align="end">
         <DropdownMenuRadioGroup value={theme} onValueChange={setTheme}>
-          <DropdownMenuRadioItem value="light">Claro</DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="dark">Escuro</DropdownMenuRadioItem>
-          <DropdownMenuRadioItem value="system">Sistema</DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="light">
+            <Sun />
+            Claro
+          </DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="dark">
+            <Moon />
+            Escuro
+          </DropdownMenuRadioItem>
+          <DropdownMenuRadioItem value="system">
+            <Monitor />
+            Sistema
+          </DropdownMenuRadioItem>
         </DropdownMenuRadioGroup>
       </DropdownMenuContent>
     </DropdownMenu>
