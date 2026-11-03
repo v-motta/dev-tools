@@ -1,4 +1,5 @@
-import type React from 'react'
+import { setRequestLocale } from 'next-intl/server'
+import { LocaleSwitcher } from '@/components/locale-switcher'
 import { AppSidebar } from '@/components/sidebar/app-sidebar'
 import { AppBreadcrumb } from '@/components/sidebar/breadcrumb'
 import { ThemeToggle } from '@/components/theme-toggle'
@@ -10,8 +11,15 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from '@/components/ui/sidebar'
+import type { Locale } from '@/i18n/routing'
 
-export default function AppLayout({ children }: { children: React.ReactNode }) {
+export default async function AppLayout({
+  children,
+  params,
+}: LayoutProps<'/[locale]'>) {
+  // The root layout already checked that the locale is supported
+  setRequestLocale((await params).locale as Locale)
+
   return (
     <SidebarProvider>
       <ToolVisitTracker />
@@ -31,6 +39,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
           </div>
 
           <ToolSearch />
+          <LocaleSwitcher />
           <ThemeToggle />
         </header>
 

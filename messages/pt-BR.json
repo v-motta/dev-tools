@@ -1,0 +1,128 @@
+{
+  "metadata": {
+    "description": "Ferramentas poderosas para o dia a dia de desenvolvimento: geradores e validadores de CPF e CNPJ, senhas, UUIDs e calculadoras."
+  },
+  "sidebar": {
+    "tagline": "Ferramentas poderosas"
+  },
+  "breadcrumb": {
+    "home": "Início"
+  },
+  "theme": {
+    "label": "Tema",
+    "light": "Claro",
+    "dark": "Escuro",
+    "system": "Sistema"
+  },
+  "localeSwitcher": {
+    "label": "Idioma"
+  },
+  "search": {
+    "button": "Buscar ferramenta",
+    "placeholder": "Buscar ferramenta...",
+    "empty": "Nenhuma ferramenta encontrada."
+  },
+  "home": {
+    "title": "Ferramentas",
+    "intro": "Geradores, validadores e calculadoras para o dia a dia, com uma API aberta em cada ferramenta. Busque qualquer uma com <kbd>Ctrl K</kbd>.",
+    "recent": "Usadas recentemente",
+    "clearHistory": "Limpar histórico",
+    "popular": "Mais usadas"
+  },
+  "tools": {
+    "groups": {
+      "brazil": "Brasil",
+      "development": "Desenvolvimento",
+      "utilities": "Utilidades"
+    },
+    "menus": {
+      "documents": "Documentos",
+      "fakeData": "Dados fictícios",
+      "generators": "Geradores",
+      "calculators": "Calculadoras",
+      "draws": "Sorteios"
+    },
+    "items": {
+      "cpf": {
+        "title": "CPF",
+        "description": "Gere CPFs válidos para testes ou valide um CPF.",
+        "keywords": "gerador validador"
+      },
+      "cnpj": {
+        "title": "CNPJ",
+        "description": "Gere CNPJs ou empresas completas para testes, ou valide um CNPJ.",
+        "keywords": "gerador validador empresa razão social"
+      },
+      "rg": {
+        "title": "RG",
+        "description": "Gere RGs válidos para testes ou valide um RG.",
+        "keywords": "gerador validador identidade"
+      },
+      "cnh": {
+        "title": "CNH",
+        "description": "Gere CNHs válidas para testes ou valide uma CNH.",
+        "keywords": "gerador validador habilitação motorista"
+      },
+      "stateRegistration": {
+        "title": "Inscrição estadual",
+        "description": "Gere inscrições estaduais válidas de qualquer estado ou valide uma.",
+        "keywords": "gerador validador"
+      },
+      "person": {
+        "title": "Gerador de pessoa",
+        "description": "Gere uma pessoa com nome, documentos, contato e endereço real.",
+        "keywords": "dados fictícios identidade"
+      },
+      "cep": {
+        "title": "CEP",
+        "description": "Gere CEPs reais com endereço ou consulte um CEP.",
+        "keywords": "gerador consulta endereço"
+      },
+      "licensePlate": {
+        "title": "Gerador de placa",
+        "description": "Gere placas de veículo no padrão Mercosul ou antigo.",
+        "keywords": "carro moto veículo"
+      },
+      "password": {
+        "title": "Gerador de senha",
+        "description": "Gere senhas seguras e aleatórias.",
+        "keywords": "segura aleatória"
+      },
+      "uuid": {
+        "title": "Gerador de UUID",
+        "description": "Gere identificadores únicos no formato UUID v4.",
+        "keywords": "guid identificador"
+      },
+      "creditCard": {
+        "title": "Gerador de cartão de crédito",
+        "description": "Gere cartões válidos para testes, com bandeira, validade e CVV.",
+        "keywords": "cartão teste"
+      },
+      "bmi": {
+        "title": "Calculadora de IMC",
+        "description": "Calcule o Índice de Massa Corporal.",
+        "keywords": "peso altura"
+      },
+      "bmr": {
+        "title": "Calculadora de TMB",
+        "description": "Calcule a Taxa Metabólica Basal e o gasto calórico diário.",
+        "keywords": "calorias metabolismo"
+      },
+      "age": {
+        "title": "Calculadora de idade",
+        "description": "Descubra a idade exata a partir da data de nascimento.",
+        "keywords": "aniversário data"
+      },
+      "discount": {
+        "title": "Calculadora de desconto",
+        "description": "Calcule o valor do desconto e o preço final.",
+        "keywords": "preço porcentagem promoção"
+      },
+      "numbers": {
+        "title": "Sorteador de números",
+        "description": "Sorteie um ou mais números dentro de um intervalo.",
+        "keywords": "aleatório loteria rifa"
+      }
+    }
+  }
+}
