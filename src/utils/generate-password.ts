@@ -1,32 +1,56 @@
 import { randomInt } from 'node:crypto'
 
-const ALPHABET = 'abcdefghijklmnopqrstuvwxyz'
+export const PASSWORD_MIN_LENGTH = 8
+export const PASSWORD_MAX_LENGTH = 64
 
-function getRandomChars(length: number): string {
-  const chars = new Set<string>()
-  while (chars.size < length) {
-    const randomChar = ALPHABET[randomInt(0, ALPHABET.length)]
-    chars.add(randomChar)
-  }
+const LOWERCASE = 'abcdefghijklmnopqrstuvwxyz'
+const UPPERCASE = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+const NUMBERS = '0123456789'
+// No quotes, backslashes or spaces, which often break when pasted into
+// config files or shells
+const SYMBOLS = '!@#$%&*-_=+?'
 
-  return Array.from(chars).join('')
+export interface PasswordOptions {
+  length?: number
+  uppercase?: boolean
+  numbers?: boolean
+  symbols?: boolean
 }
 
-export function generatePassword() {
-  const randomPositions = new Set<number>()
-  while (randomPositions.size < 2) {
-    randomPositions.add(randomInt(18))
+function pick(chars: string) {
+  return chars[randomInt(chars.length)]
+}
+
+export function generatePassword({
+  length = 16,
+  uppercase = true,
+  numbers = true,
+  symbols = true,
+}: PasswordOptions = {}) {
+  if (length < PASSWORD_MIN_LENGTH || length > PASSWORD_MAX_LENGTH) {
+    throw new RangeError(
+      `The length must be between ${PASSWORD_MIN_LENGTH} and ${PASSWORD_MAX_LENGTH}.`
+    )
   }
 
-  const [uppercasePosition, digitPosition] = Array.from(randomPositions)
+  const sets = [
+    LOWERCASE,
+    uppercase && UPPERCASE,
+    numbers && NUMBERS,
+    symbols && SYMBOLS,
+  ].filter((set) => typeof set === 'string')
+  const pool = sets.join('')
 
-  const groups = new Set<string>()
-  while (groups.size < 3) groups.add(getRandomChars(6))
+  // One character from each enabled set guarantees the password meets the
+  // rules it was asked for; the rest come from all of them
+  const chars = sets.map(pick)
+  while (chars.length < length) chars.push(pick(pool))
 
-  const pool = Array.from(groups).join('').split('')
+  // Fisher-Yates, so the guaranteed characters don't always lead
+  for (let i = chars.length - 1; i > 0; i--) {
+    const j = randomInt(i + 1)
+    ;[chars[i], chars[j]] = [chars[j], chars[i]]
+  }
 
-  pool[uppercasePosition] = ALPHABET[randomInt(0, 26)].toUpperCase()
-  pool[digitPosition] = String(randomInt(10))
-
-  return `${pool.slice(0, 6).join('')}-${pool.slice(6, 12).join('')}-${pool.slice(12, 18).join('')}`
+  return chars.join('')
 }

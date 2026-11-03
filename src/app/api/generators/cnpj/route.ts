@@ -1,8 +1,11 @@
-import { NextResponse } from 'next/server'
+import { badRequest, generatorResponse, parseBooleanParam } from '@/lib/api'
 import { generateCNPJ } from '@/utils/generate-cnpj'
 
-export async function GET() {
-  const generatedCNPJ = generateCNPJ()
+export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url)
 
-  return NextResponse.json({ cnpj: generatedCNPJ })
+  const formatted = parseBooleanParam(searchParams, 'formatted', true)
+  if (formatted === null) return badRequest('formatted must be true or false.')
+
+  return generatorResponse(searchParams, 'cnpj', () => generateCNPJ(formatted))
 }
