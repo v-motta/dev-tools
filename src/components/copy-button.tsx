@@ -1,0 +1,54 @@
+'use client'
+
+import { Check, Copy } from 'lucide-react'
+import { useEffect, useState } from 'react'
+import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
+
+interface CopyButtonProps {
+  value: string
+  /** Accessible name, e.g. "Copiar CPF" */
+  label: string
+  /** Shows "Copiar"/"Copiado!" next to the icon instead of only the icon */
+  showText?: boolean
+  className?: string
+}
+
+export function CopyButton({
+  value,
+  label,
+  showText = false,
+  className,
+}: CopyButtonProps) {
+  const [isCopied, setIsCopied] = useState(false)
+
+  useEffect(() => {
+    if (!isCopied) return
+
+    const timeout = setTimeout(() => setIsCopied(false), 2000)
+    return () => clearTimeout(timeout)
+  }, [isCopied])
+
+  async function handleCopy() {
+    try {
+      await navigator.clipboard.writeText(value)
+      setIsCopied(true)
+    } catch {
+      // Clipboard access can be denied; the value is still selectable
+    }
+  }
+
+  return (
+    <Button
+      type="button"
+      variant="outline"
+      size={showText ? 'default' : 'icon'}
+      className={cn('shrink-0 text-muted-foreground', className)}
+      aria-label={isCopied ? 'Copiado' : label}
+      onClick={handleCopy}
+    >
+      {isCopied ? <Check className="text-emerald-500" /> : <Copy />}
+      {showText && (isCopied ? 'Copiado!' : 'Copiar')}
+    </Button>
+  )
+}

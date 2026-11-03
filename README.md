@@ -47,7 +47,22 @@ Every generator and validator is backed by a public REST endpoint:
 | POST   | `/api/validators/cpf`      | `{ "cpf": "529.982.247-25" }` → `{ "isValid": true }`                                     |
 | POST   | `/api/validators/cnpj`     | `{ "cnpj": "11.222.333/0001-81" }` → `{ "isValid": true }`                                |
 
-Invalid request bodies get a `400` response with a `{ "message": "..." }` explaining the problem.
+The generators accept optional query parameters:
+
+| Parameter                         | Generators | Description                                                                                           |
+| --------------------------------- | ---------- | ----------------------------------------------------------------------------------------------------- |
+| `quantity`                        | All        | 1 to 50 values at once. The response then holds a list under the plural key, e.g. `{ "cpfs": [...] }` |
+| `formatted`                       | CPF, CNPJ  | `false` returns digits only. Defaults to `true`                                                       |
+| `style`                           | Password   | `apple` (Apple's `abcdef-ghiJkl-mn4opq` format, the default) or `custom`                              |
+| `length`                          | Password   | With `style=custom`: 8 to 64 characters. Defaults to 16                                               |
+| `uppercase`, `numbers`, `symbols` | Password   | With `style=custom`: `false` leaves that kind of character out. All default to `true`                 |
+
+```bash
+curl "https://devtools.vmotta.dev/api/generators/cpf?quantity=2&formatted=false"
+# { "cpfs": ["52998224725", "11144477735"] }
+```
+
+Invalid parameters or request bodies get a `400` response with a `{ "message": "..." }` explaining the problem.
 
 ## 📚 Tech Stack
 
@@ -106,9 +121,11 @@ dev-tools/
    │  ├─ ui/                 # shadcn/ui components
    │  ├─ generator.tsx       # Shared UI for the generators
    │  ├─ document-validator.tsx  # Shared UI for the CPF/CNPJ validators
+   │  ├─ body-measurements.tsx   # Weight/height fields in metric or imperial units
+   │  ├─ tool-search.tsx     # Ctrl+K tool search
    │  └─ tool-grid.tsx       # Grid of tool cards
    ├─ hooks/                 # Custom hooks
-   ├─ lib/                   # API helpers and React Query setup
+   ├─ lib/                   # API helpers, locale formatting and React Query setup
    └─ utils/                 # CPF/CNPJ/password generation and validation
 ```
 

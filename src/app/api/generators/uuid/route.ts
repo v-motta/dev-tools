@@ -1,8 +1,8 @@
 import { randomUUID } from 'node:crypto'
-import { NextResponse } from 'next/server'
+import { generatorResponse } from '@/lib/api'
 
-export async function GET() {
-  const uuid = randomUUID()
+export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url)
 
-  return NextResponse.json({ uuid })
+  return generatorResponse(searchParams, 'uuid', () => randomUUID())
 }

@@ -65,12 +65,9 @@ export function RandomPicker() {
     <div className="space-y-4">
       <form action={drawNumbers} className="space-y-4">
         <div className="space-y-1">
-          <div className="flex items-baseline gap-2 flex-wrap">
-            Sortear
-            <div>
-              <Label htmlFor="random_count" className="sr-only">
-                Quantidade
-              </Label>
+          <div className="grid grid-cols-3 gap-3">
+            <div className="space-y-1">
+              <Label htmlFor="random_count">Quantidade</Label>
               <Input
                 id="random_count"
                 name="random_count"
@@ -82,11 +79,8 @@ export function RandomPicker() {
                 aria-describedby="random-error"
               />
             </div>
-            número(s) entre
-            <div>
-              <Label htmlFor="random_min" className="sr-only">
-                Mínimo
-              </Label>
+            <div className="space-y-1">
+              <Label htmlFor="random_min">Mínimo</Label>
               <Input
                 id="random_min"
                 name="random_min"
@@ -98,11 +92,8 @@ export function RandomPicker() {
                 aria-describedby="random-error"
               />
             </div>
-            e
-            <div>
-              <Label htmlFor="random_max" className="sr-only">
-                Máximo
-              </Label>
+            <div className="space-y-1">
+              <Label htmlFor="random_max">Máximo</Label>
               <Input
                 id="random_max"
                 name="random_max"
@@ -134,7 +125,7 @@ export function RandomPicker() {
         }
       >
         {drawnNumbers.length > 0 && (
-          <p className="text-2xl font-mono break-words">
+          <p className="text-2xl font-mono wrap-break-word">
             {drawnNumbers.map((number) => formatNumber(number)).join(', ')}
           </p>
         )}

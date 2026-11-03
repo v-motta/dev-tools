@@ -30,3 +30,47 @@ export function parseInteger(value: unknown): number | null {
 
   return Number.isSafeInteger(number) ? number : null
 }
+
+/**
+ * Reads a `true`/`false` query parameter. Returns `fallback` when it is
+ * missing and `null` when it has any other value.
+ */
+export function parseBooleanParam(
+  searchParams: URLSearchParams,
+  name: string,
+  fallback: boolean
+): boolean | null {
+  const value = searchParams.get(name)
+  if (value === null) return fallback
+  if (value === 'true') return true
+  if (value === 'false') return false
+
+  return null
+}
+
+export const MAX_GENERATOR_QUANTITY = 50
+
+/**
+ * Responds with `{ [field]: value }`, or with `{ [field + 's']: values }`
+ * when `?quantity=` is given, so the single-value shape stays unchanged.
+ */
+export function generatorResponse(
+  searchParams: URLSearchParams,
+  field: string,
+  generate: () => string
+) {
+  if (!searchParams.has('quantity')) {
+    return NextResponse.json({ [field]: generate() })
+  }
+
+  const quantity = parseInteger(searchParams.get('quantity'))
+  if (quantity === null || quantity < 1 || quantity > MAX_GENERATOR_QUANTITY) {
+    return badRequest(
+      `The quantity must be an integer between 1 and ${MAX_GENERATOR_QUANTITY}.`
+    )
+  }
+
+  return NextResponse.json({
+    [`${field}s`]: Array.from({ length: quantity }, () => generate()),
+  })
+}

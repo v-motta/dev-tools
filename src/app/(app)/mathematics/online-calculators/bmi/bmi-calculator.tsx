@@ -1,11 +1,11 @@
 'use client'
 
-import { useState } from 'react'
+import {
+  BodyMeasurementsFields,
+  useBodyMeasurements,
+} from '@/components/body-measurements'
 import { ResultCard } from '@/components/result-card'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { formatNumber, parseDecimal } from '@/lib/locale'
+import { formatNumber } from '@/lib/locale'
 
 // WHO adult classification; `max` is exclusive
 const bmiRanges = [
@@ -80,25 +80,16 @@ function BmiScale({ bmi }: { bmi: number }) {
 }
 
 export function BMICalculator() {
-  const [bmi, setBmi] = useState<number>()
+  const body = useBodyMeasurements()
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault()
-
-    const data = new FormData(event.currentTarget)
-    const weight = parseDecimal(String(data.get('weight')))
-    const height = parseDecimal(String(data.get('height'))) / 100
-
-    if (Number.isNaN(weight) || Number.isNaN(height)) return
-
-    setBmi(weight / (height * height))
-  }
-
+  const bmi = body.values
+    ? body.values.weightKg / (body.values.heightCm / 100) ** 2
+    : undefined
   const range =
     bmi === undefined ? undefined : bmiRanges.find((r) => bmi < r.max)
 
   return (
-    <div className="space-y-8 w-full lg:w-1/2 2xl:w-1/3">
+    <div className="w-full max-w-2xl space-y-8">
       <div className="space-y-3">
         <h1 className="text-2xl font-bold font-mono">Calculadora de IMC</h1>
 
@@ -108,34 +99,9 @@ export function BMICalculator() {
       </div>
 
       <div className="space-y-4">
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="space-y-1">
-            <Label htmlFor="weight">Peso (kg)</Label>
-            <Input
-              type="number"
-              id="weight"
-              name="weight"
-              min="30"
-              max="300"
-              step="0.1"
-              required
-            />
-          </div>
-
-          <div className="space-y-1">
-            <Label htmlFor="height">Altura (cm)</Label>
-            <Input
-              type="number"
-              id="height"
-              name="height"
-              min="100"
-              max="250"
-              required
-            />
-          </div>
-
-          <Button className="w-full">Calcular IMC</Button>
-        </form>
+        <div className="space-y-2">
+          <BodyMeasurementsFields {...body} />
+        </div>
 
         <ResultCard>
           {bmi !== undefined && range && (

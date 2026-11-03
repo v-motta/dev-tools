@@ -1,4 +1,4 @@
-export function generateCNPJ() {
+export function generateCNPJ(formatted = true) {
   const base = Array.from({ length: 12 }, () => Math.floor(Math.random() * 10))
 
   let sum = 0
@@ -19,7 +19,9 @@ export function generateCNPJ() {
   const secondDigit = sum % 11 < 2 ? 0 : 11 - (sum % 11)
   base.push(secondDigit)
 
-  return base
-    .join('')
-    .replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})$/, '$1.$2.$3/$4-$5')
+  const cnpj = base.join('')
+
+  return formatted
+    ? cnpj.replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})$/, '$1.$2.$3/$4-$5')
+    : cnpj
 }
