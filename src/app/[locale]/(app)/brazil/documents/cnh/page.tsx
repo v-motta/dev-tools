@@ -1,77 +1,62 @@
-import type { Metadata } from 'next'
+import { getTranslations } from 'next-intl/server'
 import { ApiUsage } from '@/components/api-usage'
 import { DocumentValidator } from '@/components/document-validator'
 import { Generator } from '@/components/generator'
 import { HowItWorks } from '@/components/how-it-works'
 import { ToolModes } from '@/components/tool-modes'
+import { initPage, toolMetadata } from '@/i18n/page'
 
-export const metadata: Metadata = {
-  title: 'Gerador e validador de CNH',
-  description:
-    'Gere números de CNH válidos para testes ou confira na hora se uma CNH é válida.',
-  keywords: [
-    'gerador de cnh',
-    'gerador de cnh online',
-    'gerador de cnh válida',
-    'validador de cnh',
-    'validador de cnh online',
-  ],
-}
+export const generateMetadata = toolMetadata('cnh')
 
-export default function CNHPage() {
+export default async function CNHPage({
+  params,
+}: PageProps<'/[locale]/brazil/documents/cnh'>) {
+  await initPage(params)
+  const t = await getTranslations('pages.cnh')
+  const tCommon = await getTranslations('common')
+  const tApi = await getTranslations('apiUsage')
+
   return (
     <div className="w-full max-w-2xl space-y-8">
       <div className="space-y-3">
-        <h1 className="text-2xl font-bold font-mono">
-          Gerador e validador de CNH
-        </h1>
+        <h1 className="text-2xl font-bold font-mono">{t('title')}</h1>
 
-        <p className="text-muted-foreground text-balance">
-          Gere números de CNH válidos para usar em testes ou confira se uma CNH
-          é válida.
-        </p>
+        <p className="text-muted-foreground text-balance">{t('intro')}</p>
       </div>
 
       <ToolModes
         modes={[
           {
             value: 'generate',
-            label: 'Gerar',
+            label: tCommon('generate'),
             content: (
               <>
                 <p className="text-muted-foreground text-balance">
-                  Uma CNH válida é gerada ao abrir a página. Escolha a
-                  quantidade ou clique em "Gerar CNH" para criar outra.
+                  {t('generate.intro')}
                 </p>
 
                 <Generator
                   name="CNH"
-                  label="CNH gerada"
-                  pluralLabel="CNHs geradas"
+                  label={t('generate.label')}
+                  pluralLabel={t('generate.pluralLabel')}
                   endpoint="/api/generators/cnh"
                   field="cnh"
                 />
 
-                <HowItWorks
-                  items={[
-                    'A CNH é gerada no servidor e não fica armazenada em lugar nenhum.',
-                    'O número gerado é o número de registro, com 11 dígitos, o mesmo que os sistemas pedem.',
-                    'Os dois dígitos verificadores seguem a regra do Denatran.',
-                    'O número serve apenas para testes e não pertence a nenhuma pessoa real.',
-                    'Os últimos valores gerados ficam listados abaixo do botão até você sair da página.',
-                  ]}
-                />
+                <HowItWorks items={t.raw('generate.howItWorks')} />
 
                 <ApiUsage
-                  name="gerador de CNH"
+                  name={t('generate.apiName')}
                   method="GET"
                   path="/api/generators/cnh"
                   query={{ quantity: '2' }}
                   parameters={[
                     {
                       name: 'quantity',
-                      description:
-                        'Opcional. De 1 a 50. Quando informado, a resposta traz a lista "cnhs" em vez de "cnh".',
+                      description: tApi('quantity', {
+                        list: 'cnhs',
+                        single: 'cnh',
+                      }),
                     },
                   ]}
                   response={{ cnhs: ['25755879684', '61360956403'] }}
@@ -81,36 +66,24 @@ export default function CNHPage() {
           },
           {
             value: 'validate',
-            label: 'Validar',
+            label: tCommon('validate'),
             content: (
               <>
                 <p className="text-muted-foreground text-balance">
-                  Digite o número de registro da CNH e clique em "Validar CNH"
-                  para saber se ele é válido.
+                  {t('validate.intro')}
                 </p>
 
                 <DocumentValidator document="cnh" />
 
-                <HowItWorks
-                  items={[
-                    'A validação é feita no servidor e nada fica armazenado.',
-                    'São verificados os 11 dígitos e os dois dígitos verificadores.',
-                    'O número de registro fica no campo "Nº Registro" da CNH.',
-                    'O resultado aparece logo abaixo do campo.',
-                  ]}
-                />
+                <HowItWorks items={t.raw('validate.howItWorks')} />
 
                 <ApiUsage
-                  name="validador de CNH"
+                  name={t('validate.apiName')}
                   method="POST"
                   path="/api/validators/cnh"
                   body={{ cnh: '61173562148' }}
                   parameters={[
-                    {
-                      name: 'cnh',
-                      description:
-                        'Obrigatório. Os 11 dígitos do número de registro.',
-                    },
+                    { name: 'cnh', description: t('validate.apiCnh') },
                   ]}
                   response={{ isValid: true }}
                 />

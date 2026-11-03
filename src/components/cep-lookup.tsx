@@ -2,27 +2,30 @@
 
 import ky, { HTTPError } from 'ky'
 import { LoaderCircle } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 import { type FormEvent, useId, useState } from 'react'
-import { type RecordField, RecordList } from '@/components/record-list'
+import { RecordList } from '@/components/record-list'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 
-const ADDRESS_FIELDS: RecordField[] = [
-  { key: 'cep', label: 'CEP' },
-  { key: 'street', label: 'Logradouro' },
-  { key: 'complement', label: 'Complemento' },
-  { key: 'neighborhood', label: 'Bairro' },
-  { key: 'city', label: 'Cidade' },
-  { key: 'state', label: 'Estado' },
-  { key: 'ddd', label: 'DDD' },
-]
+const ADDRESS_FIELDS = [
+  'cep',
+  'street',
+  'complement',
+  'neighborhood',
+  'city',
+  'state',
+  'ddd',
+] as const
 
 type Result =
   | { status: 'found'; address: Record<string, string> }
   | { status: 'not-found' | 'error' }
 
 export function CepLookup() {
+  const t = useTranslations('cepLookup')
+  const tFields = useTranslations('fields')
   const id = useId()
   const [cep, setCep] = useState('')
   const [isPending, setIsPending] = useState(false)
@@ -60,7 +63,7 @@ export function CepLookup() {
     <div className="space-y-6">
       <form onSubmit={handleOnSubmit} className="space-y-4">
         <div className="space-y-1">
-          <Label htmlFor={id}>Digite o CEP</Label>
+          <Label htmlFor={id}>{t('label')}</Label>
           <Input
             type="text"
             inputMode="numeric"
@@ -76,21 +79,28 @@ export function CepLookup() {
 
         <Button className="w-full" disabled={isPending}>
           {isPending ? (
-            <LoaderCircle className="animate-spin" aria-label="Consultando" />
+            <LoaderCircle
+              className="animate-spin"
+              aria-label={t('searching')}
+            />
           ) : (
-            'Consultar CEP'
+            t('button')
           )}
         </Button>
       </form>
 
       <div role="status">
         {result?.status === 'found' ? (
-          <RecordList fields={ADDRESS_FIELDS} record={result.address} />
+          <RecordList
+            fields={ADDRESS_FIELDS.map((key) => ({
+              key,
+              label: tFields(key),
+            }))}
+            record={result.address}
+          />
         ) : result ? (
           <p className="text-sm font-medium text-red-500">
-            {result.status === 'not-found'
-              ? 'CEP não encontrado.'
-              : 'Não foi possível consultar o CEP. Tente novamente.'}
+            {result.status === 'not-found' ? t('notFound') : t('error')}
           </p>
         ) : null}
       </div>

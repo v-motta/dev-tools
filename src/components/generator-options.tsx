@@ -1,5 +1,6 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
 import { useEffect, useId, useState } from 'react'
 import { SegmentedControl } from '@/components/segmented-control'
 import { Checkbox } from '@/components/ui/checkbox'
@@ -101,7 +102,7 @@ interface GeneratorOptionsProps {
 /**
  * The option controls of a generator. Toggles and selects come first, next to
  * whatever the parent puts before them; checkboxes and sliders go under
- * "Opções". Meant to sit in a flex row where every header is a leading-none
+ * "Options". Meant to sit in a flex row where every header is a leading-none
  * text-sm label followed by an 8px gap, so the controls line up.
  */
 export function GeneratorOptions({
@@ -109,6 +110,7 @@ export function GeneratorOptions({
   values,
   onChange,
 }: GeneratorOptionsProps) {
+  const t = useTranslations('generator')
   const id = useId()
   const settings = options.filter(
     (option) => option.type === 'boolean' || option.type === 'range'
@@ -150,7 +152,7 @@ export function GeneratorOptions({
       {settings.length > 0 && (
         <fieldset className="min-w-56 flex-1">
           <legend className="mb-2 text-sm leading-none font-medium">
-            Opções
+            {t('options')}
           </legend>
 
           <div className="space-y-3">

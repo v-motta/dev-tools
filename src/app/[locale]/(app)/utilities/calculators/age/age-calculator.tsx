@@ -10,15 +10,18 @@ import {
   subMonths,
   subYears,
 } from 'date-fns'
+import { useTranslations } from 'next-intl'
 import { useState } from 'react'
+import { HowItWorks } from '@/components/how-it-works'
 import { ResultCard } from '@/components/result-card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { pluralize } from '@/lib/locale'
 
 const MIN_YEAR = 1900
 
-function calculateAge(value: string): { age?: string; error?: string } {
+type Age = { years: number; months: number; days: number }
+
+function calculateAge(value: string): { age?: Age; isFuture?: boolean } {
   // A date input's value is always yyyy-MM-dd, whatever the display locale
   const date = parseISO(value)
 
@@ -28,7 +31,7 @@ function calculateAge(value: string): { age?: string; error?: string } {
 
   const now = new Date()
   if (isAfter(date, now)) {
-    return { error: 'A data de nascimento não pode estar no futuro.' }
+    return { isFuture: true }
   }
 
   const years = differenceInYears(now, date)
@@ -39,28 +42,26 @@ function calculateAge(value: string): { age?: string; error?: string } {
   const afterMonths = subMonths(afterYears, months)
   const days = differenceInDays(afterMonths, date)
 
-  return {
-    age: `${pluralize(years, 'ano', 'anos')}, ${pluralize(months, 'mês', 'meses')} e ${pluralize(days, 'dia', 'dias')}`,
-  }
+  return { age: { years, months, days } }
 }
 
 export function AgeCalculator() {
+  const t = useTranslations('pages.age')
   const [birthdate, setBirthdate] = useState('')
-  const { age, error = '' } = calculateAge(birthdate)
+  const { age, isFuture } = calculateAge(birthdate)
+  const error = isFuture ? t('future') : ''
 
   return (
     <div className="w-full max-w-2xl space-y-8">
       <div className="space-y-3">
-        <h1 className="text-2xl font-bold font-mono">Calculadora de idade</h1>
+        <h1 className="text-2xl font-bold font-mono">{t('title')}</h1>
 
-        <p className="text-muted-foreground text-balance">
-          Descubra a idade exata a partir da data de nascimento.
-        </p>
+        <p className="text-muted-foreground text-balance">{t('intro')}</p>
       </div>
 
       <div className="space-y-4">
         <div className="space-y-1">
-          <Label htmlFor="birthdate">Data de nascimento</Label>
+          <Label htmlFor="birthdate">{t('birthdate')}</Label>
           <Input
             type="date"
             id="birthdate"
@@ -81,27 +82,11 @@ export function AgeCalculator() {
         </div>
 
         <ResultCard>
-          {age && <p className="text-2xl font-mono">{age}</p>}
+          {age && <p className="text-2xl font-mono">{t('result', age)}</p>}
         </ResultCard>
       </div>
 
-      <div>
-        <h2 className="text-lg font-medium mb-2">Como funciona</h2>
-
-        <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-          <li>
-            A idade é a diferença entre a data de nascimento e a data de hoje.
-          </li>
-          <li>O resultado mostra os anos, meses e dias exatos.</li>
-          <li>
-            Anos bissextos e meses de tamanhos diferentes são considerados.
-          </li>
-          <li>
-            O cálculo é feito no seu navegador: a data não é enviada nem
-            armazenada.
-          </li>
-        </ul>
-      </div>
+      <HowItWorks items={t.raw('howItWorks')} />
     </div>
   )
 }

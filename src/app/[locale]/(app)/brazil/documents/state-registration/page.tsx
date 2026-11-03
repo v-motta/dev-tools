@@ -1,104 +1,81 @@
-import type { Metadata } from 'next'
+import { getTranslations } from 'next-intl/server'
 import { ApiUsage } from '@/components/api-usage'
 import { DocumentValidator } from '@/components/document-validator'
 import { Generator } from '@/components/generator'
 import { HowItWorks } from '@/components/how-it-works'
 import { ToolModes } from '@/components/tool-modes'
+import { initPage, toolMetadata } from '@/i18n/page'
 import { STATE_CHOICES } from '@/utils/states'
 
-export const metadata: Metadata = {
-  title: 'Gerador e validador de inscrição estadual',
-  description:
-    'Gere inscrições estaduais válidas para testes em qualquer estado ou confira se uma inscrição estadual é válida.',
-  keywords: [
-    'gerador de inscrição estadual',
-    'gerador de inscrição estadual online',
-    'gerador de ie',
-    'validador de inscrição estadual',
-    'validador de ie',
-  ],
-}
+export const generateMetadata = toolMetadata('stateRegistration')
 
-export default function StateRegistrationPage() {
+export default async function StateRegistrationPage({
+  params,
+}: PageProps<'/[locale]/brazil/documents/state-registration'>) {
+  await initPage(params)
+  const t = await getTranslations('pages.stateRegistration')
+  const tCommon = await getTranslations('common')
+  const tApi = await getTranslations('apiUsage')
+
   return (
     <div className="w-full max-w-2xl space-y-8">
       <div className="space-y-3">
-        <h1 className="text-2xl font-bold font-mono">
-          Gerador e validador de inscrição estadual
-        </h1>
+        <h1 className="text-2xl font-bold font-mono">{t('title')}</h1>
 
-        <p className="text-muted-foreground text-balance">
-          Gere inscrições estaduais válidas para usar em testes ou confira se
-          uma inscrição é válida, em qualquer estado.
-        </p>
+        <p className="text-muted-foreground text-balance">{t('intro')}</p>
       </div>
 
       <ToolModes
         modes={[
           {
             value: 'generate',
-            label: 'Gerar',
+            label: tCommon('generate'),
             content: (
               <>
                 <p className="text-muted-foreground text-balance">
-                  Uma inscrição estadual de São Paulo é gerada ao abrir a
-                  página. Escolha o estado, a quantidade e o formato, ou clique
-                  em "Gerar inscrição estadual" para criar outra.
+                  {t('generate.intro')}
                 </p>
 
                 <Generator
-                  name="inscrição estadual"
-                  label="Inscrição estadual gerada"
-                  pluralLabel="Inscrições estaduais geradas"
+                  name={t('generate.name')}
+                  label={t('generate.label')}
+                  pluralLabel={t('generate.pluralLabel')}
                   endpoint="/api/generators/state-registration"
                   field="stateRegistration"
                   options={[
                     {
                       type: 'select',
                       name: 'state',
-                      label: 'Estado',
+                      label: tCommon('state'),
                       defaultValue: 'SP',
                       choices: STATE_CHOICES,
                     },
                     {
                       type: 'boolean',
                       name: 'formatted',
-                      label: 'Com pontuação',
+                      label: tCommon('formatted'),
                       defaultValue: true,
                     },
                   ]}
                 />
 
-                <HowItWorks
-                  items={[
-                    'A inscrição é gerada no servidor e não fica armazenada em lugar nenhum.',
-                    'Cada estado tem o próprio tamanho, prefixo e cálculo dos dígitos verificadores, e o gerador segue a especificação do SINTEGRA de cada um.',
-                    'Em São Paulo, o gerador cria a inscrição de indústria e comércio, de 12 dígitos.',
-                    'O número serve apenas para testes e não pertence a nenhuma empresa real.',
-                    'Os últimos valores gerados ficam listados abaixo do botão até você sair da página.',
-                  ]}
-                />
+                <HowItWorks items={t.raw('generate.howItWorks')} />
 
                 <ApiUsage
-                  name="gerador de inscrição estadual"
+                  name={t('generate.apiName')}
                   method="GET"
                   path="/api/generators/state-registration"
                   query={{ state: 'MG', quantity: '2' }}
                   parameters={[
-                    {
-                      name: 'state',
-                      description: 'Obrigatório. A sigla do estado, como "SP".',
-                    },
+                    { name: 'state', description: tApi('stateRequired') },
                     {
                       name: 'quantity',
-                      description:
-                        'Opcional. De 1 a 50. Quando informado, a resposta traz a lista "stateRegistrations" em vez de "stateRegistration".',
+                      description: tApi('quantity', {
+                        list: 'stateRegistrations',
+                        single: 'stateRegistration',
+                      }),
                     },
-                    {
-                      name: 'formatted',
-                      description:
-                        'Opcional. "false" gera só os números. Padrão: "true".',
-                    },
+                    { name: 'formatted', description: tApi('formatted') },
                   ]}
                   response={{
                     stateRegistrations: [
@@ -112,41 +89,28 @@ export default function StateRegistrationPage() {
           },
           {
             value: 'validate',
-            label: 'Validar',
+            label: tCommon('validate'),
             content: (
               <>
                 <p className="text-muted-foreground text-balance">
-                  Escolha o estado, digite a inscrição e clique em "Validar
-                  inscrição estadual" para saber se ela é válida.
+                  {t('validate.intro')}
                 </p>
 
                 <DocumentValidator document="state-registration" />
 
-                <HowItWorks
-                  items={[
-                    'A validação é feita no servidor e nada fica armazenado.',
-                    'São verificados o tamanho, o prefixo e os dígitos verificadores que o estado escolhido exige.',
-                    'A inscrição pode ser digitada com ou sem pontuação.',
-                    'Em São Paulo, só a inscrição de indústria e comércio é aceita; a de produtor rural, que começa com P, não.',
-                    'O resultado aparece logo abaixo do campo.',
-                  ]}
-                />
+                <HowItWorks items={t.raw('validate.howItWorks')} />
 
                 <ApiUsage
-                  name="validador de inscrição estadual"
+                  name={t('validate.apiName')}
                   method="POST"
                   path="/api/validators/state-registration"
                   body={{ stateRegistration: '110.042.490.114', state: 'SP' }}
                   parameters={[
                     {
                       name: 'stateRegistration',
-                      description:
-                        'Obrigatório. O número com ou sem pontuação.',
+                      description: tApi('documentRequired'),
                     },
-                    {
-                      name: 'state',
-                      description: 'Obrigatório. A sigla do estado, como "SP".',
-                    },
+                    { name: 'state', description: tApi('stateRequired') },
                   ]}
                   response={{ isValid: true }}
                 />

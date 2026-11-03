@@ -1,79 +1,58 @@
-import type { Metadata } from 'next'
+import { getTranslations } from 'next-intl/server'
 import { ApiUsage } from '@/components/api-usage'
 import { Generator } from '@/components/generator'
 import { HowItWorks } from '@/components/how-it-works'
+import { initPage, toolMetadata } from '@/i18n/page'
 
-export const metadata: Metadata = {
-  title: 'Gerador de placa de veículo',
-  description:
-    'Gere placas de carro e moto aleatórias no padrão Mercosul ou no modelo antigo.',
-  keywords: [
-    'gerador de placa',
-    'gerador de placa de carro',
-    'gerador de placa mercosul',
-    'gerador de placa de veículo',
-  ],
-}
+export const generateMetadata = toolMetadata('licensePlate')
 
-export default function LicensePlateGeneratorPage() {
+export default async function LicensePlateGeneratorPage({
+  params,
+}: PageProps<'/[locale]/brazil/fake-data/license-plate'>) {
+  await initPage(params)
+  const t = await getTranslations('pages.licensePlate')
+  const tApi = await getTranslations('apiUsage')
+
   return (
     <div className="w-full max-w-2xl space-y-8">
       <div className="space-y-3">
-        <h1 className="text-2xl font-bold font-mono">
-          Gerador de placa de veículo
-        </h1>
+        <h1 className="text-2xl font-bold font-mono">{t('title')}</h1>
 
-        <p className="text-muted-foreground text-balance">
-          Uma placa no padrão Mercosul é gerada ao abrir a página. Escolha a
-          quantidade e o padrão, ou clique em "Gerar placa" para criar outra.
-        </p>
+        <p className="text-muted-foreground text-balance">{t('intro')}</p>
       </div>
 
       <Generator
-        name="placa"
-        label="Placa gerada"
-        pluralLabel="Placas geradas"
+        name={t('name')}
+        label={t('label')}
+        pluralLabel={t('pluralLabel')}
         endpoint="/api/generators/license-plate"
         field="plate"
         options={[
           {
             type: 'toggle',
             name: 'format',
-            label: 'Padrão',
+            label: t('format'),
             defaultValue: 'mercosul',
             choices: [
               { value: 'mercosul', label: 'Mercosul' },
-              { value: 'old', label: 'Antigo' },
+              { value: 'old', label: t('old') },
             ],
           },
         ]}
       />
 
-      <HowItWorks
-        items={[
-          'A placa é gerada no servidor e não fica armazenada em lugar nenhum.',
-          'O padrão Mercosul tem três letras, um número, uma letra e dois números (ABC1D23).',
-          'O modelo antigo tem três letras e quatro números (ABC-1234).',
-          'A placa é sorteada e pode coincidir com a de um veículo real; use só para testes.',
-          'Os últimos valores gerados ficam listados abaixo do botão até você sair da página.',
-        ]}
-      />
+      <HowItWorks items={t.raw('howItWorks')} />
 
       <ApiUsage
-        name="gerador de placa"
+        name={t('apiName')}
         method="GET"
         path="/api/generators/license-plate"
         query={{ format: 'old', quantity: '2' }}
         parameters={[
-          {
-            name: 'format',
-            description:
-              'Opcional. "mercosul" (ABC1D23) ou "old" (ABC-1234). Padrão: "mercosul".',
-          },
+          { name: 'format', description: t('apiFormat') },
           {
             name: 'quantity',
-            description:
-              'Opcional. De 1 a 50. Quando informado, a resposta traz a lista "plates" em vez de "plate".',
+            description: tApi('quantity', { list: 'plates', single: 'plate' }),
           },
         ]}
         response={{ plates: ['RGR-4064', 'KQT-1182'] }}

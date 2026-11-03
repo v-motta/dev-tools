@@ -20,13 +20,6 @@ export function formatNumber(
   return new Intl.NumberFormat(LOCALE, options).format(value)
 }
 
-const pluralRules = new Intl.PluralRules(LOCALE)
-
-/** Picks the singular or plural form, e.g. `pluralize(2, 'ano', 'anos')`. */
-export function pluralize(count: number, one: string, other: string) {
-  return `${formatNumber(count)} ${pluralRules.select(count) === 'one' ? one : other}`
-}
-
 /** Parses a number typed with either a comma or a dot as the decimal separator. */
 export function parseDecimal(value: string) {
   const normalized = value.trim().replace(',', '.')

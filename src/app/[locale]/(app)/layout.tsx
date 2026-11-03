@@ -1,4 +1,3 @@
-import { setRequestLocale } from 'next-intl/server'
 import { LocaleSwitcher } from '@/components/locale-switcher'
 import { AppSidebar } from '@/components/sidebar/app-sidebar'
 import { AppBreadcrumb } from '@/components/sidebar/breadcrumb'
@@ -11,14 +10,13 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from '@/components/ui/sidebar'
-import type { Locale } from '@/i18n/routing'
+import { initPage } from '@/i18n/page'
 
 export default async function AppLayout({
   children,
   params,
 }: LayoutProps<'/[locale]'>) {
-  // The root layout already checked that the locale is supported
-  setRequestLocale((await params).locale as Locale)
+  await initPage(params)
 
   return (
     <SidebarProvider>

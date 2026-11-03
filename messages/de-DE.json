@@ -124,5 +124,704 @@
         "keywords": "Zufall Lotterie Verlosung"
       }
     }
+  },
+  "common": {
+    "howItWorks": "So funktioniert es",
+    "result": "Ergebnis",
+    "modesLabel": "Was möchtest du tun?",
+    "generate": "Erzeugen",
+    "validate": "Prüfen",
+    "state": "Bundesstaat",
+    "anyState": "Beliebiger Bundesstaat",
+    "formatted": "Mit Satzzeichen"
+  },
+  "copyButton": {
+    "copy": "Kopieren",
+    "copied": "Kopiert!",
+    "copiedLabel": "Kopiert"
+  },
+  "generator": {
+    "quantity": "Anzahl",
+    "options": "Optionen",
+    "error": "Erzeugen fehlgeschlagen. Bitte versuche es erneut.",
+    "generating": "Wird erzeugt",
+    "tryAgain": "Erneut versuchen",
+    "generate": "{name} erzeugen",
+    "copy": "{name} kopieren",
+    "copyItem": "{name} {index} kopieren",
+    "copyAll": "Alle kopieren",
+    "history": "Zuvor erzeugt",
+    "clear": "Leeren",
+    "copyPrevious": "{name} {index} aus dem Verlauf kopieren",
+    "copyJson": "JSON kopieren",
+    "copyJsonLabel": "Als JSON kopieren"
+  },
+  "recordList": {
+    "copy": "{field} kopieren"
+  },
+  "fields": {
+    "companyName": "Firmenname",
+    "tradeName": "Handelsname",
+    "cnpj": "CNPJ",
+    "stateRegistration": "Landessteuernummer",
+    "foundedAt": "Gründungsdatum",
+    "email": "E-Mail",
+    "website": "Website",
+    "phone": "Telefon",
+    "cep": "CEP",
+    "street": "Straße",
+    "number": "Hausnummer",
+    "complement": "Zusatz",
+    "neighborhood": "Stadtteil",
+    "city": "Stadt",
+    "state": "Bundesstaat",
+    "ddd": "Vorwahl (DDD)",
+    "name": "Name",
+    "sex": "Geschlecht",
+    "cpf": "CPF",
+    "rg": "RG",
+    "birthdate": "Geburtsdatum",
+    "age": "Alter",
+    "motherName": "Mutter",
+    "fatherName": "Vater",
+    "password": "Passwort",
+    "mobilePhone": "Handy",
+    "landlinePhone": "Festnetz",
+    "height": "Größe",
+    "weight": "Gewicht",
+    "bloodType": "Blutgruppe",
+    "cardNumber": "Nummer",
+    "brand": "Kartenmarke",
+    "holder": "Name des Karteninhabers",
+    "expiry": "Ablaufdatum",
+    "cvv": "CVV"
+  },
+  "apiUsage": {
+    "title": "So nutzt du die API",
+    "intro": "Du kannst {name} über unsere REST-API in deine Anwendung einbinden.",
+    "endpoint": "Endpunkt",
+    "queryParameters": "Query-Parameter",
+    "requestBody": "Request-Body",
+    "curlExample": "Beispiel mit curl",
+    "exampleBody": "Beispiel-Body",
+    "response": "Antwort",
+    "copy": "{label} kopieren",
+    "quantity": "Optional. Von 1 bis 50. Wenn angegeben, enthält die Antwort die Liste \"{list}\" statt \"{single}\".",
+    "formatted": "Optional. \"false\" erzeugt nur Ziffern. Standard: \"true\".",
+    "stateOptional": "Optional. Das Kürzel des Bundesstaats, z. B. \"SP\". Ohne Angabe wird der Bundesstaat zufällig gewählt.",
+    "stateRequired": "Pflichtfeld. Das Kürzel des Bundesstaats, z. B. \"SP\".",
+    "documentRequired": "Pflichtfeld. Die Nummer mit oder ohne Satzzeichen."
+  },
+  "documentValidator": {
+    "validating": "Wird geprüft",
+    "cpf": {
+      "label": "CPF eingeben",
+      "valid": "Gültige CPF",
+      "invalid": "Ungültige CPF",
+      "error": "Die CPF konnte nicht geprüft werden. Bitte versuche es erneut.",
+      "button": "CPF prüfen"
+    },
+    "cnpj": {
+      "label": "CNPJ eingeben",
+      "valid": "Gültige CNPJ",
+      "invalid": "Ungültige CNPJ",
+      "error": "Die CNPJ konnte nicht geprüft werden. Bitte versuche es erneut.",
+      "button": "CNPJ prüfen"
+    },
+    "rg": {
+      "label": "RG eingeben",
+      "valid": "Gültiger RG",
+      "invalid": "Ungültiger RG",
+      "error": "Der RG konnte nicht geprüft werden. Bitte versuche es erneut.",
+      "button": "RG prüfen"
+    },
+    "cnh": {
+      "label": "CNH eingeben",
+      "valid": "Gültige CNH",
+      "invalid": "Ungültige CNH",
+      "error": "Die CNH konnte nicht geprüft werden. Bitte versuche es erneut.",
+      "button": "CNH prüfen"
+    },
+    "state-registration": {
+      "label": "Landessteuernummer eingeben",
+      "valid": "Gültige Landessteuernummer",
+      "invalid": "Ungültige Landessteuernummer",
+      "error": "Die Landessteuernummer konnte nicht geprüft werden. Bitte versuche es erneut.",
+      "button": "Landessteuernummer prüfen",
+      "placeholder": "Mit oder ohne Satzzeichen"
+    }
+  },
+  "cepLookup": {
+    "label": "CEP eingeben",
+    "searching": "Wird abgefragt",
+    "button": "CEP abfragen",
+    "notFound": "CEP nicht gefunden.",
+    "error": "Die CEP konnte nicht abgefragt werden. Bitte versuche es erneut."
+  },
+  "bodyMeasurements": {
+    "units": "Einheiten",
+    "metric": "Metrisch (kg, cm)",
+    "imperial": "Imperial (lb, ft)",
+    "weight": "Gewicht ({unit})",
+    "height": "Größe",
+    "heightCm": "Größe (cm)",
+    "heightFt": "Größe in Fuß",
+    "heightIn": "Größe in Zoll",
+    "weightRange": "Das Gewicht muss zwischen {min} und {max} {unit} liegen.",
+    "heightRangeMetric": "Die Größe muss zwischen {min} und {max} cm liegen.",
+    "heightRangeImperial": "Die Größe muss zwischen 3 ft 4 in und 8 ft 2 in liegen."
+  },
+  "pages": {
+    "cpf": {
+      "metadata": {
+        "title": "CPF-Generator und -Validator",
+        "description": "Erzeuge gültige brasilianische CPF-Nummern zum Testen, mit oder ohne Satzzeichen, oder prüfe sofort, ob eine CPF gültig ist.",
+        "keywords": [
+          "cpf generator",
+          "cpf nummer generator",
+          "brasilianische cpf erzeugen",
+          "cpf validator",
+          "cpf prüfen"
+        ]
+      },
+      "title": "CPF-Generator und -Validator",
+      "intro": "Erzeuge gültige CPFs für deine Tests oder prüfe, ob eine CPF gültig ist.",
+      "generate": {
+        "intro": "Beim Öffnen der Seite wird eine gültige CPF erzeugt. Wähle Anzahl und Format oder klicke auf \"CPF erzeugen\", um eine neue zu erstellen.",
+        "label": "Erzeugte CPF",
+        "pluralLabel": "Erzeugte CPFs",
+        "howItWorks": [
+          "Die CPF wird auf dem Server erzeugt und nirgends gespeichert.",
+          "Die Nummer folgt den Regeln der brasilianischen Bundessteuerbehörde (Receita Federal).",
+          "Die Prüfziffern werden korrekt berechnet.",
+          "Die Nummer dient nur zum Testen und gehört keiner echten Person.",
+          "Die zuletzt erzeugten Werte stehen unter der Schaltfläche, bis du die Seite verlässt."
+        ],
+        "apiName": "den CPF-Generator"
+      },
+      "validate": {
+        "intro": "Gib eine CPF ein und klicke auf \"CPF prüfen\", um zu erfahren, ob sie gültig ist.",
+        "howItWorks": [
+          "Die Prüfung läuft auf dem Server und nichts wird gespeichert.",
+          "Der Validator prüft, ob die CPF den Regeln der Receita Federal folgt.",
+          "Geprüft werden das Format und die Prüfziffern.",
+          "Die CPF kann mit oder ohne Satzzeichen eingegeben werden (123.456.789-10 oder 12345678910).",
+          "Das Ergebnis erscheint direkt unter dem Feld."
+        ],
+        "apiName": "den CPF-Validator"
+      }
+    },
+    "cnpj": {
+      "metadata": {
+        "title": "CNPJ- und Firmengenerator sowie CNPJ-Validator",
+        "description": "Erzeuge gültige brasilianische CNPJ-Nummern oder komplette Firmen zum Testen, mit Firmenname, Landessteuernummer und Adresse, oder prüfe, ob eine CNPJ gültig ist.",
+        "keywords": [
+          "cnpj generator",
+          "cnpj nummer generator",
+          "brasilianische firma generator",
+          "fake firma generator",
+          "cnpj validator",
+          "cnpj prüfen"
+        ]
+      },
+      "title": "CNPJ-Generator und -Validator",
+      "intro": "Erzeuge nur eine CNPJ oder eine komplette Firma für deine Tests, oder prüfe, ob eine CNPJ gültig ist.",
+      "generate": {
+        "mode": "Nur die CNPJ",
+        "intro": "Beim Öffnen der Seite wird eine gültige CNPJ erzeugt. Wähle Anzahl und Format oder klicke auf \"CNPJ erzeugen\", um eine neue zu erstellen.",
+        "label": "Erzeugte CNPJ",
+        "pluralLabel": "Erzeugte CNPJs",
+        "howItWorks": [
+          "Die CNPJ wird auf dem Server erzeugt und nirgends gespeichert.",
+          "Die Nummer folgt den Regeln der brasilianischen Bundessteuerbehörde (Receita Federal).",
+          "Die Prüfziffern werden korrekt berechnet.",
+          "Die Nummer dient nur zum Testen und gehört keiner echten Firma.",
+          "Die zuletzt erzeugten Werte stehen unter der Schaltfläche, bis du die Seite verlässt."
+        ],
+        "apiName": "den CNPJ-Generator"
+      },
+      "company": {
+        "mode": "Komplette Firma",
+        "intro": "Eine fiktive Firma mit CNPJ, Landessteuernummer, Kontaktdaten und Adresse. Wähle den Bundesstaat oder lass \"Beliebiger Bundesstaat\" stehen.",
+        "button": "Firma erzeugen",
+        "howItWorks": [
+          "Die Firma wird auf dem Server erzeugt und nirgends gespeichert.",
+          "CNPJ und Landessteuernummer sind gültig, und die Landessteuernummer folgt den Regeln des Bundesstaats der Firma.",
+          "Die Adresse ist echt: Die CEP existiert und passt zu Straße, Stadtteil und Stadt. Die Telefonnummer nutzt die Vorwahl der Stadt.",
+          "Die E-Mail nutzt für Tests reservierte Domains (example.com), sodass keine Nachricht bei einer echten Person ankommt.",
+          "Die Daten dienen nur zum Testen und gehören keiner echten Firma."
+        ],
+        "apiName": "den Firmengenerator"
+      },
+      "validate": {
+        "intro": "Gib eine CNPJ ein und klicke auf \"CNPJ prüfen\", um zu erfahren, ob sie gültig ist.",
+        "howItWorks": [
+          "Die Prüfung läuft auf dem Server und nichts wird gespeichert.",
+          "Der Validator prüft, ob die CNPJ den Regeln der Receita Federal folgt.",
+          "Geprüft werden das Format und die Prüfziffern.",
+          "Die CNPJ kann mit oder ohne Satzzeichen eingegeben werden (00.000.000/0001-00 oder 00000000000100).",
+          "Das Ergebnis erscheint direkt unter dem Feld."
+        ],
+        "apiName": "den CNPJ-Validator"
+      }
+    },
+    "rg": {
+      "metadata": {
+        "title": "RG-Generator und -Validator",
+        "description": "Erzeuge gültige brasilianische RG-Nummern zum Testen, mit oder ohne Satzzeichen, oder prüfe sofort, ob ein RG gültig ist.",
+        "keywords": [
+          "rg generator",
+          "rg nummer generator",
+          "brasilianischer personalausweis generator",
+          "rg validator",
+          "rg prüfen"
+        ]
+      },
+      "title": "RG-Generator und -Validator",
+      "intro": "Erzeuge gültige RGs für deine Tests oder prüfe, ob ein RG gültig ist.",
+      "generate": {
+        "intro": "Beim Öffnen der Seite wird ein gültiger RG erzeugt. Wähle Anzahl und Format oder klicke auf \"RG erzeugen\", um einen neuen zu erstellen.",
+        "label": "Erzeugter RG",
+        "pluralLabel": "Erzeugte RGs",
+        "howItWorks": [
+          "Der RG wird auf dem Server erzeugt und nirgends gespeichert.",
+          "Jeder Bundesstaat stellt den RG auf seine Weise aus, daher folgt der Generator der Regel von São Paulo, die die meisten Systeme verwenden: 8 Ziffern und eine Prüfziffer.",
+          "Die Prüfziffer kann ein X sein, das für 10 steht.",
+          "Die Nummer dient nur zum Testen und gehört keiner echten Person.",
+          "Die zuletzt erzeugten Werte stehen unter der Schaltfläche, bis du die Seite verlässt."
+        ],
+        "apiName": "den RG-Generator",
+        "apiFormatted": "Optional. \"false\" erzeugt ihn ohne Satzzeichen. Standard: \"true\"."
+      },
+      "validate": {
+        "intro": "Gib einen RG ein und klicke auf \"RG prüfen\", um zu erfahren, ob er gültig ist.",
+        "howItWorks": [
+          "Die Prüfung läuft auf dem Server und nichts wird gespeichert.",
+          "Der Validator prüft die Prüfziffer nach der Regel von São Paulo. RGs anderer Bundesstaaten können ein anderes Format haben und als ungültig erscheinen.",
+          "Der RG kann mit oder ohne Satzzeichen eingegeben werden (12.345.678-X oder 12345678X).",
+          "Das Ergebnis erscheint direkt unter dem Feld."
+        ],
+        "apiName": "den RG-Validator"
+      }
+    },
+    "cnh": {
+      "metadata": {
+        "title": "CNH-Generator und -Validator",
+        "description": "Erzeuge gültige Nummern brasilianischer Führerscheine (CNH) zum Testen oder prüfe sofort, ob eine CNH gültig ist.",
+        "keywords": [
+          "cnh generator",
+          "brasilianischer führerschein generator",
+          "cnh nummer generator",
+          "cnh validator",
+          "cnh prüfen"
+        ]
+      },
+      "title": "CNH-Generator und -Validator",
+      "intro": "Erzeuge gültige CNH-Nummern für deine Tests oder prüfe, ob eine CNH gültig ist.",
+      "generate": {
+        "intro": "Beim Öffnen der Seite wird eine gültige CNH erzeugt. Wähle die Anzahl oder klicke auf \"CNH erzeugen\", um eine neue zu erstellen.",
+        "label": "Erzeugte CNH",
+        "pluralLabel": "Erzeugte CNHs",
+        "howItWorks": [
+          "Die CNH wird auf dem Server erzeugt und nirgends gespeichert.",
+          "Die erzeugte Nummer ist die 11-stellige Registernummer, die Systeme abfragen.",
+          "Die beiden Prüfziffern folgen der Regel des Denatran.",
+          "Die Nummer dient nur zum Testen und gehört keiner echten Person.",
+          "Die zuletzt erzeugten Werte stehen unter der Schaltfläche, bis du die Seite verlässt."
+        ],
+        "apiName": "den CNH-Generator"
+      },
+      "validate": {
+        "intro": "Gib die Registernummer der CNH ein und klicke auf \"CNH prüfen\", um zu erfahren, ob sie gültig ist.",
+        "howItWorks": [
+          "Die Prüfung läuft auf dem Server und nichts wird gespeichert.",
+          "Geprüft werden die 11 Ziffern und die beiden Prüfziffern.",
+          "Die Registernummer steht im Feld \"Nº Registro\" der CNH.",
+          "Das Ergebnis erscheint direkt unter dem Feld."
+        ],
+        "apiName": "den CNH-Validator",
+        "apiCnh": "Pflichtfeld. Die 11 Ziffern der Registernummer."
+      }
+    },
+    "stateRegistration": {
+      "metadata": {
+        "title": "Generator und Validator für Landessteuernummern",
+        "description": "Erzeuge gültige brasilianische Landessteuernummern (Inscrição Estadual) zum Testen in jedem Bundesstaat, oder prüfe, ob eine Landessteuernummer gültig ist.",
+        "keywords": [
+          "inscrição estadual generator",
+          "landessteuernummer generator",
+          "brasilien steuernummer generator",
+          "inscrição estadual validator",
+          "landessteuernummer prüfen"
+        ]
+      },
+      "title": "Generator und Validator für Landessteuernummern",
+      "intro": "Erzeuge gültige Landessteuernummern (Inscrição Estadual) für deine Tests oder prüfe, ob eine gültig ist, in jedem Bundesstaat.",
+      "generate": {
+        "intro": "Beim Öffnen der Seite wird eine Landessteuernummer aus São Paulo erzeugt. Wähle Bundesstaat, Anzahl und Format oder klicke auf \"Landessteuernummer erzeugen\", um eine neue zu erstellen.",
+        "name": "Landessteuernummer",
+        "label": "Erzeugte Landessteuernummer",
+        "pluralLabel": "Erzeugte Landessteuernummern",
+        "howItWorks": [
+          "Die Nummer wird auf dem Server erzeugt und nirgends gespeichert.",
+          "Jeder Bundesstaat hat eigene Länge, eigenes Präfix und eigene Prüfziffernberechnung, und der Generator folgt jeweils der SINTEGRA-Spezifikation.",
+          "In São Paulo erzeugt der Generator die 12-stellige Nummer für Industrie und Handel.",
+          "Die Nummer dient nur zum Testen und gehört keiner echten Firma.",
+          "Die zuletzt erzeugten Werte stehen unter der Schaltfläche, bis du die Seite verlässt."
+        ],
+        "apiName": "den Generator für Landessteuernummern"
+      },
+      "validate": {
+        "intro": "Wähle den Bundesstaat, gib die Nummer ein und klicke auf \"Landessteuernummer prüfen\", um zu erfahren, ob sie gültig ist.",
+        "howItWorks": [
+          "Die Prüfung läuft auf dem Server und nichts wird gespeichert.",
+          "Geprüft werden Länge, Präfix und Prüfziffern, die der gewählte Bundesstaat verlangt.",
+          "Die Nummer kann mit oder ohne Satzzeichen eingegeben werden.",
+          "In São Paulo wird nur die Nummer für Industrie und Handel akzeptiert, nicht die für Landwirte, die mit P beginnt.",
+          "Das Ergebnis erscheint direkt unter dem Feld."
+        ],
+        "apiName": "den Validator für Landessteuernummern"
+      }
+    },
+    "person": {
+      "metadata": {
+        "title": "Personengenerator",
+        "description": "Erzeuge eine fiktive brasilianische Person mit Name, CPF, RG, Geburtsdatum, Eltern, Kontaktdaten und echter Adresse zum Testen.",
+        "keywords": [
+          "personengenerator",
+          "fake person generator",
+          "fiktive person erzeugen",
+          "testdaten generator",
+          "brasilianische person generator"
+        ]
+      },
+      "title": "Personengenerator",
+      "intro": "Beim Öffnen der Seite wird eine fiktive Person erzeugt. Wähle Geschlecht und Bundesstaat oder klicke auf \"Person erzeugen\", um eine neue zu erstellen.",
+      "button": "Person erzeugen",
+      "sex": "Geschlecht",
+      "anySex": "Beliebig",
+      "female": "Weiblich",
+      "male": "Männlich",
+      "howItWorks": [
+        "Die Person wird auf dem Server erzeugt und nirgends gespeichert.",
+        "CPF und RG sind gültig. Der RG folgt der Regel von São Paulo.",
+        "Die Adresse ist echt: Die CEP existiert und passt zu Straße, Stadtteil und Stadt. Die Telefonnummern nutzen die Vorwahl der Stadt.",
+        "Wie in Brasilien üblich, trägt der Name einen Nachnamen der Mutter und danach einen des Vaters.",
+        "Die E-Mail nutzt für Tests reservierte Domains (example.com), sodass keine Nachricht bei einer echten Person ankommt.",
+        "Die Daten dienen nur zum Testen und gehören keiner echten Person."
+      ],
+      "apiName": "den Personengenerator",
+      "apiSex": "Optional. \"female\" oder \"male\". Ohne Angabe wird das Geschlecht zufällig gewählt."
+    },
+    "cep": {
+      "metadata": {
+        "title": "CEP-Generator und -Abfrage",
+        "description": "Erzeuge echte brasilianische Postleitzahlen (CEP) mit vollständiger Adresse zum Testen, aus jedem Bundesstaat, oder frage die Adresse einer CEP ab.",
+        "keywords": [
+          "cep generator",
+          "brasilianische postleitzahl generator",
+          "brasilianische adresse generator",
+          "cep abfrage",
+          "postleitzahl brasilien suchen"
+        ]
+      },
+      "title": "CEP-Generator und -Abfrage",
+      "intro": "Erzeuge eine echte CEP mit Adresse für deine Tests oder finde die Adresse zu einer CEP.",
+      "generate": {
+        "intro": "Beim Öffnen der Seite wird eine CEP erzeugt. Wähle den Bundesstaat oder klicke auf \"CEP erzeugen\", um eine neue zu erstellen.",
+        "button": "CEP erzeugen",
+        "howItWorks": [
+          "Die CEPs sind echt und stammen von der brasilianischen Post (Correios), über ViaCEP: Jede existiert und passt zur angezeigten Straße, zum Stadtteil und zur Stadt.",
+          "Sie werden aus Straßen der Hauptstadt und einer weiteren Großstadt jedes Bundesstaats gewählt und funktionieren daher in Formularen, die die Adresse anhand der CEP ausfüllen.",
+          "CEPs, die nur Firmen oder Behörden vorbehalten sind, werden ausgelassen."
+        ],
+        "apiName": "den CEP-Generator",
+        "apiFormatted": "Optional. \"false\" erzeugt die CEP nur mit Ziffern. Standard: \"true\"."
+      },
+      "lookup": {
+        "mode": "Abfragen",
+        "intro": "Gib eine CEP ein und klicke auf \"CEP abfragen\", um die Adresse zu sehen.",
+        "howItWorks": [
+          "Die Abfrage nutzt die Datenbank der Correios, über ViaCEP.",
+          "Die CEP kann mit oder ohne Bindestrich eingegeben werden.",
+          "CEPs kleiner Orte, die nur eine einzige CEP haben, kommen ohne Straße und Stadtteil zurück."
+        ],
+        "apiName": "die CEP-Abfrage"
+      }
+    },
+    "licensePlate": {
+      "metadata": {
+        "title": "Kennzeichengenerator",
+        "description": "Erzeuge zufällige brasilianische Auto- und Motorradkennzeichen im Mercosul- oder im alten Format.",
+        "keywords": [
+          "kennzeichengenerator",
+          "brasilianisches kennzeichen generator",
+          "mercosul kennzeichen",
+          "zufälliges kennzeichen erzeugen"
+        ]
+      },
+      "title": "Kennzeichengenerator",
+      "intro": "Beim Öffnen der Seite wird ein Kennzeichen im Mercosul-Format erzeugt. Wähle Anzahl und Format oder klicke auf \"Kennzeichen erzeugen\", um ein neues zu erstellen.",
+      "name": "Kennzeichen",
+      "label": "Erzeugtes Kennzeichen",
+      "pluralLabel": "Erzeugte Kennzeichen",
+      "format": "Format",
+      "old": "Alt",
+      "howItWorks": [
+        "Das Kennzeichen wird auf dem Server erzeugt und nirgends gespeichert.",
+        "Das Mercosul-Format hat drei Buchstaben, eine Ziffer, einen Buchstaben und zwei Ziffern (ABC1D23).",
+        "Das alte Format hat drei Buchstaben und vier Ziffern (ABC-1234).",
+        "Das Kennzeichen wird zufällig gewählt und kann mit dem eines echten Fahrzeugs übereinstimmen; nutze es nur zum Testen.",
+        "Die zuletzt erzeugten Werte stehen unter der Schaltfläche, bis du die Seite verlässt."
+      ],
+      "apiName": "den Kennzeichengenerator",
+      "apiFormat": "Optional. \"mercosul\" (ABC1D23) oder \"old\" (ABC-1234). Standard: \"mercosul\"."
+    },
+    "password": {
+      "metadata": {
+        "title": "Passwortgenerator",
+        "description": "Erzeuge sichere, zufällige Passwörter und wähle Länge sowie Großbuchstaben, Zahlen und Sonderzeichen.",
+        "keywords": [
+          "passwortgenerator",
+          "passwort generator online",
+          "sicheres passwort erzeugen",
+          "zufälliges passwort generator",
+          "starkes passwort generator",
+          "passwort mit sonderzeichen"
+        ]
+      },
+      "title": "Passwortgenerator",
+      "intro": "Erzeuge ein Passwort im Apple-Stil, das sich leicht lesen und eintippen lässt, oder wähle Länge und Zeichenarten. Bei jeder Änderung wird ein neues Passwort erzeugt.",
+      "name": "Passwort",
+      "label": "Erzeugtes Passwort",
+      "pluralLabel": "Erzeugte Passwörter",
+      "style": "Stil",
+      "custom": "Benutzerdefiniert",
+      "length": "Länge",
+      "uppercase": "Großbuchstaben",
+      "numbers": "Zahlen",
+      "symbols": "Sonderzeichen (!@#$%&*-_=+?)",
+      "howItWorks": [
+        "Das Passwort wird auf dem Server erzeugt und nirgends gespeichert.",
+        "Es wird mit einem kryptografisch sicheren Zufallszahlengenerator erstellt.",
+        "Der Apple-Stil folgt dem Format der starken Passwörter, die iPhone und Mac vorschlagen: drei Gruppen aus sechs Kleinbuchstaben, getrennt durch Bindestriche, mit genau einem Großbuchstaben und einer Ziffer.",
+        "Im benutzerdefinierten Stil sind Kleinbuchstaben immer enthalten, und das Passwort hat mindestens ein Zeichen jeder gewählten Art. Die Sonderzeichen lassen Anführungszeichen, Backslashes und Leerzeichen weg, die beim Einfügen in Konfigurationsdateien oder ins Terminal oft Probleme machen.",
+        "Die zuletzt erzeugten Werte stehen unter der Schaltfläche, bis du die Seite verlässt."
+      ],
+      "apiName": "den Passwortgenerator",
+      "apiStyle": "Optional. \"apple\" (abcdef-ghiJkl-mn4opq) oder \"custom\". Standard: \"apple\".",
+      "apiLength": "Nur mit style=custom. Von {min} bis {max}. Standard: 16.",
+      "apiUppercase": "Nur mit style=custom. Mit Großbuchstaben. Standard: \"true\".",
+      "apiNumbers": "Nur mit style=custom. Mit Zahlen. Standard: \"true\".",
+      "apiSymbols": "Nur mit style=custom. Mit Sonderzeichen. Standard: \"true\"."
+    },
+    "uuid": {
+      "metadata": {
+        "title": "UUID-Generator",
+        "description": "Erzeuge sofort zufällige UUIDs der Version 4.",
+        "keywords": [
+          "uuid generator",
+          "uuid generator online",
+          "zufällige uuid erzeugen",
+          "uuid v4 generator",
+          "guid generator"
+        ]
+      },
+      "title": "UUID-Generator",
+      "intro": "Beim Öffnen der Seite wird eine UUID erzeugt. Wähle die Anzahl oder klicke auf \"UUID erzeugen\", um eine neue zu erstellen.",
+      "label": "Erzeugte UUID",
+      "pluralLabel": "Erzeugte UUIDs",
+      "howItWorks": [
+        "Die UUID wird auf dem Server erzeugt und nirgends gespeichert.",
+        "Der Generator erzeugt eine UUID der Version 4, basierend auf Zufallszahlen.",
+        "Die UUID folgt dem Format 8-4-4-4-12 mit hexadezimalen Zeichen.",
+        "Die Wahrscheinlichkeit, zweimal dieselbe UUID zu erzeugen, ist praktisch null.",
+        "Die zuletzt erzeugten Werte stehen unter der Schaltfläche, bis du die Seite verlässt."
+      ],
+      "apiName": "den UUID-Generator"
+    },
+    "creditCard": {
+      "metadata": {
+        "title": "Kreditkartengenerator",
+        "description": "Erzeuge gültige Kreditkartennummern zum Testen, mit Kartenmarke, Name des Karteninhabers, Ablaufdatum und CVV.",
+        "keywords": [
+          "kreditkartengenerator",
+          "kreditkarte generator",
+          "testkreditkarte erzeugen",
+          "visa nummer generator",
+          "mastercard generator",
+          "luhn generator"
+        ]
+      },
+      "title": "Kreditkartengenerator",
+      "intro": "Beim Öffnen der Seite wird eine Visa-Karte erzeugt. Wähle Kartenmarke und Format oder klicke auf \"Karte erzeugen\", um eine neue zu erstellen.",
+      "button": "Karte erzeugen",
+      "brand": "Kartenmarke",
+      "formatted": "Nummer mit Leerzeichen",
+      "howItWorks": [
+        "Die Karte wird auf dem Server erzeugt und nirgends gespeichert.",
+        "Die Nummer beginnt mit dem Präfix der Kartenmarke und besteht den Luhn-Algorithmus, die Prüfung, die Formulare und Zahlungsanbieter vor einer Belastung durchführen.",
+        "Das Ablaufdatum liegt 1 bis 5 Jahre in der Zukunft. Die CVV hat bei American Express 4 Ziffern und bei den anderen Marken 3.",
+        "Die Nummer ist zufällig und nur zum Testen von Formularen gedacht. Für Zahlungstests nutze die Testkarten deines Zahlungsanbieters."
+      ],
+      "apiName": "den Kreditkartengenerator",
+      "apiBrand": "Optional. {brands}. Standard: \"visa\".",
+      "apiFormatted": "Optional. \"false\" erzeugt die Nummer ohne Leerzeichen. Standard: \"true\"."
+    },
+    "numbers": {
+      "metadata": {
+        "title": "Zahlen auslosen",
+        "description": "Lose eine oder mehrere Zufallszahlen innerhalb eines Bereichs aus.",
+        "keywords": [
+          "zufallszahlen generator",
+          "zahlen auslosen",
+          "zufallszahl online"
+        ]
+      },
+      "title": "Zahlen auslosen",
+      "intro": "Wähle, wie viele Zahlen du auslosen möchtest, und den Bereich der Auslosung.",
+      "quantity": "Anzahl",
+      "min": "Minimum",
+      "max": "Maximum",
+      "drawing": "Wird ausgelost",
+      "draw": "Auslosen",
+      "minAboveMax": "Das Minimum muss kleiner oder gleich dem Maximum sein.",
+      "error": "Auslosen fehlgeschlagen. Bitte versuche es erneut.",
+      "result": "{count, plural, one {Ausgeloste Zahl} other {Ausgeloste Zahlen}}",
+      "howItWorks": [
+        "Die Zahlen werden auf dem Server ausgelost und nicht gespeichert.",
+        "Minimum und Maximum gehören zum Bereich, und negative Zahlen sind erlaubt.",
+        "Du kannst bis zu 1000 Zahlen auf einmal auslosen.",
+        "Jede Zahl wird unabhängig ausgelost, Wiederholungen sind also möglich.",
+        "Die Auslosung ist nicht kryptografisch sicher: Nutze sie nicht für Passwörter, Sicherheitstokens oder Verlosungen mit echten Preisen."
+      ],
+      "apiName": "die Zahlenauslosung",
+      "apiCount": "Pflichtfeld. Wie viele Zahlen ausgelost werden, von 1 bis 1000.",
+      "apiMin": "Pflichtfeld. Die kleinstmögliche Zahl (einschließlich).",
+      "apiMax": "Pflichtfeld. Die größtmögliche Zahl (einschließlich)."
+    },
+    "bmi": {
+      "metadata": {
+        "title": "BMI-Rechner",
+        "description": "Berechne deinen Body-Mass-Index (BMI) und sieh, in welchem Bereich er liegt.",
+        "keywords": [
+          "bmi rechner",
+          "bmi rechner online",
+          "bmi berechnen",
+          "body mass index rechner",
+          "bmi rechner gewicht größe"
+        ]
+      },
+      "title": "BMI-Rechner",
+      "intro": "Ermittle deinen Body-Mass-Index anhand von Gewicht und Größe.",
+      "ranges": {
+        "underweight": "Untergewicht",
+        "normal": "Normalgewicht",
+        "overweight": "Übergewicht",
+        "obesity1": "Adipositas Grad I",
+        "obesity2": "Adipositas Grad II",
+        "obesity3": "Adipositas Grad III"
+      },
+      "howItWorks": [
+        "Der BMI ist das Gewicht (kg) geteilt durch die Größe (m) zum Quadrat.",
+        "Die Bereiche folgen der Einteilung der Weltgesundheitsorganisation für Erwachsene.",
+        "Der BMI unterscheidet nicht zwischen Muskelmasse und Fett und gilt nicht für Kinder, Schwangere und ältere Menschen. Für eine vollständige Einschätzung wende dich an medizinisches Fachpersonal.",
+        "Die Berechnung läuft in deinem Browser: Es werden keine Daten gesendet oder gespeichert."
+      ]
+    },
+    "bmr": {
+      "metadata": {
+        "title": "Grundumsatzrechner",
+        "description": "Berechne deinen Grundumsatz (BMR) und deinen täglichen Kalorienbedarf.",
+        "keywords": [
+          "grundumsatz rechner",
+          "grundumsatz berechnen",
+          "kalorienbedarf rechner",
+          "bmr rechner"
+        ]
+      },
+      "title": "Grundumsatzrechner",
+      "intro": "Ermittle deinen Grundumsatz und deinen täglichen Gesamtenergieumsatz.",
+      "age": "Alter",
+      "ageRange": "Das Alter muss zwischen {min} und {max} Jahren liegen.",
+      "sex": "Geschlecht",
+      "male": "Männlich",
+      "female": "Weiblich",
+      "select": "Auswählen",
+      "activity": "Aktivitätsniveau",
+      "activityLevels": {
+        "sedentary": "Sitzend (wenig oder kein Sport)",
+        "light": "Leicht (Sport 1 bis 3 Mal pro Woche)",
+        "moderate": "Mäßig (Sport 3 bis 5 Mal pro Woche)",
+        "active": "Aktiv (Sport 6 bis 7 Mal pro Woche)",
+        "veryActive": "Sehr aktiv (täglich intensiver Sport)"
+      },
+      "bmr": "Grundumsatz",
+      "tdee": "Gesamtenergieumsatz",
+      "calories": "{calories} kcal/Tag",
+      "howItWorks": [
+        "Der Grundumsatz ist die Energie, die der Körper in Ruhe verbraucht. Er wird mit der Mifflin-St-Jeor-Formel berechnet, die Gewicht, Größe, Alter und Geschlecht nutzt.",
+        "Der Gesamtenergieumsatz ist der Grundumsatz multipliziert mit einem Faktor, der von deiner körperlichen Aktivität abhängt.",
+        "Die Werte sind Schätzungen. Für einen Ernährungsplan wende dich an eine Ernährungsfachkraft.",
+        "Die Berechnung läuft in deinem Browser: Es werden keine Daten gesendet oder gespeichert."
+      ]
+    },
+    "age": {
+      "metadata": {
+        "title": "Altersrechner",
+        "description": "Berechne das genaue Alter in Jahren, Monaten und Tagen anhand des Geburtsdatums.",
+        "keywords": [
+          "altersrechner",
+          "alter berechnen",
+          "altersrechner online",
+          "alter nach geburtsdatum",
+          "genaues alter berechnen"
+        ]
+      },
+      "title": "Altersrechner",
+      "intro": "Ermittle das genaue Alter anhand des Geburtsdatums.",
+      "birthdate": "Geburtsdatum",
+      "future": "Das Geburtsdatum darf nicht in der Zukunft liegen.",
+      "result": "{years, plural, one {# Jahr} other {# Jahre}}, {months, plural, one {# Monat} other {# Monate}} und {days, plural, one {# Tag} other {# Tage}}",
+      "howItWorks": [
+        "Das Alter ist die Differenz zwischen dem Geburtsdatum und dem heutigen Datum.",
+        "Das Ergebnis zeigt die genauen Jahre, Monate und Tage.",
+        "Schaltjahre und unterschiedlich lange Monate werden berücksichtigt.",
+        "Die Berechnung läuft in deinem Browser: Das Datum wird weder gesendet noch gespeichert."
+      ]
+    },
+    "discount": {
+      "metadata": {
+        "title": "Rabattrechner",
+        "description": "Berechne den Rabattbetrag und den Endpreis eines Produkts.",
+        "keywords": [
+          "rabattrechner",
+          "rabatt berechnen",
+          "rabattrechner online",
+          "prozent rabatt rechner",
+          "endpreis berechnen"
+        ]
+      },
+      "title": "Rabattrechner",
+      "intro": "Berechne den Rabattbetrag und den Endpreis nach Abzug des Rabatts.",
+      "price": "Preis",
+      "discount": "Rabatt",
+      "discountAmount": "Rabattbetrag",
+      "finalPrice": "Endpreis",
+      "howItWorks": {
+        "inputs": "Gib den ursprünglichen Preis und den Rabatt in Prozent ein.",
+        "cents": "Beim Preis tippst du nur Ziffern: Sie füllen sich von den Cents her auf (1050 wird zu {example}).",
+        "percentage": "Der Prozentsatz erlaubt Werte von 0 bis 100 mit bis zu zwei Nachkommastellen.",
+        "rounding": "Der Rabatt ist der Preis mal Prozentsatz geteilt durch 100, auf Cent gerundet.",
+        "finalPrice": "Der Endpreis ist der ursprüngliche Preis minus Rabatt."
+      }
+    }
+  },
+  "ui": {
+    "menu": "Menü",
+    "menuDescription": "Navigation zwischen den Werkzeugen.",
+    "toggleMenu": "Menü öffnen oder schließen",
+    "close": "Schließen",
+    "more": "Mehr"
   }
 }

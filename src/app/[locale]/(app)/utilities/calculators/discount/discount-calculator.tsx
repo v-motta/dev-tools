@@ -1,6 +1,8 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
 import { useState } from 'react'
+import { HowItWorks } from '@/components/how-it-works'
 import { ResultCard } from '@/components/result-card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -9,6 +11,7 @@ import { formatCurrency, parseDecimal } from '@/lib/locale'
 const MAX_PRICE_DIGITS = 10
 
 export function DiscountCalculator() {
+  const t = useTranslations('pages.discount')
   // Digits typed so far, read as cents: "1050" is 10.50
   const [priceDigits, setPriceDigits] = useState('')
   const [percentage, setPercentage] = useState('')
@@ -43,19 +46,15 @@ export function DiscountCalculator() {
   return (
     <div className="w-full max-w-2xl space-y-8">
       <div className="space-y-3">
-        <h1 className="text-2xl font-bold font-mono">
-          Calculadora de desconto
-        </h1>
+        <h1 className="text-2xl font-bold font-mono">{t('title')}</h1>
 
-        <p className="text-muted-foreground text-balance">
-          Calcule o valor do desconto e o preço final depois de aplicá-lo.
-        </p>
+        <p className="text-muted-foreground text-balance">{t('intro')}</p>
       </div>
 
       <div className="space-y-4">
         <div className="flex flex-col gap-4 sm:flex-row sm:*:flex-1">
           <div className="space-y-1">
-            <Label htmlFor="price">Preço</Label>
+            <Label htmlFor="price">{t('price')}</Label>
             <Input
               id="price"
               inputMode="numeric"
@@ -66,7 +65,7 @@ export function DiscountCalculator() {
           </div>
 
           <div className="space-y-1">
-            <Label htmlFor="percentage">Desconto</Label>
+            <Label htmlFor="percentage">{t('discount')}</Label>
             <div className="relative">
               <Input
                 id="percentage"
@@ -91,14 +90,16 @@ export function DiscountCalculator() {
             <dl className="grid grid-cols-2 gap-4">
               <div>
                 <dt className="text-sm text-muted-foreground">
-                  Valor do desconto
+                  {t('discountAmount')}
                 </dt>
                 <dd className="text-xl font-mono">
                   {formatCurrency(result.discountAmount)}
                 </dd>
               </div>
               <div>
-                <dt className="text-sm text-muted-foreground">Preço final</dt>
+                <dt className="text-sm text-muted-foreground">
+                  {t('finalPrice')}
+                </dt>
                 <dd className="text-xl font-mono">
                   {formatCurrency(result.finalPrice)}
                 </dd>
@@ -108,26 +109,15 @@ export function DiscountCalculator() {
         </ResultCard>
       </div>
 
-      <div>
-        <h2 className="text-lg font-medium mb-2">Como funciona</h2>
-
-        <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-          <li>Digite o preço original e a porcentagem do desconto.</li>
-          <li>
-            No preço, digite só os números: eles preenchem a partir dos centavos
-            (1050 vira R$ 10,50).
-          </li>
-          <li>
-            A porcentagem aceita valores de 0 a 100, com até duas casas
-            decimais.
-          </li>
-          <li>
-            O desconto é o preço multiplicado pela porcentagem e dividido por
-            100, arredondado para centavos.
-          </li>
-          <li>O preço final é o preço original menos o desconto.</li>
-        </ul>
-      </div>
+      <HowItWorks
+        items={[
+          t('howItWorks.inputs'),
+          t('howItWorks.cents', { example: formatCurrency(10.5) }),
+          t('howItWorks.percentage'),
+          t('howItWorks.rounding'),
+          t('howItWorks.finalPrice'),
+        ]}
+      />
     </div>
   )
 }

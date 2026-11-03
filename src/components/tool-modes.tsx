@@ -1,5 +1,6 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
 import { type ReactNode, useState } from 'react'
 import { SegmentedControl } from '@/components/segmented-control'
 
@@ -16,12 +17,13 @@ interface ToolModesProps {
 
 /** Switches a tool page between what it can do, e.g. generate and validate. */
 export function ToolModes({ modes }: ToolModesProps) {
+  const t = useTranslations('common')
   const [current, setCurrent] = useState(modes[0].value)
 
   return (
     <div className="space-y-8">
       <SegmentedControl
-        label="O que você quer fazer?"
+        label={t('modesLabel')}
         value={current}
         onChange={setCurrent}
         options={modes}

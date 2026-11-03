@@ -1,91 +1,72 @@
-import type { Metadata } from 'next'
+import { getTranslations } from 'next-intl/server'
 import { ApiUsage } from '@/components/api-usage'
 import { DocumentValidator } from '@/components/document-validator'
 import { Generator } from '@/components/generator'
 import { HowItWorks } from '@/components/how-it-works'
 import { ToolModes } from '@/components/tool-modes'
+import { initPage, toolMetadata } from '@/i18n/page'
 
-export const metadata: Metadata = {
-  title: 'Gerador e validador de CPF',
-  description:
-    'Gere CPFs válidos para testes, com ou sem pontuação, ou confira na hora se um CPF é válido.',
-  keywords: [
-    'gerador de cpf',
-    'gerador de cpf online',
-    'gerador de cpf válido',
-    'validador de cpf',
-    'validador de cpf online',
-    'validador de cpf com pontuação',
-  ],
-}
+export const generateMetadata = toolMetadata('cpf')
 
-export default function CPFPage() {
+export default async function CPFPage({
+  params,
+}: PageProps<'/[locale]/brazil/documents/cpf'>) {
+  await initPage(params)
+  const t = await getTranslations('pages.cpf')
+  const tCommon = await getTranslations('common')
+  const tApi = await getTranslations('apiUsage')
+
   return (
     <div className="w-full max-w-2xl space-y-8">
       <div className="space-y-3">
-        <h1 className="text-2xl font-bold font-mono">
-          Gerador e validador de CPF
-        </h1>
+        <h1 className="text-2xl font-bold font-mono">{t('title')}</h1>
 
-        <p className="text-muted-foreground text-balance">
-          Gere CPFs válidos para usar em testes ou confira se um CPF é válido.
-        </p>
+        <p className="text-muted-foreground text-balance">{t('intro')}</p>
       </div>
 
       <ToolModes
         modes={[
           {
             value: 'generate',
-            label: 'Gerar',
+            label: tCommon('generate'),
             content: (
               <>
                 <p className="text-muted-foreground text-balance">
-                  Um CPF válido é gerado ao abrir a página. Escolha a quantidade
-                  e o formato, ou clique em "Gerar CPF" para criar outro.
+                  {t('generate.intro')}
                 </p>
 
                 <Generator
                   name="CPF"
-                  label="CPF gerado"
-                  pluralLabel="CPFs gerados"
+                  label={t('generate.label')}
+                  pluralLabel={t('generate.pluralLabel')}
                   endpoint="/api/generators/cpf"
                   field="cpf"
                   options={[
                     {
                       type: 'boolean',
                       name: 'formatted',
-                      label: 'Com pontuação',
+                      label: tCommon('formatted'),
                       defaultValue: true,
                     },
                   ]}
                 />
 
-                <HowItWorks
-                  items={[
-                    'O CPF é gerado no servidor e não fica armazenado em lugar nenhum.',
-                    'O número segue as regras da Receita Federal.',
-                    'Os dígitos verificadores são calculados corretamente.',
-                    'O número serve apenas para testes e não pertence a nenhuma pessoa real.',
-                    'Os últimos valores gerados ficam listados abaixo do botão até você sair da página.',
-                  ]}
-                />
+                <HowItWorks items={t.raw('generate.howItWorks')} />
 
                 <ApiUsage
-                  name="gerador de CPF"
+                  name={t('generate.apiName')}
                   method="GET"
                   path="/api/generators/cpf"
                   query={{ quantity: '2', formatted: 'false' }}
                   parameters={[
                     {
                       name: 'quantity',
-                      description:
-                        'Opcional. De 1 a 50. Quando informado, a resposta traz a lista "cpfs" em vez de "cpf".',
+                      description: tApi('quantity', {
+                        list: 'cpfs',
+                        single: 'cpf',
+                      }),
                     },
-                    {
-                      name: 'formatted',
-                      description:
-                        'Opcional. "false" gera só os números. Padrão: "true".',
-                    },
+                    { name: 'formatted', description: tApi('formatted') },
                   ]}
                   response={{ cpfs: ['52998224725', '11144477735'] }}
                 />
@@ -94,37 +75,24 @@ export default function CPFPage() {
           },
           {
             value: 'validate',
-            label: 'Validar',
+            label: tCommon('validate'),
             content: (
               <>
                 <p className="text-muted-foreground text-balance">
-                  Digite um CPF e clique em "Validar CPF" para saber se ele é
-                  válido.
+                  {t('validate.intro')}
                 </p>
 
                 <DocumentValidator document="cpf" />
 
-                <HowItWorks
-                  items={[
-                    'A validação é feita no servidor e nada fica armazenado.',
-                    'O validador confere se o CPF segue as regras da Receita Federal.',
-                    'São verificados o formato e os dígitos verificadores.',
-                    'O CPF pode ser digitado com ou sem pontuação (123.456.789-10 ou 12345678910).',
-                    'O resultado aparece logo abaixo do campo.',
-                  ]}
-                />
+                <HowItWorks items={t.raw('validate.howItWorks')} />
 
                 <ApiUsage
-                  name="validador de CPF"
+                  name={t('validate.apiName')}
                   method="POST"
                   path="/api/validators/cpf"
                   body={{ cpf: '123.456.789-10' }}
                   parameters={[
-                    {
-                      name: 'cpf',
-                      description:
-                        'Obrigatório. O número com ou sem pontuação.',
-                    },
+                    { name: 'cpf', description: tApi('documentRequired') },
                   ]}
                   response={{ isValid: false }}
                 />

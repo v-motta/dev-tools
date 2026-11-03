@@ -1,5 +1,6 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
 import { useId, useState } from 'react'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -25,6 +26,7 @@ function toInput(value: number) {
 
 /** Keeps weight and height as typed and exposes them in kg and cm. */
 export function useBodyMeasurements() {
+  const t = useTranslations('bodyMeasurements')
   const [system, setSystemState] = useState<MeasurementSystem>('metric')
   const [weight, setWeight] = useState('')
   const [heightCm, setHeightCm] = useState('')
@@ -80,9 +82,28 @@ export function useBodyMeasurements() {
     heightIn,
     setHeightIn,
     weightError:
-      Number.isNaN(weightKg) || isWeightValid ? '' : weightRangeText(system),
+      Number.isNaN(weightKg) || isWeightValid
+        ? ''
+        : system === 'metric'
+          ? t('weightRange', {
+              min: WEIGHT_RANGE_KG.min,
+              max: WEIGHT_RANGE_KG.max,
+              unit: 'kg',
+            })
+          : t('weightRange', {
+              min: Math.ceil(WEIGHT_RANGE_KG.min / KG_PER_LB),
+              max: Math.floor(WEIGHT_RANGE_KG.max / KG_PER_LB),
+              unit: 'lb',
+            }),
     heightError:
-      Number.isNaN(height) || isHeightValid ? '' : heightRangeText(system),
+      Number.isNaN(height) || isHeightValid
+        ? ''
+        : system === 'metric'
+          ? t('heightRangeMetric', {
+              min: HEIGHT_RANGE_CM.min,
+              max: HEIGHT_RANGE_CM.max,
+            })
+          : t('heightRangeImperial'),
     /** `undefined` until both values are filled in and within range */
     values:
       isWeightValid && isHeightValid
@@ -91,41 +112,30 @@ export function useBodyMeasurements() {
   }
 }
 
-function weightRangeText(system: MeasurementSystem) {
-  return system === 'metric'
-    ? `O peso deve estar entre ${WEIGHT_RANGE_KG.min} e ${WEIGHT_RANGE_KG.max} kg.`
-    : `O peso deve estar entre ${Math.ceil(WEIGHT_RANGE_KG.min / KG_PER_LB)} e ${Math.floor(WEIGHT_RANGE_KG.max / KG_PER_LB)} lb.`
-}
-
-function heightRangeText(system: MeasurementSystem) {
-  return system === 'metric'
-    ? `A altura deve estar entre ${HEIGHT_RANGE_CM.min} e ${HEIGHT_RANGE_CM.max} cm.`
-    : `A altura deve estar entre 3 ft 4 in e 8 ft 2 in.`
-}
-
 type BodyMeasurementsFieldsProps = ReturnType<typeof useBodyMeasurements>
 
 export function BodyMeasurementsFields(props: BodyMeasurementsFieldsProps) {
   const id = useId()
   const { system, setSystem, weightError, heightError } = props
+  const t = useTranslations('bodyMeasurements')
 
   return (
     <>
       <div className="pb-4">
         <SegmentedControl
-          label="Unidades"
+          label={t('units')}
           value={system}
           onChange={setSystem}
           options={[
-            { value: 'metric', label: 'Métrico (kg, cm)' },
-            { value: 'imperial', label: 'Imperial (lb, ft)' },
+            { value: 'metric', label: t('metric') },
+            { value: 'imperial', label: t('imperial') },
           ]}
         />
       </div>
 
       <div className="space-y-1">
         <Label htmlFor={`${id}-weight`}>
-          Peso ({system === 'metric' ? 'kg' : 'lb'})
+          {t('weight', { unit: system === 'metric' ? 'kg' : 'lb' })}
         </Label>
         <Input
           id={`${id}-weight`}
@@ -146,7 +156,7 @@ export function BodyMeasurementsFields(props: BodyMeasurementsFieldsProps) {
       <div className="space-y-1">
         {system === 'metric' ? (
           <>
-            <Label htmlFor={`${id}-height`}>Altura (cm)</Label>
+            <Label htmlFor={`${id}-height`}>{t('heightCm')}</Label>
             <Input
               id={`${id}-height`}
               inputMode="numeric"
@@ -158,7 +168,7 @@ export function BodyMeasurementsFields(props: BodyMeasurementsFieldsProps) {
           </>
         ) : (
           <fieldset aria-describedby={`${id}-height-error`}>
-            <legend className="mb-1 text-sm font-medium">Altura</legend>
+            <legend className="mb-1 text-sm font-medium">{t('height')}</legend>
             <div className="grid grid-cols-2 gap-3">
               <div className="flex items-center gap-2">
                 <Input
@@ -166,7 +176,7 @@ export function BodyMeasurementsFields(props: BodyMeasurementsFieldsProps) {
                   inputMode="numeric"
                   value={props.heightFt}
                   onChange={(event) => props.setHeightFt(event.target.value)}
-                  aria-label="Altura em pés"
+                  aria-label={t('heightFt')}
                   aria-invalid={heightError !== ''}
                 />
                 <Label htmlFor={`${id}-height-ft`} className="font-normal">
@@ -179,7 +189,7 @@ export function BodyMeasurementsFields(props: BodyMeasurementsFieldsProps) {
                   inputMode="decimal"
                   value={props.heightIn}
                   onChange={(event) => props.setHeightIn(event.target.value)}
-                  aria-label="Altura em polegadas"
+                  aria-label={t('heightIn')}
                   aria-invalid={heightError !== ''}
                 />
                 <Label htmlFor={`${id}-height-in`} className="font-normal">

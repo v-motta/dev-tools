@@ -1,98 +1,83 @@
-import type { Metadata } from 'next'
+import { getTranslations } from 'next-intl/server'
 import { ApiUsage } from '@/components/api-usage'
 import { HowItWorks } from '@/components/how-it-works'
 import { RecordGenerator } from '@/components/record-generator'
+import { initPage, toolMetadata } from '@/i18n/page'
 import { CARD_BRANDS } from '@/utils/generate-credit-card'
 
-export const metadata: Metadata = {
-  title: 'Gerador de cartão de crédito',
-  description:
-    'Gere números de cartão de crédito válidos para testes, com bandeira, nome, validade e CVV.',
-  keywords: [
-    'gerador de cartão de crédito',
-    'gerador de cartão de crédito válido',
-    'gerador de cartão para teste',
-    'gerador de cartão visa',
-    'gerador de cartão mastercard',
-    'gerador de cartão elo',
-  ],
-}
+export const generateMetadata = toolMetadata('creditCard')
 
+/** Each field of the generated card, with the message of its label */
 const CARD_FIELDS = [
-  { key: 'number', label: 'Número' },
-  { key: 'brand', label: 'Bandeira' },
-  { key: 'holder', label: 'Nome impresso' },
-  { key: 'expiry', label: 'Validade' },
-  { key: 'cvv', label: 'CVV' },
-]
+  { key: 'number', label: 'cardNumber' },
+  { key: 'brand', label: 'brand' },
+  { key: 'holder', label: 'holder' },
+  { key: 'expiry', label: 'expiry' },
+  { key: 'cvv', label: 'cvv' },
+] as const
 
 const BRAND_CHOICES = Object.entries(CARD_BRANDS).map(([value, brand]) => ({
   value,
   label: brand.name,
 }))
 
-export default function CreditCardGeneratorPage() {
+export default async function CreditCardGeneratorPage({
+  params,
+}: PageProps<'/[locale]/development/generators/credit-card'>) {
+  await initPage(params)
+  const t = await getTranslations('pages.creditCard')
+  const tFields = await getTranslations('fields')
+
   return (
     <div className="w-full max-w-2xl space-y-8">
       <div className="space-y-3">
-        <h1 className="text-2xl font-bold font-mono">
-          Gerador de cartão de crédito
-        </h1>
+        <h1 className="text-2xl font-bold font-mono">{t('title')}</h1>
 
-        <p className="text-muted-foreground text-balance">
-          Um cartão Visa é gerado ao abrir a página. Escolha a bandeira e o
-          formato, ou clique em "Gerar cartão" para criar outro.
-        </p>
+        <p className="text-muted-foreground text-balance">{t('intro')}</p>
       </div>
 
       <RecordGenerator
-        buttonLabel="Gerar cartão"
+        buttonLabel={t('button')}
         endpoint="/api/generators/credit-card"
         field="creditCard"
-        fields={CARD_FIELDS}
+        fields={CARD_FIELDS.map(({ key, label }) => ({
+          key,
+          label: tFields(label),
+        }))}
         options={[
           {
             type: 'select',
             name: 'brand',
-            label: 'Bandeira',
+            label: t('brand'),
             defaultValue: 'visa',
             choices: BRAND_CHOICES,
           },
           {
             type: 'boolean',
             name: 'formatted',
-            label: 'Número com espaços',
+            label: t('formatted'),
             defaultValue: true,
           },
         ]}
       />
 
-      <HowItWorks
-        items={[
-          'O cartão é gerado no servidor e não fica armazenado em lugar nenhum.',
-          'O número começa com o prefixo da bandeira e passa no algoritmo de Luhn, a verificação que formulários e gateways fazem antes de cobrar.',
-          'A validade fica entre 1 e 5 anos no futuro. O CVV tem 4 dígitos na American Express e 3 nas outras bandeiras.',
-          'O número é sorteado e serve só para testar formulários. Para testar pagamentos, use os cartões de teste do seu gateway.',
-        ]}
-      />
+      <HowItWorks items={t.raw('howItWorks')} />
 
       <ApiUsage
-        name="gerador de cartão de crédito"
+        name={t('apiName')}
         method="GET"
         path="/api/generators/credit-card"
         query={{ brand: 'amex' }}
         parameters={[
           {
             name: 'brand',
-            description: `Opcional. ${Object.keys(CARD_BRANDS)
-              .map((brand) => `"${brand}"`)
-              .join(', ')}. Padrão: "visa".`,
+            description: t('apiBrand', {
+              brands: Object.keys(CARD_BRANDS)
+                .map((brand) => `"${brand}"`)
+                .join(', '),
+            }),
           },
-          {
-            name: 'formatted',
-            description:
-              'Opcional. "false" gera o número sem espaços. Padrão: "true".',
-          },
+          { name: 'formatted', description: t('apiFormatted') },
         ]}
         response={{
           creditCard: {

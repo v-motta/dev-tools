@@ -1,17 +1,12 @@
-import type { Metadata } from 'next'
+import { initPage, toolMetadata } from '@/i18n/page'
 import { BMRCalculator } from './bmr-calculator'
 
-export const metadata: Metadata = {
-  title: 'Calculadora de TMB',
-  description:
-    'Calcule sua Taxa Metabólica Basal (TMB) e seu gasto calórico diário.',
-  keywords: [
-    'calculador de tmb',
-    'calculador de tmb online',
-    'calculador de tmb grátis',
-  ],
-}
+export const generateMetadata = toolMetadata('bmr')
 
-export default function BMRCalculatorPage() {
+export default async function BMRCalculatorPage({
+  params,
+}: PageProps<'/[locale]/utilities/calculators/bmr'>) {
+  await initPage(params)
+
   return <BMRCalculator />
 }

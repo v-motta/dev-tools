@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import { getTranslations } from 'next-intl/server'
 import { ApiUsage } from '@/components/api-usage'
 import { DocumentValidator } from '@/components/document-validator'
 import { Generator } from '@/components/generator'
@@ -6,110 +6,89 @@ import { ANY } from '@/components/generator-options'
 import { HowItWorks } from '@/components/how-it-works'
 import { RecordGenerator } from '@/components/record-generator'
 import { ToolModes } from '@/components/tool-modes'
+import { initPage, toolMetadata } from '@/i18n/page'
 import { STATE_CHOICES } from '@/utils/states'
 
-export const metadata: Metadata = {
-  title: 'Gerador de CNPJ e de empresa, e validador de CNPJ',
-  description:
-    'Gere CNPJs válidos ou empresas completas para testes, com razão social, inscrição estadual e endereço, ou confira se um CNPJ é válido.',
-  keywords: [
-    'gerador de cnpj',
-    'gerador de cnpj online',
-    'gerador de cnpj válido',
-    'gerador de cnpj com máscara',
-    'gerador de empresa',
-    'gerador de empresa fictícia',
-    'validador de cnpj',
-    'validador de cnpj online',
-  ],
-}
+export const generateMetadata = toolMetadata('cnpj')
 
+/** Each field of the generated company, with the message of its label */
 const COMPANY_FIELDS = [
-  { key: 'name', label: 'Razão social' },
-  { key: 'tradeName', label: 'Nome fantasia' },
-  { key: 'cnpj', label: 'CNPJ' },
-  { key: 'stateRegistration', label: 'Inscrição estadual' },
-  { key: 'foundedAt', label: 'Data de abertura' },
-  { key: 'email', label: 'E-mail' },
-  { key: 'website', label: 'Site' },
-  { key: 'phone', label: 'Telefone' },
-  { key: 'cep', label: 'CEP' },
-  { key: 'street', label: 'Logradouro' },
-  { key: 'number', label: 'Número' },
-  { key: 'neighborhood', label: 'Bairro' },
-  { key: 'city', label: 'Cidade' },
-  { key: 'state', label: 'Estado' },
-]
+  { key: 'name', label: 'companyName' },
+  { key: 'tradeName', label: 'tradeName' },
+  { key: 'cnpj', label: 'cnpj' },
+  { key: 'stateRegistration', label: 'stateRegistration' },
+  { key: 'foundedAt', label: 'foundedAt' },
+  { key: 'email', label: 'email' },
+  { key: 'website', label: 'website' },
+  { key: 'phone', label: 'phone' },
+  { key: 'cep', label: 'cep' },
+  { key: 'street', label: 'street' },
+  { key: 'number', label: 'number' },
+  { key: 'neighborhood', label: 'neighborhood' },
+  { key: 'city', label: 'city' },
+  { key: 'state', label: 'state' },
+] as const
 
-export default function CNPJPage() {
+export default async function CNPJPage({
+  params,
+}: PageProps<'/[locale]/brazil/documents/cnpj'>) {
+  await initPage(params)
+  const t = await getTranslations('pages.cnpj')
+  const tCommon = await getTranslations('common')
+  const tApi = await getTranslations('apiUsage')
+  const tFields = await getTranslations('fields')
+
   return (
     <div className="w-full max-w-2xl space-y-8">
       <div className="space-y-3">
-        <h1 className="text-2xl font-bold font-mono">
-          Gerador e validador de CNPJ
-        </h1>
+        <h1 className="text-2xl font-bold font-mono">{t('title')}</h1>
 
-        <p className="text-muted-foreground text-balance">
-          Gere só um CNPJ ou uma empresa completa para usar em testes, ou
-          confira se um CNPJ é válido.
-        </p>
+        <p className="text-muted-foreground text-balance">{t('intro')}</p>
       </div>
 
       <ToolModes
         modes={[
           {
             value: 'cnpj',
-            label: 'Só o CNPJ',
+            label: t('generate.mode'),
             content: (
               <>
                 <p className="text-muted-foreground text-balance">
-                  Um CNPJ válido é gerado ao abrir a página. Escolha a
-                  quantidade e o formato, ou clique em "Gerar CNPJ" para criar
-                  outro.
+                  {t('generate.intro')}
                 </p>
 
                 <Generator
                   name="CNPJ"
-                  label="CNPJ gerado"
-                  pluralLabel="CNPJs gerados"
+                  label={t('generate.label')}
+                  pluralLabel={t('generate.pluralLabel')}
                   endpoint="/api/generators/cnpj"
                   field="cnpj"
                   options={[
                     {
                       type: 'boolean',
                       name: 'formatted',
-                      label: 'Com pontuação',
+                      label: tCommon('formatted'),
                       defaultValue: true,
                     },
                   ]}
                 />
 
-                <HowItWorks
-                  items={[
-                    'O CNPJ é gerado no servidor e não fica armazenado em lugar nenhum.',
-                    'O número segue as regras da Receita Federal.',
-                    'Os dígitos verificadores são calculados corretamente.',
-                    'O número serve apenas para testes e não pertence a nenhuma empresa real.',
-                    'Os últimos valores gerados ficam listados abaixo do botão até você sair da página.',
-                  ]}
-                />
+                <HowItWorks items={t.raw('generate.howItWorks')} />
 
                 <ApiUsage
-                  name="gerador de CNPJ"
+                  name={t('generate.apiName')}
                   method="GET"
                   path="/api/generators/cnpj"
                   query={{ quantity: '2', formatted: 'false' }}
                   parameters={[
                     {
                       name: 'quantity',
-                      description:
-                        'Opcional. De 1 a 50. Quando informado, a resposta traz a lista "cnpjs" em vez de "cnpj".',
+                      description: tApi('quantity', {
+                        list: 'cnpjs',
+                        single: 'cnpj',
+                      }),
                     },
-                    {
-                      name: 'formatted',
-                      description:
-                        'Opcional. "false" gera só os números. Padrão: "true".',
-                    },
+                    { name: 'formatted', description: tApi('formatted') },
                   ]}
                   response={{ cnpjs: ['11222333000181', '45723174000110'] }}
                 />
@@ -118,54 +97,44 @@ export default function CNPJPage() {
           },
           {
             value: 'company',
-            label: 'Empresa completa',
+            label: t('company.mode'),
             content: (
               <>
                 <p className="text-muted-foreground text-balance">
-                  Uma empresa fictícia com CNPJ, inscrição estadual, contato e
-                  endereço. Escolha o estado ou deixe em "Qualquer estado".
+                  {t('company.intro')}
                 </p>
 
                 <RecordGenerator
-                  buttonLabel="Gerar empresa"
+                  buttonLabel={t('company.button')}
                   endpoint="/api/generators/company"
                   field="company"
-                  fields={COMPANY_FIELDS}
+                  fields={COMPANY_FIELDS.map(({ key, label }) => ({
+                    key,
+                    label: tFields(label),
+                  }))}
                   options={[
                     {
                       type: 'select',
                       name: 'state',
-                      label: 'Estado',
+                      label: tCommon('state'),
                       defaultValue: ANY,
                       choices: [
-                        { value: ANY, label: 'Qualquer estado' },
+                        { value: ANY, label: tCommon('anyState') },
                         ...STATE_CHOICES,
                       ],
                     },
                   ]}
                 />
 
-                <HowItWorks
-                  items={[
-                    'A empresa é gerada no servidor e não fica armazenada em lugar nenhum.',
-                    'O CNPJ e a inscrição estadual são válidos, e a inscrição segue as regras do estado da empresa.',
-                    'O endereço é real: o CEP existe e corresponde à rua, ao bairro e à cidade. O telefone usa o DDD da cidade.',
-                    'O e-mail usa domínios reservados para testes (example.com), então nenhuma mensagem chega a alguém de verdade.',
-                    'Os dados servem apenas para testes e não pertencem a nenhuma empresa real.',
-                  ]}
-                />
+                <HowItWorks items={t.raw('company.howItWorks')} />
 
                 <ApiUsage
-                  name="gerador de empresa"
+                  name={t('company.apiName')}
                   method="GET"
                   path="/api/generators/company"
                   query={{ state: 'RS' }}
                   parameters={[
-                    {
-                      name: 'state',
-                      description:
-                        'Opcional. A sigla do estado, como "SP". Sem ela, o estado é sorteado.',
-                    },
+                    { name: 'state', description: tApi('stateOptional') },
                   ]}
                   response={{
                     company: {
@@ -191,37 +160,24 @@ export default function CNPJPage() {
           },
           {
             value: 'validate',
-            label: 'Validar',
+            label: tCommon('validate'),
             content: (
               <>
                 <p className="text-muted-foreground text-balance">
-                  Digite um CNPJ e clique em "Validar CNPJ" para saber se ele é
-                  válido.
+                  {t('validate.intro')}
                 </p>
 
                 <DocumentValidator document="cnpj" />
 
-                <HowItWorks
-                  items={[
-                    'A validação é feita no servidor e nada fica armazenado.',
-                    'O validador confere se o CNPJ segue as regras da Receita Federal.',
-                    'São verificados o formato e os dígitos verificadores.',
-                    'O CNPJ pode ser digitado com ou sem pontuação (00.000.000/0001-00 ou 00000000000100).',
-                    'O resultado aparece logo abaixo do campo.',
-                  ]}
-                />
+                <HowItWorks items={t.raw('validate.howItWorks')} />
 
                 <ApiUsage
-                  name="validador de CNPJ"
+                  name={t('validate.apiName')}
                   method="POST"
                   path="/api/validators/cnpj"
                   body={{ cnpj: '00.111.222/0000-00' }}
                   parameters={[
-                    {
-                      name: 'cnpj',
-                      description:
-                        'Obrigatório. O número com ou sem pontuação.',
-                    },
+                    { name: 'cnpj', description: tApi('documentRequired') },
                   ]}
                   response={{ isValid: false }}
                 />

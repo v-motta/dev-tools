@@ -2,6 +2,7 @@
 
 import ky from 'ky'
 import { Check, LoaderCircle, X } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 import { type FormEvent, useId, useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -18,13 +19,13 @@ import { STATE_CHOICES } from '@/utils/states'
 
 const onlyDigits = (value: string) => value.replace(/\D/g, '')
 
+// Labels and results live in messages/*.json under `documentValidator`, one
+// set per document, since languages inflect them by the document's gender
 interface DocumentConfig {
-  name: string
-  /** Portuguese inflects "o/a" and "válido/válida" by the document's gender */
-  feminine?: boolean
   /** Body field sent to `/api/validators/{document}` */
   field: string
-  placeholder: string
+  /** Missing when the messages hold a text placeholder instead */
+  placeholder?: string
   maxLength: number
   inputMode: 'numeric' | 'text'
   /** Turns what was typed into the value shown in the field */
@@ -35,7 +36,6 @@ interface DocumentConfig {
 
 const documents = {
   cpf: {
-    name: 'CPF',
     field: 'cpf',
     placeholder: '123.456.789-10',
     maxLength: 14,
@@ -47,7 +47,6 @@ const documents = {
         .replace(/(\d{3})(\d{1,2})$/, '$1-$2'),
   },
   cnpj: {
-    name: 'CNPJ',
     field: 'cnpj',
     placeholder: '00.623.904/0001-73',
     maxLength: 18,
@@ -60,7 +59,6 @@ const documents = {
         .replace(/(\d{4})(\d)/, '$1-$2'),
   },
   rg: {
-    name: 'RG',
     field: 'rg',
     placeholder: '12.345.678-X',
     maxLength: 12,
@@ -77,8 +75,6 @@ const documents = {
         .replace(/\.(\d{3})([\dX])$/, '.$1-$2'),
   },
   cnh: {
-    name: 'CNH',
-    feminine: true,
     field: 'cnh',
     placeholder: '12345678900',
     maxLength: 11,
@@ -86,10 +82,7 @@ const documents = {
     mask: onlyDigits,
   },
   'state-registration': {
-    name: 'inscrição estadual',
-    feminine: true,
     field: 'stateRegistration',
-    placeholder: 'Com ou sem pontuação',
     maxLength: 20,
     inputMode: 'numeric',
     // Every state formats it differently, so only stray letters are removed
@@ -106,8 +99,9 @@ type ValidationStatus = 'valid' | 'invalid' | 'error'
 
 export function DocumentValidator({ document }: DocumentValidatorProps) {
   const config: DocumentConfig = documents[document]
-  const { name, feminine, field, placeholder, maxLength, inputMode, mask } =
-    config
+  const { field, maxLength, inputMode, mask } = config
+  const t = useTranslations('documentValidator')
+  const tCommon = useTranslations('common')
   const id = useId()
   const messageId = useId()
 
@@ -116,12 +110,10 @@ export function DocumentValidator({ document }: DocumentValidatorProps) {
   const [isPending, setIsPending] = useState(false)
   const [status, setStatus] = useState<ValidationStatus>()
 
-  const article = feminine ? 'a' : 'o'
-  const capitalized = name[0].toUpperCase() + name.slice(1)
   const messages: Record<ValidationStatus, string> = {
-    valid: `${capitalized} ${feminine ? 'válida' : 'válido'}`,
-    invalid: `${capitalized} ${feminine ? 'inválida' : 'inválido'}`,
-    error: `Não foi possível validar ${article} ${name}. Tente novamente.`,
+    valid: t(`${document}.valid`),
+    invalid: t(`${document}.invalid`),
+    error: t(`${document}.error`),
   }
 
   async function handleOnSubmit(event: FormEvent<HTMLFormElement>) {
@@ -153,7 +145,7 @@ export function DocumentValidator({ document }: DocumentValidatorProps) {
     <form onSubmit={handleOnSubmit} className="space-y-4">
       {config.withState && (
         <div className="flex flex-col gap-2">
-          <Label htmlFor={`${id}-state`}>Estado</Label>
+          <Label htmlFor={`${id}-state`}>{tCommon('state')}</Label>
           <Select
             value={state}
             onValueChange={(value) => {
@@ -176,9 +168,7 @@ export function DocumentValidator({ document }: DocumentValidatorProps) {
       )}
 
       <div className="space-y-1">
-        <Label htmlFor={id}>
-          Digite {article} {name}
-        </Label>
+        <Label htmlFor={id}>{t(`${document}.label`)}</Label>
         <div className="relative">
           <Input
             type="text"
@@ -187,7 +177,9 @@ export function DocumentValidator({ document }: DocumentValidatorProps) {
             name={field}
             value={value}
             onChange={handleOnChange}
-            placeholder={placeholder}
+            placeholder={
+              config.placeholder ?? t('state-registration.placeholder')
+            }
             maxLength={maxLength}
             required
             aria-invalid={status === 'invalid'}
@@ -225,9 +217,9 @@ export function DocumentValidator({ document }: DocumentValidatorProps) {
 
       <Button className="w-full" disabled={isPending}>
         {isPending ? (
-          <LoaderCircle className="animate-spin" aria-label="Validando" />
+          <LoaderCircle className="animate-spin" aria-label={t('validating')} />
         ) : (
-          `Validar ${name}`
+          t(`${document}.button`)
         )}
       </Button>
     </form>

@@ -1,19 +1,12 @@
-import type { Metadata } from 'next'
+import { initPage, toolMetadata } from '@/i18n/page'
 import { DiscountCalculator } from './discount-calculator'
 
-export const metadata: Metadata = {
-  title: 'Calculadora de desconto',
-  description: 'Calcule o valor do desconto e o preço final de um produto.',
-  keywords: [
-    'calculador de desconto',
-    'calculador de desconto online',
-    'calculador de desconto grátis',
-    'calculador de desconto com porcentagem',
-    'calculador de desconto com porcentagem online',
-    'calculador de desconto com porcentagem grátis',
-  ],
-}
+export const generateMetadata = toolMetadata('discount')
 
-export default function DiscountCalculatorPage() {
+export default async function DiscountCalculatorPage({
+  params,
+}: PageProps<'/[locale]/utilities/calculators/discount'>) {
+  await initPage(params)
+
   return <DiscountCalculator />
 }

@@ -3,6 +3,7 @@
 import { keepPreviousData, useQuery } from '@tanstack/react-query'
 import ky from 'ky'
 import { LoaderCircle } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 import { useId, useState } from 'react'
 import { CopyButton } from '@/components/copy-button'
 import {
@@ -21,9 +22,9 @@ import {
 } from '@/components/ui/select'
 
 interface GeneratorProps {
-  /** Name of the generated value, e.g. "CPF" or "senha" */
+  /** Name of the generated value, e.g. "CPF" or "password", in the page's language */
   name: string
-  /** Output labels, e.g. "CPF gerado"/"CPFs gerados" (Portuguese inflects them) */
+  /** Output labels, e.g. "Generated CPF"/"Generated CPFs", since languages inflect them */
   label: string
   pluralLabel: string
   /** API route that responds with `{ [field + 's']: string[] }` */
@@ -43,6 +44,7 @@ export function Generator({
   field,
   options = [],
 }: GeneratorProps) {
+  const t = useTranslations('generator')
   const id = useId()
   const [quantity, setQuantity] = useState(1)
   const { values, setOption, visibleOptions, paramsKey } =
@@ -81,7 +83,7 @@ export function Generator({
           an 8px gap, so the controls line up */}
       <div className="flex flex-wrap items-start gap-x-8 gap-y-4">
         <div className="flex flex-col gap-2">
-          <Label htmlFor={`${id}-quantity`}>Quantidade</Label>
+          <Label htmlFor={`${id}-quantity`}>{t('quantity')}</Label>
           <Select
             value={String(quantity)}
             onValueChange={(value) => setQuantity(Number(value))}
@@ -127,20 +129,18 @@ export function Generator({
                     <span className="break-all">{value}</span>
                     <CopyButton
                       value={value}
-                      label={`Copiar ${name} ${index + 1}`}
+                      label={t('copyItem', { name, index: index + 1 })}
                       className="size-7 border-0 shadow-none"
                     />
                   </li>
                 ))}
               </ul>
             ) : isError && !isFetching ? (
-              <p className="text-base font-sans text-red-500">
-                Não foi possível gerar. Tente novamente.
-              </p>
+              <p className="text-base font-sans text-red-500">{t('error')}</p>
             ) : (
               <LoaderCircle
                 className="animate-spin text-muted-foreground"
-                aria-label="Gerando"
+                aria-label={t('generating')}
               />
             )}
           </output>
@@ -148,7 +148,7 @@ export function Generator({
           {isSuccess && (
             <CopyButton
               value={data.join('\n')}
-              label={data.length > 1 ? 'Copiar todos' : `Copiar ${name}`}
+              label={data.length > 1 ? t('copyAll') : t('copy', { name })}
               showText
             />
           )}
@@ -161,25 +161,25 @@ export function Generator({
         onClick={() => refetch()}
       >
         {isFetching ? (
-          <LoaderCircle className="animate-spin" aria-label="Gerando" />
+          <LoaderCircle className="animate-spin" aria-label={t('generating')} />
         ) : isError ? (
-          'Tentar novamente'
+          t('tryAgain')
         ) : (
-          `Gerar ${name}`
+          t('generate', { name })
         )}
       </Button>
 
       {previousValues.length > 0 && (
         <div className="space-y-2">
           <div className="flex items-center justify-between">
-            <h2 className="text-sm font-medium">Gerados anteriormente</h2>
+            <h2 className="text-sm font-medium">{t('history')}</h2>
             <Button
               variant="ghost"
               size="sm"
               className="text-muted-foreground"
               onClick={() => setHistory(isSuccess ? data : [])}
             >
-              Limpar
+              {t('clear')}
             </Button>
           </div>
 
@@ -192,7 +192,7 @@ export function Generator({
                 <span className="break-all text-muted-foreground">{value}</span>
                 <CopyButton
                   value={value}
-                  label={`Copiar ${name} anterior ${index + 1}`}
+                  label={t('copyPrevious', { name, index: index + 1 })}
                   className="size-7 border-0 shadow-none"
                 />
               </li>
