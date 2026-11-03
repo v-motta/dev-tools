@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import { isStateCode, type StateCode } from '@/utils/states'
 
 export function badRequest(message: string) {
   return NextResponse.json({ message }, { status: 400 })
@@ -48,6 +49,34 @@ export function parseBooleanParam(
   return null
 }
 
+/**
+ * Reads a query parameter that must be one of `choices`. Returns `fallback`
+ * when it is missing and `null` when it has any other value.
+ */
+export function parseChoiceParam<T extends string>(
+  searchParams: URLSearchParams,
+  name: string,
+  choices: readonly T[],
+  fallback: T | undefined
+): T | undefined | null {
+  const value = searchParams.get(name)
+  if (value === null) return fallback
+
+  return choices.includes(value as T) ? (value as T) : null
+}
+
+/** Reads `?state=` as a state code, in any case. See `parseChoiceParam`. */
+export function parseStateParam(
+  searchParams: URLSearchParams,
+  fallback?: StateCode
+) {
+  const value = searchParams.get('state')
+  if (value === null) return fallback
+
+  const state = value.toUpperCase()
+  return isStateCode(state) ? state : null
+}
+
 export const MAX_GENERATOR_QUANTITY = 50
 
 /**
@@ -57,7 +86,7 @@ export const MAX_GENERATOR_QUANTITY = 50
 export function generatorResponse(
   searchParams: URLSearchParams,
   field: string,
-  generate: () => string
+  generate: () => unknown
 ) {
   if (!searchParams.has('quantity')) {
     return NextResponse.json({ [field]: generate() })

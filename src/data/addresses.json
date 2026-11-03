@@ -1,0 +1,6042 @@
+[
+  {
+    "cep": "02203000",
+    "street": "Avenida Ede",
+    "neighborhood": "Vila Ede",
+    "city": "São Paulo",
+    "state": "SP",
+    "ddd": "11"
+  },
+  {
+    "cep": "02996150",
+    "street": "Avenida Dois",
+    "neighborhood": "Parque Nações Unidas",
+    "city": "São Paulo",
+    "state": "SP",
+    "ddd": "11"
+  },
+  {
+    "cep": "02996160",
+    "street": "Avenida Três",
+    "neighborhood": "Parque Nações Unidas",
+    "city": "São Paulo",
+    "state": "SP",
+    "ddd": "11"
+  },
+  {
+    "cep": "03370010",
+    "street": "Avenida Luca",
+    "neighborhood": "Chácara Mafalda",
+    "city": "São Paulo",
+    "state": "SP",
+    "ddd": "11"
+  },
+  {
+    "cep": "04058021",
+    "street": "Avenida Odila",
+    "neighborhood": "Planalto Paulista",
+    "city": "São Paulo",
+    "state": "SP",
+    "ddd": "11"
+  },
+  {
+    "cep": "04065000",
+    "street": "Avenida Ceci",
+    "neighborhood": "Planalto Paulista",
+    "city": "São Paulo",
+    "state": "SP",
+    "ddd": "11"
+  },
+  {
+    "cep": "04065003",
+    "street": "Avenida Ceci",
+    "neighborhood": "Planalto Paulista",
+    "city": "São Paulo",
+    "state": "SP",
+    "ddd": "11"
+  },
+  {
+    "cep": "04077020",
+    "street": "Avenida Moema",
+    "neighborhood": "Moema",
+    "city": "São Paulo",
+    "state": "SP",
+    "ddd": "11"
+  },
+  {
+    "cep": "04077023",
+    "street": "Avenida Moema",
+    "neighborhood": "Moema",
+    "city": "São Paulo",
+    "state": "SP",
+    "ddd": "11"
+  },
+  {
+    "cep": "04082002",
+    "street": "Avenida Iraí",
+    "neighborhood": "Indianópolis",
+    "city": "São Paulo",
+    "state": "SP",
+    "ddd": "11"
+  },
+  {
+    "cep": "04082003",
+    "street": "Avenida Iraí",
+    "neighborhood": "Indianópolis",
+    "city": "São Paulo",
+    "state": "SP",
+    "ddd": "11"
+  },
+  {
+    "cep": "04082004",
+    "street": "Avenida Iraí",
+    "neighborhood": "Indianópolis",
+    "city": "São Paulo",
+    "state": "SP",
+    "ddd": "11"
+  },
+  {
+    "cep": "04082005",
+    "street": "Avenida Iraí",
+    "neighborhood": "Indianópolis",
+    "city": "São Paulo",
+    "state": "SP",
+    "ddd": "11"
+  },
+  {
+    "cep": "04774020",
+    "street": "Avenida Berna",
+    "neighborhood": "Veleiros",
+    "city": "São Paulo",
+    "state": "SP",
+    "ddd": "11"
+  },
+  {
+    "cep": "04852410",
+    "street": "Rua 3",
+    "neighborhood": "Jardim Jaú (Zona Sul)",
+    "city": "São Paulo",
+    "state": "SP",
+    "ddd": "11"
+  },
+  {
+    "cep": "13051435",
+    "street": "Rua 4",
+    "neighborhood": "Loteamento Parque das Águas",
+    "city": "Campinas",
+    "state": "SP",
+    "ddd": "19"
+  },
+  {
+    "cep": "13053100",
+    "street": "Avenida Três",
+    "neighborhood": "Cidade Singer",
+    "city": "Campinas",
+    "state": "SP",
+    "ddd": "19"
+  },
+  {
+    "cep": "13056299",
+    "street": "Avenida Zero",
+    "neighborhood": "Jardim Princesa",
+    "city": "Campinas",
+    "state": "SP",
+    "ddd": "19"
+  },
+  {
+    "cep": "13056568",
+    "street": "Rua 8",
+    "neighborhood": "Residencial Vilas do Rio",
+    "city": "Campinas",
+    "state": "SP",
+    "ddd": "19"
+  },
+  {
+    "cep": "13058659",
+    "street": "Avenida 1",
+    "neighborhood": "Residencial Parque das Cores",
+    "city": "Campinas",
+    "state": "SP",
+    "ddd": "19"
+  },
+  {
+    "cep": "13069554",
+    "street": "Rua 9",
+    "neighborhood": "Residencial Vila Profeta",
+    "city": "Campinas",
+    "state": "SP",
+    "ddd": "19"
+  },
+  {
+    "cep": "13069555",
+    "street": "Rua 1",
+    "neighborhood": "Residencial Vila Profeta",
+    "city": "Campinas",
+    "state": "SP",
+    "ddd": "19"
+  },
+  {
+    "cep": "13097292",
+    "street": "Avenida 2",
+    "neighborhood": "Residencial Vista Campinas",
+    "city": "Campinas",
+    "state": "SP",
+    "ddd": "19"
+  },
+  {
+    "cep": "13097293",
+    "street": "Avenida 3",
+    "neighborhood": "Residencial Vista Campinas",
+    "city": "Campinas",
+    "state": "SP",
+    "ddd": "19"
+  },
+  {
+    "cep": "13097294",
+    "street": "Avenida 4",
+    "neighborhood": "Residencial Vista Campinas",
+    "city": "Campinas",
+    "state": "SP",
+    "ddd": "19"
+  },
+  {
+    "cep": "13097295",
+    "street": "Avenida 5",
+    "neighborhood": "Residencial Vista Campinas",
+    "city": "Campinas",
+    "state": "SP",
+    "ddd": "19"
+  },
+  {
+    "cep": "13097303",
+    "street": "Rua 8",
+    "neighborhood": "Residencial Vista Campinas",
+    "city": "Campinas",
+    "state": "SP",
+    "ddd": "19"
+  },
+  {
+    "cep": "13098591",
+    "street": "Avenida 1",
+    "neighborhood": "Loteamento Parque das Sapucaias",
+    "city": "Campinas",
+    "state": "SP",
+    "ddd": "19"
+  },
+  {
+    "cep": "13105351",
+    "street": "Rua 3",
+    "neighborhood": "Ville Sainte Anne",
+    "city": "Campinas",
+    "state": "SP",
+    "ddd": "19"
+  },
+  {
+    "cep": "13105355",
+    "street": "Rua 7",
+    "neighborhood": "Ville Sainte Anne",
+    "city": "Campinas",
+    "state": "SP",
+    "ddd": "19"
+  },
+  {
+    "cep": "20941560",
+    "street": "Avenida Sayd",
+    "neighborhood": "Mangueira",
+    "city": "Rio de Janeiro",
+    "state": "RJ",
+    "ddd": "21"
+  },
+  {
+    "cep": "21041020",
+    "street": "Avenida Paris",
+    "neighborhood": "Bonsucesso",
+    "city": "Rio de Janeiro",
+    "state": "RJ",
+    "ddd": "21"
+  },
+  {
+    "cep": "21062400",
+    "street": "Avenida Itaoca",
+    "neighborhood": "Complexo do Alemão",
+    "city": "Rio de Janeiro",
+    "state": "RJ",
+    "ddd": "21"
+  },
+  {
+    "cep": "21515001",
+    "street": "Avenida Brasil",
+    "neighborhood": "Barros Filho",
+    "city": "Rio de Janeiro",
+    "state": "RJ",
+    "ddd": "21"
+  },
+  {
+    "cep": "21615336",
+    "street": "Avenida Brasil",
+    "neighborhood": "Deodoro",
+    "city": "Rio de Janeiro",
+    "state": "RJ",
+    "ddd": "21"
+  },
+  {
+    "cep": "21615337",
+    "street": "Avenida Brasil",
+    "neighborhood": "Deodoro",
+    "city": "Rio de Janeiro",
+    "state": "RJ",
+    "ddd": "21"
+  },
+  {
+    "cep": "21615338",
+    "street": "Avenida Brasil",
+    "neighborhood": "Deodoro",
+    "city": "Rio de Janeiro",
+    "state": "RJ",
+    "ddd": "21"
+  },
+  {
+    "cep": "21941009",
+    "street": "Avenida Sete",
+    "neighborhood": "Itacolomi",
+    "city": "Rio de Janeiro",
+    "state": "RJ",
+    "ddd": "21"
+  },
+  {
+    "cep": "22620171",
+    "street": "Avenida Pepe",
+    "neighborhood": "Barra da Tijuca",
+    "city": "Rio de Janeiro",
+    "state": "RJ",
+    "ddd": "21"
+  },
+  {
+    "cep": "22775027",
+    "street": "Avenida N-s",
+    "neighborhood": "Barra Olímpica",
+    "city": "Rio de Janeiro",
+    "state": "RJ",
+    "ddd": "21"
+  },
+  {
+    "cep": "22793295",
+    "street": "Avenida Malibu",
+    "neighborhood": "Barra da Tijuca",
+    "city": "Rio de Janeiro",
+    "state": "RJ",
+    "ddd": "21"
+  },
+  {
+    "cep": "23028000",
+    "street": "Avenida Canal",
+    "neighborhood": "Guaratiba",
+    "city": "Rio de Janeiro",
+    "state": "RJ",
+    "ddd": "21"
+  },
+  {
+    "cep": "23548042",
+    "street": "Avenida Dois",
+    "neighborhood": "Sepetiba",
+    "city": "Rio de Janeiro",
+    "state": "RJ",
+    "ddd": "21"
+  },
+  {
+    "cep": "23548096",
+    "street": "Avenida Três",
+    "neighborhood": "Sepetiba",
+    "city": "Rio de Janeiro",
+    "state": "RJ",
+    "ddd": "21"
+  },
+  {
+    "cep": "23560363",
+    "street": "Avenida Canal",
+    "neighborhood": "Santa Cruz",
+    "city": "Rio de Janeiro",
+    "state": "RJ",
+    "ddd": "21"
+  },
+  {
+    "cep": "24020020",
+    "street": "Avenida Churchill",
+    "neighborhood": "Centro",
+    "city": "Niterói",
+    "state": "RJ",
+    "ddd": "21"
+  },
+  {
+    "cep": "24030012",
+    "street": "Avenida Feliciano Sodré",
+    "neighborhood": "Centro",
+    "city": "Niterói",
+    "state": "RJ",
+    "ddd": "21"
+  },
+  {
+    "cep": "24030014",
+    "street": "Avenida Feliciano Sodré",
+    "neighborhood": "Centro",
+    "city": "Niterói",
+    "state": "RJ",
+    "ddd": "21"
+  },
+  {
+    "cep": "24030221",
+    "street": "Avenida Jansen de Melo",
+    "neighborhood": "Centro",
+    "city": "Niterói",
+    "state": "RJ",
+    "ddd": "21"
+  },
+  {
+    "cep": "24110294",
+    "street": "Avenida Otaviano",
+    "neighborhood": "Barreto",
+    "city": "Niterói",
+    "state": "RJ",
+    "ddd": "21"
+  },
+  {
+    "cep": "24130305",
+    "street": "Avenida José Ramos",
+    "neighborhood": "Fonseca",
+    "city": "Niterói",
+    "state": "RJ",
+    "ddd": "21"
+  },
+  {
+    "cep": "24230252",
+    "street": "Avenida Sete de Setembro",
+    "neighborhood": "Icaraí",
+    "city": "Niterói",
+    "state": "RJ",
+    "ddd": "21"
+  },
+  {
+    "cep": "24310005",
+    "street": "Avenida Rui Barbosa",
+    "neighborhood": "Largo da Batalha",
+    "city": "Niterói",
+    "state": "RJ",
+    "ddd": "21"
+  },
+  {
+    "cep": "24325220",
+    "street": "Avenida França",
+    "neighborhood": "Maria Paula",
+    "city": "Niterói",
+    "state": "RJ",
+    "ddd": "21"
+  },
+  {
+    "cep": "24330001",
+    "street": "Comunidade Avenida Dakar",
+    "neighborhood": "Rio do Ouro",
+    "city": "Niterói",
+    "state": "RJ",
+    "ddd": "21"
+  },
+  {
+    "cep": "24346053",
+    "street": "Avenida Boa Vista",
+    "neighborhood": "Itaipu",
+    "city": "Niterói",
+    "state": "RJ",
+    "ddd": "21"
+  },
+  {
+    "cep": "24348000",
+    "street": "Avenida Mathias Sandri",
+    "neighborhood": "Itacoatiara",
+    "city": "Niterói",
+    "state": "RJ",
+    "ddd": "21"
+  },
+  {
+    "cep": "24350272",
+    "street": "Avenida Cinco",
+    "neighborhood": "Piratininga",
+    "city": "Niterói",
+    "state": "RJ",
+    "ddd": "21"
+  },
+  {
+    "cep": "24360180",
+    "street": "Avenida Padre Natuzzi",
+    "neighborhood": "São Francisco",
+    "city": "Niterói",
+    "state": "RJ",
+    "ddd": "21"
+  },
+  {
+    "cep": "24360440",
+    "street": "Avenida Rui Barbosa",
+    "neighborhood": "São Francisco",
+    "city": "Niterói",
+    "state": "RJ",
+    "ddd": "21"
+  },
+  {
+    "cep": "29016320",
+    "street": "Rua Serrat",
+    "neighborhood": "Centro",
+    "city": "Vitória",
+    "state": "ES",
+    "ddd": "27"
+  },
+  {
+    "cep": "29023117",
+    "street": "Rua Bariri",
+    "neighborhood": "Inhanguetá",
+    "city": "Vitória",
+    "state": "ES",
+    "ddd": "27"
+  },
+  {
+    "cep": "29026125",
+    "street": "Rua Tuyuty",
+    "neighborhood": "Santo Antônio",
+    "city": "Vitória",
+    "state": "ES",
+    "ddd": "27"
+  },
+  {
+    "cep": "29026858",
+    "street": "Rua Atlanta",
+    "neighborhood": "Santa Tereza",
+    "city": "Vitória",
+    "state": "ES",
+    "ddd": "27"
+  },
+  {
+    "cep": "29030010",
+    "street": "Avenida Beira Mar",
+    "neighborhood": "São Pedro",
+    "city": "Vitória",
+    "state": "ES",
+    "ddd": "27"
+  },
+  {
+    "cep": "29032263",
+    "street": "Rua União",
+    "neighborhood": "Santo André",
+    "city": "Vitória",
+    "state": "ES",
+    "ddd": "27"
+  },
+  {
+    "cep": "29045160",
+    "street": "Avenida Vitória",
+    "neighborhood": "Horto",
+    "city": "Vitória",
+    "state": "ES",
+    "ddd": "27"
+  },
+  {
+    "cep": "29045235",
+    "street": "Avenida Maruípe",
+    "neighborhood": "Santa Luíza",
+    "city": "Vitória",
+    "state": "ES",
+    "ddd": "27"
+  },
+  {
+    "cep": "29046600",
+    "street": "Rua do Luar",
+    "neighborhood": "Santa Martha",
+    "city": "Vitória",
+    "state": "ES",
+    "ddd": "27"
+  },
+  {
+    "cep": "29047014",
+    "street": "Rua Alegre",
+    "neighborhood": "Bonfim",
+    "city": "Vitória",
+    "state": "ES",
+    "ddd": "27"
+  },
+  {
+    "cep": "29048463",
+    "street": "Avenida Maruípe",
+    "neighborhood": "São Cristóvão",
+    "city": "Vitória",
+    "state": "ES",
+    "ddd": "27"
+  },
+  {
+    "cep": "29050810",
+    "street": "Avenida Vitória",
+    "neighborhood": "Bento Ferreira",
+    "city": "Vitória",
+    "state": "ES",
+    "ddd": "27"
+  },
+  {
+    "cep": "29053360",
+    "street": "Avenida Vitória",
+    "neighborhood": "Monte Belo",
+    "city": "Vitória",
+    "state": "ES",
+    "ddd": "27"
+  },
+  {
+    "cep": "29070290",
+    "street": "Rua Aguapé",
+    "neighborhood": "Maria Ortiz",
+    "city": "Vitória",
+    "state": "ES",
+    "ddd": "27"
+  },
+  {
+    "cep": "29070441",
+    "street": "Rua Saudade",
+    "neighborhood": "Maria Ortiz",
+    "city": "Vitória",
+    "state": "ES",
+    "ddd": "27"
+  },
+  {
+    "cep": "29102190",
+    "street": "Avenida Muqui",
+    "neighborhood": "Praia de Itaparica",
+    "city": "Vila Velha",
+    "state": "ES",
+    "ddd": "27"
+  },
+  {
+    "cep": "29102318",
+    "street": "Rua Um",
+    "neighborhood": "Coqueiral de Itaparica",
+    "city": "Vila Velha",
+    "state": "ES",
+    "ddd": "27"
+  },
+  {
+    "cep": "29103825",
+    "street": "Avenida Ceará",
+    "neighborhood": "Jockey de Itaparica",
+    "city": "Vila Velha",
+    "state": "ES",
+    "ddd": "27"
+  },
+  {
+    "cep": "29103850",
+    "street": "Avenida Piauí",
+    "neighborhood": "Jockey de Itaparica",
+    "city": "Vila Velha",
+    "state": "ES",
+    "ddd": "27"
+  },
+  {
+    "cep": "29105710",
+    "street": "Rua Um",
+    "neighborhood": "Cocal",
+    "city": "Vila Velha",
+    "state": "ES",
+    "ddd": "27"
+  },
+  {
+    "cep": "29117735",
+    "street": "Avenida Brasil",
+    "neighborhood": "Cobi de Cima",
+    "city": "Vila Velha",
+    "state": "ES",
+    "ddd": "27"
+  },
+  {
+    "cep": "29117762",
+    "street": "Avenida União",
+    "neighborhood": "Cobi de Cima",
+    "city": "Vila Velha",
+    "state": "ES",
+    "ddd": "27"
+  },
+  {
+    "cep": "29117795",
+    "street": "Avenida Brasil",
+    "neighborhood": "Cobi de Baixo",
+    "city": "Vila Velha",
+    "state": "ES",
+    "ddd": "27"
+  },
+  {
+    "cep": "29124325",
+    "street": "Avenida Muriaé",
+    "neighborhood": "Barramares",
+    "city": "Vila Velha",
+    "state": "ES",
+    "ddd": "27"
+  },
+  {
+    "cep": "29125355",
+    "street": "Avenida Miramar",
+    "neighborhood": "Praia dos Recifes",
+    "city": "Vila Velha",
+    "state": "ES",
+    "ddd": "27"
+  },
+  {
+    "cep": "29126743",
+    "street": "Avenida Grécia",
+    "neighborhood": "Jabaeté",
+    "city": "Vila Velha",
+    "state": "ES",
+    "ddd": "27"
+  },
+  {
+    "cep": "29127323",
+    "street": "Rua 22",
+    "neighborhood": "Terra Vermelha",
+    "city": "Vila Velha",
+    "state": "ES",
+    "ddd": "27"
+  },
+  {
+    "cep": "29127340",
+    "street": "Avenida Araras",
+    "neighborhood": "Terra Vermelha",
+    "city": "Vila Velha",
+    "state": "ES",
+    "ddd": "27"
+  },
+  {
+    "cep": "29128524",
+    "street": "Avenida Tâmara",
+    "neighborhood": "Balneário Ponta da Fruta",
+    "city": "Vila Velha",
+    "state": "ES",
+    "ddd": "27"
+  },
+  {
+    "cep": "29129013",
+    "street": "Avenida Um",
+    "neighborhood": "Ponta da Fruta",
+    "city": "Vila Velha",
+    "state": "ES",
+    "ddd": "27"
+  },
+  {
+    "cep": "30140001",
+    "street": "Avenida Brasil",
+    "neighborhood": "Santa Efigênia",
+    "city": "Belo Horizonte",
+    "state": "MG",
+    "ddd": "31"
+  },
+  {
+    "cep": "30140002",
+    "street": "Avenida Brasil",
+    "neighborhood": "Funcionários",
+    "city": "Belo Horizonte",
+    "state": "MG",
+    "ddd": "31"
+  },
+  {
+    "cep": "30140003",
+    "street": "Avenida Brasil",
+    "neighborhood": "Funcionários",
+    "city": "Belo Horizonte",
+    "state": "MG",
+    "ddd": "31"
+  },
+  {
+    "cep": "30140004",
+    "street": "Avenida Brasil",
+    "neighborhood": "Boa Viagem",
+    "city": "Belo Horizonte",
+    "state": "MG",
+    "ddd": "31"
+  },
+  {
+    "cep": "30140008",
+    "street": "Avenida Brasil",
+    "neighborhood": "Savassi",
+    "city": "Belo Horizonte",
+    "state": "MG",
+    "ddd": "31"
+  },
+  {
+    "cep": "30530625",
+    "street": "Avenida Mamoré",
+    "neighborhood": "Alto dos Pinheiros",
+    "city": "Belo Horizonte",
+    "state": "MG",
+    "ddd": "31"
+  },
+  {
+    "cep": "30535012",
+    "street": "Avenida Itaú",
+    "neighborhood": "Dom Cabral",
+    "city": "Belo Horizonte",
+    "state": "MG",
+    "ddd": "31"
+  },
+  {
+    "cep": "30628120",
+    "street": "Avenida Um",
+    "neighborhood": "Solar do Barreiro (Barreiro)",
+    "city": "Belo Horizonte",
+    "state": "MG",
+    "ddd": "31"
+  },
+  {
+    "cep": "30640755",
+    "street": "Avenida Um",
+    "neighborhood": "Diamante (Barreiro)",
+    "city": "Belo Horizonte",
+    "state": "MG",
+    "ddd": "31"
+  },
+  {
+    "cep": "30660500",
+    "street": "Avenida Agave",
+    "neighborhood": "Olaria (Barreiro)",
+    "city": "Belo Horizonte",
+    "state": "MG",
+    "ddd": "31"
+  },
+  {
+    "cep": "30850000",
+    "street": "Avenida Ivaí",
+    "neighborhood": "Dom Bosco",
+    "city": "Belo Horizonte",
+    "state": "MG",
+    "ddd": "31"
+  },
+  {
+    "cep": "31340640",
+    "street": "Avenida Novara",
+    "neighborhood": "Bandeirantes (Pampulha)",
+    "city": "Belo Horizonte",
+    "state": "MG",
+    "ddd": "31"
+  },
+  {
+    "cep": "31340700",
+    "street": "Avenida Torino",
+    "neighborhood": "Bandeirantes (Pampulha)",
+    "city": "Belo Horizonte",
+    "state": "MG",
+    "ddd": "31"
+  },
+  {
+    "cep": "31360102",
+    "street": "Avenida Serrana",
+    "neighborhood": "Santa Terezinha",
+    "city": "Belo Horizonte",
+    "state": "MG",
+    "ddd": "31"
+  },
+  {
+    "cep": "31742400",
+    "street": "Avenida Um",
+    "neighborhood": "Jardim Felicidade",
+    "city": "Belo Horizonte",
+    "state": "MG",
+    "ddd": "31"
+  },
+  {
+    "cep": "38400754",
+    "street": "Avenida Mauá",
+    "neighborhood": "Bom Jesus",
+    "city": "Uberlândia",
+    "state": "MG",
+    "ddd": "34"
+  },
+  {
+    "cep": "38401156",
+    "street": "Avenida Peru",
+    "neighborhood": "Presidente Roosevelt",
+    "city": "Uberlândia",
+    "state": "MG",
+    "ddd": "34"
+  },
+  {
+    "cep": "38401410",
+    "street": "Avenida Rural",
+    "neighborhood": "Jardim Brasília",
+    "city": "Uberlândia",
+    "state": "MG",
+    "ddd": "34"
+  },
+  {
+    "cep": "38402158",
+    "street": "Rua Sul",
+    "neighborhood": "Nossa Senhora das Graças",
+    "city": "Uberlândia",
+    "state": "MG",
+    "ddd": "34"
+  },
+  {
+    "cep": "38407706",
+    "street": "Avenida Chicago",
+    "neighborhood": "Novo Mundo",
+    "city": "Uberlândia",
+    "state": "MG",
+    "ddd": "34"
+  },
+  {
+    "cep": "38407849",
+    "street": "Avenida Prisma",
+    "neighborhood": "Grand Ville",
+    "city": "Uberlândia",
+    "state": "MG",
+    "ddd": "34"
+  },
+  {
+    "cep": "38411165",
+    "street": "Rua G-4",
+    "neighborhood": "Morada da Colina",
+    "city": "Uberlândia",
+    "state": "MG",
+    "ddd": "34"
+  },
+  {
+    "cep": "38411167",
+    "street": "Rua G-2",
+    "neighborhood": "Morada da Colina",
+    "city": "Uberlândia",
+    "state": "MG",
+    "ddd": "34"
+  },
+  {
+    "cep": "38411169",
+    "street": "Rua G-1",
+    "neighborhood": "Morada da Colina",
+    "city": "Uberlândia",
+    "state": "MG",
+    "ddd": "34"
+  },
+  {
+    "cep": "38411171",
+    "street": "Rua G-5",
+    "neighborhood": "Morada da Colina",
+    "city": "Uberlândia",
+    "state": "MG",
+    "ddd": "34"
+  },
+  {
+    "cep": "38414042",
+    "street": "Avenida Platina",
+    "neighborhood": "Dona Zulmira",
+    "city": "Uberlândia",
+    "state": "MG",
+    "ddd": "34"
+  },
+  {
+    "cep": "38415171",
+    "street": "Rua Dez",
+    "neighborhood": "Taiaman",
+    "city": "Uberlândia",
+    "state": "MG",
+    "ddd": "34"
+  },
+  {
+    "cep": "38418236",
+    "street": "Avenida Andaluz",
+    "neighborhood": "Jockey Camping",
+    "city": "Uberlândia",
+    "state": "MG",
+    "ddd": "34"
+  },
+  {
+    "cep": "38425644",
+    "street": "Rua 6",
+    "neighborhood": "Loteamento Ecopark (I e II)",
+    "city": "Uberlândia",
+    "state": "MG",
+    "ddd": "34"
+  },
+  {
+    "cep": "38425647",
+    "street": "Rua 4",
+    "neighborhood": "Loteamento Ecopark (I e II)",
+    "city": "Uberlândia",
+    "state": "MG",
+    "ddd": "34"
+  },
+  {
+    "cep": "40025345",
+    "street": "Avenida ABC",
+    "neighborhood": "Baixa dos Sapateiros",
+    "city": "Salvador",
+    "state": "BA",
+    "ddd": "71"
+  },
+  {
+    "cep": "40070260",
+    "street": "Avenida Doze",
+    "neighborhood": "Barris",
+    "city": "Salvador",
+    "state": "BA",
+    "ddd": "71"
+  },
+  {
+    "cep": "40100520",
+    "street": "Avenida Alda",
+    "neighborhood": "Garcia",
+    "city": "Salvador",
+    "state": "BA",
+    "ddd": "71"
+  },
+  {
+    "cep": "40220895",
+    "street": "Avenida Rego",
+    "neighborhood": "Engenho Velho da Federação",
+    "city": "Salvador",
+    "state": "BA",
+    "ddd": "71"
+  },
+  {
+    "cep": "40260500",
+    "street": "Avenida Maia",
+    "neighborhood": "Luiz Anselmo",
+    "city": "Salvador",
+    "state": "BA",
+    "ddd": "71"
+  },
+  {
+    "cep": "40320385",
+    "street": "Avenida Gato",
+    "neighborhood": "Caixa D'Água",
+    "city": "Salvador",
+    "state": "BA",
+    "ddd": "71"
+  },
+  {
+    "cep": "40320770",
+    "street": "Avenida Ana",
+    "neighborhood": "Caixa D'Água",
+    "city": "Salvador",
+    "state": "BA",
+    "ddd": "71"
+  },
+  {
+    "cep": "40335005",
+    "street": "Avenida Lima",
+    "neighborhood": "Pero Vaz",
+    "city": "Salvador",
+    "state": "BA",
+    "ddd": "71"
+  },
+  {
+    "cep": "40355555",
+    "street": "Avenida Gil",
+    "neighborhood": "Fazenda Grande do Retiro",
+    "city": "Salvador",
+    "state": "BA",
+    "ddd": "71"
+  },
+  {
+    "cep": "40365195",
+    "street": "Avenida 200",
+    "neighborhood": "Curuzu",
+    "city": "Salvador",
+    "state": "BA",
+    "ddd": "71"
+  },
+  {
+    "cep": "40365265",
+    "street": "Avenida Cid",
+    "neighborhood": "Curuzu",
+    "city": "Salvador",
+    "state": "BA",
+    "ddd": "71"
+  },
+  {
+    "cep": "40430800",
+    "street": "Avenida Braz",
+    "neighborhood": "Vila Ruy Barbosa/ Jardim Cruzeiro",
+    "city": "Salvador",
+    "state": "BA",
+    "ddd": "71"
+  },
+  {
+    "cep": "40434520",
+    "street": "Avenida Maia",
+    "neighborhood": "Massaranduba",
+    "city": "Salvador",
+    "state": "BA",
+    "ddd": "71"
+  },
+  {
+    "cep": "40733600",
+    "street": "Rua 1",
+    "neighborhood": "Fazenda Coutos",
+    "city": "Salvador",
+    "state": "BA",
+    "ddd": "71"
+  },
+  {
+    "cep": "41930090",
+    "street": "Avenida Eco",
+    "neighborhood": "Vale das Pedrinhas",
+    "city": "Salvador",
+    "state": "BA",
+    "ddd": "71"
+  },
+  {
+    "cep": "44001465",
+    "street": "Avenida Sampaio",
+    "neighborhood": "Centro",
+    "city": "Feira de Santana",
+    "state": "BA",
+    "ddd": "75"
+  },
+  {
+    "cep": "44001472",
+    "street": "Avenida Sampaio",
+    "neighborhood": "Centro",
+    "city": "Feira de Santana",
+    "state": "BA",
+    "ddd": "75"
+  },
+  {
+    "cep": "44010205",
+    "street": "Avenida da Imprensa",
+    "neighborhood": "CIS",
+    "city": "Feira de Santana",
+    "state": "BA",
+    "ddd": "75"
+  },
+  {
+    "cep": "44010455",
+    "street": "Avenida Mathias",
+    "neighborhood": "CIS",
+    "city": "Feira de Santana",
+    "state": "BA",
+    "ddd": "75"
+  },
+  {
+    "cep": "44010850",
+    "street": "Avenida Pró-Bahia",
+    "neighborhood": "CIS",
+    "city": "Feira de Santana",
+    "state": "BA",
+    "ddd": "75"
+  },
+  {
+    "cep": "44013170",
+    "street": "Rua 9",
+    "neighborhood": "CIS",
+    "city": "Feira de Santana",
+    "state": "BA",
+    "ddd": "75"
+  },
+  {
+    "cep": "44020282",
+    "street": "Avenida Riachuelo",
+    "neighborhood": "Baraúna",
+    "city": "Feira de Santana",
+    "state": "BA",
+    "ddd": "75"
+  },
+  {
+    "cep": "44020285",
+    "street": "Avenida Riachuelo",
+    "neighborhood": "Baraúna",
+    "city": "Feira de Santana",
+    "state": "BA",
+    "ddd": "75"
+  },
+  {
+    "cep": "44028200",
+    "street": "Rua 7",
+    "neighborhood": "Gabriela",
+    "city": "Feira de Santana",
+    "state": "BA",
+    "ddd": "75"
+  },
+  {
+    "cep": "44030322",
+    "street": "Avenida Lucilândia",
+    "neighborhood": "Gabriela",
+    "city": "Feira de Santana",
+    "state": "BA",
+    "ddd": "75"
+  },
+  {
+    "cep": "44035100",
+    "street": "Rua 1",
+    "neighborhood": "Campo Limpo",
+    "city": "Feira de Santana",
+    "state": "BA",
+    "ddd": "75"
+  },
+  {
+    "cep": "44046200",
+    "street": "Avenida Asa Branca",
+    "neighborhood": "Asa Branca",
+    "city": "Feira de Santana",
+    "state": "BA",
+    "ddd": "75"
+  },
+  {
+    "cep": "44056784",
+    "street": "Avenida Sete Lagoas",
+    "neighborhood": "Mangabeira",
+    "city": "Feira de Santana",
+    "state": "BA",
+    "ddd": "75"
+  },
+  {
+    "cep": "44079006",
+    "street": "Avenida Periférica",
+    "neighborhood": "Subaé",
+    "city": "Feira de Santana",
+    "state": "BA",
+    "ddd": "75"
+  },
+  {
+    "cep": "44091620",
+    "street": "Avenida Dois",
+    "neighborhood": "Tomba",
+    "city": "Feira de Santana",
+    "state": "BA",
+    "ddd": "75"
+  },
+  {
+    "cep": "49009230",
+    "street": "Avenida Matapoã",
+    "neighborhood": "Mosqueiro",
+    "city": "Aracaju",
+    "state": "SE",
+    "ddd": "79"
+  },
+  {
+    "cep": "49031436",
+    "street": "Rua 2",
+    "neighborhood": "Farolândia",
+    "city": "Aracaju",
+    "state": "SE",
+    "ddd": "79"
+  },
+  {
+    "cep": "49039056",
+    "street": "Avenida Canal 02",
+    "neighborhood": "Marivan",
+    "city": "Aracaju",
+    "state": "SE",
+    "ddd": "79"
+  },
+  {
+    "cep": "49039059",
+    "street": "Avenida Canal 01",
+    "neighborhood": "Marivan",
+    "city": "Aracaju",
+    "state": "SE",
+    "ddd": "79"
+  },
+  {
+    "cep": "49040460",
+    "street": "Avenida Paulo VI",
+    "neighborhood": "Inácio Barbosa",
+    "city": "Aracaju",
+    "state": "SE",
+    "ddd": "79"
+  },
+  {
+    "cep": "49044070",
+    "street": "Avenida Amarela",
+    "neighborhood": "Santa Maria",
+    "city": "Aracaju",
+    "state": "SE",
+    "ddd": "79"
+  },
+  {
+    "cep": "49055285",
+    "street": "Avenida São Paulo",
+    "neighborhood": "Getúlio Vargas",
+    "city": "Aracaju",
+    "state": "SE",
+    "ddd": "79"
+  },
+  {
+    "cep": "49060400",
+    "street": "Avenida Maranhão",
+    "neighborhood": "Santo Antônio",
+    "city": "Aracaju",
+    "state": "SE",
+    "ddd": "79"
+  },
+  {
+    "cep": "49072310",
+    "street": "Avenida São Paulo",
+    "neighborhood": "Dezoito do Forte",
+    "city": "Aracaju",
+    "state": "SE",
+    "ddd": "79"
+  },
+  {
+    "cep": "49072400",
+    "street": "Avenida Bela Vista",
+    "neighborhood": "Dezoito do Forte",
+    "city": "Aracaju",
+    "state": "SE",
+    "ddd": "79"
+  },
+  {
+    "cep": "49082065",
+    "street": "Avenida Brasil",
+    "neighborhood": "Novo Paraíso",
+    "city": "Aracaju",
+    "state": "SE",
+    "ddd": "79"
+  },
+  {
+    "cep": "49087413",
+    "street": "Avenida São Paulo",
+    "neighborhood": "Santos Dumont",
+    "city": "Aracaju",
+    "state": "SE",
+    "ddd": "79"
+  },
+  {
+    "cep": "49089203",
+    "street": "Avenida Silva",
+    "neighborhood": "Soledade",
+    "city": "Aracaju",
+    "state": "SE",
+    "ddd": "79"
+  },
+  {
+    "cep": "49091040",
+    "street": "Avenida Matadouro",
+    "neighborhood": "Jardim Centenário",
+    "city": "Aracaju",
+    "state": "SE",
+    "ddd": "79"
+  },
+  {
+    "cep": "49092720",
+    "street": "Avenida Canal 5",
+    "neighborhood": "Olaria",
+    "city": "Aracaju",
+    "state": "SE",
+    "ddd": "79"
+  },
+  {
+    "cep": "49152620",
+    "street": "Avenida A-51",
+    "neighborhood": "Marcos Freire III",
+    "city": "Nossa Senhora do Socorro",
+    "state": "SE",
+    "ddd": "79"
+  },
+  {
+    "cep": "49152642",
+    "street": "Avenida A-50",
+    "neighborhood": "Marcos Freire III",
+    "city": "Nossa Senhora do Socorro",
+    "state": "SE",
+    "ddd": "79"
+  },
+  {
+    "cep": "49152654",
+    "street": "Avenida A-48",
+    "neighborhood": "Marcos Freire III",
+    "city": "Nossa Senhora do Socorro",
+    "state": "SE",
+    "ddd": "79"
+  },
+  {
+    "cep": "49152694",
+    "street": "Avenida A-46",
+    "neighborhood": "Marcos Freire III",
+    "city": "Nossa Senhora do Socorro",
+    "state": "SE",
+    "ddd": "79"
+  },
+  {
+    "cep": "49152698",
+    "street": "Avenida A-45",
+    "neighborhood": "Marcos Freire III",
+    "city": "Nossa Senhora do Socorro",
+    "state": "SE",
+    "ddd": "79"
+  },
+  {
+    "cep": "49153092",
+    "street": "Avenida A-28",
+    "neighborhood": "Albano Franco",
+    "city": "Nossa Senhora do Socorro",
+    "state": "SE",
+    "ddd": "79"
+  },
+  {
+    "cep": "49155052",
+    "street": "Rua 1",
+    "neighborhood": "Fernando Collor",
+    "city": "Nossa Senhora do Socorro",
+    "state": "SE",
+    "ddd": "79"
+  },
+  {
+    "cep": "49156000",
+    "street": "Avenida A-02",
+    "neighborhood": "Marcos Freire I",
+    "city": "Nossa Senhora do Socorro",
+    "state": "SE",
+    "ddd": "79"
+  },
+  {
+    "cep": "49156072",
+    "street": "Avenida A-08",
+    "neighborhood": "Marcos Freire I",
+    "city": "Nossa Senhora do Socorro",
+    "state": "SE",
+    "ddd": "79"
+  },
+  {
+    "cep": "49159406",
+    "street": "Avenida 2",
+    "neighborhood": "Boa Viagem",
+    "city": "Nossa Senhora do Socorro",
+    "state": "SE",
+    "ddd": "79"
+  },
+  {
+    "cep": "49160145",
+    "street": "Rua 6",
+    "neighborhood": "Itacanema",
+    "city": "Nossa Senhora do Socorro",
+    "state": "SE",
+    "ddd": "79"
+  },
+  {
+    "cep": "49160187",
+    "street": "Avenida 4",
+    "neighborhood": "Itacanema",
+    "city": "Nossa Senhora do Socorro",
+    "state": "SE",
+    "ddd": "79"
+  },
+  {
+    "cep": "49160217",
+    "street": "Rua 7",
+    "neighborhood": "Itacanema",
+    "city": "Nossa Senhora do Socorro",
+    "state": "SE",
+    "ddd": "79"
+  },
+  {
+    "cep": "49160390",
+    "street": "Rua 2",
+    "neighborhood": "Parque dos Faróis",
+    "city": "Nossa Senhora do Socorro",
+    "state": "SE",
+    "ddd": "79"
+  },
+  {
+    "cep": "49163693",
+    "street": "Avenida 2",
+    "neighborhood": "Guajará",
+    "city": "Nossa Senhora do Socorro",
+    "state": "SE",
+    "ddd": "79"
+  },
+  {
+    "cep": "50090700",
+    "street": "Avenida Central",
+    "neighborhood": "São José",
+    "city": "Recife",
+    "state": "PE",
+    "ddd": "81"
+  },
+  {
+    "cep": "50740000",
+    "street": "Avenida Caxangá",
+    "neighborhood": "Várzea",
+    "city": "Recife",
+    "state": "PE",
+    "ddd": "81"
+  },
+  {
+    "cep": "50761740",
+    "street": "Avenida Recife",
+    "neighborhood": "San Martin",
+    "city": "Recife",
+    "state": "PE",
+    "ddd": "81"
+  },
+  {
+    "cep": "50781000",
+    "street": "Avenida Recife",
+    "neighborhood": "Areias",
+    "city": "Recife",
+    "state": "PE",
+    "ddd": "81"
+  },
+  {
+    "cep": "50781510",
+    "street": "Avenida Central",
+    "neighborhood": "Areias",
+    "city": "Recife",
+    "state": "PE",
+    "ddd": "81"
+  },
+  {
+    "cep": "50820500",
+    "street": "Avenida Central",
+    "neighborhood": "Afogados",
+    "city": "Recife",
+    "state": "PE",
+    "ddd": "81"
+  },
+  {
+    "cep": "50820685",
+    "street": "Avenida Central",
+    "neighborhood": "Mangueira",
+    "city": "Recife",
+    "state": "PE",
+    "ddd": "81"
+  },
+  {
+    "cep": "50860000",
+    "street": "Avenida Recife",
+    "neighborhood": "Areias",
+    "city": "Recife",
+    "state": "PE",
+    "ddd": "81"
+  },
+  {
+    "cep": "50865030",
+    "street": "Avenida Recife",
+    "neighborhood": "Estância",
+    "city": "Recife",
+    "state": "PE",
+    "ddd": "81"
+  },
+  {
+    "cep": "50900590",
+    "street": "Avenida Central",
+    "neighborhood": "Barro",
+    "city": "Recife",
+    "state": "PE",
+    "ddd": "81"
+  },
+  {
+    "cep": "50920000",
+    "street": "Avenida Central",
+    "neighborhood": "Tejipió",
+    "city": "Recife",
+    "state": "PE",
+    "ddd": "81"
+  },
+  {
+    "cep": "51180180",
+    "street": "Avenida Mônaco",
+    "neighborhood": "Imbiribeira",
+    "city": "Recife",
+    "state": "PE",
+    "ddd": "81"
+  },
+  {
+    "cep": "51220225",
+    "street": "Avenida Recife",
+    "neighborhood": "Ibura",
+    "city": "Recife",
+    "state": "PE",
+    "ddd": "81"
+  },
+  {
+    "cep": "52170010",
+    "street": "Avenida Concriz",
+    "neighborhood": "Passarinho",
+    "city": "Recife",
+    "state": "PE",
+    "ddd": "81"
+  },
+  {
+    "cep": "52390310",
+    "street": "Avenida Canaã",
+    "neighborhood": "Passarinho",
+    "city": "Recife",
+    "state": "PE",
+    "ddd": "81"
+  },
+  {
+    "cep": "55016360",
+    "street": "Avenida Brasil",
+    "neighborhood": "Universitário",
+    "city": "Caruaru",
+    "state": "PE",
+    "ddd": "81"
+  },
+  {
+    "cep": "55016365",
+    "street": "Avenida Suécia",
+    "neighborhood": "Universitário",
+    "city": "Caruaru",
+    "state": "PE",
+    "ddd": "81"
+  },
+  {
+    "cep": "55016400",
+    "street": "Avenida Portugal",
+    "neighborhood": "Universitário",
+    "city": "Caruaru",
+    "state": "PE",
+    "ddd": "81"
+  },
+  {
+    "cep": "55016430",
+    "street": "Avenida Amazonas",
+    "neighborhood": "Universitário",
+    "city": "Caruaru",
+    "state": "PE",
+    "ddd": "81"
+  },
+  {
+    "cep": "55016460",
+    "street": "Avenida Terezina",
+    "neighborhood": "Universitário",
+    "city": "Caruaru",
+    "state": "PE",
+    "ddd": "81"
+  },
+  {
+    "cep": "55021435",
+    "street": "Rua R-22",
+    "neighborhood": "Cidade Jardim",
+    "city": "Caruaru",
+    "state": "PE",
+    "ddd": "81"
+  },
+  {
+    "cep": "55024335",
+    "street": "Avenida Amapá",
+    "neighborhood": "Indianópolis",
+    "city": "Caruaru",
+    "state": "PE",
+    "ddd": "81"
+  },
+  {
+    "cep": "55024525",
+    "street": "Rua Doze",
+    "neighborhood": "Indianópolis",
+    "city": "Caruaru",
+    "state": "PE",
+    "ddd": "81"
+  },
+  {
+    "cep": "55024603",
+    "street": "Rua Um",
+    "neighborhood": "Indianópolis",
+    "city": "Caruaru",
+    "state": "PE",
+    "ddd": "81"
+  },
+  {
+    "cep": "55036600",
+    "street": "Rua R-1",
+    "neighborhood": "Kennedy",
+    "city": "Caruaru",
+    "state": "PE",
+    "ddd": "81"
+  },
+  {
+    "cep": "55036640",
+    "street": "Rua R-5",
+    "neighborhood": "Kennedy",
+    "city": "Caruaru",
+    "state": "PE",
+    "ddd": "81"
+  },
+  {
+    "cep": "55036650",
+    "street": "Rua R-6",
+    "neighborhood": "Kennedy",
+    "city": "Caruaru",
+    "state": "PE",
+    "ddd": "81"
+  },
+  {
+    "cep": "55036655",
+    "street": "Rua R-7",
+    "neighborhood": "Kennedy",
+    "city": "Caruaru",
+    "state": "PE",
+    "ddd": "81"
+  },
+  {
+    "cep": "55036660",
+    "street": "Rua R-8",
+    "neighborhood": "Kennedy",
+    "city": "Caruaru",
+    "state": "PE",
+    "ddd": "81"
+  },
+  {
+    "cep": "55038300",
+    "street": "Rua Cabo",
+    "neighborhood": "Boa Vista",
+    "city": "Caruaru",
+    "state": "PE",
+    "ddd": "81"
+  },
+  {
+    "cep": "57022050",
+    "street": "Avenida da Paz",
+    "neighborhood": "Jaraguá",
+    "city": "Maceió",
+    "state": "AL",
+    "ddd": "82"
+  },
+  {
+    "cep": "57022070",
+    "street": "Avenida Juca Nunes",
+    "neighborhood": "Jaraguá",
+    "city": "Maceió",
+    "state": "AL",
+    "ddd": "82"
+  },
+  {
+    "cep": "57035560",
+    "street": "Avenida Pio XII",
+    "neighborhood": "Jatiúca",
+    "city": "Maceió",
+    "state": "AL",
+    "ddd": "82"
+  },
+  {
+    "cep": "57038166",
+    "street": "Avenida Rui Barbosa",
+    "neighborhood": "Cruz das Almas",
+    "city": "Maceió",
+    "state": "AL",
+    "ddd": "82"
+  },
+  {
+    "cep": "57039542",
+    "street": "Avenida Beira Mar",
+    "neighborhood": "Riacho Doce",
+    "city": "Maceió",
+    "state": "AL",
+    "ddd": "82"
+  },
+  {
+    "cep": "57063005",
+    "street": "Avenida Jorge Barros",
+    "neighborhood": "Santa Amélia",
+    "city": "Maceió",
+    "state": "AL",
+    "ddd": "82"
+  },
+  {
+    "cep": "57071888",
+    "street": "Avenida Nascente",
+    "neighborhood": "Clima Bom",
+    "city": "Maceió",
+    "state": "AL",
+    "ddd": "82"
+  },
+  {
+    "cep": "57074550",
+    "street": "Avenida Grand Jardim",
+    "neighborhood": "Cidade Universitária",
+    "city": "Maceió",
+    "state": "AL",
+    "ddd": "82"
+  },
+  {
+    "cep": "57081582",
+    "street": "Avenida Industrial",
+    "neighborhood": "Tabuleiro do Martins",
+    "city": "Maceió",
+    "state": "AL",
+    "ddd": "82"
+  },
+  {
+    "cep": "57081770",
+    "street": "Avenida Getsêmane",
+    "neighborhood": "Tabuleiro do Martins",
+    "city": "Maceió",
+    "state": "AL",
+    "ddd": "82"
+  },
+  {
+    "cep": "57082640",
+    "street": "Avenida Industrial",
+    "neighborhood": "Santa Lúcia",
+    "city": "Maceió",
+    "state": "AL",
+    "ddd": "82"
+  },
+  {
+    "cep": "57082890",
+    "street": "Avenida Aquidauana",
+    "neighborhood": "Santa Lúcia",
+    "city": "Maceió",
+    "state": "AL",
+    "ddd": "82"
+  },
+  {
+    "cep": "57084334",
+    "street": "Avenida 02",
+    "neighborhood": "Benedito Bentes",
+    "city": "Maceió",
+    "state": "AL",
+    "ddd": "82"
+  },
+  {
+    "cep": "57084626",
+    "street": "Avenida 04",
+    "neighborhood": "Benedito Bentes",
+    "city": "Maceió",
+    "state": "AL",
+    "ddd": "82"
+  },
+  {
+    "cep": "57084700",
+    "street": "Avenida Meirim",
+    "neighborhood": "Benedito Bentes",
+    "city": "Maceió",
+    "state": "AL",
+    "ddd": "82"
+  },
+  {
+    "cep": "57300180",
+    "street": "Avenida Pedro Leão",
+    "neighborhood": "Centro",
+    "city": "Arapiraca",
+    "state": "AL",
+    "ddd": "82"
+  },
+  {
+    "cep": "57303750",
+    "street": "Avenida Asa Branca",
+    "neighborhood": "Guaribas",
+    "city": "Arapiraca",
+    "state": "AL",
+    "ddd": "82"
+  },
+  {
+    "cep": "57305025",
+    "street": "Avenida Rio Branco",
+    "neighborhood": "Manuel Teles",
+    "city": "Arapiraca",
+    "state": "AL",
+    "ddd": "82"
+  },
+  {
+    "cep": "57305330",
+    "street": "Avenida Pedro Leão",
+    "neighborhood": "Baixão",
+    "city": "Arapiraca",
+    "state": "AL",
+    "ddd": "82"
+  },
+  {
+    "cep": "57305495",
+    "street": "Avenida Miguel Correia Amorim",
+    "neighborhood": "Baixão",
+    "city": "Arapiraca",
+    "state": "AL",
+    "ddd": "82"
+  },
+  {
+    "cep": "57306855",
+    "street": "Avenida Ventura de Farias",
+    "neighborhood": "Cavaco",
+    "city": "Arapiraca",
+    "state": "AL",
+    "ddd": "82"
+  },
+  {
+    "cep": "57308250",
+    "street": "Rua Batalha",
+    "neighborhood": "Planalto",
+    "city": "Arapiraca",
+    "state": "AL",
+    "ddd": "82"
+  },
+  {
+    "cep": "57308460",
+    "street": "Rua Viçosa",
+    "neighborhood": "Planalto",
+    "city": "Arapiraca",
+    "state": "AL",
+    "ddd": "82"
+  },
+  {
+    "cep": "57308790",
+    "street": "Rua 08-47",
+    "neighborhood": "Planalto",
+    "city": "Arapiraca",
+    "state": "AL",
+    "ddd": "82"
+  },
+  {
+    "cep": "57309065",
+    "street": "Rua Nova",
+    "neighborhood": "Bom Sucesso",
+    "city": "Arapiraca",
+    "state": "AL",
+    "ddd": "82"
+  },
+  {
+    "cep": "57309638",
+    "street": "Rua Araçá",
+    "neighborhood": "Massaranduba",
+    "city": "Arapiraca",
+    "state": "AL",
+    "ddd": "82"
+  },
+  {
+    "cep": "57312040",
+    "street": "Rua Roteiro",
+    "neighborhood": "Santa Esmeralda",
+    "city": "Arapiraca",
+    "state": "AL",
+    "ddd": "82"
+  },
+  {
+    "cep": "57314105",
+    "street": "Avenida Deputada Ceci Cunha",
+    "neighborhood": "Itapoã",
+    "city": "Arapiraca",
+    "state": "AL",
+    "ddd": "82"
+  },
+  {
+    "cep": "57316470",
+    "street": "Rua Paraíba",
+    "neighborhood": "Nova Esperança",
+    "city": "Arapiraca",
+    "state": "AL",
+    "ddd": "82"
+  },
+  {
+    "cep": "57317101",
+    "street": "Avenida Rotary",
+    "neighborhood": "Deputado Nezinho",
+    "city": "Arapiraca",
+    "state": "AL",
+    "ddd": "82"
+  },
+  {
+    "cep": "58010230",
+    "street": "Avenida Sanhauá",
+    "neighborhood": "Varadouro",
+    "city": "João Pessoa",
+    "state": "PB",
+    "ddd": "83"
+  },
+  {
+    "cep": "58028885",
+    "street": "Avenida Acre",
+    "neighborhood": "Ipês",
+    "city": "João Pessoa",
+    "state": "PB",
+    "ddd": "83"
+  },
+  {
+    "cep": "58030061",
+    "street": "Rua Goiás",
+    "neighborhood": "Estados",
+    "city": "João Pessoa",
+    "state": "PB",
+    "ddd": "83"
+  },
+  {
+    "cep": "58030180",
+    "street": "Avenida Paraná",
+    "neighborhood": "Estados",
+    "city": "João Pessoa",
+    "state": "PB",
+    "ddd": "83"
+  },
+  {
+    "cep": "58030200",
+    "street": "Rua Pará",
+    "neighborhood": "Estados",
+    "city": "João Pessoa",
+    "state": "PB",
+    "ddd": "83"
+  },
+  {
+    "cep": "58030220",
+    "street": "Avenida Ceará",
+    "neighborhood": "Estados",
+    "city": "João Pessoa",
+    "state": "PB",
+    "ddd": "83"
+  },
+  {
+    "cep": "58030230",
+    "street": "Avenida Acre",
+    "neighborhood": "Estados",
+    "city": "João Pessoa",
+    "state": "PB",
+    "ddd": "83"
+  },
+  {
+    "cep": "58030331",
+    "street": "Avenida Piauí",
+    "neighborhood": "Estados",
+    "city": "João Pessoa",
+    "state": "PB",
+    "ddd": "83"
+  },
+  {
+    "cep": "58030430",
+    "street": "Avenida Paraíba",
+    "neighborhood": "Estados",
+    "city": "João Pessoa",
+    "state": "PB",
+    "ddd": "83"
+  },
+  {
+    "cep": "58038380",
+    "street": "Avenida Sapé",
+    "neighborhood": "Manaíra",
+    "city": "João Pessoa",
+    "state": "PB",
+    "ddd": "83"
+  },
+  {
+    "cep": "58043330",
+    "street": "Rua do Sol",
+    "neighborhood": "Miramar",
+    "city": "João Pessoa",
+    "state": "PB",
+    "ddd": "83"
+  },
+  {
+    "cep": "58048436",
+    "street": "Rua Romero",
+    "neighborhood": "Costa do Sol",
+    "city": "João Pessoa",
+    "state": "PB",
+    "ddd": "83"
+  },
+  {
+    "cep": "58071673",
+    "street": "Rua da Paz",
+    "neighborhood": "Cristo Redentor",
+    "city": "João Pessoa",
+    "state": "PB",
+    "ddd": "83"
+  },
+  {
+    "cep": "58079786",
+    "street": "Rua Recife",
+    "neighborhood": "Grotão",
+    "city": "João Pessoa",
+    "state": "PB",
+    "ddd": "83"
+  },
+  {
+    "cep": "58083624",
+    "street": "Rua Angola",
+    "neighborhood": "Mumbaba",
+    "city": "João Pessoa",
+    "state": "PB",
+    "ddd": "83"
+  },
+  {
+    "cep": "58400130",
+    "street": "Avenida Cajazeiras",
+    "neighborhood": "Centro",
+    "city": "Campina Grande",
+    "state": "PB",
+    "ddd": "83"
+  },
+  {
+    "cep": "58400575",
+    "street": "Avenida Rio Branco",
+    "neighborhood": "Prata",
+    "city": "Campina Grande",
+    "state": "PB",
+    "ddd": "83"
+  },
+  {
+    "cep": "58402683",
+    "street": "Avenida Iugoslávia",
+    "neighborhood": "Nações",
+    "city": "Campina Grande",
+    "state": "PB",
+    "ddd": "83"
+  },
+  {
+    "cep": "58402703",
+    "street": "Avenida México",
+    "neighborhood": "Nações",
+    "city": "Campina Grande",
+    "state": "PB",
+    "ddd": "83"
+  },
+  {
+    "cep": "58404852",
+    "street": "Rua Dublim",
+    "neighborhood": "Cuités",
+    "city": "Campina Grande",
+    "state": "PB",
+    "ddd": "83"
+  },
+  {
+    "cep": "58404886",
+    "street": "Rua Moscou",
+    "neighborhood": "Cuités",
+    "city": "Campina Grande",
+    "state": "PB",
+    "ddd": "83"
+  },
+  {
+    "cep": "58406790",
+    "street": "Rua Chile",
+    "neighborhood": "Nova Brasília",
+    "city": "Campina Grande",
+    "state": "PB",
+    "ddd": "83"
+  },
+  {
+    "cep": "58410034",
+    "street": "Rua Goiás",
+    "neighborhood": "Estação Velha",
+    "city": "Campina Grande",
+    "state": "PB",
+    "ddd": "83"
+  },
+  {
+    "cep": "58414280",
+    "street": "Avenida Amazonas",
+    "neighborhood": "Liberdade",
+    "city": "Campina Grande",
+    "state": "PB",
+    "ddd": "83"
+  },
+  {
+    "cep": "58414710",
+    "street": "Avenida Aeroclube",
+    "neighborhood": "Tambor",
+    "city": "Campina Grande",
+    "state": "PB",
+    "ddd": "83"
+  },
+  {
+    "cep": "58415460",
+    "street": "Avenida João Wallig",
+    "neighborhood": "Cruzeiro",
+    "city": "Campina Grande",
+    "state": "PB",
+    "ddd": "83"
+  },
+  {
+    "cep": "58416536",
+    "street": "Rua Equador",
+    "neighborhood": "Santa Rosa",
+    "city": "Campina Grande",
+    "state": "PB",
+    "ddd": "83"
+  },
+  {
+    "cep": "58423130",
+    "street": "Rua Recife",
+    "neighborhood": "Três Irmãs",
+    "city": "Campina Grande",
+    "state": "PB",
+    "ddd": "83"
+  },
+  {
+    "cep": "58433146",
+    "street": "Rua Penedo",
+    "neighborhood": "Malvinas",
+    "city": "Campina Grande",
+    "state": "PB",
+    "ddd": "83"
+  },
+  {
+    "cep": "58436035",
+    "street": "Rua Angola",
+    "neighborhood": "Serrotão",
+    "city": "Campina Grande",
+    "state": "PB",
+    "ddd": "83"
+  },
+  {
+    "cep": "59012220",
+    "street": "Avenida CG1",
+    "neighborhood": "Petrópolis",
+    "city": "Natal",
+    "state": "RN",
+    "ddd": "84"
+  },
+  {
+    "cep": "59012250",
+    "street": "Rua Chile",
+    "neighborhood": "Ribeira",
+    "city": "Natal",
+    "state": "RN",
+    "ddd": "84"
+  },
+  {
+    "cep": "59067760",
+    "street": "Rua Oiti",
+    "neighborhood": "Pitimbu",
+    "city": "Natal",
+    "state": "RN",
+    "ddd": "84"
+  },
+  {
+    "cep": "59069590",
+    "street": "Rua Uvaia",
+    "neighborhood": "Pitimbu",
+    "city": "Natal",
+    "state": "RN",
+    "ddd": "84"
+  },
+  {
+    "cep": "59070170",
+    "street": "Rua Patos",
+    "neighborhood": "Cidade da Esperança",
+    "city": "Natal",
+    "state": "RN",
+    "ddd": "84"
+  },
+  {
+    "cep": "59088690",
+    "street": "Avenida Ouro Preto",
+    "neighborhood": "Neópolis",
+    "city": "Natal",
+    "state": "RN",
+    "ddd": "84"
+  },
+  {
+    "cep": "59114200",
+    "street": "Avenida Santarém",
+    "neighborhood": "Nossa Senhora da Apresentação",
+    "city": "Natal",
+    "state": "RN",
+    "ddd": "84"
+  },
+  {
+    "cep": "59114234",
+    "street": "Rua Tupi",
+    "neighborhood": "Nossa Senhora da Apresentação",
+    "city": "Natal",
+    "state": "RN",
+    "ddd": "84"
+  },
+  {
+    "cep": "59114250",
+    "street": "Avenida Boa Sorte",
+    "neighborhood": "Nossa Senhora da Apresentação",
+    "city": "Natal",
+    "state": "RN",
+    "ddd": "84"
+  },
+  {
+    "cep": "59120120",
+    "street": "Avenida Salvador",
+    "neighborhood": "Potengi",
+    "city": "Natal",
+    "state": "RN",
+    "ddd": "84"
+  },
+  {
+    "cep": "59120260",
+    "street": "Avenida Bahia",
+    "neighborhood": "Potengi",
+    "city": "Natal",
+    "state": "RN",
+    "ddd": "84"
+  },
+  {
+    "cep": "59125010",
+    "street": "Rua Ibiá",
+    "neighborhood": "Potengi",
+    "city": "Natal",
+    "state": "RN",
+    "ddd": "84"
+  },
+  {
+    "cep": "59125130",
+    "street": "Rua Sapé",
+    "neighborhood": "Potengi",
+    "city": "Natal",
+    "state": "RN",
+    "ddd": "84"
+  },
+  {
+    "cep": "59129340",
+    "street": "Avenida Rio Doce",
+    "neighborhood": "Potengi",
+    "city": "Natal",
+    "state": "RN",
+    "ddd": "84"
+  },
+  {
+    "cep": "59131580",
+    "street": "Rua Iraí",
+    "neighborhood": "Pajuçara",
+    "city": "Natal",
+    "state": "RN",
+    "ddd": "84"
+  },
+  {
+    "cep": "59607000",
+    "street": "Avenida Mota Neto",
+    "neighborhood": "Aeroporto",
+    "city": "Mossoró",
+    "state": "RN",
+    "ddd": "84"
+  },
+  {
+    "cep": "59616736",
+    "street": "Rua Cedro",
+    "neighborhood": "Santa Delmira",
+    "city": "Mossoró",
+    "state": "RN",
+    "ddd": "84"
+  },
+  {
+    "cep": "59621400",
+    "street": "Avenida Rio Branco",
+    "neighborhood": "Santo Antônio",
+    "city": "Mossoró",
+    "state": "RN",
+    "ddd": "84"
+  },
+  {
+    "cep": "59623501",
+    "street": "Avenida Dona Chiquita",
+    "neighborhood": "Santa Júlia",
+    "city": "Mossoró",
+    "state": "RN",
+    "ddd": "84"
+  },
+  {
+    "cep": "59625120",
+    "street": "Avenida Rio Mossoró",
+    "neighborhood": "Alto de São Manoel",
+    "city": "Mossoró",
+    "state": "RN",
+    "ddd": "84"
+  },
+  {
+    "cep": "59626300",
+    "street": "Avenida Luiz Marques",
+    "neighborhood": "Rincão",
+    "city": "Mossoró",
+    "state": "RN",
+    "ddd": "84"
+  },
+  {
+    "cep": "59633540",
+    "street": "Avenida Abolição",
+    "neighborhood": "Alto do Sumaré",
+    "city": "Mossoró",
+    "state": "RN",
+    "ddd": "84"
+  },
+  {
+    "cep": "59633730",
+    "street": "Avenida Wilson Rosado",
+    "neighborhood": "Alto do Sumaré",
+    "city": "Mossoró",
+    "state": "RN",
+    "ddd": "84"
+  },
+  {
+    "cep": "59634135",
+    "street": "Rua Mauá",
+    "neighborhood": "Alto do Sumaré",
+    "city": "Mossoró",
+    "state": "RN",
+    "ddd": "84"
+  },
+  {
+    "cep": "59634640",
+    "street": "Rua Qatar",
+    "neighborhood": "Alto do Sumaré",
+    "city": "Mossoró",
+    "state": "RN",
+    "ddd": "84"
+  },
+  {
+    "cep": "59634657",
+    "street": "Rua Irã",
+    "neighborhood": "Alto do Sumaré",
+    "city": "Mossoró",
+    "state": "RN",
+    "ddd": "84"
+  },
+  {
+    "cep": "59640270",
+    "street": "Rua Honda",
+    "neighborhood": "Santa Júlia",
+    "city": "Mossoró",
+    "state": "RN",
+    "ddd": "84"
+  },
+  {
+    "cep": "59643480",
+    "street": "Rua Arês",
+    "neighborhood": "Itapetinga",
+    "city": "Mossoró",
+    "state": "RN",
+    "ddd": "84"
+  },
+  {
+    "cep": "59643484",
+    "street": "Rua Lajes",
+    "neighborhood": "Itapetinga",
+    "city": "Mossoró",
+    "state": "RN",
+    "ddd": "84"
+  },
+  {
+    "cep": "59646575",
+    "street": "Rua Ingá",
+    "neighborhood": "Rincão",
+    "city": "Mossoró",
+    "state": "RN",
+    "ddd": "84"
+  },
+  {
+    "cep": "60183690",
+    "street": "Rua 5",
+    "neighborhood": "Praia do Futuro I",
+    "city": "Fortaleza",
+    "state": "CE",
+    "ddd": "85"
+  },
+  {
+    "cep": "60191390",
+    "street": "Rua 7",
+    "neighborhood": "Manuel Dias Branco",
+    "city": "Fortaleza",
+    "state": "CE",
+    "ddd": "85"
+  },
+  {
+    "cep": "60422746",
+    "street": "Rua 3",
+    "neighborhood": "Aeroporto",
+    "city": "Fortaleza",
+    "state": "CE",
+    "ddd": "85"
+  },
+  {
+    "cep": "60743060",
+    "street": "Rua 6",
+    "neighborhood": "Itaperi",
+    "city": "Fortaleza",
+    "state": "CE",
+    "ddd": "85"
+  },
+  {
+    "cep": "60743290",
+    "street": "Rua 9",
+    "neighborhood": "Parque Dois Irmãos",
+    "city": "Fortaleza",
+    "state": "CE",
+    "ddd": "85"
+  },
+  {
+    "cep": "60744290",
+    "street": "Rua 2",
+    "neighborhood": "Passaré",
+    "city": "Fortaleza",
+    "state": "CE",
+    "ddd": "85"
+  },
+  {
+    "cep": "60761280",
+    "street": "Rua 4",
+    "neighborhood": "Parque Dois Irmãos",
+    "city": "Fortaleza",
+    "state": "CE",
+    "ddd": "85"
+  },
+  {
+    "cep": "60763675",
+    "street": "Rua 3",
+    "neighborhood": "Conjunto Esperança",
+    "city": "Fortaleza",
+    "state": "CE",
+    "ddd": "85"
+  },
+  {
+    "cep": "60768080",
+    "street": "Rua 7",
+    "neighborhood": "Mondubim",
+    "city": "Fortaleza",
+    "state": "CE",
+    "ddd": "85"
+  },
+  {
+    "cep": "60820640",
+    "street": "Avenida 1",
+    "neighborhood": "Jardim das Oliveiras",
+    "city": "Fortaleza",
+    "state": "CE",
+    "ddd": "85"
+  },
+  {
+    "cep": "60823340",
+    "street": "Rua 5",
+    "neighborhood": "Cidade dos Funcionários",
+    "city": "Fortaleza",
+    "state": "CE",
+    "ddd": "85"
+  },
+  {
+    "cep": "60831483",
+    "street": "Rua 3",
+    "neighborhood": "Lagoa Redonda",
+    "city": "Fortaleza",
+    "state": "CE",
+    "ddd": "85"
+  },
+  {
+    "cep": "60863840",
+    "street": "Rua 3",
+    "neighborhood": "Barroso",
+    "city": "Fortaleza",
+    "state": "CE",
+    "ddd": "85"
+  },
+  {
+    "cep": "60875330",
+    "street": "Rua 7",
+    "neighborhood": "São Bento",
+    "city": "Fortaleza",
+    "state": "CE",
+    "ddd": "85"
+  },
+  {
+    "cep": "60875340",
+    "street": "Rua 6",
+    "neighborhood": "São Bento",
+    "city": "Fortaleza",
+    "state": "CE",
+    "ddd": "85"
+  },
+  {
+    "cep": "63010127",
+    "street": "Rua Boa Vista",
+    "neighborhood": "Centro",
+    "city": "Juazeiro do Norte",
+    "state": "CE",
+    "ddd": "88"
+  },
+  {
+    "cep": "63011010",
+    "street": "Avenida Leandro Bezerra",
+    "neighborhood": "Salgadinho",
+    "city": "Juazeiro do Norte",
+    "state": "CE",
+    "ddd": "88"
+  },
+  {
+    "cep": "63011045",
+    "street": "Rua do Brejo",
+    "neighborhood": "Salgadinho",
+    "city": "Juazeiro do Norte",
+    "state": "CE",
+    "ddd": "88"
+  },
+  {
+    "cep": "63020225",
+    "street": "Rua Dom Bosco",
+    "neighborhood": "Pio XII",
+    "city": "Juazeiro do Norte",
+    "state": "CE",
+    "ddd": "88"
+  },
+  {
+    "cep": "63022455",
+    "street": "Avenida Paulo Maia",
+    "neighborhood": "Antônio Vieira",
+    "city": "Juazeiro do Norte",
+    "state": "CE",
+    "ddd": "88"
+  },
+  {
+    "cep": "63030080",
+    "street": "Rua do Canal",
+    "neighborhood": "Limoeiro",
+    "city": "Juazeiro do Norte",
+    "state": "CE",
+    "ddd": "88"
+  },
+  {
+    "cep": "63030441",
+    "street": "Avenida Antônio Sales",
+    "neighborhood": "Novo Juazeiro",
+    "city": "Juazeiro do Norte",
+    "state": "CE",
+    "ddd": "88"
+  },
+  {
+    "cep": "63030680",
+    "street": "Rua 128",
+    "neighborhood": "Novo Juazeiro",
+    "city": "Juazeiro do Norte",
+    "state": "CE",
+    "ddd": "88"
+  },
+  {
+    "cep": "63031090",
+    "street": "Avenida do Contorno",
+    "neighborhood": "Tiradentes",
+    "city": "Juazeiro do Norte",
+    "state": "CE",
+    "ddd": "88"
+  },
+  {
+    "cep": "63034240",
+    "street": "Rua da Paz",
+    "neighborhood": "Pirajá",
+    "city": "Juazeiro do Norte",
+    "state": "CE",
+    "ddd": "88"
+  },
+  {
+    "cep": "63038131",
+    "street": "Avenida Sabiá",
+    "neighborhood": "Professora Maria Geli Sá Barreto",
+    "city": "Juazeiro do Norte",
+    "state": "CE",
+    "ddd": "88"
+  },
+  {
+    "cep": "63041160",
+    "street": "Rua da Luz",
+    "neighborhood": "Prefeito Carlos Alberto da Cruz",
+    "city": "Juazeiro do Norte",
+    "state": "CE",
+    "ddd": "88"
+  },
+  {
+    "cep": "63047160",
+    "street": "Rua Timbó",
+    "neighborhood": "Planalto",
+    "city": "Juazeiro do Norte",
+    "state": "CE",
+    "ddd": "88"
+  },
+  {
+    "cep": "63050295",
+    "street": "Avenida Padre Cícero",
+    "neighborhood": "Salesianos",
+    "city": "Juazeiro do Norte",
+    "state": "CE",
+    "ddd": "88"
+  },
+  {
+    "cep": "63051050",
+    "street": "Rua da Paz",
+    "neighborhood": "João Cabral",
+    "city": "Juazeiro do Norte",
+    "state": "CE",
+    "ddd": "88"
+  },
+  {
+    "cep": "64001010",
+    "street": "Avenida Maranhão",
+    "neighborhood": "Centro",
+    "city": "Teresina",
+    "state": "PI",
+    "ddd": "86"
+  },
+  {
+    "cep": "64003740",
+    "street": "Avenida Bahia",
+    "neighborhood": "Pirajá",
+    "city": "Teresina",
+    "state": "PI",
+    "ddd": "86"
+  },
+  {
+    "cep": "64006035",
+    "street": "Avenida União",
+    "neighborhood": "Aeroporto",
+    "city": "Teresina",
+    "state": "PI",
+    "ddd": "86"
+  },
+  {
+    "cep": "64006142",
+    "street": "Rua 2",
+    "neighborhood": "Primavera",
+    "city": "Teresina",
+    "state": "PI",
+    "ddd": "86"
+  },
+  {
+    "cep": "64006149",
+    "street": "Rua 9",
+    "neighborhood": "Primavera",
+    "city": "Teresina",
+    "state": "PI",
+    "ddd": "86"
+  },
+  {
+    "cep": "64007592",
+    "street": "Avenida União",
+    "neighborhood": "Real Copagri",
+    "city": "Teresina",
+    "state": "PI",
+    "ddd": "86"
+  },
+  {
+    "cep": "64010750",
+    "street": "Avenida Dois",
+    "neighborhood": "Mocambinho",
+    "city": "Teresina",
+    "state": "PI",
+    "ddd": "86"
+  },
+  {
+    "cep": "64018100",
+    "street": "Avenida Maranhão",
+    "neighborhood": "Vermelha",
+    "city": "Teresina",
+    "state": "PI",
+    "ddd": "86"
+  },
+  {
+    "cep": "64018330",
+    "street": "Avenida Maranhão",
+    "neighborhood": "São Pedro",
+    "city": "Teresina",
+    "state": "PI",
+    "ddd": "86"
+  },
+  {
+    "cep": "64020470",
+    "street": "Avenida Maranhão",
+    "neighborhood": "Saci",
+    "city": "Teresina",
+    "state": "PI",
+    "ddd": "86"
+  },
+  {
+    "cep": "64028350",
+    "street": "Avenida Norte Sul",
+    "neighborhood": "Santo Antônio",
+    "city": "Teresina",
+    "state": "PI",
+    "ddd": "86"
+  },
+  {
+    "cep": "64049410",
+    "street": "Avenida Poti",
+    "neighborhood": "Fátima",
+    "city": "Teresina",
+    "state": "PI",
+    "ddd": "86"
+  },
+  {
+    "cep": "64049538",
+    "street": "Avenida Ininga",
+    "neighborhood": "Fátima",
+    "city": "Teresina",
+    "state": "PI",
+    "ddd": "86"
+  },
+  {
+    "cep": "64064020",
+    "street": "Avenida Gazânia",
+    "neighborhood": "Zoobotânico",
+    "city": "Teresina",
+    "state": "PI",
+    "ddd": "86"
+  },
+  {
+    "cep": "64071095",
+    "street": "Avenida Brasil",
+    "neighborhood": "Verde Lar",
+    "city": "Teresina",
+    "state": "PI",
+    "ddd": "86"
+  },
+  {
+    "cep": "64200040",
+    "street": "Avenida Nações Unidas",
+    "neighborhood": "Nossa Senhora do Carmo",
+    "city": "Parnaíba",
+    "state": "PI",
+    "ddd": "86"
+  },
+  {
+    "cep": "64202740",
+    "street": "Avenida Primeiro de Maio",
+    "neighborhood": "Cantagalo",
+    "city": "Parnaíba",
+    "state": "PI",
+    "ddd": "86"
+  },
+  {
+    "cep": "64208090",
+    "street": "Rua Piauí",
+    "neighborhood": "Piauí",
+    "city": "Parnaíba",
+    "state": "PI",
+    "ddd": "86"
+  },
+  {
+    "cep": "64208150",
+    "street": "Rua JK",
+    "neighborhood": "Piauí",
+    "city": "Parnaíba",
+    "state": "PI",
+    "ddd": "86"
+  },
+  {
+    "cep": "64212205",
+    "street": "Rua Perú",
+    "neighborhood": "Rodoviária",
+    "city": "Parnaíba",
+    "state": "PI",
+    "ddd": "86"
+  },
+  {
+    "cep": "64212405",
+    "street": "Avenida Armando Cajubá",
+    "neighborhood": "Alto Santa Maria",
+    "city": "Parnaíba",
+    "state": "PI",
+    "ddd": "86"
+  },
+  {
+    "cep": "64215855",
+    "street": "Avenida Treze de Maio",
+    "neighborhood": "Ceará",
+    "city": "Parnaíba",
+    "state": "PI",
+    "ddd": "86"
+  },
+  {
+    "cep": "64216675",
+    "street": "Avenida Gerardo Cearense",
+    "neighborhood": "Igaraçu",
+    "city": "Parnaíba",
+    "state": "PI",
+    "ddd": "86"
+  },
+  {
+    "cep": "64216725",
+    "street": "Avenida Batista Silva",
+    "neighborhood": "Igaraçu",
+    "city": "Parnaíba",
+    "state": "PI",
+    "ddd": "86"
+  },
+  {
+    "cep": "64217080",
+    "street": "Avenida Batista Silva",
+    "neighborhood": "São Vicente de Paula",
+    "city": "Parnaíba",
+    "state": "PI",
+    "ddd": "86"
+  },
+  {
+    "cep": "64218330",
+    "street": "Avenida Álvaro Mendes",
+    "neighborhood": "São José",
+    "city": "Parnaíba",
+    "state": "PI",
+    "ddd": "86"
+  },
+  {
+    "cep": "64218610",
+    "street": "Avenida Capitão Claro",
+    "neighborhood": "Nova Parnaíba",
+    "city": "Parnaíba",
+    "state": "PI",
+    "ddd": "86"
+  },
+  {
+    "cep": "64218660",
+    "street": "Avenida Senador Furtado",
+    "neighborhood": "Nova Parnaíba",
+    "city": "Parnaíba",
+    "state": "PI",
+    "ddd": "86"
+  },
+  {
+    "cep": "64218780",
+    "street": "Rua Oeiras",
+    "neighborhood": "Nova Parnaíba",
+    "city": "Parnaíba",
+    "state": "PI",
+    "ddd": "86"
+  },
+  {
+    "cep": "64218875",
+    "street": "Avenida Batista Silva",
+    "neighborhood": "Bebedouro",
+    "city": "Parnaíba",
+    "state": "PI",
+    "ddd": "86"
+  },
+  {
+    "cep": "65043360",
+    "street": "Avenida Um",
+    "neighborhood": "COHEB do Sacavém",
+    "city": "São Luís",
+    "state": "MA",
+    "ddd": "98"
+  },
+  {
+    "cep": "65043774",
+    "street": "Avenida Um",
+    "neighborhood": "Salina do Sacavém",
+    "city": "São Luís",
+    "state": "MA",
+    "ddd": "98"
+  },
+  {
+    "cep": "65055327",
+    "street": "Avenida Dez",
+    "neighborhood": "Jardim São Cristóvão II",
+    "city": "São Luís",
+    "state": "MA",
+    "ddd": "98"
+  },
+  {
+    "cep": "65058002",
+    "street": "Avenida 205",
+    "neighborhood": "Cidade Operária",
+    "city": "São Luís",
+    "state": "MA",
+    "ddd": "98"
+  },
+  {
+    "cep": "65058094",
+    "street": "Avenida 103",
+    "neighborhood": "Cidade Operária",
+    "city": "São Luís",
+    "state": "MA",
+    "ddd": "98"
+  },
+  {
+    "cep": "65058181",
+    "street": "Avenida 203",
+    "neighborhood": "Cidade Operária",
+    "city": "São Luís",
+    "state": "MA",
+    "ddd": "98"
+  },
+  {
+    "cep": "65058567",
+    "street": "Avenida 105",
+    "neighborhood": "Cidade Operária",
+    "city": "São Luís",
+    "state": "MA",
+    "ddd": "98"
+  },
+  {
+    "cep": "65058690",
+    "street": "Avenida Um",
+    "neighborhood": "Vila Apaco",
+    "city": "São Luís",
+    "state": "MA",
+    "ddd": "98"
+  },
+  {
+    "cep": "65062190",
+    "street": "Avenida Um",
+    "neighborhood": "Bequimão",
+    "city": "São Luís",
+    "state": "MA",
+    "ddd": "98"
+  },
+  {
+    "cep": "65062600",
+    "street": "Avenida Um",
+    "neighborhood": "Vila Padre Xavier",
+    "city": "São Luís",
+    "state": "MA",
+    "ddd": "98"
+  },
+  {
+    "cep": "65063020",
+    "street": "Avenida Dois",
+    "neighborhood": "Angelim",
+    "city": "São Luís",
+    "state": "MA",
+    "ddd": "98"
+  },
+  {
+    "cep": "65064421",
+    "street": "Avenida Um",
+    "neighborhood": "Cohama",
+    "city": "São Luís",
+    "state": "MA",
+    "ddd": "98"
+  },
+  {
+    "cep": "65071453",
+    "street": "Avenida 03",
+    "neighborhood": "Alto do Calhau",
+    "city": "São Luís",
+    "state": "MA",
+    "ddd": "98"
+  },
+  {
+    "cep": "65072405",
+    "street": "Avenida 2",
+    "neighborhood": "Cohajap",
+    "city": "São Luís",
+    "state": "MA",
+    "ddd": "98"
+  },
+  {
+    "cep": "65073141",
+    "street": "Avenida Um",
+    "neighborhood": "Alterosa",
+    "city": "São Luís",
+    "state": "MA",
+    "ddd": "98"
+  },
+  {
+    "cep": "65901760",
+    "street": "Avenida 01",
+    "neighborhood": "Itamar Guará",
+    "city": "Imperatriz",
+    "state": "MA",
+    "ddd": "99"
+  },
+  {
+    "cep": "65906788",
+    "street": "Avenida Beta",
+    "neighborhood": "Residencial Canto da Serra",
+    "city": "Imperatriz",
+    "state": "MA",
+    "ddd": "99"
+  },
+  {
+    "cep": "65907425",
+    "street": "Avenida JK",
+    "neighborhood": "Nova Imperatriz",
+    "city": "Imperatriz",
+    "state": "MA",
+    "ddd": "99"
+  },
+  {
+    "cep": "65908477",
+    "street": "Avenida SEAC",
+    "neighborhood": "Jardim Pérola",
+    "city": "Imperatriz",
+    "state": "MA",
+    "ddd": "99"
+  },
+  {
+    "cep": "65908530",
+    "street": "Avenida Portugal",
+    "neighborhood": "Jardim Europa",
+    "city": "Imperatriz",
+    "state": "MA",
+    "ddd": "99"
+  },
+  {
+    "cep": "65910440",
+    "street": "Avenida Caiçara",
+    "neighborhood": "Vila Redenção",
+    "city": "Imperatriz",
+    "state": "MA",
+    "ddd": "99"
+  },
+  {
+    "cep": "65910547",
+    "street": "Avenida Jacob",
+    "neighborhood": "Vila Redenção",
+    "city": "Imperatriz",
+    "state": "MA",
+    "ddd": "99"
+  },
+  {
+    "cep": "65911300",
+    "street": "Avenida Jacob",
+    "neighborhood": "Parque das Estrelas",
+    "city": "Imperatriz",
+    "state": "MA",
+    "ddd": "99"
+  },
+  {
+    "cep": "65914005",
+    "street": "Avenida Itaipu",
+    "neighborhood": "Vila Airton Senna",
+    "city": "Imperatriz",
+    "state": "MA",
+    "ddd": "99"
+  },
+  {
+    "cep": "65917033",
+    "street": "Avenida JK",
+    "neighborhood": "Boca da Mata",
+    "city": "Imperatriz",
+    "state": "MA",
+    "ddd": "99"
+  },
+  {
+    "cep": "65917550",
+    "street": "Avenida Tietê",
+    "neighborhood": "Portal da Amazônia",
+    "city": "Imperatriz",
+    "state": "MA",
+    "ddd": "99"
+  },
+  {
+    "cep": "65917603",
+    "street": "Avenida Central",
+    "neighborhood": "Parque das Mansões",
+    "city": "Imperatriz",
+    "state": "MA",
+    "ddd": "99"
+  },
+  {
+    "cep": "65917618",
+    "street": "Avenida Jacuri",
+    "neighborhood": "Parque das Mansões",
+    "city": "Imperatriz",
+    "state": "MA",
+    "ddd": "99"
+  },
+  {
+    "cep": "65917660",
+    "street": "Avenida Contorno",
+    "neighborhood": "Parque das Mansões",
+    "city": "Imperatriz",
+    "state": "MA",
+    "ddd": "99"
+  },
+  {
+    "cep": "65918369",
+    "street": "Avenida Três",
+    "neighborhood": "Conjunto Nova Vitória",
+    "city": "Imperatriz",
+    "state": "MA",
+    "ddd": "99"
+  },
+  {
+    "cep": "66025375",
+    "street": "Avenida Ivanir",
+    "neighborhood": "Jurunas",
+    "city": "Belém",
+    "state": "PA",
+    "ddd": "91"
+  },
+  {
+    "cep": "66095680",
+    "street": "Avenida Xingu",
+    "neighborhood": "Marco",
+    "city": "Belém",
+    "state": "PA",
+    "ddd": "91"
+  },
+  {
+    "cep": "66110045",
+    "street": "Avenida Leste",
+    "neighborhood": "Maracangalha",
+    "city": "Belém",
+    "state": "PA",
+    "ddd": "91"
+  },
+  {
+    "cep": "66110054",
+    "street": "Avenida Norte",
+    "neighborhood": "Maracangalha",
+    "city": "Belém",
+    "state": "PA",
+    "ddd": "91"
+  },
+  {
+    "cep": "66110420",
+    "street": "Avenida Pará",
+    "neighborhood": "Maracangalha",
+    "city": "Belém",
+    "state": "PA",
+    "ddd": "91"
+  },
+  {
+    "cep": "66610415",
+    "street": "Avenida W-3",
+    "neighborhood": "Curió-Utinga",
+    "city": "Belém",
+    "state": "PA",
+    "ddd": "91"
+  },
+  {
+    "cep": "66610455",
+    "street": "Avenida W-2",
+    "neighborhood": "Curió-Utinga",
+    "city": "Belém",
+    "state": "PA",
+    "ddd": "91"
+  },
+  {
+    "cep": "66615850",
+    "street": "Avenida Dalva",
+    "neighborhood": "Marambaia",
+    "city": "Belém",
+    "state": "PA",
+    "ddd": "91"
+  },
+  {
+    "cep": "66625867",
+    "street": "Avenida Belém",
+    "neighborhood": "Cabanagem",
+    "city": "Belém",
+    "state": "PA",
+    "ddd": "91"
+  },
+  {
+    "cep": "66640065",
+    "street": "Avenida Norte",
+    "neighborhood": "Mangueirão",
+    "city": "Belém",
+    "state": "PA",
+    "ddd": "91"
+  },
+  {
+    "cep": "66645155",
+    "street": "Avenida Dalva",
+    "neighborhood": "Castanheira",
+    "city": "Belém",
+    "state": "PA",
+    "ddd": "91"
+  },
+  {
+    "cep": "66690700",
+    "street": "Avenida Pará",
+    "neighborhood": "Águas Lindas",
+    "city": "Belém",
+    "state": "PA",
+    "ddd": "91"
+  },
+  {
+    "cep": "66690760",
+    "street": "Avenida Ceará",
+    "neighborhood": "Águas Lindas",
+    "city": "Belém",
+    "state": "PA",
+    "ddd": "91"
+  },
+  {
+    "cep": "66820153",
+    "street": "Avenida União",
+    "neighborhood": "Tenoné",
+    "city": "Belém",
+    "state": "PA",
+    "ddd": "91"
+  },
+  {
+    "cep": "66833336",
+    "street": "Avenida Brasil",
+    "neighborhood": "Tapanã (Icoaraci)",
+    "city": "Belém",
+    "state": "PA",
+    "ddd": "91"
+  },
+  {
+    "cep": "68010235",
+    "street": "Avenida Altamira",
+    "neighborhood": "Santíssimo",
+    "city": "Santarém",
+    "state": "PA",
+    "ddd": "93"
+  },
+  {
+    "cep": "68010390",
+    "street": "Avenida Maicá",
+    "neighborhood": "Santana",
+    "city": "Santarém",
+    "state": "PA",
+    "ddd": "93"
+  },
+  {
+    "cep": "68017020",
+    "street": "Rua para",
+    "neighborhood": "Área Verde",
+    "city": "Santarém",
+    "state": "PA",
+    "ddd": "93"
+  },
+  {
+    "cep": "68020210",
+    "street": "Avenida Jasmim",
+    "neighborhood": "Aeroporto Velho",
+    "city": "Santarém",
+    "state": "PA",
+    "ddd": "93"
+  },
+  {
+    "cep": "68025580",
+    "street": "Rua Nova",
+    "neighborhood": "São Francisco",
+    "city": "Santarém",
+    "state": "PA",
+    "ddd": "93"
+  },
+  {
+    "cep": "68030340",
+    "street": "Avenida Violeta",
+    "neighborhood": "Jardim Santarém",
+    "city": "Santarém",
+    "state": "PA",
+    "ddd": "93"
+  },
+  {
+    "cep": "68030650",
+    "street": "Avenida Irurá",
+    "neighborhood": "Caranazal",
+    "city": "Santarém",
+    "state": "PA",
+    "ddd": "93"
+  },
+  {
+    "cep": "68035120",
+    "street": "Rua 14",
+    "neighborhood": "Maracanã",
+    "city": "Santarém",
+    "state": "PA",
+    "ddd": "93"
+  },
+  {
+    "cep": "68035165",
+    "street": "Rua 18",
+    "neighborhood": "Maracanã",
+    "city": "Santarém",
+    "state": "PA",
+    "ddd": "93"
+  },
+  {
+    "cep": "68037015",
+    "street": "Avenida Pardal",
+    "neighborhood": "Salvação",
+    "city": "Santarém",
+    "state": "PA",
+    "ddd": "93"
+  },
+  {
+    "cep": "68037250",
+    "street": "Rua Jaó",
+    "neighborhood": "Salvação",
+    "city": "Santarém",
+    "state": "PA",
+    "ddd": "93"
+  },
+  {
+    "cep": "68037255",
+    "street": "Avenida Cauré",
+    "neighborhood": "Salvação",
+    "city": "Santarém",
+    "state": "PA",
+    "ddd": "93"
+  },
+  {
+    "cep": "68038385",
+    "street": "Rua Dez",
+    "neighborhood": "Elcione Barbalho",
+    "city": "Santarém",
+    "state": "PA",
+    "ddd": "93"
+  },
+  {
+    "cep": "68040000",
+    "street": "Avenida Tapajós",
+    "neighborhood": "Aldeia",
+    "city": "Santarém",
+    "state": "PA",
+    "ddd": "93"
+  },
+  {
+    "cep": "68040004",
+    "street": "Avenida Tapajós",
+    "neighborhood": "Aldeia",
+    "city": "Santarém",
+    "state": "PA",
+    "ddd": "93"
+  },
+  {
+    "cep": "68902022",
+    "street": "Rua Sete",
+    "neighborhood": "Beirol",
+    "city": "Macapá",
+    "state": "AP",
+    "ddd": "96"
+  },
+  {
+    "cep": "68902757",
+    "street": "Rua Sexta",
+    "neighborhood": "Buritizal",
+    "city": "Macapá",
+    "state": "AP",
+    "ddd": "96"
+  },
+  {
+    "cep": "68903294",
+    "street": "Avenida Denver",
+    "neighborhood": "Jardim Marco Zero",
+    "city": "Macapá",
+    "state": "AP",
+    "ddd": "96"
+  },
+  {
+    "cep": "68903355",
+    "street": "Avenida Dois",
+    "neighborhood": "Jardim Marco Zero",
+    "city": "Macapá",
+    "state": "AP",
+    "ddd": "96"
+  },
+  {
+    "cep": "68903470",
+    "street": "Rua Terra",
+    "neighborhood": "Jardim Marco Zero",
+    "city": "Macapá",
+    "state": "AP",
+    "ddd": "96"
+  },
+  {
+    "cep": "68906127",
+    "street": "Avenida China",
+    "neighborhood": "Cabralzinho",
+    "city": "Macapá",
+    "state": "AP",
+    "ddd": "96"
+  },
+  {
+    "cep": "68906140",
+    "street": "Avenida Natal",
+    "neighborhood": "Cabralzinho",
+    "city": "Macapá",
+    "state": "AP",
+    "ddd": "96"
+  },
+  {
+    "cep": "68906320",
+    "street": "Rua Um",
+    "neighborhood": "Marabaixo",
+    "city": "Macapá",
+    "state": "AP",
+    "ddd": "96"
+  },
+  {
+    "cep": "68906462",
+    "street": "Avenida Verde",
+    "neighborhood": "Marabaixo",
+    "city": "Macapá",
+    "state": "AP",
+    "ddd": "96"
+  },
+  {
+    "cep": "68907193",
+    "street": "Avenida Acapu",
+    "neighborhood": "Renascer",
+    "city": "Macapá",
+    "state": "AP",
+    "ddd": "96"
+  },
+  {
+    "cep": "68909468",
+    "street": "Avenida Mogno",
+    "neighborhood": "Boné Azul",
+    "city": "Macapá",
+    "state": "AP",
+    "ddd": "96"
+  },
+  {
+    "cep": "68909469",
+    "street": "Avenida Ipê",
+    "neighborhood": "Boné Azul",
+    "city": "Macapá",
+    "state": "AP",
+    "ddd": "96"
+  },
+  {
+    "cep": "68909842",
+    "street": "Avenida Sexta",
+    "neighborhood": "Marabaixo",
+    "city": "Macapá",
+    "state": "AP",
+    "ddd": "96"
+  },
+  {
+    "cep": "68909846",
+    "street": "Avenida Nona",
+    "neighborhood": "Marabaixo",
+    "city": "Macapá",
+    "state": "AP",
+    "ddd": "96"
+  },
+  {
+    "cep": "68911030",
+    "street": "Rua Nona",
+    "neighborhood": "Fazendinha",
+    "city": "Macapá",
+    "state": "AP",
+    "ddd": "96"
+  },
+  {
+    "cep": "68925228",
+    "street": "Avenida Santana",
+    "neighborhood": "Central",
+    "city": "Santana",
+    "state": "AP",
+    "ddd": "96"
+  },
+  {
+    "cep": "68926130",
+    "street": "Rua D 22",
+    "neighborhood": "Vila Amazonas",
+    "city": "Santana",
+    "state": "AP",
+    "ddd": "96"
+  },
+  {
+    "cep": "68926150",
+    "street": "Rua D 9",
+    "neighborhood": "Vila Amazonas",
+    "city": "Santana",
+    "state": "AP",
+    "ddd": "96"
+  },
+  {
+    "cep": "68926162",
+    "street": "Rua D 14",
+    "neighborhood": "Vila Amazonas",
+    "city": "Santana",
+    "state": "AP",
+    "ddd": "96"
+  },
+  {
+    "cep": "68926163",
+    "street": "Rua D 15",
+    "neighborhood": "Vila Amazonas",
+    "city": "Santana",
+    "state": "AP",
+    "ddd": "96"
+  },
+  {
+    "cep": "68926174",
+    "street": "Rua D 11",
+    "neighborhood": "Vila Amazonas",
+    "city": "Santana",
+    "state": "AP",
+    "ddd": "96"
+  },
+  {
+    "cep": "68927296",
+    "street": "Avenida Brasilia",
+    "neighborhood": "Nova Brasília",
+    "city": "Santana",
+    "state": "AP",
+    "ddd": "96"
+  },
+  {
+    "cep": "68928090",
+    "street": "Avenida Mineira",
+    "neighborhood": "Paraíso",
+    "city": "Santana",
+    "state": "AP",
+    "ddd": "96"
+  },
+  {
+    "cep": "68928313",
+    "street": "Avenida Brasil",
+    "neighborhood": "Fonte Nova",
+    "city": "Santana",
+    "state": "AP",
+    "ddd": "96"
+  },
+  {
+    "cep": "68929528",
+    "street": "Rua Sete",
+    "neighborhood": "Distrito Industrial",
+    "city": "Santana",
+    "state": "AP",
+    "ddd": "96"
+  },
+  {
+    "cep": "68929813",
+    "street": "Rua Dez",
+    "neighborhood": "Equador",
+    "city": "Santana",
+    "state": "AP",
+    "ddd": "96"
+  },
+  {
+    "cep": "68929815",
+    "street": "Rua Doze",
+    "neighborhood": "Equador",
+    "city": "Santana",
+    "state": "AP",
+    "ddd": "96"
+  },
+  {
+    "cep": "68930001",
+    "street": "Avenida Floresta",
+    "neighborhood": "Jardim Floresta",
+    "city": "Santana",
+    "state": "AP",
+    "ddd": "96"
+  },
+  {
+    "cep": "68930265",
+    "street": "Avenida Local - 05",
+    "neighborhood": "Acquaville",
+    "city": "Santana",
+    "state": "AP",
+    "ddd": "96"
+  },
+  {
+    "cep": "68930342",
+    "street": "Avenida Local - 42",
+    "neighborhood": "Acquaville",
+    "city": "Santana",
+    "state": "AP",
+    "ddd": "96"
+  },
+  {
+    "cep": "69015754",
+    "street": "Avenida 1",
+    "neighborhood": "Colônia Terra Nova",
+    "city": "Manaus",
+    "state": "AM",
+    "ddd": "92"
+  },
+  {
+    "cep": "69018075",
+    "street": "Rua 8",
+    "neighborhood": "Lago Azul",
+    "city": "Manaus",
+    "state": "AM",
+    "ddd": "92"
+  },
+  {
+    "cep": "69023234",
+    "street": "Rua 2",
+    "neighborhood": "Tarumã-Açu",
+    "city": "Manaus",
+    "state": "AM",
+    "ddd": "92"
+  },
+  {
+    "cep": "69033615",
+    "street": "Avenida Brasil",
+    "neighborhood": "São Jorge",
+    "city": "Manaus",
+    "state": "AM",
+    "ddd": "92"
+  },
+  {
+    "cep": "69044030",
+    "street": "Avenida Dublim",
+    "neighborhood": "Planalto",
+    "city": "Manaus",
+    "state": "AM",
+    "ddd": "92"
+  },
+  {
+    "cep": "69044550",
+    "street": "Rua 8",
+    "neighborhood": "Planalto",
+    "city": "Manaus",
+    "state": "AM",
+    "ddd": "92"
+  },
+  {
+    "cep": "69044560",
+    "street": "Rua 9",
+    "neighborhood": "Planalto",
+    "city": "Manaus",
+    "state": "AM",
+    "ddd": "92"
+  },
+  {
+    "cep": "69044800",
+    "street": "Avenida Laguna",
+    "neighborhood": "Planalto",
+    "city": "Manaus",
+    "state": "AM",
+    "ddd": "92"
+  },
+  {
+    "cep": "69045200",
+    "street": "Avenida Tókio",
+    "neighborhood": "Planalto",
+    "city": "Manaus",
+    "state": "AM",
+    "ddd": "92"
+  },
+  {
+    "cep": "69049640",
+    "street": "Rua 1",
+    "neighborhood": "Redenção",
+    "city": "Manaus",
+    "state": "AM",
+    "ddd": "92"
+  },
+  {
+    "cep": "69075020",
+    "street": "Avenida Açaí",
+    "neighborhood": "Distrito Industrial I",
+    "city": "Manaus",
+    "state": "AM",
+    "ddd": "92"
+  },
+  {
+    "cep": "69075140",
+    "street": "Avenida Mandii",
+    "neighborhood": "Distrito Industrial I",
+    "city": "Manaus",
+    "state": "AM",
+    "ddd": "92"
+  },
+  {
+    "cep": "69093535",
+    "street": "Rua 2",
+    "neighborhood": "Colônia Terra Nova",
+    "city": "Manaus",
+    "state": "AM",
+    "ddd": "92"
+  },
+  {
+    "cep": "69097315",
+    "street": "Avenida Nepal",
+    "neighborhood": "Nova Cidade",
+    "city": "Manaus",
+    "state": "AM",
+    "ddd": "92"
+  },
+  {
+    "cep": "69099845",
+    "street": "Rua 9",
+    "neighborhood": "Cidade de Deus",
+    "city": "Manaus",
+    "state": "AM",
+    "ddd": "92"
+  },
+  {
+    "cep": "69151200",
+    "street": "Avenida Paes de Andrade",
+    "neighborhood": "Centro",
+    "city": "Parintins",
+    "state": "AM",
+    "ddd": "92"
+  },
+  {
+    "cep": "69151454",
+    "street": "Avenida Nações Unidas",
+    "neighborhood": "Raimundo Muniz",
+    "city": "Parintins",
+    "state": "AM",
+    "ddd": "92"
+  },
+  {
+    "cep": "69151486",
+    "street": "Avenida Amazonas",
+    "neighborhood": "Francesa",
+    "city": "Parintins",
+    "state": "AM",
+    "ddd": "92"
+  },
+  {
+    "cep": "69152579",
+    "street": "Rua 2",
+    "neighborhood": "União",
+    "city": "Parintins",
+    "state": "AM",
+    "ddd": "92"
+  },
+  {
+    "cep": "69152588",
+    "street": "Rua 3",
+    "neighborhood": "União",
+    "city": "Parintins",
+    "state": "AM",
+    "ddd": "92"
+  },
+  {
+    "cep": "69152589",
+    "street": "Rua 4",
+    "neighborhood": "União",
+    "city": "Parintins",
+    "state": "AM",
+    "ddd": "92"
+  },
+  {
+    "cep": "69154510",
+    "street": "Rua 8",
+    "neighborhood": "Teixeirão",
+    "city": "Parintins",
+    "state": "AM",
+    "ddd": "92"
+  },
+  {
+    "cep": "69154517",
+    "street": "Rua 13",
+    "neighborhood": "Teixeirão",
+    "city": "Parintins",
+    "state": "AM",
+    "ddd": "92"
+  },
+  {
+    "cep": "69154521",
+    "street": "Rua 17",
+    "neighborhood": "Teixeirão",
+    "city": "Parintins",
+    "state": "AM",
+    "ddd": "92"
+  },
+  {
+    "cep": "69154528",
+    "street": "Rua 22",
+    "neighborhood": "Teixeirão",
+    "city": "Parintins",
+    "state": "AM",
+    "ddd": "92"
+  },
+  {
+    "cep": "69154529",
+    "street": "Rua 21",
+    "neighborhood": "Teixeirão",
+    "city": "Parintins",
+    "state": "AM",
+    "ddd": "92"
+  },
+  {
+    "cep": "69154539",
+    "street": "Rua 31",
+    "neighborhood": "Teixeirão",
+    "city": "Parintins",
+    "state": "AM",
+    "ddd": "92"
+  },
+  {
+    "cep": "69154543",
+    "street": "Rua 39",
+    "neighborhood": "Teixeirão",
+    "city": "Parintins",
+    "state": "AM",
+    "ddd": "92"
+  },
+  {
+    "cep": "69154552",
+    "street": "Rua 45",
+    "neighborhood": "Teixeirão",
+    "city": "Parintins",
+    "state": "AM",
+    "ddd": "92"
+  },
+  {
+    "cep": "69154557",
+    "street": "Rua 47",
+    "neighborhood": "Teixeirão",
+    "city": "Parintins",
+    "state": "AM",
+    "ddd": "92"
+  },
+  {
+    "cep": "69302020",
+    "street": "Avenida Berlim",
+    "neighborhood": "Residencial Cidade Veredas do Rio Branco",
+    "city": "Boa Vista",
+    "state": "RR",
+    "ddd": "95"
+  },
+  {
+    "cep": "69302065",
+    "street": "Avenida Parque",
+    "neighborhood": "Residencial Cidade Veredas do Rio Branco",
+    "city": "Boa Vista",
+    "state": "RR",
+    "ddd": "95"
+  },
+  {
+    "cep": "69304006",
+    "street": "Rua 2",
+    "neighborhood": "Mecejana",
+    "city": "Boa Vista",
+    "state": "RR",
+    "ddd": "95"
+  },
+  {
+    "cep": "69310753",
+    "street": "Avenida Equador",
+    "neighborhood": "Said Salomão",
+    "city": "Boa Vista",
+    "state": "RR",
+    "ddd": "95"
+  },
+  {
+    "cep": "69312497",
+    "street": "Avenida Parma",
+    "neighborhood": "Centenário",
+    "city": "Boa Vista",
+    "state": "RR",
+    "ddd": "95"
+  },
+  {
+    "cep": "69312613",
+    "street": "Rua III",
+    "neighborhood": "Centenário",
+    "city": "Boa Vista",
+    "state": "RR",
+    "ddd": "95"
+  },
+  {
+    "cep": "69312623",
+    "street": "Rua VI",
+    "neighborhood": "Centenário",
+    "city": "Boa Vista",
+    "state": "RR",
+    "ddd": "95"
+  },
+  {
+    "cep": "69312627",
+    "street": "Rua IX",
+    "neighborhood": "Centenário",
+    "city": "Boa Vista",
+    "state": "RR",
+    "ddd": "95"
+  },
+  {
+    "cep": "69314590",
+    "street": "Rua 03",
+    "neighborhood": "Jardim Tropical",
+    "city": "Boa Vista",
+    "state": "RR",
+    "ddd": "95"
+  },
+  {
+    "cep": "69314600",
+    "street": "Rua 05",
+    "neighborhood": "Jardim Tropical",
+    "city": "Boa Vista",
+    "state": "RR",
+    "ddd": "95"
+  },
+  {
+    "cep": "69314624",
+    "street": "Rua 12",
+    "neighborhood": "Jardim Tropical",
+    "city": "Boa Vista",
+    "state": "RR",
+    "ddd": "95"
+  },
+  {
+    "cep": "69317473",
+    "street": "Rua 04",
+    "neighborhood": "Cidade Satélite",
+    "city": "Boa Vista",
+    "state": "RR",
+    "ddd": "95"
+  },
+  {
+    "cep": "69318004",
+    "street": "Avenida CB-12",
+    "neighborhood": "Laura Moreira",
+    "city": "Boa Vista",
+    "state": "RR",
+    "ddd": "95"
+  },
+  {
+    "cep": "69318024",
+    "street": "Avenida R - 7",
+    "neighborhood": "Laura Moreira",
+    "city": "Boa Vista",
+    "state": "RR",
+    "ddd": "95"
+  },
+  {
+    "cep": "69318733",
+    "street": "Avenida Ye'kwana",
+    "neighborhood": "Dr. Airton Rocha",
+    "city": "Boa Vista",
+    "state": "RR",
+    "ddd": "95"
+  },
+  {
+    "cep": "69900078",
+    "street": "Avenida Brasil",
+    "neighborhood": "Centro",
+    "city": "Rio Branco",
+    "state": "AC",
+    "ddd": "68"
+  },
+  {
+    "cep": "69900088",
+    "street": "Avenida Ceará",
+    "neighborhood": "Centro",
+    "city": "Rio Branco",
+    "state": "AC",
+    "ddd": "68"
+  },
+  {
+    "cep": "69902106",
+    "street": "Rua 2",
+    "neighborhood": "Loteamento Jardim São Francisco",
+    "city": "Rio Branco",
+    "state": "AC",
+    "ddd": "68"
+  },
+  {
+    "cep": "69903018",
+    "street": "Avenida Brasil",
+    "neighborhood": "Xavier Maia",
+    "city": "Rio Branco",
+    "state": "AC",
+    "ddd": "68"
+  },
+  {
+    "cep": "69903418",
+    "street": "Rua 5",
+    "neighborhood": "Loteamento Santa Luzia",
+    "city": "Rio Branco",
+    "state": "AC",
+    "ddd": "68"
+  },
+  {
+    "cep": "69905088",
+    "street": "Avenida Ceará",
+    "neighborhood": "Habitasa",
+    "city": "Rio Branco",
+    "state": "AC",
+    "ddd": "68"
+  },
+  {
+    "cep": "69911800",
+    "street": "Avenida Sobral",
+    "neighborhood": "Ayrton Senna",
+    "city": "Rio Branco",
+    "state": "AC",
+    "ddd": "68"
+  },
+  {
+    "cep": "69911802",
+    "street": "Avenida Sobral",
+    "neighborhood": "Ayrton Senna",
+    "city": "Rio Branco",
+    "state": "AC",
+    "ddd": "68"
+  },
+  {
+    "cep": "69911864",
+    "street": "Avenida Sobral",
+    "neighborhood": "Ayrton Senna",
+    "city": "Rio Branco",
+    "state": "AC",
+    "ddd": "68"
+  },
+  {
+    "cep": "69912096",
+    "street": "Rua 3",
+    "neighborhood": "João Paulo",
+    "city": "Rio Branco",
+    "state": "AC",
+    "ddd": "68"
+  },
+  {
+    "cep": "69912106",
+    "street": "Rua 8",
+    "neighborhood": "João Paulo",
+    "city": "Rio Branco",
+    "state": "AC",
+    "ddd": "68"
+  },
+  {
+    "cep": "69915738",
+    "street": "Avenida Iáco",
+    "neighborhood": "Portal da Amazônia",
+    "city": "Rio Branco",
+    "state": "AC",
+    "ddd": "68"
+  },
+  {
+    "cep": "69917772",
+    "street": "Avenida Sabiá",
+    "neighborhood": "Conjunto Universitário",
+    "city": "Rio Branco",
+    "state": "AC",
+    "ddd": "68"
+  },
+  {
+    "cep": "69918084",
+    "street": "Avenida Ceará",
+    "neighborhood": "Jardim Nazle",
+    "city": "Rio Branco",
+    "state": "AC",
+    "ddd": "68"
+  },
+  {
+    "cep": "69919784",
+    "street": "Avenida Norte",
+    "neighborhood": "Conjunto Tucumã",
+    "city": "Rio Branco",
+    "state": "AC",
+    "ddd": "68"
+  },
+  {
+    "cep": "71258010",
+    "street": "Quadra 1",
+    "neighborhood": "Setor Norte (Vila Estrutural)",
+    "city": "Brasília",
+    "state": "DF",
+    "ddd": "61"
+  },
+  {
+    "cep": "71686208",
+    "street": "Avenida do Sol",
+    "neighborhood": "Setor Habitacional Jardim Botânico",
+    "city": "Brasília",
+    "state": "DF",
+    "ddd": "61"
+  },
+  {
+    "cep": "71693005",
+    "street": "Quadra 4",
+    "neighborhood": "Vila São José (São Sebastião)",
+    "city": "Brasília",
+    "state": "DF",
+    "ddd": "61"
+  },
+  {
+    "cep": "71693090",
+    "street": "Avenida Centro",
+    "neighborhood": "Vila São José (São Sebastião)",
+    "city": "Brasília",
+    "state": "DF",
+    "ddd": "61"
+  },
+  {
+    "cep": "71693103",
+    "street": "Rua 3",
+    "neighborhood": "Vila Nova (São Sebastião)",
+    "city": "Brasília",
+    "state": "DF",
+    "ddd": "61"
+  },
+  {
+    "cep": "71697126",
+    "street": "Avenida Olaria",
+    "neighborhood": "Alto Mangueiral (São Sebastião)",
+    "city": "Brasília",
+    "state": "DF",
+    "ddd": "61"
+  },
+  {
+    "cep": "71736300",
+    "street": "Quadra 3",
+    "neighborhood": "Setor de Indústrias Bernardo Sayão (Núcleo Bandeirante)",
+    "city": "Brasília",
+    "state": "DF",
+    "ddd": "61"
+  },
+  {
+    "cep": "71937000",
+    "street": "Rua 4",
+    "neighborhood": "Sul (Águas Claras)",
+    "city": "Brasília",
+    "state": "DF",
+    "ddd": "61"
+  },
+  {
+    "cep": "72492035",
+    "street": "Avenida Goiás",
+    "neighborhood": "Engenho das Lages (Gama)",
+    "city": "Brasília",
+    "state": "DF",
+    "ddd": "61"
+  },
+  {
+    "cep": "72720080",
+    "street": "Quadra 8",
+    "neighborhood": "Setor Tradicional (Brazlândia)",
+    "city": "Brasília",
+    "state": "DF",
+    "ddd": "61"
+  },
+  {
+    "cep": "73060652",
+    "street": "Rua 2",
+    "neighborhood": "Setor Oeste (Sobradinho II)",
+    "city": "Brasília",
+    "state": "DF",
+    "ddd": "61"
+  },
+  {
+    "cep": "73083430",
+    "street": "Quadra 4",
+    "neighborhood": "Serra Azul (Sobradinho)",
+    "city": "Brasília",
+    "state": "DF",
+    "ddd": "61"
+  },
+  {
+    "cep": "73330050",
+    "street": "Avenida Maranhão",
+    "neighborhood": "Setor Tradicional (Planaltina)",
+    "city": "Brasília",
+    "state": "DF",
+    "ddd": "61"
+  },
+  {
+    "cep": "73366426",
+    "street": "Rua 2",
+    "neighborhood": "Condomínio Nova Esperança (Planaltina)",
+    "city": "Brasília",
+    "state": "DF",
+    "ddd": "61"
+  },
+  {
+    "cep": "73389015",
+    "street": "Quadra 5",
+    "neighborhood": "Taquara (Planaltina)",
+    "city": "Brasília",
+    "state": "DF",
+    "ddd": "61"
+  },
+  {
+    "cep": "74115070",
+    "street": "Rua 6",
+    "neighborhood": "Setor Oeste",
+    "city": "Goiânia",
+    "state": "GO",
+    "ddd": "62"
+  },
+  {
+    "cep": "74476128",
+    "street": "Rua 6",
+    "neighborhood": "Conjunto Residencial Paulo Pacheco",
+    "city": "Goiânia",
+    "state": "GO",
+    "ddd": "62"
+  },
+  {
+    "cep": "74620020",
+    "street": "Rua 7",
+    "neighborhood": "Setor Morais",
+    "city": "Goiânia",
+    "state": "GO",
+    "ddd": "62"
+  },
+  {
+    "cep": "74653115",
+    "street": "Rua 7",
+    "neighborhood": "Setor Nova Vila",
+    "city": "Goiânia",
+    "state": "GO",
+    "ddd": "62"
+  },
+  {
+    "cep": "74730100",
+    "street": "Rua 2",
+    "neighborhood": "Conjunto Riviera",
+    "city": "Goiânia",
+    "state": "GO",
+    "ddd": "62"
+  },
+  {
+    "cep": "74770170",
+    "street": "Rua 5",
+    "neighborhood": "Vila Pedroso",
+    "city": "Goiânia",
+    "state": "GO",
+    "ddd": "62"
+  },
+  {
+    "cep": "74815430",
+    "street": "Rua 3",
+    "neighborhood": "Vila São João",
+    "city": "Goiânia",
+    "state": "GO",
+    "ddd": "62"
+  },
+  {
+    "cep": "74884737",
+    "street": "Avenida 4",
+    "neighborhood": "Residencial Goiânia Golfe Clube",
+    "city": "Goiânia",
+    "state": "GO",
+    "ddd": "62"
+  },
+  {
+    "cep": "74910480",
+    "street": "Rua 7",
+    "neighborhood": "Vila São Joaquim",
+    "city": "Aparecida de Goiânia",
+    "state": "GO",
+    "ddd": "62"
+  },
+  {
+    "cep": "74913530",
+    "street": "Rua 2",
+    "neighborhood": "Vila Real",
+    "city": "Aparecida de Goiânia",
+    "state": "GO",
+    "ddd": "62"
+  },
+  {
+    "cep": "74922410",
+    "street": "Rua 5",
+    "neighborhood": "Sítios Santa Luzia",
+    "city": "Aparecida de Goiânia",
+    "state": "GO",
+    "ddd": "62"
+  },
+  {
+    "cep": "74955010",
+    "street": "Rua 3",
+    "neighborhood": "Vila Oliveira",
+    "city": "Aparecida de Goiânia",
+    "state": "GO",
+    "ddd": "62"
+  },
+  {
+    "cep": "74961020",
+    "street": "Rua 2",
+    "neighborhood": "Jardim Tiradentes",
+    "city": "Aparecida de Goiânia",
+    "state": "GO",
+    "ddd": "62"
+  },
+  {
+    "cep": "74971070",
+    "street": "Rua 8",
+    "neighborhood": "Setor Marista Sul",
+    "city": "Aparecida de Goiânia",
+    "state": "GO",
+    "ddd": "62"
+  },
+  {
+    "cep": "74985245",
+    "street": "Rua 6",
+    "neighborhood": "Polo Empresarial Goiás - Etapa I",
+    "city": "Aparecida de Goiânia",
+    "state": "GO",
+    "ddd": "62"
+  },
+  {
+    "cep": "75053427",
+    "street": "Rua 4",
+    "neighborhood": "Adriana Parque",
+    "city": "Anápolis",
+    "state": "GO",
+    "ddd": "62"
+  },
+  {
+    "cep": "75054527",
+    "street": "Rua 7",
+    "neighborhood": "Residencial Dom Felipe",
+    "city": "Anápolis",
+    "state": "GO",
+    "ddd": "62"
+  },
+  {
+    "cep": "75060560",
+    "street": "Rua 2",
+    "neighborhood": "Antônio Fernandes",
+    "city": "Anápolis",
+    "state": "GO",
+    "ddd": "62"
+  },
+  {
+    "cep": "75060570",
+    "street": "Avenida 2",
+    "neighborhood": "Antônio Fernandes",
+    "city": "Anápolis",
+    "state": "GO",
+    "ddd": "62"
+  },
+  {
+    "cep": "75075691",
+    "street": "Avenida GT 1",
+    "neighborhood": "Condomínio Residencial Grand Trianon",
+    "city": "Anápolis",
+    "state": "GO",
+    "ddd": "62"
+  },
+  {
+    "cep": "75086052",
+    "street": "Avenida 30",
+    "neighborhood": "Residencial Flor do Cerrado",
+    "city": "Anápolis",
+    "state": "GO",
+    "ddd": "62"
+  },
+  {
+    "cep": "75090515",
+    "street": "Avenida JP 50",
+    "neighborhood": "Jardim Primavera 2ª Etapa",
+    "city": "Anápolis",
+    "state": "GO",
+    "ddd": "62"
+  },
+  {
+    "cep": "75090721",
+    "street": "Avenida JP 50",
+    "neighborhood": "Residencial Santo Expedito",
+    "city": "Anápolis",
+    "state": "GO",
+    "ddd": "62"
+  },
+  {
+    "cep": "75096020",
+    "street": "Avenida N-001",
+    "neighborhood": "Anápolis City",
+    "city": "Anápolis",
+    "state": "GO",
+    "ddd": "62"
+  },
+  {
+    "cep": "75105280",
+    "street": "Rua 1",
+    "neighborhood": "Jardim Arco Verde",
+    "city": "Anápolis",
+    "state": "GO",
+    "ddd": "62"
+  },
+  {
+    "cep": "75105290",
+    "street": "Rua 2",
+    "neighborhood": "Jardim Arco Verde",
+    "city": "Anápolis",
+    "state": "GO",
+    "ddd": "62"
+  },
+  {
+    "cep": "75126530",
+    "street": "Rua 4",
+    "neighborhood": "Residencial Geovanni Braga",
+    "city": "Anápolis",
+    "state": "GO",
+    "ddd": "62"
+  },
+  {
+    "cep": "75133430",
+    "street": "Rua 7",
+    "neighborhood": "São João",
+    "city": "Anápolis",
+    "state": "GO",
+    "ddd": "62"
+  },
+  {
+    "cep": "75144160",
+    "street": "Rua 6",
+    "neighborhood": "Jardim Petrópolis",
+    "city": "Anápolis",
+    "state": "GO",
+    "ddd": "62"
+  },
+  {
+    "cep": "75144520",
+    "street": "Rua 7",
+    "neighborhood": "Vila Fabril",
+    "city": "Anápolis",
+    "state": "GO",
+    "ddd": "62"
+  },
+  {
+    "cep": "76801309",
+    "street": "Avenida Calama",
+    "neighborhood": "Olaria",
+    "city": "Porto Velho",
+    "state": "RO",
+    "ddd": "69"
+  },
+  {
+    "cep": "76801432",
+    "street": "Avenida Farquar",
+    "neighborhood": "Pedrinhas",
+    "city": "Porto Velho",
+    "state": "RO",
+    "ddd": "69"
+  },
+  {
+    "cep": "76803746",
+    "street": "Avenida Calama",
+    "neighborhood": "São João Bosco",
+    "city": "Porto Velho",
+    "state": "RO",
+    "ddd": "69"
+  },
+  {
+    "cep": "76804566",
+    "street": "Rua Poti",
+    "neighborhood": "Tupy",
+    "city": "Porto Velho",
+    "state": "RO",
+    "ddd": "69"
+  },
+  {
+    "cep": "76804578",
+    "street": "Rua Poti",
+    "neighborhood": "Tupy",
+    "city": "Porto Velho",
+    "state": "RO",
+    "ddd": "69"
+  },
+  {
+    "cep": "76811642",
+    "street": "Rua Soin",
+    "neighborhood": "Eldorado",
+    "city": "Porto Velho",
+    "state": "RO",
+    "ddd": "69"
+  },
+  {
+    "cep": "76813890",
+    "street": "Rua Mira",
+    "neighborhood": "Ulisses Guimarães",
+    "city": "Porto Velho",
+    "state": "RO",
+    "ddd": "69"
+  },
+  {
+    "cep": "76814140",
+    "street": "Rua Paca",
+    "neighborhood": "Ronaldo Aragão",
+    "city": "Porto Velho",
+    "state": "RO",
+    "ddd": "69"
+  },
+  {
+    "cep": "76816422",
+    "street": "Avenida Pavão",
+    "neighborhood": "Aeroclube",
+    "city": "Porto Velho",
+    "state": "RO",
+    "ddd": "69"
+  },
+  {
+    "cep": "76820611",
+    "street": "Avenida Calama",
+    "neighborhood": "Flodoaldo Pontes Pinto",
+    "city": "Porto Velho",
+    "state": "RO",
+    "ddd": "69"
+  },
+  {
+    "cep": "76820864",
+    "street": "Avenida Calama",
+    "neighborhood": "Embratel",
+    "city": "Porto Velho",
+    "state": "RO",
+    "ddd": "69"
+  },
+  {
+    "cep": "76824360",
+    "street": "Rua Vera",
+    "neighborhood": "Igarapé",
+    "city": "Porto Velho",
+    "state": "RO",
+    "ddd": "69"
+  },
+  {
+    "cep": "76824402",
+    "street": "Rua Leda",
+    "neighborhood": "Cuniã",
+    "city": "Porto Velho",
+    "state": "RO",
+    "ddd": "69"
+  },
+  {
+    "cep": "76825330",
+    "street": "Avenida Calama",
+    "neighborhood": "Teixeirão",
+    "city": "Porto Velho",
+    "state": "RO",
+    "ddd": "69"
+  },
+  {
+    "cep": "76828898",
+    "street": "Rua Paz",
+    "neighborhood": "Socialista",
+    "city": "Porto Velho",
+    "state": "RO",
+    "ddd": "69"
+  },
+  {
+    "cep": "76900073",
+    "street": "Rua Tupi",
+    "neighborhood": "Centro",
+    "city": "Ji-Paraná",
+    "state": "RO",
+    "ddd": "69"
+  },
+  {
+    "cep": "76901123",
+    "street": "Rua Acre",
+    "neighborhood": "Jardim Presidencial",
+    "city": "Ji-Paraná",
+    "state": "RO",
+    "ddd": "69"
+  },
+  {
+    "cep": "76904301",
+    "street": "Avenida Lago Azul",
+    "neighborhood": "Espelho D' Água",
+    "city": "Ji-Paraná",
+    "state": "RO",
+    "ddd": "69"
+  },
+  {
+    "cep": "76907643",
+    "street": "Avenida JK",
+    "neighborhood": "Casa Preta",
+    "city": "Ji-Paraná",
+    "state": "RO",
+    "ddd": "69"
+  },
+  {
+    "cep": "76908241",
+    "street": "Avenida Guanabara",
+    "neighborhood": "São Francisco",
+    "city": "Ji-Paraná",
+    "state": "RO",
+    "ddd": "69"
+  },
+  {
+    "cep": "76908354",
+    "street": "Avenida Brasil",
+    "neighborhood": "Nova Brasília",
+    "city": "Ji-Paraná",
+    "state": "RO",
+    "ddd": "69"
+  },
+  {
+    "cep": "76908504",
+    "street": "Avenida Brasil",
+    "neighborhood": "Nova Brasília",
+    "city": "Ji-Paraná",
+    "state": "RO",
+    "ddd": "69"
+  },
+  {
+    "cep": "76908596",
+    "street": "Avenida Brasil",
+    "neighborhood": "Nova Brasília",
+    "city": "Ji-Paraná",
+    "state": "RO",
+    "ddd": "69"
+  },
+  {
+    "cep": "76908616",
+    "street": "Avenida Brasil",
+    "neighborhood": "Nova Brasília",
+    "city": "Ji-Paraná",
+    "state": "RO",
+    "ddd": "69"
+  },
+  {
+    "cep": "76909899",
+    "street": "Avenida Brasil",
+    "neighborhood": "Habitar Brasil",
+    "city": "Ji-Paraná",
+    "state": "RO",
+    "ddd": "69"
+  },
+  {
+    "cep": "76912678",
+    "street": "Avenida Aracaju",
+    "neighborhood": "Jorge Teixeira",
+    "city": "Ji-Paraná",
+    "state": "RO",
+    "ddd": "69"
+  },
+  {
+    "cep": "76912760",
+    "street": "Rua Jaú",
+    "neighborhood": "Jorge Teixeira",
+    "city": "Ji-Paraná",
+    "state": "RO",
+    "ddd": "69"
+  },
+  {
+    "cep": "76913185",
+    "street": "Rua Ipê",
+    "neighborhood": "Cafezinho",
+    "city": "Ji-Paraná",
+    "state": "RO",
+    "ddd": "69"
+  },
+  {
+    "cep": "76913832",
+    "street": "Avenida Grécia",
+    "neighborhood": "Jardim São Cristóvão",
+    "city": "Ji-Paraná",
+    "state": "RO",
+    "ddd": "69"
+  },
+  {
+    "cep": "76913834",
+    "street": "Avenida Holanda",
+    "neighborhood": "Jardim São Cristóvão",
+    "city": "Ji-Paraná",
+    "state": "RO",
+    "ddd": "69"
+  },
+  {
+    "cep": "77008004",
+    "street": "Avenida LO 18",
+    "neighborhood": "Loteamento Água Fria",
+    "city": "Palmas",
+    "state": "TO",
+    "ddd": "63"
+  },
+  {
+    "cep": "77008010",
+    "street": "Avenida NS 15",
+    "neighborhood": "Loteamento Água Fria",
+    "city": "Palmas",
+    "state": "TO",
+    "ddd": "63"
+  },
+  {
+    "cep": "77060212",
+    "street": "Rua 5",
+    "neighborhood": "Jardim Aureny II",
+    "city": "Palmas",
+    "state": "TO",
+    "ddd": "63"
+  },
+  {
+    "cep": "77060216",
+    "street": "Rua 2",
+    "neighborhood": "Jardim Aureny II",
+    "city": "Palmas",
+    "state": "TO",
+    "ddd": "63"
+  },
+  {
+    "cep": "77060228",
+    "street": "Rua 3",
+    "neighborhood": "Jardim Aureny II",
+    "city": "Palmas",
+    "state": "TO",
+    "ddd": "63"
+  },
+  {
+    "cep": "77060318",
+    "street": "Rua 5",
+    "neighborhood": "Jardim Santa Bárbara",
+    "city": "Palmas",
+    "state": "TO",
+    "ddd": "63"
+  },
+  {
+    "cep": "77060326",
+    "street": "Rua 8",
+    "neighborhood": "Jardim Santa Bárbara",
+    "city": "Palmas",
+    "state": "TO",
+    "ddd": "63"
+  },
+  {
+    "cep": "77060621",
+    "street": "Avenida Ipanema",
+    "neighborhood": "Jardim Bela Vista",
+    "city": "Palmas",
+    "state": "TO",
+    "ddd": "63"
+  },
+  {
+    "cep": "77062084",
+    "street": "Rua 2",
+    "neighborhood": "Setor União Sul",
+    "city": "Palmas",
+    "state": "TO",
+    "ddd": "63"
+  },
+  {
+    "cep": "77062104",
+    "street": "Rua 3",
+    "neighborhood": "Setor União Sul",
+    "city": "Palmas",
+    "state": "TO",
+    "ddd": "63"
+  },
+  {
+    "cep": "77064070",
+    "street": "Avenida Palmas",
+    "neighborhood": "Setor Santa Fé (Taquaralto)",
+    "city": "Palmas",
+    "state": "TO",
+    "ddd": "63"
+  },
+  {
+    "cep": "77064655",
+    "street": "Rua 9",
+    "neighborhood": "Setor Sul (Taquaralto)",
+    "city": "Palmas",
+    "state": "TO",
+    "ddd": "63"
+  },
+  {
+    "cep": "77064718",
+    "street": "Avenida Sales",
+    "neighborhood": "Setor Bela Vista (Taquaralto)",
+    "city": "Palmas",
+    "state": "TO",
+    "ddd": "63"
+  },
+  {
+    "cep": "77080010",
+    "street": "Rua 4",
+    "neighborhood": "Taquarussu",
+    "city": "Palmas",
+    "state": "TO",
+    "ddd": "63"
+  },
+  {
+    "cep": "77080102",
+    "street": "Rua 2",
+    "neighborhood": "Taquarussu",
+    "city": "Palmas",
+    "state": "TO",
+    "ddd": "63"
+  },
+  {
+    "cep": "77808290",
+    "street": "Avenida Cabral",
+    "neighborhood": "Residencial Itaipu",
+    "city": "Araguaína",
+    "state": "TO",
+    "ddd": "63"
+  },
+  {
+    "cep": "77813520",
+    "street": "Avenida Emanoel",
+    "neighborhood": "Senador",
+    "city": "Araguaína",
+    "state": "TO",
+    "ddd": "63"
+  },
+  {
+    "cep": "77814780",
+    "street": "Avenida Brasil",
+    "neighborhood": "Loteamento Monte Sinai",
+    "city": "Araguaína",
+    "state": "TO",
+    "ddd": "63"
+  },
+  {
+    "cep": "77818230",
+    "street": "Avenida Goiás",
+    "neighborhood": "Vila Nova",
+    "city": "Araguaína",
+    "state": "TO",
+    "ddd": "63"
+  },
+  {
+    "cep": "77818380",
+    "street": "Rua 4",
+    "neighborhood": "Vila Cearense",
+    "city": "Araguaína",
+    "state": "TO",
+    "ddd": "63"
+  },
+  {
+    "cep": "77822508",
+    "street": "Rua 3",
+    "neighborhood": "Loteamento Santos Dumont",
+    "city": "Araguaína",
+    "state": "TO",
+    "ddd": "63"
+  },
+  {
+    "cep": "77823170",
+    "street": "Rua 2",
+    "neighborhood": "Dom Orione",
+    "city": "Araguaína",
+    "state": "TO",
+    "ddd": "63"
+  },
+  {
+    "cep": "77824480",
+    "street": "Avenida S-001",
+    "neighborhood": "Vila Santiago",
+    "city": "Araguaína",
+    "state": "TO",
+    "ddd": "63"
+  },
+  {
+    "cep": "77825767",
+    "street": "Avenida Tietê",
+    "neighborhood": "Residencial Topázio",
+    "city": "Araguaína",
+    "state": "TO",
+    "ddd": "63"
+  },
+  {
+    "cep": "77826055",
+    "street": "Rua 6",
+    "neighborhood": "Loteamento Barros",
+    "city": "Araguaína",
+    "state": "TO",
+    "ddd": "63"
+  },
+  {
+    "cep": "77826135",
+    "street": "Rua 5",
+    "neighborhood": "Loteamento Barros",
+    "city": "Araguaína",
+    "state": "TO",
+    "ddd": "63"
+  },
+  {
+    "cep": "77826566",
+    "street": "Avenida Brasil",
+    "neighborhood": "Setor Coimbra",
+    "city": "Araguaína",
+    "state": "TO",
+    "ddd": "63"
+  },
+  {
+    "cep": "77826582",
+    "street": "Avenida Goiás",
+    "neighborhood": "Setor Coimbra",
+    "city": "Araguaína",
+    "state": "TO",
+    "ddd": "63"
+  },
+  {
+    "cep": "77826604",
+    "street": "Avenida 1",
+    "neighborhood": "Conjunto Residencial Patrocínio",
+    "city": "Araguaína",
+    "state": "TO",
+    "ddd": "63"
+  },
+  {
+    "cep": "77828320",
+    "street": "Avenida Raizal",
+    "neighborhood": "Morada do Sol",
+    "city": "Araguaína",
+    "state": "TO",
+    "ddd": "63"
+  },
+  {
+    "cep": "78068056",
+    "street": "Rua 6",
+    "neighborhood": "Morada dos Nobres",
+    "city": "Cuiabá",
+    "state": "MT",
+    "ddd": "65"
+  },
+  {
+    "cep": "78089722",
+    "street": "Rua 5",
+    "neighborhood": "Residencial Coxipó",
+    "city": "Cuiabá",
+    "state": "MT",
+    "ddd": "65"
+  },
+  {
+    "cep": "78093690",
+    "street": "Rua 6",
+    "neighborhood": "Osmar Cabral",
+    "city": "Cuiabá",
+    "state": "MT",
+    "ddd": "65"
+  },
+  {
+    "cep": "78093693",
+    "street": "Rua 3",
+    "neighborhood": "Osmar Cabral",
+    "city": "Cuiabá",
+    "state": "MT",
+    "ddd": "65"
+  },
+  {
+    "cep": "78098191",
+    "street": "Rua 4",
+    "neighborhood": "Pascoal Ramos",
+    "city": "Cuiabá",
+    "state": "MT",
+    "ddd": "65"
+  },
+  {
+    "cep": "78705090",
+    "street": "Avenida Bahia",
+    "neighborhood": "Cidade Salmen",
+    "city": "Rondonópolis",
+    "state": "MT",
+    "ddd": "66"
+  },
+  {
+    "cep": "78711098",
+    "street": "Avenida Dois",
+    "neighborhood": "Jardim do Parque II",
+    "city": "Rondonópolis",
+    "state": "MT",
+    "ddd": "66"
+  },
+  {
+    "cep": "78711102",
+    "street": "Avenida Um",
+    "neighborhood": "Jardim do Parque II",
+    "city": "Rondonópolis",
+    "state": "MT",
+    "ddd": "66"
+  },
+  {
+    "cep": "78711176",
+    "street": "Avenida Um",
+    "neighborhood": "Jardim da Mata II",
+    "city": "Rondonópolis",
+    "state": "MT",
+    "ddd": "66"
+  },
+  {
+    "cep": "78711180",
+    "street": "Avenida Três",
+    "neighborhood": "Jardim da Mata II",
+    "city": "Rondonópolis",
+    "state": "MT",
+    "ddd": "66"
+  },
+  {
+    "cep": "78718108",
+    "street": "Avenida Bahia",
+    "neighborhood": "Vila São José",
+    "city": "Rondonópolis",
+    "state": "MT",
+    "ddd": "66"
+  },
+  {
+    "cep": "78720457",
+    "street": "Avenida Bahia",
+    "neighborhood": "Loteamento Esplanada",
+    "city": "Rondonópolis",
+    "state": "MT",
+    "ddd": "66"
+  },
+  {
+    "cep": "78720585",
+    "street": "Avenida Bahia",
+    "neighborhood": "Vila Operária",
+    "city": "Rondonópolis",
+    "state": "MT",
+    "ddd": "66"
+  },
+  {
+    "cep": "78721781",
+    "street": "Avenida Bahia",
+    "neighborhood": "Jardim Padre Rodolfo Lunkenbein",
+    "city": "Rondonópolis",
+    "state": "MT",
+    "ddd": "66"
+  },
+  {
+    "cep": "78721836",
+    "street": "Avenida Um",
+    "neighborhood": "Chácara Beija-Flor",
+    "city": "Rondonópolis",
+    "state": "MT",
+    "ddd": "66"
+  },
+  {
+    "cep": "78721889",
+    "street": "Avenida F13",
+    "neighborhood": "Jardim Residencial Porto Ferreira",
+    "city": "Rondonópolis",
+    "state": "MT",
+    "ddd": "66"
+  },
+  {
+    "cep": "78734602",
+    "street": "Avenida Dois",
+    "neighborhood": "Chácara Residencial Parque das Nações",
+    "city": "Rondonópolis",
+    "state": "MT",
+    "ddd": "66"
+  },
+  {
+    "cep": "78735585",
+    "street": "Avenida A-26",
+    "neighborhood": "Residencial Mariela",
+    "city": "Rondonópolis",
+    "state": "MT",
+    "ddd": "66"
+  },
+  {
+    "cep": "78735593",
+    "street": "Avenida JK",
+    "neighborhood": "Residencial Santa Clara",
+    "city": "Rondonópolis",
+    "state": "MT",
+    "ddd": "66"
+  },
+  {
+    "cep": "78736134",
+    "street": "Avenida D2",
+    "neighborhood": "Residencial João Antônio Fagundes",
+    "city": "Rondonópolis",
+    "state": "MT",
+    "ddd": "66"
+  },
+  {
+    "cep": "79009760",
+    "street": "Avenida Noroeste",
+    "neighborhood": "Amambaí",
+    "city": "Campo Grande",
+    "state": "MS",
+    "ddd": "67"
+  },
+  {
+    "cep": "79036500",
+    "street": "Avenida Atlanta",
+    "neighborhood": "Loteamento Bosque da Esperança",
+    "city": "Campo Grande",
+    "state": "MS",
+    "ddd": "67"
+  },
+  {
+    "cep": "79041360",
+    "street": "Avenida Schnoor",
+    "neighborhood": "Tiradentes",
+    "city": "Campo Grande",
+    "state": "MS",
+    "ddd": "67"
+  },
+  {
+    "cep": "79051485",
+    "street": "Avenida Noroeste",
+    "neighborhood": "Vila Carlota",
+    "city": "Campo Grande",
+    "state": "MS",
+    "ddd": "67"
+  },
+  {
+    "cep": "79065380",
+    "street": "Avenida Baobá",
+    "neighborhood": "Vila Moreninha III",
+    "city": "Campo Grande",
+    "state": "MS",
+    "ddd": "67"
+  },
+  {
+    "cep": "79083480",
+    "street": "Avenida Anhembí",
+    "neighborhood": "Jardim Aero Rancho",
+    "city": "Campo Grande",
+    "state": "MS",
+    "ddd": "67"
+  },
+  {
+    "cep": "79086540",
+    "street": "Avenida Ravena",
+    "neighborhood": "Guanandi",
+    "city": "Campo Grande",
+    "state": "MS",
+    "ddd": "67"
+  },
+  {
+    "cep": "79100430",
+    "street": "Avenida Madrí",
+    "neighborhood": "Vila Alba",
+    "city": "Campo Grande",
+    "state": "MS",
+    "ddd": "67"
+  },
+  {
+    "cep": "79104270",
+    "street": "Avenida 4",
+    "neighborhood": "Vila Nova Campo Grande",
+    "city": "Campo Grande",
+    "state": "MS",
+    "ddd": "67"
+  },
+  {
+    "cep": "79104280",
+    "street": "Rua 70",
+    "neighborhood": "Vila Nova Campo Grande",
+    "city": "Campo Grande",
+    "state": "MS",
+    "ddd": "67"
+  },
+  {
+    "cep": "79104281",
+    "street": "Rua 71",
+    "neighborhood": "Vila Nova Campo Grande",
+    "city": "Campo Grande",
+    "state": "MS",
+    "ddd": "67"
+  },
+  {
+    "cep": "79104770",
+    "street": "Rua 84",
+    "neighborhood": "Vila Nova Campo Grande",
+    "city": "Campo Grande",
+    "state": "MS",
+    "ddd": "67"
+  },
+  {
+    "cep": "79105120",
+    "street": "Rua 33",
+    "neighborhood": "Vila Nova Campo Grande",
+    "city": "Campo Grande",
+    "state": "MS",
+    "ddd": "67"
+  },
+  {
+    "cep": "79105131",
+    "street": "Rua 80",
+    "neighborhood": "Vila Nova Campo Grande",
+    "city": "Campo Grande",
+    "state": "MS",
+    "ddd": "67"
+  },
+  {
+    "cep": "79105200",
+    "street": "Rua 38",
+    "neighborhood": "Vila Nova Campo Grande",
+    "city": "Campo Grande",
+    "state": "MS",
+    "ddd": "67"
+  },
+  {
+    "cep": "79800004",
+    "street": "Avenida Marcelino Pires",
+    "neighborhood": "Centro",
+    "city": "Dourados",
+    "state": "MS",
+    "ddd": "67"
+  },
+  {
+    "cep": "79801002",
+    "street": "Avenida Marcelino Pires",
+    "neighborhood": "Centro",
+    "city": "Dourados",
+    "state": "MS",
+    "ddd": "67"
+  },
+  {
+    "cep": "79814145",
+    "street": "Avenida Liberdade",
+    "neighborhood": "Jardim Londrina",
+    "city": "Dourados",
+    "state": "MS",
+    "ddd": "67"
+  },
+  {
+    "cep": "79822620",
+    "street": "Avenida Toscana",
+    "neighborhood": "Vila Toscana II",
+    "city": "Dourados",
+    "state": "MS",
+    "ddd": "67"
+  },
+  {
+    "cep": "79823490",
+    "street": "Avenida Guaicurus",
+    "neighborhood": "Parque Alvorada",
+    "city": "Dourados",
+    "state": "MS",
+    "ddd": "67"
+  },
+  {
+    "cep": "79823540",
+    "street": "Rua 32",
+    "neighborhood": "Altos do Indaiá",
+    "city": "Dourados",
+    "state": "MS",
+    "ddd": "67"
+  },
+  {
+    "cep": "79823800",
+    "street": "Avenida Albino Sotolani",
+    "neighborhood": "Conjunto Residencial Monte Carlo",
+    "city": "Dourados",
+    "state": "MS",
+    "ddd": "67"
+  },
+  {
+    "cep": "79824340",
+    "street": "Avenida das Palmeiras",
+    "neighborhood": "Ecoville",
+    "city": "Dourados",
+    "state": "MS",
+    "ddd": "67"
+  },
+  {
+    "cep": "79826473",
+    "street": "Rua X 1",
+    "neighborhood": "Jardim Monte Alegre",
+    "city": "Dourados",
+    "state": "MS",
+    "ddd": "67"
+  },
+  {
+    "cep": "79826520",
+    "street": "Rua X 8",
+    "neighborhood": "Jardim Monte Alegre",
+    "city": "Dourados",
+    "state": "MS",
+    "ddd": "67"
+  },
+  {
+    "cep": "79833720",
+    "street": "Avenida Canaã",
+    "neighborhood": "Canaã I",
+    "city": "Dourados",
+    "state": "MS",
+    "ddd": "67"
+  },
+  {
+    "cep": "79837216",
+    "street": "Avenida Dilau Azambuja",
+    "neighborhood": "Vival dos Ipês",
+    "city": "Dourados",
+    "state": "MS",
+    "ddd": "67"
+  },
+  {
+    "cep": "79837304",
+    "street": "Avenida Esplanada",
+    "neighborhood": "Esplanada",
+    "city": "Dourados",
+    "state": "MS",
+    "ddd": "67"
+  },
+  {
+    "cep": "79839709",
+    "street": "Avenida Lauro Dierings",
+    "neighborhood": "Distrito Industrial de Dourados",
+    "city": "Dourados",
+    "state": "MS",
+    "ddd": "67"
+  },
+  {
+    "cep": "79841471",
+    "street": "Rua Um",
+    "neighborhood": "Parque das Nações",
+    "city": "Dourados",
+    "state": "MS",
+    "ddd": "67"
+  },
+  {
+    "cep": "80240030",
+    "street": "Avenida Iguaçu",
+    "neighborhood": "Água Verde",
+    "city": "Curitiba",
+    "state": "PR",
+    "ddd": "41"
+  },
+  {
+    "cep": "80240031",
+    "street": "Avenida Iguaçu",
+    "neighborhood": "Água Verde",
+    "city": "Curitiba",
+    "state": "PR",
+    "ddd": "41"
+  },
+  {
+    "cep": "80240070",
+    "street": "Avenida Água Verde",
+    "neighborhood": "Vila Izabel",
+    "city": "Curitiba",
+    "state": "PR",
+    "ddd": "41"
+  },
+  {
+    "cep": "80240074",
+    "street": "Avenida Iguaçu",
+    "neighborhood": "Vila Izabel",
+    "city": "Curitiba",
+    "state": "PR",
+    "ddd": "41"
+  },
+  {
+    "cep": "80250190",
+    "street": "Avenida Iguaçu",
+    "neighborhood": "Rebouças",
+    "city": "Curitiba",
+    "state": "PR",
+    "ddd": "41"
+  },
+  {
+    "cep": "80330170",
+    "street": "Rua Irati",
+    "neighborhood": "Portão",
+    "city": "Curitiba",
+    "state": "PR",
+    "ddd": "41"
+  },
+  {
+    "cep": "80510290",
+    "street": "Rua Quari",
+    "neighborhood": "São Francisco",
+    "city": "Curitiba",
+    "state": "PR",
+    "ddd": "41"
+  },
+  {
+    "cep": "80610040",
+    "street": "Avenida dos Estados",
+    "neighborhood": "Água Verde",
+    "city": "Curitiba",
+    "state": "PR",
+    "ddd": "41"
+  },
+  {
+    "cep": "80620040",
+    "street": "Rua Acre",
+    "neighborhood": "Água Verde",
+    "city": "Curitiba",
+    "state": "PR",
+    "ddd": "41"
+  },
+  {
+    "cep": "80630250",
+    "street": "Rua Bahia",
+    "neighborhood": "Guaíra",
+    "city": "Curitiba",
+    "state": "PR",
+    "ddd": "41"
+  },
+  {
+    "cep": "81030385",
+    "street": "Avenida Henry Ford",
+    "neighborhood": "Fanny",
+    "city": "Curitiba",
+    "state": "PR",
+    "ddd": "41"
+  },
+  {
+    "cep": "81170423",
+    "street": "Rua 1",
+    "neighborhood": "Cidade Industrial",
+    "city": "Curitiba",
+    "state": "PR",
+    "ddd": "41"
+  },
+  {
+    "cep": "81560040",
+    "street": "Rua Cocos",
+    "neighborhood": "Uberaba",
+    "city": "Curitiba",
+    "state": "PR",
+    "ddd": "41"
+  },
+  {
+    "cep": "82600360",
+    "street": "Avenida José Gulin",
+    "neighborhood": "Bacacheri",
+    "city": "Curitiba",
+    "state": "PR",
+    "ddd": "41"
+  },
+  {
+    "cep": "82930210",
+    "street": "Rua Natal",
+    "neighborhood": "Cajuru",
+    "city": "Curitiba",
+    "state": "PR",
+    "ddd": "41"
+  },
+  {
+    "cep": "86025440",
+    "street": "Rua Ivai",
+    "neighborhood": "Conceição",
+    "city": "Londrina",
+    "state": "PR",
+    "ddd": "43"
+  },
+  {
+    "cep": "86025595",
+    "street": "Avenida Rio Branco",
+    "neighborhood": "Jardim Agari",
+    "city": "Londrina",
+    "state": "PR",
+    "ddd": "43"
+  },
+  {
+    "cep": "86025680",
+    "street": "Rua Ipê",
+    "neighborhood": "Jardim Tabapuã",
+    "city": "Londrina",
+    "state": "PR",
+    "ddd": "43"
+  },
+  {
+    "cep": "86025770",
+    "street": "Rua Joá",
+    "neighborhood": "São Cristóvão",
+    "city": "Londrina",
+    "state": "PR",
+    "ddd": "43"
+  },
+  {
+    "cep": "86026500",
+    "street": "Rua Acre",
+    "neighborhood": "Centro",
+    "city": "Londrina",
+    "state": "PR",
+    "ddd": "43"
+  },
+  {
+    "cep": "86031770",
+    "street": "Avenida Brasília",
+    "neighborhood": "Lindóia",
+    "city": "Londrina",
+    "state": "PR",
+    "ddd": "43"
+  },
+  {
+    "cep": "86050160",
+    "street": "Rua Lima",
+    "neighborhood": "Guanabara",
+    "city": "Londrina",
+    "state": "PR",
+    "ddd": "43"
+  },
+  {
+    "cep": "86050390",
+    "street": "Avenida Japão",
+    "neighborhood": "Cláudia",
+    "city": "Londrina",
+    "state": "PR",
+    "ddd": "43"
+  },
+  {
+    "cep": "86060000",
+    "street": "Avenida Maringá",
+    "neighborhood": "Vitória",
+    "city": "Londrina",
+    "state": "PR",
+    "ddd": "43"
+  },
+  {
+    "cep": "86067230",
+    "street": "Avenida Ouro",
+    "neighborhood": "Jardim São Francisco de Assis",
+    "city": "Londrina",
+    "state": "PR",
+    "ddd": "43"
+  },
+  {
+    "cep": "86070535",
+    "street": "Avenida Rio Branco",
+    "neighborhood": "Jardim Shangri-la A",
+    "city": "Londrina",
+    "state": "PR",
+    "ddd": "43"
+  },
+  {
+    "cep": "86070545",
+    "street": "Avenida Tiradentes",
+    "neighborhood": "Jardim Shangri-la A",
+    "city": "Londrina",
+    "state": "PR",
+    "ddd": "43"
+  },
+  {
+    "cep": "86071230",
+    "street": "Rua Vime",
+    "neighborhood": "Leonor",
+    "city": "Londrina",
+    "state": "PR",
+    "ddd": "43"
+  },
+  {
+    "cep": "86072080",
+    "street": "Rua Sul",
+    "neighborhood": "Leste Oeste",
+    "city": "Londrina",
+    "state": "PR",
+    "ddd": "43"
+  },
+  {
+    "cep": "86082110",
+    "street": "Rua Maysa",
+    "neighborhood": "Conjunto Vivi Xavier",
+    "city": "Londrina",
+    "state": "PR",
+    "ddd": "43"
+  },
+  {
+    "cep": "88015300",
+    "street": "Avenida Trompowsky",
+    "neighborhood": "Centro",
+    "city": "Florianópolis",
+    "state": "SC",
+    "ddd": "48"
+  },
+  {
+    "cep": "88020300",
+    "street": "Avenida Mauro Ramos",
+    "neighborhood": "Centro",
+    "city": "Florianópolis",
+    "state": "SC",
+    "ddd": "48"
+  },
+  {
+    "cep": "88020304",
+    "street": "Avenida Mauro Ramos",
+    "neighborhood": "Centro",
+    "city": "Florianópolis",
+    "state": "SC",
+    "ddd": "48"
+  },
+  {
+    "cep": "88034090",
+    "street": "Avenida SC-COM",
+    "neighborhood": "Itacorubi",
+    "city": "Florianópolis",
+    "state": "SC",
+    "ddd": "48"
+  },
+  {
+    "cep": "88034400",
+    "street": "Avenida Itamarati",
+    "neighborhood": "Itacorubi",
+    "city": "Florianópolis",
+    "state": "SC",
+    "ddd": "48"
+  },
+  {
+    "cep": "88034510",
+    "street": "Rua Itapuã",
+    "neighborhood": "Itacorubi",
+    "city": "Florianópolis",
+    "state": "SC",
+    "ddd": "48"
+  },
+  {
+    "cep": "88037385",
+    "street": "Rua Munster",
+    "neighborhood": "Córrego Grande",
+    "city": "Florianópolis",
+    "state": "SC",
+    "ddd": "48"
+  },
+  {
+    "cep": "88053005",
+    "street": "Avenida Jacarandá",
+    "neighborhood": "Daniela",
+    "city": "Florianópolis",
+    "state": "SC",
+    "ddd": "48"
+  },
+  {
+    "cep": "88053100",
+    "street": "Avenida das Acácias",
+    "neighborhood": "Daniela",
+    "city": "Florianópolis",
+    "state": "SC",
+    "ddd": "48"
+  },
+  {
+    "cep": "88054410",
+    "street": "Rua Laser",
+    "neighborhood": "Canasvieiras",
+    "city": "Florianópolis",
+    "state": "SC",
+    "ddd": "48"
+  },
+  {
+    "cep": "88056120",
+    "street": "Rua da Paz",
+    "neighborhood": "Cachoeira do Bom Jesus",
+    "city": "Florianópolis",
+    "state": "SC",
+    "ddd": "48"
+  },
+  {
+    "cep": "88065363",
+    "street": "Rua Jambo",
+    "neighborhood": "Campeche",
+    "city": "Florianópolis",
+    "state": "SC",
+    "ddd": "48"
+  },
+  {
+    "cep": "88066126",
+    "street": "Rua Angico",
+    "neighborhood": "Campeche",
+    "city": "Florianópolis",
+    "state": "SC",
+    "ddd": "48"
+  },
+  {
+    "cep": "88066405",
+    "street": "Rua 2",
+    "neighborhood": "Armação",
+    "city": "Florianópolis",
+    "state": "SC",
+    "ddd": "48"
+  },
+  {
+    "cep": "88066420",
+    "street": "Avenida 3",
+    "neighborhood": "Armação",
+    "city": "Florianópolis",
+    "state": "SC",
+    "ddd": "48"
+  },
+  {
+    "cep": "89201220",
+    "street": "Avenida Doutor Albano Schulz",
+    "neighborhood": "Centro",
+    "city": "Joinville",
+    "state": "SC",
+    "ddd": "47"
+  },
+  {
+    "cep": "89202002",
+    "street": "Avenida Getúlio Vargas",
+    "neighborhood": "Anita Garibaldi",
+    "city": "Joinville",
+    "state": "SC",
+    "ddd": "47"
+  },
+  {
+    "cep": "89202295",
+    "street": "Avenida Getúlio Vargas",
+    "neighborhood": "Bucarein",
+    "city": "Joinville",
+    "state": "SC",
+    "ddd": "47"
+  },
+  {
+    "cep": "89204420",
+    "street": "Rua Pará",
+    "neighborhood": "América",
+    "city": "Joinville",
+    "state": "SC",
+    "ddd": "47"
+  },
+  {
+    "cep": "89216225",
+    "street": "Rua Lua",
+    "neighborhood": "Glória",
+    "city": "Joinville",
+    "state": "SC",
+    "ddd": "47"
+  },
+  {
+    "cep": "89217190",
+    "street": "Rua Jaú",
+    "neighborhood": "Glória",
+    "city": "Joinville",
+    "state": "SC",
+    "ddd": "47"
+  },
+  {
+    "cep": "89219260",
+    "street": "Rua Iuna",
+    "neighborhood": "Costa e Silva",
+    "city": "Joinville",
+    "state": "SC",
+    "ddd": "47"
+  },
+  {
+    "cep": "89219507",
+    "street": "Avenida Mississipi",
+    "neighborhood": "Zona Industrial Norte",
+    "city": "Joinville",
+    "state": "SC",
+    "ddd": "47"
+  },
+  {
+    "cep": "89224424",
+    "street": "Avenida Odilon Rocha Ferreira",
+    "neighborhood": "Jardim Iririú",
+    "city": "Joinville",
+    "state": "SC",
+    "ddd": "47"
+  },
+  {
+    "cep": "89225869",
+    "street": "Rua Vere",
+    "neighborhood": "Aventureiro",
+    "city": "Joinville",
+    "state": "SC",
+    "ddd": "47"
+  },
+  {
+    "cep": "89226542",
+    "street": "Rua Norma",
+    "neighborhood": "Jardim Paraíso",
+    "city": "Joinville",
+    "state": "SC",
+    "ddd": "47"
+  },
+  {
+    "cep": "89226732",
+    "street": "Rua Apus",
+    "neighborhood": "Jardim Paraíso",
+    "city": "Joinville",
+    "state": "SC",
+    "ddd": "47"
+  },
+  {
+    "cep": "89227053",
+    "street": "Rua Soure",
+    "neighborhood": "Iririú",
+    "city": "Joinville",
+    "state": "SC",
+    "ddd": "47"
+  },
+  {
+    "cep": "89230700",
+    "street": "Avenida Alwino Hansen",
+    "neighborhood": "Adhemar Garcia",
+    "city": "Joinville",
+    "state": "SC",
+    "ddd": "47"
+  },
+  {
+    "cep": "89232301",
+    "street": "Avenida Paulo Schroeder",
+    "neighborhood": "Boehmerwald",
+    "city": "Joinville",
+    "state": "SC",
+    "ddd": "47"
+  },
+  {
+    "cep": "90150070",
+    "street": "Avenida Ganzo",
+    "neighborhood": "Menino Deus",
+    "city": "Porto Alegre",
+    "state": "RS",
+    "ddd": "51"
+  },
+  {
+    "cep": "90240581",
+    "street": "Avenida Berlim",
+    "neighborhood": "São Geraldo",
+    "city": "Porto Alegre",
+    "state": "RS",
+    "ddd": "51"
+  },
+  {
+    "cep": "90460140",
+    "street": "Avenida Itaqui",
+    "neighborhood": "Petrópolis",
+    "city": "Porto Alegre",
+    "state": "RS",
+    "ddd": "51"
+  },
+  {
+    "cep": "90460200",
+    "street": "Avenida Ijuí",
+    "neighborhood": "Petrópolis",
+    "city": "Porto Alegre",
+    "state": "RS",
+    "ddd": "51"
+  },
+  {
+    "cep": "90810120",
+    "street": "Avenida Cai",
+    "neighborhood": "Cristal",
+    "city": "Porto Alegre",
+    "state": "RS",
+    "ddd": "51"
+  },
+  {
+    "cep": "90820100",
+    "street": "Avenida Divisa",
+    "neighborhood": "Cristal",
+    "city": "Porto Alegre",
+    "state": "RS",
+    "ddd": "51"
+  },
+  {
+    "cep": "90870140",
+    "street": "Avenida Belém",
+    "neighborhood": "Teresópolis",
+    "city": "Porto Alegre",
+    "state": "RS",
+    "ddd": "51"
+  },
+  {
+    "cep": "90880110",
+    "street": "Avenida Natal",
+    "neighborhood": "Medianeira",
+    "city": "Porto Alegre",
+    "state": "RS",
+    "ddd": "51"
+  },
+  {
+    "cep": "91030280",
+    "street": "Avenida Brino",
+    "neighborhood": "Santa Maria Goretti",
+    "city": "Porto Alegre",
+    "state": "RS",
+    "ddd": "51"
+  },
+  {
+    "cep": "91040550",
+    "street": "Avenida Polar",
+    "neighborhood": "Jardim Floresta",
+    "city": "Porto Alegre",
+    "state": "RS",
+    "ddd": "51"
+  },
+  {
+    "cep": "91510090",
+    "street": "Avenida Rocio",
+    "neighborhood": "Vila João Pessoa",
+    "city": "Porto Alegre",
+    "state": "RS",
+    "ddd": "51"
+  },
+  {
+    "cep": "91510120",
+    "street": "Avenida Veiga",
+    "neighborhood": "Coronel Aparício Borges",
+    "city": "Porto Alegre",
+    "state": "RS",
+    "ddd": "51"
+  },
+  {
+    "cep": "91530030",
+    "street": "Avenida Ceres",
+    "neighborhood": "Partenon",
+    "city": "Porto Alegre",
+    "state": "RS",
+    "ddd": "51"
+  },
+  {
+    "cep": "91530520",
+    "street": "Avenida Ideal",
+    "neighborhood": "Agronomia",
+    "city": "Porto Alegre",
+    "state": "RS",
+    "ddd": "51"
+  },
+  {
+    "cep": "91760430",
+    "street": "Avenida Jardim",
+    "neighborhood": "Ipanema",
+    "city": "Porto Alegre",
+    "state": "RS",
+    "ddd": "51"
+  },
+  {
+    "cep": "95040600",
+    "street": "Rua Dois",
+    "neighborhood": "Madureira",
+    "city": "Caxias do Sul",
+    "state": "RS",
+    "ddd": "54"
+  },
+  {
+    "cep": "95045644",
+    "street": "Rua Sete",
+    "neighborhood": "Centenário",
+    "city": "Caxias do Sul",
+    "state": "RS",
+    "ddd": "54"
+  },
+  {
+    "cep": "95045652",
+    "street": "Rua Cinco",
+    "neighborhood": "Centenário",
+    "city": "Caxias do Sul",
+    "state": "RS",
+    "ddd": "54"
+  },
+  {
+    "cep": "95050000",
+    "street": "Avenida Brasil",
+    "neighborhood": "Jardim América",
+    "city": "Caxias do Sul",
+    "state": "RS",
+    "ddd": "54"
+  },
+  {
+    "cep": "95050110",
+    "street": "Rua Ceará",
+    "neighborhood": "Jardim América",
+    "city": "Caxias do Sul",
+    "state": "RS",
+    "ddd": "54"
+  },
+  {
+    "cep": "95052022",
+    "street": "Avenida Brasil",
+    "neighborhood": "Sagrada Família",
+    "city": "Caxias do Sul",
+    "state": "RS",
+    "ddd": "54"
+  },
+  {
+    "cep": "95058100",
+    "street": "Avenida Colina",
+    "neighborhood": "São Cristóvão",
+    "city": "Caxias do Sul",
+    "state": "RS",
+    "ddd": "54"
+  },
+  {
+    "cep": "95058367",
+    "street": "Rua Eberle",
+    "neighborhood": "São Cristóvão",
+    "city": "Caxias do Sul",
+    "state": "RS",
+    "ddd": "54"
+  },
+  {
+    "cep": "95074130",
+    "street": "Avenida Canopus",
+    "neighborhood": "Cruzeiro",
+    "city": "Caxias do Sul",
+    "state": "RS",
+    "ddd": "54"
+  },
+  {
+    "cep": "95074220",
+    "street": "Avenida Hércules",
+    "neighborhood": "Cruzeiro",
+    "city": "Caxias do Sul",
+    "state": "RS",
+    "ddd": "54"
+  },
+  {
+    "cep": "95074290",
+    "street": "Rua Orion",
+    "neighborhood": "Cruzeiro",
+    "city": "Caxias do Sul",
+    "state": "RS",
+    "ddd": "54"
+  },
+  {
+    "cep": "95076057",
+    "street": "Avenida França",
+    "neighborhood": "São Virgílio",
+    "city": "Caxias do Sul",
+    "state": "RS",
+    "ddd": "54"
+  },
+  {
+    "cep": "95077128",
+    "street": "Avenida Osmar Petteffi",
+    "neighborhood": "São Virgílio",
+    "city": "Caxias do Sul",
+    "state": "RS",
+    "ddd": "54"
+  },
+  {
+    "cep": "95098730",
+    "street": "Avenida Primavera",
+    "neighborhood": "Kayser",
+    "city": "Caxias do Sul",
+    "state": "RS",
+    "ddd": "54"
+  },
+  {
+    "cep": "95112340",
+    "street": "Avenida Triches",
+    "neighborhood": "Industrial",
+    "city": "Caxias do Sul",
+    "state": "RS",
+    "ddd": "54"
+  }
+]
