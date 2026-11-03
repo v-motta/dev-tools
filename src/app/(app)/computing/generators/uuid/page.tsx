@@ -2,12 +2,12 @@ import type { Metadata } from 'next'
 import { Generator } from '@/components/generator'
 
 export const metadata: Metadata = {
-  title: 'UUID Generator',
-  description: 'Generate a random v4 UUID instantly.',
+  title: 'Gerador de UUID',
+  description: 'Gere um UUID v4 aleatório na hora.',
   keywords: [
     'gerador de UUID',
     'gerador de UUID online',
-    'gerador de UUID aleatória',
+    'gerador de UUID aleatório',
   ],
 }
 
@@ -15,38 +15,35 @@ export default function UUIDGeneratorPage() {
   return (
     <div className="space-y-8 w-full lg:w-1/2 2xl:w-1/3">
       <div className="space-y-3">
-        <h1 className="text-2xl font-bold font-mono">UUID Generator</h1>
+        <h1 className="text-2xl font-bold font-mono">Gerador de UUID</h1>
 
         <p className="text-muted-foreground text-balance">
-          Use our UUID generator to create a unique identifier.
+          Crie um identificador único com um clique.
         </p>
       </div>
 
-      <Generator name="UUID" endpoint="/api/generators/uuid" field="uuid" />
+      <Generator
+        name="UUID"
+        label="UUID gerado"
+        endpoint="/api/generators/uuid"
+        field="uuid"
+      />
 
       <div>
-        <h2 className="text-lg font-medium mb-2">How it works</h2>
+        <h2 className="text-lg font-medium mb-2">Como funciona</h2>
 
         <ul className="list-disc list-inside space-y-2 text-muted-foreground">
           <li>
-            The UUID is generated on the server and is not stored anywhere.
+            O UUID é gerado no servidor e não fica armazenado em lugar nenhum.
           </li>
           <li>
-            The generator creates a v4 UUID that ensures a unique universal
-            identifier.
+            O gerador cria um UUID versão 4, baseado em números aleatórios.
           </li>
           <li>
-            The generated UUID follows the 8-4-4-4-12 hexadecimal character
-            format.
+            O UUID segue o formato 8-4-4-4-12, com caracteres hexadecimais.
           </li>
-          <li>
-            The chance of generating two identical UUIDs is practically
-            impossible.
-          </li>
-          <li>
-            You can copy the generated UUID by clicking the copy icon next to
-            it.
-          </li>
+          <li>A chance de gerar dois UUIDs iguais é, na prática, nula.</li>
+          <li>Para copiar o UUID, clique no ícone ao lado dele.</li>
         </ul>
       </div>
     </div>

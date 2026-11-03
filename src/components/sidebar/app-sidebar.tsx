@@ -19,10 +19,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               <Drill strokeWidth={1.5} />
             </div>
 
-            <div className="text-left text-sm leading-tight group-data-[state=open]/collapsible:rotate-90">
-              <p className="truncate font-semibold">The powerful tools</p>
+            <div className="text-left text-sm leading-tight">
+              <p className="truncate font-semibold">Dev Tools</p>
               <p className="truncate text-xs text-muted-foreground">
-                by Mottinha
+                Ferramentas poderosas
               </p>
             </div>
           </Link>

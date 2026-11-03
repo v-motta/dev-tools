@@ -15,17 +15,6 @@ import {
   UserRoundCheck,
   Weight,
 } from 'lucide-react'
-import type { StaticImageData } from 'next/image'
-import calculateAge from '@/../public/calculate-age.jpg'
-import calculateBmi from '@/../public/calculate-bmi.png'
-import calculateBmr from '@/../public/calculate-bmr.jpg'
-import calculateDiscount from '@/../public/calculate-discount.jpg'
-import generateCnpj from '@/../public/generate-cnpj.jpg'
-import generateCpf2 from '@/../public/generate-cpf-2.png'
-import generatePassword from '@/../public/generate-password.png'
-import generateUUID from '@/../public/generate-uuid.png'
-import validateCnpj from '@/../public/validate-cnpj.jpg'
-import validateCpf2 from '@/../public/validate-cpf-2.png'
 
 export interface SidebarGroup {
   label: string
@@ -45,85 +34,74 @@ export interface SidebarMenuItem {
 export interface SidebarSubMenuItem {
   title: string
   description: string
-  image: StaticImageData
   url: string
   icon: LucideIcon
 }
 
 export const tools: SidebarGroup[] = [
   {
-    label: 'Computing',
+    label: 'Computação',
     menuItems: [
       {
-        title: 'Generators',
+        title: 'Geradores',
         url: '/computing/generators',
         icon: ServerCog,
         category: 'generators',
         subMenuItems: [
           {
-            title: 'CPF Generator',
-            description: 'Easily generate valid CPFs with our CPF generator.',
-            image: generateCpf2,
+            title: 'Gerador de CPF',
+            description: 'Gere CPFs válidos para testes.',
             url: '/computing/generators/cpf',
             icon: IdCard,
           },
           {
-            title: 'CNPJ Generator',
-            description: 'Easily generate valid CNPJs with our CNPJ generator.',
-            image: generateCnpj,
+            title: 'Gerador de CNPJ',
+            description: 'Gere CNPJs válidos para testes.',
             url: '/computing/generators/cnpj',
             icon: Landmark,
           },
           {
-            title: 'Password Generator',
-            description:
-              'Generate secure passwords with our password generator.',
-            image: generatePassword,
+            title: 'Gerador de senha',
+            description: 'Gere senhas seguras e aleatórias.',
             url: '/computing/generators/password',
             icon: KeyRound,
           },
           {
-            title: 'UUID Generator',
-            description: 'Generate unique UUIDs with our UUID generator.',
-            image: generateUUID,
+            title: 'Gerador de UUID',
+            description: 'Gere identificadores únicos no formato UUID v4.',
             url: '/computing/generators/uuid',
             icon: Fingerprint,
           },
           {
-            title: 'Random Picker',
-            description:
-              'Draw random numbers within a range with our random picker.',
-            image: generateUUID,
+            title: 'Sorteador de números',
+            description: 'Sorteie um ou mais números dentro de um intervalo.',
             url: '/computing/random-picker',
             icon: Dices,
           },
           // {
-          //   title: 'Person Generator',
+          //   title: 'Gerador de pessoa',
           //   description:
-          //     'Generate a random person with name, telephone, CPF, and birthdate.',
-          //   image: generateUUID,
+          //     'Gere uma pessoa aleatória com nome, telefone, CPF e data de nascimento.',
           //   url: '/computing/generators/person',
           //   icon: User2,
           // },
         ],
       },
       {
-        title: 'Validators',
+        title: 'Validadores',
         url: '/computing/validators',
         icon: CheckCircle,
         category: 'validators',
         subMenuItems: [
           {
-            title: 'CPF Validator',
-            description: 'Check if a CPF is valid with our CPF validator.',
-            image: validateCpf2,
+            title: 'Validador de CPF',
+            description: 'Confira se um CPF é válido.',
             url: '/computing/validators/cpf',
             icon: UserRoundCheck,
           },
           {
-            title: 'CNPJ Validator',
-            description: 'Check if a CNPJ is valid with our CNPJ validator.',
-            image: validateCnpj,
+            title: 'Validador de CNPJ',
+            description: 'Confira se um CNPJ é válido.',
             url: '/computing/validators/cnpj',
             icon: LaptopMinimalCheck,
           },
@@ -132,43 +110,37 @@ export const tools: SidebarGroup[] = [
     ],
   },
   {
-    label: 'Mathematics',
+    label: 'Matemática',
     menuItems: [
       {
-        title: 'Online Calculators',
+        title: 'Calculadoras',
         url: '/mathematics/online-calculators',
         icon: Calculator,
         category: 'online-calculators',
         subMenuItems: [
           {
-            title: 'BMI Calculator',
-            description:
-              'Calculate the Body Mass Index with our BMI calculator.',
-            image: calculateBmi,
+            title: 'Calculadora de IMC',
+            description: 'Calcule o Índice de Massa Corporal.',
             url: '/mathematics/online-calculators/bmi',
             icon: Dumbbell,
           },
           {
-            title: 'BMR Calculator',
+            title: 'Calculadora de TMB',
             description:
-              'Calculate the Basal Metabolic Rate with our BMR calculator.',
-            image: calculateBmr,
+              'Calcule a Taxa Metabólica Basal e o gasto calórico diário.',
             url: '/mathematics/online-calculators/bmr',
             icon: Weight,
           },
           {
-            title: 'Age Calculator',
+            title: 'Calculadora de idade',
             description:
-              'Calculate the age based on a birthdate with our age calculator.',
-            image: calculateAge,
+              'Descubra a idade exata a partir da data de nascimento.',
             url: '/mathematics/online-calculators/age',
             icon: CalendarDays,
           },
           {
-            title: 'Discount Calculator',
-            description:
-              'Calculate the discount amount and the final price after applying the discount.',
-            image: calculateDiscount,
+            title: 'Calculadora de desconto',
+            description: 'Calcule o valor do desconto e o preço final.',
             url: '/mathematics/online-calculators/discount',
             icon: TicketPercent,
           },

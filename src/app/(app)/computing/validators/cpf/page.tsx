@@ -3,8 +3,8 @@ import { ApiUsage } from '@/components/api-usage'
 import { DocumentValidator } from '@/components/document-validator'
 
 export const metadata: Metadata = {
-  title: 'CPF Validator',
-  description: 'Validate a CPF number instantly.',
+  title: 'Validador de CPF',
+  description: 'Confira na hora se um CPF é válido.',
   keywords: [
     'validador de cpf',
     'validador de cpf online',
@@ -19,42 +19,34 @@ export default function CPFValidatorPage() {
   return (
     <div className="space-y-8 w-full lg:w-1/2 2xl:w-1/3">
       <div className="space-y-3">
-        <h1 className="text-2xl font-bold font-mono">CPF Validator</h1>
+        <h1 className="text-2xl font-bold font-mono">Validador de CPF</h1>
 
         <p className="text-muted-foreground text-balance">
-          Use our CPF validator! Just enter a CPF number and click on 'Validate
-          CPF' to check if it is valid.
+          Digite um CPF e clique em "Validar CPF" para saber se ele é válido.
         </p>
       </div>
 
       <DocumentValidator document="cpf" />
 
       <div>
-        <h2 className="text-lg font-medium mb-2">How it works</h2>
+        <h2 className="text-lg font-medium mb-2">Como funciona</h2>
 
         <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+          <li>A validação é feita no servidor e nada fica armazenado.</li>
           <li>
-            The validation is done on the server and does not store any
-            information.
+            O validador confere se o CPF segue as regras da Receita Federal.
           </li>
+          <li>São verificados o formato e os dígitos verificadores.</li>
           <li>
-            The validator checks if the CPF follows the rules of the Federal
-            Revenue Service.
+            O CPF pode ser digitado com ou sem pontuação (123.456.789-10 ou
+            12345678910).
           </li>
-          <li>The format of the CPF and its check digits are verified.</li>
-          <li>
-            The system accepts CPFs with or without punctuation (123.456.789-10
-            or 12345678910).
-          </li>
-          <li>
-            The validation result is displayed through a green icon (valid) or a
-            red icon (invalid).
-          </li>
+          <li>O resultado aparece logo abaixo do campo.</li>
         </ul>
       </div>
 
       <ApiUsage
-        name="CPF validator"
+        name="validador de CPF"
         endpoint="POST /api/validators/cpf"
         request={{ cpf: '123.456.789-10' }}
         response={{ isValid: false }}

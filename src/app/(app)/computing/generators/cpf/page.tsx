@@ -2,42 +2,41 @@ import type { Metadata } from 'next'
 import { Generator } from '@/components/generator'
 
 export const metadata: Metadata = {
-  title: 'CPF Generator',
-  description: 'Generate a valid CPF number instantly.',
+  title: 'Gerador de CPF',
+  description: 'Gere um CPF válido para testes na hora.',
 }
 export default async function CPFGeneratorPage() {
   return (
     <div className="space-y-8 w-full lg:w-1/2 2xl:w-1/3">
       <div className="space-y-3">
-        <h1 className="text-2xl font-bold font-mono">CPF Generator</h1>
+        <h1 className="text-2xl font-bold font-mono">Gerador de CPF</h1>
 
         <p className="text-muted-foreground text-balance">
-          Use our CPF generator! Just click on 'Generate CPF' and, in moments, a
-          new valid CPF will be created.
+          Clique em "Gerar CPF" e, em instantes, um novo CPF válido é criado.
         </p>
       </div>
 
-      <Generator name="CPF" endpoint="/api/generators/cpf" field="cpf" />
+      <Generator
+        name="CPF"
+        label="CPF gerado"
+        endpoint="/api/generators/cpf"
+        field="cpf"
+      />
 
       <div>
-        <h2 className="text-lg font-medium mb-2">How it works</h2>
+        <h2 className="text-lg font-medium mb-2">Como funciona</h2>
 
         <ul className="list-disc list-inside space-y-2 text-muted-foreground">
           <li>
-            The CPF is generated on the server and is not stored anywhere.
+            O CPF é gerado no servidor e não fica armazenado em lugar nenhum.
           </li>
+          <li>O número segue as regras da Receita Federal.</li>
+          <li>Os dígitos verificadores são calculados corretamente.</li>
           <li>
-            The generator creates a valid CPF number following the rules of the
-            Federal Revenue Service.
+            O número serve apenas para testes e não pertence a nenhuma pessoa
+            real.
           </li>
-          <li>The generated CPF has correctly calculated check digits.</li>
-          <li>
-            The generated number is for testing purposes only and does not
-            belong to any real person.
-          </li>
-          <li>
-            You can copy the generated CPF by clicking the copy icon next to it.
-          </li>
+          <li>Para copiar o CPF, clique no ícone ao lado dele.</li>
         </ul>
       </div>
     </div>

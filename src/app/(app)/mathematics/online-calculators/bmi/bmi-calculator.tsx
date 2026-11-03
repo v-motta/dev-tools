@@ -1,9 +1,83 @@
 'use client'
 
 import { useState } from 'react'
+import { ResultCard } from '@/components/result-card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import { formatNumber, parseDecimal } from '@/lib/locale'
+
+// WHO adult classification; `max` is exclusive
+const bmiRanges = [
+  { label: 'Abaixo do peso', max: 18.5, color: 'bg-sky-400' },
+  { label: 'Peso normal', max: 25, color: 'bg-emerald-500' },
+  { label: 'Sobrepeso', max: 30, color: 'bg-amber-400' },
+  { label: 'Obesidade grau I', max: 35, color: 'bg-orange-500' },
+  { label: 'Obesidade grau II', max: 40, color: 'bg-rose-500' },
+  {
+    label: 'Obesidade grau III',
+    max: Number.POSITIVE_INFINITY,
+    color: 'bg-red-600',
+  },
+]
+
+// Values shown on the scale; a BMI outside them sticks to the edges
+const SCALE_MIN = 15
+const SCALE_MAX = 45
+
+function toScalePosition(bmi: number) {
+  const clamped = Math.min(Math.max(bmi, SCALE_MIN), SCALE_MAX)
+  return ((clamped - SCALE_MIN) / (SCALE_MAX - SCALE_MIN)) * 100
+}
+
+function formatBmi(bmi: number) {
+  return formatNumber(bmi, {
+    minimumFractionDigits: 1,
+    maximumFractionDigits: 1,
+  })
+}
+
+function BmiScale({ bmi }: { bmi: number }) {
+  return (
+    <div aria-hidden className="space-y-1 pt-2">
+      <div className="relative">
+        <div className="flex h-2 overflow-hidden rounded-full">
+          {bmiRanges.map((range, index) => {
+            const min = index === 0 ? SCALE_MIN : bmiRanges[index - 1].max
+            const max = Math.min(range.max, SCALE_MAX)
+
+            return (
+              <div
+                key={range.label}
+                className={range.color}
+                style={{
+                  width: `${toScalePosition(max) - toScalePosition(min)}%`,
+                }}
+              />
+            )
+          })}
+        </div>
+
+        <div
+          className="absolute top-1/2 size-4 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-background bg-foreground shadow"
+          style={{ left: `${toScalePosition(bmi)}%` }}
+        />
+      </div>
+
+      <div className="relative h-4 text-xs text-muted-foreground">
+        {bmiRanges.slice(0, -1).map((range) => (
+          <span
+            key={range.max}
+            className="absolute -translate-x-1/2"
+            style={{ left: `${toScalePosition(range.max)}%` }}
+          >
+            {formatNumber(range.max)}
+          </span>
+        ))}
+      </div>
+    </div>
+  )
+}
 
 export function BMICalculator() {
   const [bmi, setBmi] = useState<number>()
@@ -12,83 +86,91 @@ export function BMICalculator() {
     event.preventDefault()
 
     const data = new FormData(event.currentTarget)
-    const result = Object.fromEntries(data)
+    const weight = parseDecimal(String(data.get('weight')))
+    const height = parseDecimal(String(data.get('height'))) / 100
 
-    if (!result.weight || !result.height) {
-      return
-    }
+    if (Number.isNaN(weight) || Number.isNaN(height)) return
 
-    const weight = Number.parseFloat(result.weight as string)
-    const height = Number.parseFloat(result.height as string) / 100
-
-    const bmi = weight / (height * height)
-
-    setBmi(bmi)
+    setBmi(weight / (height * height))
   }
 
-  const bmiStatus: Record<string, string> = {
-    underweight: 'Underweight 🏃‍♀️🍏',
-    normal: 'Normal weight ⚖️😊',
-    overweight: 'Overweight 🍔🍟',
-    obesity1: 'Obesity Grade 1 🍕🍦',
-    obesity2: 'Obesity Grade 2 🍩🍔',
-    obesity3: 'Obesity Grade 3 (morbid) 🚑⚠️',
-  }
-
-  function getBmiStatus(bmi: number): string {
-    if (bmi < 18.5) return bmiStatus.underweight
-    if (bmi < 25) return bmiStatus.normal
-    if (bmi < 30) return bmiStatus.overweight
-    if (bmi < 35) return bmiStatus.obesity1
-    if (bmi < 40) return bmiStatus.obesity2
-
-    return bmiStatus.obesity3
-  }
+  const range =
+    bmi === undefined ? undefined : bmiRanges.find((r) => bmi < r.max)
 
   return (
     <div className="space-y-8 w-full lg:w-1/2 2xl:w-1/3">
       <div className="space-y-3">
-        <h1 className="text-2xl font-bold font-mono">BMI Calculator</h1>
+        <h1 className="text-2xl font-bold font-mono">Calculadora de IMC</h1>
 
         <p className="text-muted-foreground text-balance">
-          Use our calculator to discover your Body Mass Index.
+          Descubra seu Índice de Massa Corporal a partir do peso e da altura.
         </p>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div className="space-y-1">
-          <Label htmlFor="weight">Enter your weight (kg)</Label>
-          <Input
-            type="number"
-            id="weight"
-            name="weight"
-            min="30"
-            max="300"
-            required
-          />
-        </div>
+      <div className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="space-y-1">
+            <Label htmlFor="weight">Peso (kg)</Label>
+            <Input
+              type="number"
+              id="weight"
+              name="weight"
+              min="30"
+              max="300"
+              step="0.1"
+              required
+            />
+          </div>
 
-        <div className="space-y-1">
-          <Label htmlFor="height">Enter your height (cm)</Label>
-          <Input
-            type="number"
-            id="height"
-            name="height"
-            min="100"
-            max="250"
-            required
-          />
-        </div>
+          <div className="space-y-1">
+            <Label htmlFor="height">Altura (cm)</Label>
+            <Input
+              type="number"
+              id="height"
+              name="height"
+              min="100"
+              max="250"
+              required
+            />
+          </div>
 
-        {bmi && (
-          <p>
-            BMI: <span className="font-bold">( {bmi.toFixed(2)} )</span> -{' '}
-            <span className="font-bold">( {getBmiStatus(bmi)} )</span>
-          </p>
-        )}
+          <Button className="w-full">Calcular IMC</Button>
+        </form>
 
-        <Button className="w-full">Calculate BMI</Button>
-      </form>
+        <ResultCard>
+          {bmi !== undefined && range && (
+            <>
+              <p>
+                <span className="text-2xl font-mono">{formatBmi(bmi)}</span>{' '}
+                <span className="text-muted-foreground">·</span>{' '}
+                <span className="font-medium">{range.label}</span>
+              </p>
+              <BmiScale bmi={bmi} />
+            </>
+          )}
+        </ResultCard>
+      </div>
+
+      <div>
+        <h2 className="text-lg font-medium mb-2">Como funciona</h2>
+
+        <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+          <li>O IMC é o peso (kg) dividido pela altura (m) ao quadrado.</li>
+          <li>
+            As faixas seguem a classificação da Organização Mundial da Saúde
+            para adultos.
+          </li>
+          <li>
+            O IMC não diferencia massa muscular de gordura nem vale para
+            crianças, gestantes e idosos. Para uma avaliação completa, consulte
+            um profissional de saúde.
+          </li>
+          <li>
+            O cálculo é feito no seu navegador: nenhum dado é enviado ou
+            armazenado.
+          </li>
+        </ul>
+      </div>
     </div>
   )
 }

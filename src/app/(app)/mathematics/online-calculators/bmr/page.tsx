@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import { BMRCalculator } from './bmr-calculator'
 
 export const metadata: Metadata = {
-  title: 'BMR Calculator',
+  title: 'Calculadora de TMB',
   description:
-    'Calculate your Basal Metabolic Rate (BMR) with this free online tool.',
+    'Calcule sua Taxa Metabólica Basal (TMB) e seu gasto calórico diário.',
   keywords: [
     'calculador de tmb',
     'calculador de tmb online',

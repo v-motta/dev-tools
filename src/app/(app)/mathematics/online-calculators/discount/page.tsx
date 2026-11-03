@@ -2,9 +2,8 @@ import type { Metadata } from 'next'
 import { DiscountCalculator } from './discount-calculator'
 
 export const metadata: Metadata = {
-  title: 'Discount Calculator',
-  description:
-    'Calculate the discount amount and the final price after applying the discount.',
+  title: 'Calculadora de desconto',
+  description: 'Calcule o valor do desconto e o preço final de um produto.',
   keywords: [
     'calculador de desconto',
     'calculador de desconto online',

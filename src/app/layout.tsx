@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import { Analytics } from '@vercel/analytics/next'
+import { LOCALE } from '@/lib/locale'
 import { Providers } from './providers'
 
 const geistSans = Geist({
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
     default: 'Dev Tools',
   },
   description:
-    'A collection of useful tools for developers, including various utilities and resources to enhance productivity.',
+    'Ferramentas poderosas para o dia a dia de desenvolvimento: geradores e validadores de CPF e CNPJ, senhas, UUIDs e calculadoras.',
 }
 
 export default function RootLayout({
@@ -29,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={LOCALE} suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

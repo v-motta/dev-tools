@@ -47,9 +47,9 @@ export function DocumentValidator({ document }: DocumentValidatorProps) {
   const [status, setStatus] = useState<ValidationStatus>()
 
   const messages: Record<ValidationStatus, string> = {
-    valid: `Valid ${name}`,
-    invalid: `Invalid ${name}`,
-    error: `Could not validate the ${name}. Please try again.`,
+    valid: `${name} válido`,
+    invalid: `${name} inválido`,
+    error: `Não foi possível validar o ${name}. Tente novamente.`,
   }
 
   async function handleOnSubmit(event: FormEvent<HTMLFormElement>) {
@@ -78,7 +78,7 @@ export function DocumentValidator({ document }: DocumentValidatorProps) {
   return (
     <form onSubmit={handleOnSubmit} className="space-y-4">
       <div className="space-y-1">
-        <Label htmlFor={document}>Enter the {name}</Label>
+        <Label htmlFor={document}>Digite o {name}</Label>
         <div className="relative">
           <Input
             type="text"
@@ -125,9 +125,9 @@ export function DocumentValidator({ document }: DocumentValidatorProps) {
 
       <Button className="w-full" disabled={isPending}>
         {isPending ? (
-          <LoaderCircle className="animate-spin" aria-label="Validating" />
+          <LoaderCircle className="animate-spin" aria-label="Validando" />
         ) : (
-          `Validate ${name}`
+          `Validar ${name}`
         )}
       </Button>
     </form>

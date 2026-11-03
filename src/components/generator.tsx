@@ -8,15 +8,17 @@ import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 
 interface GeneratorProps {
-  /** Name of the generated value, e.g. "CPF" */
+  /** Name of the generated value, e.g. "CPF" or "senha" */
   name: string
+  /** Label of the output, e.g. "CPF gerado" (Portuguese inflects it by gender) */
+  label: string
   /** API route that responds with `{ [field]: string }` */
   endpoint: string
   /** Response field that holds the generated value */
   field: string
 }
 
-export function Generator({ name, endpoint, field }: GeneratorProps) {
+export function Generator({ name, label, endpoint, field }: GeneratorProps) {
   const id = useId()
   const [isCopied, setIsCopied] = useState(false)
 
@@ -49,7 +51,7 @@ export function Generator({ name, endpoint, field }: GeneratorProps) {
   return (
     <div className="flex flex-col gap-y-4">
       <div className="space-y-1">
-        <Label htmlFor={id}>Generated {name}</Label>
+        <Label htmlFor={id}>{label}</Label>
         <div className="flex gap-2">
           <output
             id={id}
@@ -59,12 +61,12 @@ export function Generator({ name, endpoint, field }: GeneratorProps) {
               <p className="break-all">{data}</p>
             ) : isError && !isFetching ? (
               <p className="text-base font-sans text-red-500">
-                Couldn't generate a {name}. Please try again.
+                Não foi possível gerar. Tente novamente.
               </p>
             ) : (
               <LoaderCircle
                 className="animate-spin text-muted-foreground"
-                aria-label="Generating"
+                aria-label="Gerando"
               />
             )}
           </output>
@@ -75,7 +77,7 @@ export function Generator({ name, endpoint, field }: GeneratorProps) {
               variant="outline"
               type="button"
               className="[&_svg]:size-5 text-muted-foreground"
-              aria-label={isCopied ? 'Copied' : `Copy ${name}`}
+              aria-label={isCopied ? 'Copiado' : `Copiar ${name}`}
               onClick={handleCopy}
             >
               {isCopied ? <Check className="text-emerald-500" /> : <Copy />}
@@ -90,11 +92,11 @@ export function Generator({ name, endpoint, field }: GeneratorProps) {
         onClick={() => refetch()}
       >
         {isFetching ? (
-          <LoaderCircle className="animate-spin" aria-label="Generating" />
+          <LoaderCircle className="animate-spin" aria-label="Gerando" />
         ) : isError ? (
-          'Try again'
+          'Tentar novamente'
         ) : (
-          `Generate ${name}`
+          `Gerar ${name}`
         )}
       </Button>
     </div>

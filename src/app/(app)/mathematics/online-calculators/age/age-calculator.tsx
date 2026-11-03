@@ -11,9 +11,11 @@ import {
   subYears,
 } from 'date-fns'
 import { useState } from 'react'
+import { ResultCard } from '@/components/result-card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import { pluralize } from '@/lib/locale'
 
 export function AgeCalculator() {
   const [calculatedAge, setCalculatedAge] = useState('')
@@ -29,13 +31,13 @@ export function AgeCalculator() {
 
     if (!isValid(date)) {
       setCalculatedAge('')
-      setErrorMessage('Enter a valid date.')
+      setErrorMessage('Digite uma data válida.')
       return
     }
 
     if (isAfter(date, now)) {
       setCalculatedAge('')
-      setErrorMessage('The birthdate cannot be in the future.')
+      setErrorMessage('A data de nascimento não pode estar no futuro.')
       return
     }
 
@@ -48,74 +50,68 @@ export function AgeCalculator() {
     const days = differenceInDays(afterMonths, date)
 
     setErrorMessage('')
-    setCalculatedAge(`${years} years, ${months} months and ${days} days`)
+    setCalculatedAge(
+      `${pluralize(years, 'ano', 'anos')}, ${pluralize(months, 'mês', 'meses')} e ${pluralize(days, 'dia', 'dias')}`
+    )
   }
 
   return (
     <div className="space-y-8 w-full lg:w-1/2 2xl:w-1/3">
       <div className="space-y-3">
-        <h1 className="text-2xl font-bold font-mono">Age Calculator</h1>
+        <h1 className="text-2xl font-bold font-mono">Calculadora de idade</h1>
 
         <p className="text-muted-foreground text-balance">
-          Use our calculator to discover an age based on a birthdate.
+          Descubra a idade exata a partir da data de nascimento.
         </p>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div className="space-y-1">
-          <Label htmlFor="birthdate">Enter your birthdate</Label>
-          <Input
-            type="date"
-            id="birthdate"
-            name="birthdate"
-            min="1900-01-01"
-            required
-            aria-invalid={errorMessage !== ''}
-            aria-describedby="birthdate-error"
-            className="w-fit dark:scheme-dark"
-          />
-          <p
-            id="birthdate-error"
-            role="alert"
-            className="min-h-5 text-sm font-medium text-red-500"
-          >
-            {errorMessage}
-          </p>
-        </div>
+      <div className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="space-y-1">
+            <Label htmlFor="birthdate">Data de nascimento</Label>
+            <Input
+              type="date"
+              id="birthdate"
+              name="birthdate"
+              min="1900-01-01"
+              required
+              aria-invalid={errorMessage !== ''}
+              aria-describedby="birthdate-error"
+              className="w-fit dark:scheme-dark"
+            />
+            <p
+              id="birthdate-error"
+              role="alert"
+              className="min-h-5 text-sm font-medium text-red-500"
+            >
+              {errorMessage}
+            </p>
+          </div>
 
-        <Button className="w-full">Calculate age</Button>
-      </form>
+          <Button className="w-full">Calcular idade</Button>
+        </form>
 
-      {calculatedAge && (
-        <div className="space-y-2 p-4 border rounded-lg" role="status">
-          <p className="text-sm text-muted-foreground">Result</p>
-          <p className="font-mono">{calculatedAge}</p>
-        </div>
-      )}
+        <ResultCard>
+          {calculatedAge && (
+            <p className="text-2xl font-mono">{calculatedAge}</p>
+          )}
+        </ResultCard>
+      </div>
 
       <div>
-        <h2 className="text-lg font-medium mb-2">How it works</h2>
+        <h2 className="text-lg font-medium mb-2">Como funciona</h2>
 
         <ul className="list-disc list-inside space-y-2 text-muted-foreground">
           <li>
-            The age is calculated based on the difference between the selected
-            birthdate and today's date.
+            A idade é a diferença entre a data de nascimento e a data de hoje.
+          </li>
+          <li>O resultado mostra os anos, meses e dias exatos.</li>
+          <li>
+            Anos bissextos e meses de tamanhos diferentes são considerados.
           </li>
           <li>
-            The calculator provides a precise result showing years, months, and
-            days.
-          </li>
-          <li>
-            Calculations are performed in real-time using the browser's date
-            functions.
-          </li>
-          <li>
-            The result automatically adjusts for leap years and varying month
-            lengths.
-          </li>
-          <li>
-            All calculations are done locally and no date information is stored
-            or transmitted.
+            O cálculo é feito no seu navegador: a data não é enviada nem
+            armazenada.
           </li>
         </ul>
       </div>
