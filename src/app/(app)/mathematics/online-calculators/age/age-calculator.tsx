@@ -4,35 +4,51 @@ import {
   differenceInDays,
   differenceInMonths,
   differenceInYears,
+  isAfter,
+  isValid,
+  parseISO,
   subMonths,
   subYears,
 } from 'date-fns'
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { DatePicker } from './date-picker'
 
 export function AgeCalculator() {
-  const [date, setDate] = useState<Date>()
   const [calculatedAge, setCalculatedAge] = useState('')
+  const [errorMessage, setErrorMessage] = useState('')
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
 
-    if (date) {
-      const now = new Date()
-      const years = differenceInYears(now, date)
+    const data = new FormData(event.currentTarget)
+    // A date input's value is always yyyy-MM-dd, whatever the display locale
+    const date = parseISO(String(data.get('birthdate')))
+    const now = new Date()
 
-      const afterYears = subYears(now, years)
-      const months = differenceInMonths(afterYears, date)
-
-      const afterMonths = subMonths(afterYears, months)
-      const days = differenceInDays(afterMonths, date)
-
-      const formattedPhrase = `${years} years, ${months} months and ${days} days`
-
-      setCalculatedAge(formattedPhrase)
+    if (!isValid(date)) {
+      setCalculatedAge('')
+      setErrorMessage('Enter a valid date.')
+      return
     }
+
+    if (isAfter(date, now)) {
+      setCalculatedAge('')
+      setErrorMessage('The birthdate cannot be in the future.')
+      return
+    }
+
+    const years = differenceInYears(now, date)
+
+    const afterYears = subYears(now, years)
+    const months = differenceInMonths(afterYears, date)
+
+    const afterMonths = subMonths(afterYears, months)
+    const days = differenceInDays(afterMonths, date)
+
+    setErrorMessage('')
+    setCalculatedAge(`${years} years, ${months} months and ${days} days`)
   }
 
   return (
@@ -47,15 +63,31 @@ export function AgeCalculator() {
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="space-y-1">
-          <Label htmlFor="age">Enter your birthdate</Label>
-          <DatePicker date={date} setDate={setDate} />
+          <Label htmlFor="birthdate">Enter your birthdate</Label>
+          <Input
+            type="date"
+            id="birthdate"
+            name="birthdate"
+            min="1900-01-01"
+            required
+            aria-invalid={errorMessage !== ''}
+            aria-describedby="birthdate-error"
+            className="w-fit dark:scheme-dark"
+          />
+          <p
+            id="birthdate-error"
+            role="alert"
+            className="min-h-5 text-sm font-medium text-red-500"
+          >
+            {errorMessage}
+          </p>
         </div>
 
         <Button className="w-full">Calculate age</Button>
       </form>
 
       {calculatedAge && (
-        <div className="space-y-2 p-4 border rounded-lg">
+        <div className="space-y-2 p-4 border rounded-lg" role="status">
           <p className="text-sm text-muted-foreground">Result</p>
           <p className="font-mono">{calculatedAge}</p>
         </div>

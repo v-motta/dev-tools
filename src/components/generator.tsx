@@ -20,18 +20,28 @@ export function Generator({ name, endpoint, field }: GeneratorProps) {
   const id = useId()
   const [isCopied, setIsCopied] = useState(false)
 
-  const { data, isFetching, isSuccess, refetch } = useQuery({
+  const { data, isError, isFetching, isSuccess, refetch } = useQuery({
     queryKey: ['generator', endpoint],
     queryFn: async () => {
       const response = await ky.get(endpoint).json<Record<string, string>>()
       return response[field]
     },
+    // Every visit should show a new value instead of the cached one
+    staleTime: 0,
+    gcTime: 0,
+    retry: 1,
   })
 
   async function handleCopy() {
     if (!isSuccess) return
 
-    await navigator.clipboard.writeText(data)
+    try {
+      await navigator.clipboard.writeText(data)
+    } catch {
+      // Clipboard access can be denied; the value is still selectable
+      return
+    }
+
     setIsCopied(true)
     setTimeout(() => setIsCopied(false), 2000)
   }
@@ -47,8 +57,15 @@ export function Generator({ name, endpoint, field }: GeneratorProps) {
           >
             {isSuccess ? (
               <p className="break-all">{data}</p>
+            ) : isError && !isFetching ? (
+              <p className="text-base font-sans text-red-500">
+                Couldn't generate a {name}. Please try again.
+              </p>
             ) : (
-              <LoaderCircle className="animate-spin text-muted-foreground" />
+              <LoaderCircle
+                className="animate-spin text-muted-foreground"
+                aria-label="Generating"
+              />
             )}
           </output>
 
@@ -58,7 +75,7 @@ export function Generator({ name, endpoint, field }: GeneratorProps) {
               variant="outline"
               type="button"
               className="[&_svg]:size-5 text-muted-foreground"
-              aria-label={`Copy ${name}`}
+              aria-label={isCopied ? 'Copied' : `Copy ${name}`}
               onClick={handleCopy}
             >
               {isCopied ? <Check className="text-emerald-500" /> : <Copy />}
@@ -73,7 +90,9 @@ export function Generator({ name, endpoint, field }: GeneratorProps) {
         onClick={() => refetch()}
       >
         {isFetching ? (
-          <LoaderCircle className="animate-spin" />
+          <LoaderCircle className="animate-spin" aria-label="Generating" />
+        ) : isError ? (
+          'Try again'
         ) : (
           `Generate ${name}`
         )}

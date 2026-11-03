@@ -1,11 +1,29 @@
 'use client'
 
 import ky, { HTTPError } from 'ky'
+import { LoaderCircle } from 'lucide-react'
 import { useState } from 'react'
+import { useFormStatus } from 'react-dom'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+
+// useFormStatus only reads the status of a parent <form>, so the button
+// needs to be its own component
+function SubmitButton() {
+  const { pending } = useFormStatus()
+
+  return (
+    <Button className="w-full" disabled={pending}>
+      {pending ? (
+        <LoaderCircle className="animate-spin" aria-label="Drawing" />
+      ) : (
+        'Pick Random Number(s)'
+      )}
+    </Button>
+  )
+}
 
 export function RandomPicker() {
   const [drawnNumbers, setDrawnNumbers] = useState<number[]>([])
@@ -82,10 +100,10 @@ export function RandomPicker() {
           </div>
         </div>
 
-        <Button className="w-full">Pick Random Number(s)</Button>
+        <SubmitButton />
       </form>
 
-      <Card className="mt-4 p-4">
+      <Card className="mt-4 p-4" role="status">
         {errorMessage ? (
           <div className="text-red-500">{errorMessage}</div>
         ) : drawnNumbers.length > 0 ? (

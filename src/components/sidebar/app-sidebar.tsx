@@ -13,11 +13,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar {...props}>
       <SidebarHeader>
-        <SidebarMenuButton size="lg">
-          <Link
-            href="/"
-            className="flex items-center gap-3 p-1 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground group-data-[collapsible=icon]/35 rounded-lg"
-          >
+        <SidebarMenuButton size="lg" asChild>
+          <Link href="/" className="gap-3">
             <div className="flex aspect-square items-center justify-center transition-all">
               <Drill strokeWidth={1.5} />
             </div>
