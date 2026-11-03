@@ -1,0 +1,128 @@
+{
+  "metadata": {
+    "description": "Leistungsstarke Werkzeuge für den Entwicklungsalltag: Generatoren und Validatoren für CPF und CNPJ, Passwörter, UUIDs und Rechner."
+  },
+  "sidebar": {
+    "tagline": "Leistungsstarke Werkzeuge"
+  },
+  "breadcrumb": {
+    "home": "Startseite"
+  },
+  "theme": {
+    "label": "Design",
+    "light": "Hell",
+    "dark": "Dunkel",
+    "system": "System"
+  },
+  "localeSwitcher": {
+    "label": "Sprache"
+  },
+  "search": {
+    "button": "Werkzeug suchen",
+    "placeholder": "Werkzeug suchen...",
+    "empty": "Kein Werkzeug gefunden."
+  },
+  "home": {
+    "title": "Werkzeuge",
+    "intro": "Generatoren, Validatoren und Rechner für den Alltag, mit einer offenen API hinter jedem Werkzeug. Finde jedes davon mit <kbd>Strg K</kbd>.",
+    "recent": "Zuletzt verwendet",
+    "clearHistory": "Verlauf löschen",
+    "popular": "Am häufigsten verwendet"
+  },
+  "tools": {
+    "groups": {
+      "brazil": "Brasilien",
+      "development": "Entwicklung",
+      "utilities": "Hilfsmittel"
+    },
+    "menus": {
+      "documents": "Dokumente",
+      "fakeData": "Testdaten",
+      "generators": "Generatoren",
+      "calculators": "Rechner",
+      "draws": "Auslosungen"
+    },
+    "items": {
+      "cpf": {
+        "title": "CPF",
+        "description": "Erzeuge gültige CPFs zum Testen oder prüfe eine CPF.",
+        "keywords": "Generator Validator Steuernummer"
+      },
+      "cnpj": {
+        "title": "CNPJ",
+        "description": "Erzeuge CNPJs oder komplette Firmen zum Testen oder prüfe eine CNPJ.",
+        "keywords": "Generator Validator Firma Unternehmen"
+      },
+      "rg": {
+        "title": "RG",
+        "description": "Erzeuge gültige RGs zum Testen oder prüfe einen RG.",
+        "keywords": "Generator Validator Personalausweis"
+      },
+      "cnh": {
+        "title": "CNH",
+        "description": "Erzeuge gültige CNHs zum Testen oder prüfe eine CNH.",
+        "keywords": "Generator Validator Führerschein"
+      },
+      "stateRegistration": {
+        "title": "Landessteuernummer",
+        "description": "Erzeuge gültige Landessteuernummern für jeden Bundesstaat oder prüfe eine.",
+        "keywords": "Generator Validator Steuer"
+      },
+      "person": {
+        "title": "Personengenerator",
+        "description": "Erzeuge eine Person mit Name, Dokumenten, Kontakt und echter Adresse.",
+        "keywords": "Testdaten Identität"
+      },
+      "cep": {
+        "title": "CEP",
+        "description": "Erzeuge echte CEPs mit Adresse oder schlage eine CEP nach.",
+        "keywords": "Generator Abfrage Adresse Postleitzahl PLZ"
+      },
+      "licensePlate": {
+        "title": "Kennzeichengenerator",
+        "description": "Erzeuge Fahrzeugkennzeichen im Mercosul- oder im alten Format.",
+        "keywords": "Auto Motorrad Fahrzeug Nummernschild"
+      },
+      "password": {
+        "title": "Passwortgenerator",
+        "description": "Erzeuge sichere, zufällige Passwörter.",
+        "keywords": "sicher zufällig Kennwort"
+      },
+      "uuid": {
+        "title": "UUID-Generator",
+        "description": "Erzeuge eindeutige Kennungen im UUID-v4-Format.",
+        "keywords": "GUID Kennung"
+      },
+      "creditCard": {
+        "title": "Kreditkartengenerator",
+        "description": "Erzeuge gültige Testkarten mit Kartenmarke, Ablaufdatum und CVV.",
+        "keywords": "Karte Test"
+      },
+      "bmi": {
+        "title": "BMI-Rechner",
+        "description": "Berechne den Body-Mass-Index.",
+        "keywords": "Gewicht Größe"
+      },
+      "bmr": {
+        "title": "Grundumsatzrechner",
+        "description": "Berechne den Grundumsatz und den täglichen Kalorienbedarf.",
+        "keywords": "Kalorien Stoffwechsel BMR"
+      },
+      "age": {
+        "title": "Altersrechner",
+        "description": "Ermittle das genaue Alter anhand des Geburtsdatums.",
+        "keywords": "Geburtstag Datum"
+      },
+      "discount": {
+        "title": "Rabattrechner",
+        "description": "Berechne den Rabattbetrag und den Endpreis.",
+        "keywords": "Preis Prozent Angebot"
+      },
+      "numbers": {
+        "title": "Zahlen auslosen",
+        "description": "Lose eine oder mehrere Zahlen innerhalb eines Bereichs aus.",
+        "keywords": "Zufall Lotterie Verlosung"
+      }
+    }
+  }
+}

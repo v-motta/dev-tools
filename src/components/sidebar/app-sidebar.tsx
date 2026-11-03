@@ -1,5 +1,6 @@
 import { Drill } from 'lucide-react'
-import Link from 'next/link'
+import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
 import {
   Sidebar,
   SidebarContent,
@@ -10,6 +11,8 @@ import { NavMain } from './nav-main'
 import { SidebarFooter } from './sidebar-footer'
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const t = useTranslations('sidebar')
+
   return (
     <Sidebar {...props}>
       <SidebarHeader>
@@ -22,7 +25,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             <div className="text-left text-sm leading-tight">
               <p className="truncate font-semibold">Dev Tools</p>
               <p className="truncate text-xs text-muted-foreground">
-                Ferramentas poderosas
+                {t('tagline')}
               </p>
             </div>
           </Link>

@@ -1,8 +1,7 @@
 'use client'
 
 import { ChevronRight } from 'lucide-react'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 import {
   isMenuItemActive,
@@ -22,8 +21,10 @@ import {
   SidebarMenuItem,
   SidebarMenuSub,
 } from '@/components/ui/sidebar'
+import { Link, usePathname } from '@/i18n/navigation'
 
 function NavItem({ item, pathname }: { item: NavMenuItem; pathname: string }) {
+  const t = useTranslations('tools')
   const isActive = isMenuItemActive(item, pathname)
   const [isOpen, setIsOpen] = useState(isActive)
   const [wasActive, setWasActive] = useState(isActive)
@@ -47,7 +48,7 @@ function NavItem({ item, pathname }: { item: NavMenuItem; pathname: string }) {
           <SidebarMenuButton isActive={isActive && !isOpen}>
             <item.icon className="size-4" />
 
-            {item.title}
+            {t(`menus.${item.id}`)}
 
             <ChevronRight className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-90" />
           </SidebarMenuButton>
@@ -61,7 +62,7 @@ function NavItem({ item, pathname }: { item: NavMenuItem; pathname: string }) {
                   <Link href={subItem.url}>
                     <subItem.icon className="size-4" />
 
-                    {subItem.title}
+                    {t(`items.${subItem.id}.title`)}
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
@@ -74,16 +75,17 @@ function NavItem({ item, pathname }: { item: NavMenuItem; pathname: string }) {
 }
 
 export function NavMain() {
+  const t = useTranslations('tools')
   const pathname = usePathname()
 
   return (
     <>
       {tools.map((group) => (
-        <SidebarGroup key={group.label}>
-          <SidebarGroupLabel>{group.label}</SidebarGroupLabel>
+        <SidebarGroup key={group.id}>
+          <SidebarGroupLabel>{t(`groups.${group.id}`)}</SidebarGroupLabel>
           <SidebarMenu>
             {group.menuItems.map((item) => (
-              <NavItem key={item.title} item={item} pathname={pathname} />
+              <NavItem key={item.id} item={item} pathname={pathname} />
             ))}
           </SidebarMenu>
         </SidebarGroup>

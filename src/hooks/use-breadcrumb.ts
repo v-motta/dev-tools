@@ -1,9 +1,10 @@
 'use client'
 
 import { House, type LucideIcon } from 'lucide-react'
-import { usePathname } from 'next/navigation'
+import { useTranslations } from 'next-intl'
 import { useMemo } from 'react'
 import { findToolByUrl } from '@/app/tools'
+import { usePathname } from '@/i18n/navigation'
 
 export interface BreadcrumbEntry {
   title: string
@@ -12,12 +13,17 @@ export interface BreadcrumbEntry {
   url?: string
 }
 
-const homeEntry: BreadcrumbEntry = { title: 'Início', icon: House, url: '/' }
-
 export function useBreadcrumb() {
+  const t = useTranslations()
   const pathname = usePathname()
 
   const breadcrumb = useMemo(() => {
+    const homeEntry: BreadcrumbEntry = {
+      title: t('breadcrumb.home'),
+      icon: House,
+      url: '/',
+    }
+
     const match = findToolByUrl(pathname)
     if (!match) return [homeEntry]
 
@@ -25,10 +31,14 @@ export function useBreadcrumb() {
 
     return [
       homeEntry,
-      { title: menuItem.title, icon: menuItem.icon },
-      { title: tool.title, icon: tool.icon, url: tool.url },
+      { title: t(`tools.menus.${menuItem.id}`), icon: menuItem.icon },
+      {
+        title: t(`tools.items.${tool.id}.title`),
+        icon: tool.icon,
+        url: tool.url,
+      },
     ]
-  }, [pathname])
+  }, [pathname, t])
 
   return { breadcrumb }
 }

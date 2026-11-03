@@ -25,181 +25,166 @@ import {
   Weight,
   Wrench,
 } from 'lucide-react'
+import type { Messages } from 'next-intl'
+
+type ToolMessages = Messages['tools']
+
+// Labels, titles, descriptions and search keywords live in messages/*.json
+// under `tools`, keyed by these ids
+export type GroupId = keyof ToolMessages['groups']
+export type MenuId = keyof ToolMessages['menus']
+export type ToolId = keyof ToolMessages['items']
 
 export interface SidebarGroup {
-  label: string
+  id: GroupId
   /** Shown next to the group heading on the home page */
   icon: LucideIcon
   menuItems: SidebarMenuItem[]
 }
 
 export interface SidebarMenuItem {
-  title: string
+  id: MenuId
   icon: LucideIcon
   subMenuItems: SidebarSubMenuItem[]
 }
 
 export interface SidebarSubMenuItem {
-  title: string
-  description: string
+  id: ToolId
   url: string
   icon: LucideIcon
-  /** Extra terms the Ctrl+K search matches, besides title and description */
-  keywords?: string[]
+  /**
+   * Terms the Ctrl+K search matches in every language, besides the
+   * translated title, description and keywords
+   */
+  aliases?: string[]
 }
 
 export const tools: SidebarGroup[] = [
   {
-    label: 'Brasil',
+    id: 'brazil',
     icon: Flag,
     menuItems: [
       {
-        title: 'Documentos',
+        id: 'documents',
         icon: FileText,
         subMenuItems: [
           {
-            title: 'CPF',
-            description: 'Gere CPFs válidos para testes ou valide um CPF.',
+            id: 'cpf',
             url: '/brazil/documents/cpf',
             icon: UserRoundCheck,
-            keywords: ['gerador', 'validador'],
           },
           {
-            title: 'CNPJ',
-            description:
-              'Gere CNPJs ou empresas completas para testes, ou valide um CNPJ.',
+            id: 'cnpj',
             url: '/brazil/documents/cnpj',
             icon: Landmark,
-            keywords: ['gerador', 'validador', 'empresa', 'razão social'],
+            aliases: ['razão social'],
           },
           {
-            title: 'RG',
-            description: 'Gere RGs válidos para testes ou valide um RG.',
+            id: 'rg',
             url: '/brazil/documents/rg',
             icon: IdCard,
-            keywords: ['gerador', 'validador', 'identidade'],
           },
           {
-            title: 'CNH',
-            description: 'Gere CNHs válidas para testes ou valide uma CNH.',
+            id: 'cnh',
             url: '/brazil/documents/cnh',
             icon: Contact,
-            keywords: ['gerador', 'validador', 'habilitação', 'motorista'],
           },
           {
-            title: 'Inscrição estadual',
-            description:
-              'Gere inscrições estaduais válidas de qualquer estado ou valide uma.',
+            id: 'stateRegistration',
             url: '/brazil/documents/state-registration',
             icon: Receipt,
-            keywords: ['gerador', 'validador', 'ie', 'sintegra'],
+            aliases: ['ie', 'inscrição estadual', 'sintegra'],
           },
         ],
       },
       {
-        title: 'Dados fictícios',
+        id: 'fakeData',
         icon: UsersRound,
         subMenuItems: [
           {
-            title: 'Gerador de pessoa',
-            description:
-              'Gere uma pessoa com nome, documentos, contato e endereço real.',
+            id: 'person',
             url: '/brazil/fake-data/person',
             icon: User,
           },
           {
-            title: 'CEP',
-            description: 'Gere CEPs reais com endereço ou consulte um CEP.',
+            id: 'cep',
             url: '/brazil/fake-data/cep',
             icon: MapPin,
-            keywords: ['gerador', 'consulta', 'endereço'],
           },
           {
-            title: 'Gerador de placa',
-            description: 'Gere placas de veículo no padrão Mercosul ou antigo.',
+            id: 'licensePlate',
             url: '/brazil/fake-data/license-plate',
             icon: Car,
-            keywords: ['carro', 'moto', 'veículo', 'mercosul'],
+            aliases: ['mercosul'],
           },
         ],
       },
     ],
   },
   {
-    label: 'Desenvolvimento',
+    id: 'development',
     icon: Code,
     menuItems: [
       {
-        title: 'Geradores',
+        id: 'generators',
         icon: ServerCog,
         subMenuItems: [
           {
-            title: 'Gerador de senha',
-            description: 'Gere senhas seguras e aleatórias.',
+            id: 'password',
             url: '/development/generators/password',
             icon: KeyRound,
           },
           {
-            title: 'Gerador de UUID',
-            description: 'Gere identificadores únicos no formato UUID v4.',
+            id: 'uuid',
             url: '/development/generators/uuid',
             icon: Fingerprint,
           },
           {
-            title: 'Gerador de cartão de crédito',
-            description:
-              'Gere cartões válidos para testes, com bandeira, validade e CVV.',
+            id: 'creditCard',
             url: '/development/generators/credit-card',
             icon: CreditCard,
-            keywords: ['visa', 'mastercard', 'elo', 'luhn'],
+            aliases: ['visa', 'mastercard', 'elo', 'luhn'],
           },
         ],
       },
     ],
   },
   {
-    label: 'Utilidades',
+    id: 'utilities',
     icon: Wrench,
     menuItems: [
       {
-        title: 'Calculadoras',
+        id: 'calculators',
         icon: Calculator,
         subMenuItems: [
           {
-            title: 'Calculadora de IMC',
-            description: 'Calcule o Índice de Massa Corporal.',
+            id: 'bmi',
             url: '/utilities/calculators/bmi',
             icon: Dumbbell,
           },
           {
-            title: 'Calculadora de TMB',
-            description:
-              'Calcule a Taxa Metabólica Basal e o gasto calórico diário.',
+            id: 'bmr',
             url: '/utilities/calculators/bmr',
             icon: Weight,
           },
           {
-            title: 'Calculadora de idade',
-            description:
-              'Descubra a idade exata a partir da data de nascimento.',
+            id: 'age',
             url: '/utilities/calculators/age',
             icon: CalendarDays,
           },
           {
-            title: 'Calculadora de desconto',
-            description: 'Calcule o valor do desconto e o preço final.',
+            id: 'discount',
             url: '/utilities/calculators/discount',
             icon: TicketPercent,
           },
         ],
       },
       {
-        title: 'Sorteios',
+        id: 'draws',
         icon: Dices,
         subMenuItems: [
           {
-            title: 'Sorteador de números',
-            description: 'Sorteie um ou mais números dentro de um intervalo.',
+            id: 'numbers',
             url: '/utilities/draws/numbers',
             icon: Hash,
           },

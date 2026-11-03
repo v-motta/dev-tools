@@ -1,0 +1,128 @@
+{
+  "metadata": {
+    "description": "Powerful tools for everyday development: CPF and CNPJ generators and validators, passwords, UUIDs and calculators."
+  },
+  "sidebar": {
+    "tagline": "Powerful tools"
+  },
+  "breadcrumb": {
+    "home": "Home"
+  },
+  "theme": {
+    "label": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "localeSwitcher": {
+    "label": "Language"
+  },
+  "search": {
+    "button": "Search tools",
+    "placeholder": "Search tools...",
+    "empty": "No tools found."
+  },
+  "home": {
+    "title": "Tools",
+    "intro": "Generators, validators and calculators for everyday use, with an open API behind every tool. Find any of them with <kbd>Ctrl K</kbd>.",
+    "recent": "Recently used",
+    "clearHistory": "Clear history",
+    "popular": "Most used"
+  },
+  "tools": {
+    "groups": {
+      "brazil": "Brazil",
+      "development": "Development",
+      "utilities": "Utilities"
+    },
+    "menus": {
+      "documents": "Documents",
+      "fakeData": "Fake data",
+      "generators": "Generators",
+      "calculators": "Calculators",
+      "draws": "Draws"
+    },
+    "items": {
+      "cpf": {
+        "title": "CPF",
+        "description": "Generate valid CPFs for testing or validate a CPF.",
+        "keywords": "generator validator taxpayer"
+      },
+      "cnpj": {
+        "title": "CNPJ",
+        "description": "Generate CNPJs or complete companies for testing, or validate a CNPJ.",
+        "keywords": "generator validator company business"
+      },
+      "rg": {
+        "title": "RG",
+        "description": "Generate valid RGs for testing or validate an RG.",
+        "keywords": "generator validator identity id card"
+      },
+      "cnh": {
+        "title": "CNH",
+        "description": "Generate valid CNHs for testing or validate a CNH.",
+        "keywords": "generator validator driver license"
+      },
+      "stateRegistration": {
+        "title": "State registration",
+        "description": "Generate valid state registrations for any state or validate one.",
+        "keywords": "generator validator tax"
+      },
+      "person": {
+        "title": "Person generator",
+        "description": "Generate a person with name, documents, contact and a real address.",
+        "keywords": "fake data identity"
+      },
+      "cep": {
+        "title": "CEP",
+        "description": "Generate real CEPs with an address or look up a CEP.",
+        "keywords": "generator lookup address zip postal code"
+      },
+      "licensePlate": {
+        "title": "License plate generator",
+        "description": "Generate vehicle plates in the Mercosul or the old format.",
+        "keywords": "car motorcycle vehicle"
+      },
+      "password": {
+        "title": "Password generator",
+        "description": "Generate secure random passwords.",
+        "keywords": "secure random"
+      },
+      "uuid": {
+        "title": "UUID generator",
+        "description": "Generate unique identifiers in the UUID v4 format.",
+        "keywords": "guid identifier"
+      },
+      "creditCard": {
+        "title": "Credit card generator",
+        "description": "Generate valid cards for testing, with brand, expiry date and CVV.",
+        "keywords": "card test"
+      },
+      "bmi": {
+        "title": "BMI calculator",
+        "description": "Calculate the Body Mass Index.",
+        "keywords": "weight height"
+      },
+      "bmr": {
+        "title": "BMR calculator",
+        "description": "Calculate the Basal Metabolic Rate and daily calorie needs.",
+        "keywords": "calories metabolism"
+      },
+      "age": {
+        "title": "Age calculator",
+        "description": "Find out the exact age from a date of birth.",
+        "keywords": "birthday date"
+      },
+      "discount": {
+        "title": "Discount calculator",
+        "description": "Calculate the discount amount and the final price.",
+        "keywords": "price percentage sale"
+      },
+      "numbers": {
+        "title": "Number picker",
+        "description": "Draw one or more numbers within a range.",
+        "keywords": "random lottery raffle"
+      }
+    }
+  }
+}

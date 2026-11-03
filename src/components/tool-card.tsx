@@ -1,6 +1,7 @@
 import { ArrowRight } from 'lucide-react'
-import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 import type { SidebarSubMenuItem } from '@/app/tools'
+import { Link } from '@/i18n/navigation'
 import { cn } from '@/lib/utils'
 import { Card, CardDescription, CardHeader, CardTitle } from './ui/card'
 
@@ -15,6 +16,8 @@ interface ToolCardProps {
 }
 
 export function ToolCard({ tool, featured = false }: ToolCardProps) {
+  const t = useTranslations('tools.items')
+
   return (
     // The whole card is the link; nesting a <button> inside an <a> is invalid
     // HTML and adds a redundant stop when navigating with the keyboard
@@ -49,9 +52,9 @@ export function ToolCard({ tool, featured = false }: ToolCardProps) {
             className={cn('space-y-1', featured && 'col-span-2 row-start-2')}
           >
             <CardTitle className={cn(featured && 'text-lg')}>
-              {tool.title}
+              {t(`${tool.id}.title`)}
             </CardTitle>
-            <CardDescription>{tool.description}</CardDescription>
+            <CardDescription>{t(`${tool.id}.description`)}</CardDescription>
           </div>
 
           <ArrowRight

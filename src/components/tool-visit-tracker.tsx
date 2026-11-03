@@ -1,8 +1,8 @@
 'use client'
 
-import { usePathname } from 'next/navigation'
 import { useEffect } from 'react'
 import { findToolByUrl } from '@/app/tools'
+import { usePathname } from '@/i18n/navigation'
 import { addRecentTool } from '@/lib/recent-tools'
 
 const COUNTED_STORAGE_KEY = 'counted-tool-views'
