@@ -2,12 +2,14 @@ import {
   Calculator,
   CalendarDays,
   Car,
+  Code,
   Contact,
   CreditCard,
   Dices,
   Dumbbell,
   FileText,
   Fingerprint,
+  Flag,
   Hash,
   IdCard,
   KeyRound,
@@ -21,10 +23,13 @@ import {
   UserRoundCheck,
   UsersRound,
   Weight,
+  Wrench,
 } from 'lucide-react'
 
 export interface SidebarGroup {
   label: string
+  /** Shown next to the group heading on the home page */
+  icon: LucideIcon
   menuItems: SidebarMenuItem[]
 }
 
@@ -46,6 +51,7 @@ export interface SidebarSubMenuItem {
 export const tools: SidebarGroup[] = [
   {
     label: 'Brasil',
+    icon: Flag,
     menuItems: [
       {
         title: 'Documentos',
@@ -121,6 +127,7 @@ export const tools: SidebarGroup[] = [
   },
   {
     label: 'Desenvolvimento',
+    icon: Code,
     menuItems: [
       {
         title: 'Geradores',
@@ -152,6 +159,7 @@ export const tools: SidebarGroup[] = [
   },
   {
     label: 'Utilidades',
+    icon: Wrench,
     menuItems: [
       {
         title: 'Calculadoras',

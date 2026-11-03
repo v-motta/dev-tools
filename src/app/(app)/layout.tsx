@@ -3,6 +3,7 @@ import { AppSidebar } from '@/components/sidebar/app-sidebar'
 import { AppBreadcrumb } from '@/components/sidebar/breadcrumb'
 import { ThemeToggle } from '@/components/theme-toggle'
 import { ToolSearch } from '@/components/tool-search'
+import { ToolVisitTracker } from '@/components/tool-visit-tracker'
 import { Separator } from '@/components/ui/separator'
 import {
   SidebarInset,
@@ -13,6 +14,7 @@ import {
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (
     <SidebarProvider>
+      <ToolVisitTracker />
       <AppSidebar />
 
       <SidebarInset>

@@ -125,6 +125,16 @@ bun dev            # start the dev server at http://localhost:3000
 | `bun run bench:password`  | Benchmark the password generator        |
 | `bun run build:addresses` | Rebuild the address dataset from ViaCEP |
 
+### Most used tools
+
+The home page highlights the three tools opened by the most sessions. Each session counts a tool once, and the count is stored in a [Redis database on Upstash](https://vercel.com/marketplace/upstash). The ranking refreshes at most once an hour.
+
+To turn it on, add Upstash for Redis to the project from the Vercel Marketplace. The integration sets `KV_REST_API_URL` and `KV_REST_API_TOKEN`; a database created directly on Upstash can use `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN` instead. To use it locally, put the same variables in `.env.local`.
+
+Without these variables, nothing is counted and the home page shows CPF, CNPJ and the person generator.
+
+The "Usadas recentemente" section lists the last tools opened in the browser. It is kept in `localStorage` and never sent to the server.
+
 ## 📂 Project Structure
 
 ```
@@ -146,7 +156,7 @@ dev-tools/
    │  │  └─ page.tsx         # Home page
    │  ├─ api/                # REST endpoints used by the tools
    │  ├─ layout.tsx          # Root layout (fonts, providers, analytics)
-   │  └─ tools.ts            # Tool registry: sidebar, cards and breadcrumb
+   │  └─ tools.ts            # Tool registry: sidebar, home, search and breadcrumb
    ├─ components/
    │  ├─ sidebar/            # Sidebar, navigation and breadcrumb
    │  ├─ ui/                 # shadcn/ui components
@@ -155,10 +165,12 @@ dev-tools/
    │  ├─ document-validator.tsx  # Shared UI for the document validators
    │  ├─ body-measurements.tsx   # Weight/height fields in metric or imperial units
    │  ├─ tool-search.tsx     # Ctrl+K tool search
-   │  └─ tool-grid.tsx       # Grid of tool cards
+   │  ├─ tool-visit-tracker.tsx  # Counts tool visits and keeps the recent ones
+   │  ├─ recent-tools.tsx    # "Usadas recentemente" section of the home page
+   │  └─ tool-card.tsx       # Tool card for the home page
    ├─ data/                  # Real addresses for the person, company and CEP generators
    ├─ hooks/                 # Custom hooks
-   ├─ lib/                   # API helpers, locale formatting and React Query setup
+   ├─ lib/                   # API helpers, Redis, tool ranking, locale formatting and React Query setup
    └─ utils/                 # Generators and validators (documents, person, cards...)
 ```
 
