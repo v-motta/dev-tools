@@ -24,7 +24,7 @@
 - [x] **RG Generator**: Generate valid RG numbers (São Paulo's rule)
 - [x] **CNH Generator**: Generate valid driver's license numbers
 - [x] **State Registration Generator**: Generate valid inscrições estaduais for every state
-- [x] **Person Generator**: Generate a person with documents, contact and a real address
+- [x] **Person Generator**: Generate a person from 58 nationalities; Brazilians come with documents and a real address
 - [x] **CEP Generator**: Pick a real CEP with its address, or look one up
 - [x] **License Plate Generator**: Generate Mercosul or old-style plates
 - [x] **Credit Card Generator**: Generate Luhn-valid test cards for six brands
@@ -75,7 +75,8 @@ The generators accept optional query parameters:
 | --------------------------------- | --------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | `quantity`                        | CPF, CNPJ, RG, CNH, IE, plate, password, UUID | 1 to 50 values at once. The response then holds a list under the plural key, e.g. `{ "cpfs": [...] }` |
 | `formatted`                       | CPF, CNPJ, RG, IE, address, credit card       | `false` returns digits only. Defaults to `true`                                                       |
-| `state`                           | IE (required), person, company, address       | A state code such as `SP`. Picked at random when left out                                             |
+| `state`                           | IE (required), person, company, address       | A state code such as `SP`. Picked at random when left out. Person: only with `nationality=BR`         |
+| `nationality`                     | Person                                        | A country code such as `DE`. Defaults to `BR`; the others have no documents and a made-up address     |
 | `sex`                             | Person                                        | `female` or `male`. Picked at random when left out                                                    |
 | `format`                          | License plate                                 | `mercosul` (`ABC1D23`, the default) or `old` (`ABC-1234`)                                             |
 | `brand`                           | Credit card                                   | `visa` (the default), `mastercard`, `elo`, `amex`, `hipercard` or `diners`                            |
@@ -88,7 +89,7 @@ curl "https://devtools.vmotta.dev/api/generators/cpf?quantity=2&formatted=false"
 # { "cpfs": ["52998224725", "11144477735"] }
 ```
 
-The person, company and CEP generators pick from real addresses in `src/data/addresses.json`, built from ViaCEP by `bun run build:addresses`.
+The company and CEP generators, and the person generator for Brazilians, pick from real addresses in `src/data/addresses.json`, built from ViaCEP by `bun run build:addresses`. People of other nationalities get names, addresses and phone numbers in their country's format from Faker (`src/utils/nationalities.ts`).
 
 Invalid parameters or request bodies get a `400` response with a `{ "message": "..." }` explaining the problem.
 
@@ -133,29 +134,46 @@ To turn it on, add Upstash for Redis to the project from the Vercel Marketplace.
 
 Without these variables, nothing is counted and the home page shows CPF, CNPJ and the person generator.
 
-The "Usadas recentemente" section lists the last tools opened in the browser. It is kept in `localStorage` and never sent to the server.
+The "Recently used" section lists the last tools opened in the browser. It is kept in `localStorage` and never sent to the server.
+
+## 🌐 Languages
+
+The site is available in Portuguese (`/pt-br`), German (`/de-de`) and English (`/en-us`), built with [next-intl](https://next-intl.dev). A visitor without a language in the URL is redirected to, in order:
+
+1. The language picked in the header's language switcher, kept in the `NEXT_LOCALE` cookie
+2. The browser's language (`Accept-Language`)
+3. The language of the visitor's country (`x-vercel-ip-country`, set by Vercel)
+4. English
+
+Numbers, prices and dates follow the language too, and prices use its currency: BRL, EUR or USD. The generated data stays Brazilian in every language.
+
+All texts live in `messages/{locale}.json`, with `pt-BR.json` as the source: its keys type the `t()` calls, so a missing key is a type error. Run `bun run check:messages` after editing them; it fails when another language is missing a key, has an extra one or uses different `{placeholders}`.
+
+To add a language, add it to `src/i18n/routing.ts` (locale and URL prefix), create its `messages/{locale}.json`, and give it a flag in `src/components/flags.tsx`, a name in `src/components/locale-switcher.tsx` and a currency in `src/lib/locale.ts`.
 
 ## 📂 Project Structure
 
 ```
 dev-tools/
-├─ scripts/                  # Benchmarks and the address dataset builder
+├─ messages/                 # Texts for each language (pt-BR is the source)
+├─ scripts/                  # Benchmarks, the address dataset builder and the messages check
 ├─ public/                   # Logo
 └─ src/
    ├─ app/
-   │  ├─ (app)/              # Pages rendered inside the sidebar layout
-   │  │  ├─ brazil/
-   │  │  │  ├─ documents/    # CPF, CNPJ, RG, CNH and IE: generate and validate
-   │  │  │  └─ fake-data/    # Person, CEP and license plate generators
-   │  │  ├─ development/
-   │  │  │  └─ generators/   # Password, UUID and credit card generators
-   │  │  ├─ utilities/
-   │  │  │  ├─ calculators/  # Age, BMI, BMR and discount calculators
-   │  │  │  └─ draws/        # Random number picker
-   │  │  ├─ layout.tsx       # Sidebar + breadcrumb layout
-   │  │  └─ page.tsx         # Home page
+   │  ├─ [locale]/
+   │  │  ├─ (app)/           # Pages rendered inside the sidebar layout
+   │  │  │  ├─ brazil/
+   │  │  │  │  ├─ documents/ # CPF, CNPJ, RG, CNH and IE: generate and validate
+   │  │  │  │  └─ fake-data/ # CEP and license plate generators
+   │  │  │  ├─ development/
+   │  │  │  │  └─ generators/ # Password, UUID, credit card and person generators
+   │  │  │  ├─ utilities/
+   │  │  │  │  ├─ calculators/ # Age, BMI, BMR and discount calculators
+   │  │  │  │  └─ draws/     # Random number picker
+   │  │  │  ├─ layout.tsx    # Sidebar + breadcrumb layout
+   │  │  │  └─ page.tsx      # Home page
+   │  │  └─ layout.tsx       # Root layout (fonts, providers, analytics, language)
    │  ├─ api/                # REST endpoints used by the tools
-   │  ├─ layout.tsx          # Root layout (fonts, providers, analytics)
    │  └─ tools.ts            # Tool registry: sidebar, home, search and breadcrumb
    ├─ components/
    │  ├─ sidebar/            # Sidebar, navigation and breadcrumb
@@ -166,12 +184,15 @@ dev-tools/
    │  ├─ body-measurements.tsx   # Weight/height fields in metric or imperial units
    │  ├─ tool-search.tsx     # Ctrl+K tool search
    │  ├─ tool-visit-tracker.tsx  # Counts tool visits and keeps the recent ones
-   │  ├─ recent-tools.tsx    # "Usadas recentemente" section of the home page
+   │  ├─ locale-switcher.tsx # Language switcher with flags
+   │  ├─ recent-tools.tsx    # "Recently used" section of the home page
    │  └─ tool-card.tsx       # Tool card for the home page
    ├─ data/                  # Real addresses for the person, company and CEP generators
    ├─ hooks/                 # Custom hooks
+   ├─ i18n/                  # Language routing, detection, page metadata and locale-aware links
    ├─ lib/                   # API helpers, Redis, tool ranking, locale formatting and React Query setup
-   └─ utils/                 # Generators and validators (documents, person, cards...)
+   ├─ utils/                 # Generators and validators (documents, person, cards...)
+   └─ proxy.ts               # Picks the visitor's language and redirects to it
 ```
 
 ## ❤️ Contributing

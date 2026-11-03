@@ -7,7 +7,7 @@ import {
 } from '@/components/body-measurements'
 import { HowItWorks } from '@/components/how-it-works'
 import { ResultCard } from '@/components/result-card'
-import { formatNumber } from '@/lib/locale'
+import { useLocaleFormat } from '@/lib/locale'
 
 // WHO adult classification; `max` is exclusive. `id` names the label in
 // `pages.bmi.ranges`
@@ -29,14 +29,9 @@ function toScalePosition(bmi: number) {
   return ((clamped - SCALE_MIN) / (SCALE_MAX - SCALE_MIN)) * 100
 }
 
-function formatBmi(bmi: number) {
-  return formatNumber(bmi, {
-    minimumFractionDigits: 1,
-    maximumFractionDigits: 1,
-  })
-}
-
 function BmiScale({ bmi }: { bmi: number }) {
+  const { formatNumber } = useLocaleFormat()
+
   return (
     <div aria-hidden className="space-y-1 pt-2">
       <div className="relative">
@@ -80,6 +75,7 @@ function BmiScale({ bmi }: { bmi: number }) {
 
 export function BMICalculator() {
   const t = useTranslations('pages.bmi')
+  const { formatNumber } = useLocaleFormat()
   const body = useBodyMeasurements()
 
   const bmi = body.values
@@ -105,7 +101,12 @@ export function BMICalculator() {
           {bmi !== undefined && range && (
             <>
               <p>
-                <span className="text-2xl font-mono">{formatBmi(bmi)}</span>{' '}
+                <span className="text-2xl font-mono">
+                  {formatNumber(bmi, {
+                    minimumFractionDigits: 1,
+                    maximumFractionDigits: 1,
+                  })}
+                </span>{' '}
                 <span className="text-muted-foreground">·</span>{' '}
                 <span className="font-medium">{t(`ranges.${range.id}`)}</span>
               </p>

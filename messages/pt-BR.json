@@ -70,8 +70,8 @@
       },
       "person": {
         "title": "Gerador de pessoa",
-        "description": "Gere uma pessoa com nome, documentos, contato e endereço real.",
-        "keywords": "dados fictícios identidade"
+        "description": "Gere uma pessoa fictícia de mais de 50 nacionalidades, com contato e endereço.",
+        "keywords": "dados fictícios identidade nacionalidade estrangeiro"
       },
       "cep": {
         "title": "CEP",
@@ -190,6 +190,9 @@
     "height": "Altura",
     "weight": "Peso",
     "bloodType": "Tipo sanguíneo",
+    "address": "Endereço",
+    "zipCode": "Código postal",
+    "country": "País",
     "cardNumber": "Número",
     "brand": "Bandeira",
     "holder": "Nome impresso",
@@ -489,32 +492,35 @@
     "person": {
       "metadata": {
         "title": "Gerador de pessoa",
-        "description": "Gere uma pessoa fictícia com nome, CPF, RG, data de nascimento, filiação, contato e endereço real para testes.",
+        "description": "Gere uma pessoa fictícia de mais de 50 nacionalidades para testes: nome, data de nascimento, filiação, contato e endereço. Brasileiros vêm com CPF, RG e endereço real.",
         "keywords": [
           "gerador de pessoa",
           "gerador de pessoa fictícia",
           "gerador de dados pessoais",
           "gerador de nome",
-          "gerador de pessoas para teste"
+          "gerador de pessoas para teste",
+          "gerador de pessoa estrangeira"
         ]
       },
       "title": "Gerador de pessoa",
-      "intro": "Uma pessoa fictícia é gerada ao abrir a página. Escolha o sexo e o estado, ou clique em \"Gerar pessoa\" para criar outra.",
+      "intro": "Uma pessoa fictícia é gerada ao abrir a página. Escolha a nacionalidade, o sexo e, para o Brasil, o estado, ou clique em \"Gerar pessoa\" para criar outra.",
       "button": "Gerar pessoa",
+      "nationality": "Nacionalidade",
       "sex": "Sexo",
       "anySex": "Qualquer",
       "female": "Feminino",
       "male": "Masculino",
       "howItWorks": [
         "A pessoa é gerada no servidor e não fica armazenada em lugar nenhum.",
-        "O CPF e o RG são válidos. O RG segue a regra de São Paulo.",
-        "O endereço é real: o CEP existe e corresponde à rua, ao bairro e à cidade. Os telefones usam o DDD da cidade.",
-        "Como no Brasil, o nome leva um sobrenome da mãe e depois um do pai.",
+        "Brasileiros vêm com CPF e RG válidos (o RG segue a regra de São Paulo) e endereço real: o CEP existe e corresponde à rua, ao bairro e à cidade. Os telefones usam o DDD da cidade, e o nome leva um sobrenome da mãe e depois um do pai.",
+        "Nas outras nacionalidades, nome, endereço, telefone e data seguem o formato do país, com dados do Faker. O endereço é fictício e não há documentos; campos que o Faker não tem para o país ficam de fora.",
         "O e-mail usa domínios reservados para testes (example.com), então nenhuma mensagem chega a alguém de verdade.",
         "Os dados servem apenas para testes e não pertencem a nenhuma pessoa real."
       ],
       "apiName": "o gerador de pessoa",
-      "apiSex": "Opcional. \"female\" ou \"male\". Sem ele, o sexo é sorteado."
+      "apiSex": "Opcional. \"female\" ou \"male\". Sem ele, o sexo é sorteado. Brasileiros vêm com \"Feminino\" ou \"Masculino\" na resposta.",
+      "apiNationality": "Opcional. O código do país, como \"BR\" ou \"DE\". Padrão: \"BR\". A resposta de outras nacionalidades traz \"phone\", \"address\", \"zipCode\" e \"country\" em vez dos campos brasileiros.",
+      "apiState": "Opcional, só com nationality=BR. A sigla do estado, como \"SP\". Sem ela, o estado é sorteado."
     },
     "cep": {
       "metadata": {

@@ -6,12 +6,14 @@ import { HowItWorks } from '@/components/how-it-works'
 import { ResultCard } from '@/components/result-card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { formatCurrency, parseDecimal } from '@/lib/locale'
+import { parseDecimal, useLocaleFormat } from '@/lib/locale'
 
 const MAX_PRICE_DIGITS = 10
 
 export function DiscountCalculator() {
   const t = useTranslations('pages.discount')
+  const { formatCurrency, decimalSeparator } = useLocaleFormat()
+
   // Digits typed so far, read as cents: "1050" is 10.50
   const [priceDigits, setPriceDigits] = useState('')
   const [percentage, setPercentage] = useState('')
@@ -34,10 +36,11 @@ export function DiscountCalculator() {
   }
 
   function handlePercentageChange(e: React.ChangeEvent<HTMLInputElement>) {
-    const value = e.target.value.replace('.', ',')
+    // Either separator can be typed; it shows as the locale's own
+    const value = e.target.value.replace(/[.,]/, decimalSeparator)
 
     // Up to 3 integer digits and 2 decimals, between 0 and 100
-    if (!/^\d{0,3}(,\d{0,2})?$/.test(value)) return
+    if (!/^\d{0,3}([.,]\d{0,2})?$/.test(value)) return
     if (parseDecimal(value) > 100) return
 
     setPercentage(value)

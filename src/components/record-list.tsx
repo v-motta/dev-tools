@@ -4,6 +4,8 @@ import { CopyButton } from '@/components/copy-button'
 export interface RecordField {
   key: string
   label: string
+  /** Text to show for raw values, e.g. { female: 'Weiblich' } */
+  values?: Record<string, string>
 }
 
 interface RecordListProps {
@@ -17,9 +19,11 @@ export function RecordList({ fields, record }: RecordListProps) {
 
   return (
     <dl className="divide-y rounded-md border">
-      {fields.map(({ key, label }) => {
-        const value = String(record[key] ?? '')
-        if (!value) return null
+      {fields.map(({ key, label, values }) => {
+        const raw = String(record[key] ?? '')
+        if (!raw) return null
+
+        const value = values?.[raw] ?? raw
 
         return (
           <div

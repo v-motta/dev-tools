@@ -70,8 +70,8 @@
       },
       "person": {
         "title": "Personengenerator",
-        "description": "Erzeuge eine Person mit Name, Dokumenten, Kontakt und echter Adresse.",
-        "keywords": "Testdaten Identität"
+        "description": "Erzeuge eine fiktive Person aus über 50 Nationalitäten, mit Kontaktdaten und Adresse.",
+        "keywords": "Testdaten Identität Nationalität Ausland"
       },
       "cep": {
         "title": "CEP",
@@ -190,6 +190,9 @@
     "height": "Größe",
     "weight": "Gewicht",
     "bloodType": "Blutgruppe",
+    "address": "Adresse",
+    "zipCode": "Postleitzahl",
+    "country": "Land",
     "cardNumber": "Nummer",
     "brand": "Kartenmarke",
     "holder": "Name des Karteninhabers",
@@ -486,32 +489,35 @@
     "person": {
       "metadata": {
         "title": "Personengenerator",
-        "description": "Erzeuge eine fiktive brasilianische Person mit Name, CPF, RG, Geburtsdatum, Eltern, Kontaktdaten und echter Adresse zum Testen.",
+        "description": "Erzeuge eine fiktive Person aus über 50 Nationalitäten zum Testen: Name, Geburtsdatum, Eltern, Kontaktdaten und Adresse. Brasilianer kommen mit CPF, RG und echter Adresse.",
         "keywords": [
           "personengenerator",
           "fake person generator",
           "fiktive person erzeugen",
           "testdaten generator",
-          "brasilianische person generator"
+          "zufälliger name generator",
+          "fake person nach land"
         ]
       },
       "title": "Personengenerator",
-      "intro": "Beim Öffnen der Seite wird eine fiktive Person erzeugt. Wähle Geschlecht und Bundesstaat oder klicke auf \"Person erzeugen\", um eine neue zu erstellen.",
+      "intro": "Beim Öffnen der Seite wird eine fiktive Person erzeugt. Wähle Nationalität, Geschlecht und, für Brasilien, den Bundesstaat oder klicke auf \"Person erzeugen\", um eine neue zu erstellen.",
       "button": "Person erzeugen",
+      "nationality": "Nationalität",
       "sex": "Geschlecht",
       "anySex": "Beliebig",
       "female": "Weiblich",
       "male": "Männlich",
       "howItWorks": [
         "Die Person wird auf dem Server erzeugt und nirgends gespeichert.",
-        "CPF und RG sind gültig. Der RG folgt der Regel von São Paulo.",
-        "Die Adresse ist echt: Die CEP existiert und passt zu Straße, Stadtteil und Stadt. Die Telefonnummern nutzen die Vorwahl der Stadt.",
-        "Wie in Brasilien üblich, trägt der Name einen Nachnamen der Mutter und danach einen des Vaters.",
+        "Brasilianer kommen mit gültiger CPF und gültigem RG (der RG folgt der Regel von São Paulo) und echter Adresse: Die CEP existiert und passt zu Straße, Stadtteil und Stadt. Die Telefonnummern nutzen die Vorwahl der Stadt, und der Name trägt einen Nachnamen der Mutter und danach einen des Vaters.",
+        "Bei den anderen Nationalitäten folgen Name, Adresse, Telefonnummer und Datum dem Format des Landes, mit Daten von Faker. Die Adresse ist erfunden und es gibt keine Dokumente; Felder, für die Faker im jeweiligen Land keine Daten hat, werden ausgelassen.",
         "Die E-Mail nutzt für Tests reservierte Domains (example.com), sodass keine Nachricht bei einer echten Person ankommt.",
         "Die Daten dienen nur zum Testen und gehören keiner echten Person."
       ],
       "apiName": "den Personengenerator",
-      "apiSex": "Optional. \"female\" oder \"male\". Ohne Angabe wird das Geschlecht zufällig gewählt."
+      "apiSex": "Optional. \"female\" oder \"male\". Ohne Angabe wird das Geschlecht zufällig gewählt. Brasilianer kommen in der Antwort mit \"Feminino\" oder \"Masculino\".",
+      "apiNationality": "Optional. Der Ländercode, z. B. \"BR\" oder \"DE\". Standard: \"BR\". Bei anderen Nationalitäten enthält die Antwort \"phone\", \"address\", \"zipCode\" und \"country\" statt der brasilianischen Felder.",
+      "apiState": "Optional, nur mit nationality=BR. Das Kürzel des Bundesstaats, z. B. \"SP\". Ohne Angabe wird der Bundesstaat zufällig gewählt."
     },
     "cep": {
       "metadata": {

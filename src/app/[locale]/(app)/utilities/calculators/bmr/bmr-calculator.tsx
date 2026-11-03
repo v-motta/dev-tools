@@ -17,7 +17,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { formatNumber } from '@/lib/locale'
+import { useLocaleFormat } from '@/lib/locale'
 
 // `value` names the label in `pages.bmr.activityLevels`
 const activityLevels = [
@@ -32,6 +32,7 @@ const AGE_RANGE = { min: 15, max: 100 }
 
 export function BMRCalculator() {
   const t = useTranslations('pages.bmr')
+  const { formatNumber } = useLocaleFormat()
   const body = useBodyMeasurements()
   const [age, setAge] = useState('')
   const [sex, setSex] = useState('')
