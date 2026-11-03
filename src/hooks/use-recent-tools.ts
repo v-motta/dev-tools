@@ -18,11 +18,15 @@ export function useRecentTools() {
   )
 
   return useMemo(
-    () =>
-      parseRecentTools(snapshot).flatMap((url): SidebarSubMenuItem[] => {
-        const found = findToolByUrl(url)
-        return found ? [found.tool] : []
-      }),
+    () => [
+      // A moved tool can be in the history under its old and its new URL
+      ...new Set(
+        parseRecentTools(snapshot).flatMap((url): SidebarSubMenuItem[] => {
+          const found = findToolByUrl(url)
+          return found ? [found.tool] : []
+        })
+      ),
+    ],
     [snapshot]
   )
 }

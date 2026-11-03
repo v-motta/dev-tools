@@ -102,11 +102,6 @@ export const tools: SidebarGroup[] = [
         icon: UsersRound,
         subMenuItems: [
           {
-            id: 'person',
-            url: '/brazil/fake-data/person',
-            icon: User,
-          },
-          {
             id: 'cep',
             url: '/brazil/fake-data/cep',
             icon: MapPin,
@@ -144,6 +139,11 @@ export const tools: SidebarGroup[] = [
             url: '/development/generators/credit-card',
             icon: CreditCard,
             aliases: ['visa', 'mastercard', 'elo', 'luhn'],
+          },
+          {
+            id: 'person',
+            url: '/development/generators/person',
+            icon: User,
           },
         ],
       },
@@ -198,10 +198,20 @@ const menuItems = tools.flatMap((group) => group.menuItems)
 
 export const allTools = menuItems.flatMap((menuItem) => menuItem.subMenuItems)
 
-/** Finds the tool whose URL is exactly `url`, along with its menu item. */
+/**
+ * Where moved tools used to be, so the recent history in the browser and the
+ * ranking in Redis still find them. next.config.ts redirects the pages.
+ */
+export const MOVED_TOOL_URLS: Record<string, string> = {
+  '/brazil/fake-data/person': '/development/generators/person',
+}
+
+/** Finds the tool whose URL is `url` (or was, before it moved), along with its menu item. */
 export function findToolByUrl(url: string) {
+  const currentUrl = MOVED_TOOL_URLS[url] ?? url
+
   for (const menuItem of menuItems) {
-    const tool = menuItem.subMenuItems.find((item) => item.url === url)
+    const tool = menuItem.subMenuItems.find((item) => item.url === currentUrl)
     if (tool) return { menuItem, tool }
   }
 

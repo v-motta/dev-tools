@@ -16,7 +16,7 @@ const POPULAR_TOOLS_COUNT = 3
 const FALLBACK_TOOL_URLS = [
   '/brazil/documents/cpf',
   '/brazil/documents/cnpj',
-  '/brazil/fake-data/person',
+  '/development/generators/person',
 ]
 
 // The ranking can hold URLs of tools that were renamed or removed, so it
@@ -47,7 +47,10 @@ export async function getPopularTools() {
 
   for (const url of urls) {
     const found = findToolByUrl(url)
-    if (found) popularTools.push(found.tool)
+    // A moved tool can be ranked under both its old and its new URL
+    if (found && !popularTools.includes(found.tool)) {
+      popularTools.push(found.tool)
+    }
     if (popularTools.length === POPULAR_TOOLS_COUNT) break
   }
 

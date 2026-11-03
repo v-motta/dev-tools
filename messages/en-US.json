@@ -70,8 +70,8 @@
       },
       "person": {
         "title": "Person generator",
-        "description": "Generate a person with name, documents, contact and a real address.",
-        "keywords": "fake data identity"
+        "description": "Generate a fake person from over 50 nationalities, with contact details and address.",
+        "keywords": "fake data identity nationality foreign"
       },
       "cep": {
         "title": "CEP",
@@ -190,6 +190,9 @@
     "height": "Height",
     "weight": "Weight",
     "bloodType": "Blood type",
+    "address": "Address",
+    "zipCode": "Postal code",
+    "country": "Country",
     "cardNumber": "Number",
     "brand": "Brand",
     "holder": "Cardholder name",
@@ -488,32 +491,35 @@
     "person": {
       "metadata": {
         "title": "Person generator",
-        "description": "Generate a fake Brazilian person with name, CPF, RG, date of birth, parents, contact details and a real address for testing.",
+        "description": "Generate a fake person from over 50 nationalities for testing: name, date of birth, parents, contact details and address. Brazilians come with CPF, RG and a real address.",
         "keywords": [
           "person generator",
           "fake person generator",
-          "brazilian fake person generator",
           "fake identity generator",
-          "test data generator"
+          "random name generator",
+          "test data generator",
+          "fake person by country"
         ]
       },
       "title": "Person generator",
-      "intro": "A fake person is generated when the page opens. Choose the sex and the state, or click \"Generate person\" to create another one.",
+      "intro": "A fake person is generated when the page opens. Choose the nationality, the sex and, for Brazil, the state, or click \"Generate person\" to create another one.",
       "button": "Generate person",
+      "nationality": "Nationality",
       "sex": "Sex",
       "anySex": "Any",
       "female": "Female",
       "male": "Male",
       "howItWorks": [
         "The person is generated on the server and is not stored anywhere.",
-        "The CPF and the RG are valid. The RG follows the São Paulo rule.",
-        "The address is real: the CEP exists and matches the street, neighborhood and city. The phone numbers use the city's area code.",
-        "As in Brazil, the name takes a surname from the mother followed by one from the father.",
+        "Brazilians come with a valid CPF and RG (the RG follows the São Paulo rule) and a real address: the CEP exists and matches the street, neighborhood and city. The phone numbers use the city's area code, and the name takes a surname from the mother followed by one from the father.",
+        "For the other nationalities, the name, address, phone number and date follow the country's format, with data from Faker. The address is made up and there are no documents; fields Faker has no data for in that country are left out.",
         "The email uses domains reserved for testing (example.com), so no message ever reaches a real person.",
         "The data is for testing only and does not belong to any real person."
       ],
       "apiName": "the person generator",
-      "apiSex": "Optional. \"female\" or \"male\". Without it, the sex is picked at random."
+      "apiSex": "Optional. \"female\" or \"male\". Without it, the sex is picked at random. Brazilians come with \"Feminino\" or \"Masculino\" in the response.",
+      "apiNationality": "Optional. The country code, such as \"BR\" or \"DE\". Default: \"BR\". For other nationalities, the response has \"phone\", \"address\", \"zipCode\" and \"country\" instead of the Brazilian fields.",
+      "apiState": "Optional, only with nationality=BR. The state abbreviation, such as \"SP\". Without it, the state is picked at random."
     },
     "cep": {
       "metadata": {
