@@ -1,101 +1,86 @@
-import type { Metadata } from 'next'
+import { getTranslations } from 'next-intl/server'
 import { ApiUsage } from '@/components/api-usage'
 import { CepLookup } from '@/components/cep-lookup'
 import { ANY } from '@/components/generator-options'
 import { HowItWorks } from '@/components/how-it-works'
 import { RecordGenerator } from '@/components/record-generator'
 import { ToolModes } from '@/components/tool-modes'
+import { initPage, toolMetadata } from '@/i18n/page'
 import { STATE_CHOICES } from '@/utils/states'
 
-export const metadata: Metadata = {
-  title: 'Gerador e consulta de CEP',
-  description:
-    'Gere CEPs reais com o endereço completo para testes, de qualquer estado, ou consulte o endereço de um CEP.',
-  keywords: [
-    'gerador de cep',
-    'gerador de cep válido',
-    'gerador de endereço',
-    'consulta de cep',
-    'buscar cep',
-  ],
-}
+export const generateMetadata = toolMetadata('cep')
 
+/** Each field of the generated address, with the message of its label */
 const ADDRESS_FIELDS = [
-  { key: 'cep', label: 'CEP' },
-  { key: 'street', label: 'Logradouro' },
-  { key: 'neighborhood', label: 'Bairro' },
-  { key: 'city', label: 'Cidade' },
-  { key: 'state', label: 'Estado' },
-]
+  'cep',
+  'street',
+  'neighborhood',
+  'city',
+  'state',
+] as const
 
-export default function CEPPage() {
+export default async function CEPPage({
+  params,
+}: PageProps<'/[locale]/brazil/fake-data/cep'>) {
+  await initPage(params)
+  const t = await getTranslations('pages.cep')
+  const tCommon = await getTranslations('common')
+  const tApi = await getTranslations('apiUsage')
+  const tFields = await getTranslations('fields')
+
   return (
     <div className="w-full max-w-2xl space-y-8">
       <div className="space-y-3">
-        <h1 className="text-2xl font-bold font-mono">
-          Gerador e consulta de CEP
-        </h1>
+        <h1 className="text-2xl font-bold font-mono">{t('title')}</h1>
 
-        <p className="text-muted-foreground text-balance">
-          Gere um CEP real com o endereço para usar em testes ou descubra o
-          endereço de um CEP.
-        </p>
+        <p className="text-muted-foreground text-balance">{t('intro')}</p>
       </div>
 
       <ToolModes
         modes={[
           {
             value: 'generate',
-            label: 'Gerar',
+            label: tCommon('generate'),
             content: (
               <>
                 <p className="text-muted-foreground text-balance">
-                  Um CEP é gerado ao abrir a página. Escolha o estado ou clique
-                  em "Gerar CEP" para criar outro.
+                  {t('generate.intro')}
                 </p>
 
                 <RecordGenerator
-                  buttonLabel="Gerar CEP"
+                  buttonLabel={t('generate.button')}
                   endpoint="/api/generators/address"
                   field="address"
-                  fields={ADDRESS_FIELDS}
+                  fields={ADDRESS_FIELDS.map((key) => ({
+                    key,
+                    label: tFields(key),
+                  }))}
                   options={[
                     {
                       type: 'select',
                       name: 'state',
-                      label: 'Estado',
+                      label: tCommon('state'),
                       defaultValue: ANY,
                       choices: [
-                        { value: ANY, label: 'Qualquer estado' },
+                        { value: ANY, label: tCommon('anyState') },
                         ...STATE_CHOICES,
                       ],
                     },
                   ]}
                 />
 
-                <HowItWorks
-                  items={[
-                    'Os CEPs são reais e vêm dos Correios, pela ViaCEP: cada um existe e corresponde à rua, ao bairro e à cidade mostrados.',
-                    'São sorteados entre ruas da capital e de outra cidade grande de cada estado, então funcionam em formulários que preenchem o endereço pelo CEP.',
-                    'CEPs exclusivos de empresas e órgãos públicos ficam de fora.',
-                  ]}
-                />
+                <HowItWorks items={t.raw('generate.howItWorks')} />
 
                 <ApiUsage
-                  name="gerador de CEP"
+                  name={t('generate.apiName')}
                   method="GET"
                   path="/api/generators/address"
                   query={{ state: 'PE' }}
                   parameters={[
-                    {
-                      name: 'state',
-                      description:
-                        'Opcional. A sigla do estado, como "SP". Sem ela, o estado é sorteado.',
-                    },
+                    { name: 'state', description: tApi('stateOptional') },
                     {
                       name: 'formatted',
-                      description:
-                        'Opcional. "false" gera o CEP só com números. Padrão: "true".',
+                      description: t('generate.apiFormatted'),
                     },
                   ]}
                   response={{
@@ -113,25 +98,19 @@ export default function CEPPage() {
           },
           {
             value: 'lookup',
-            label: 'Consultar',
+            label: t('lookup.mode'),
             content: (
               <>
                 <p className="text-muted-foreground text-balance">
-                  Digite um CEP e clique em "Consultar CEP" para ver o endereço.
+                  {t('lookup.intro')}
                 </p>
 
                 <CepLookup />
 
-                <HowItWorks
-                  items={[
-                    'A consulta usa a base dos Correios, pela ViaCEP.',
-                    'O CEP pode ser digitado com ou sem hífen.',
-                    'CEPs de cidades pequenas, que têm um CEP só, voltam sem rua e sem bairro.',
-                  ]}
-                />
+                <HowItWorks items={t.raw('lookup.howItWorks')} />
 
                 <ApiUsage
-                  name="consulta de CEP"
+                  name={t('lookup.apiName')}
                   method="GET"
                   path="/api/cep/01304000"
                   response={{

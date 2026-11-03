@@ -1,116 +1,95 @@
-import type { Metadata } from 'next'
+import { getTranslations } from 'next-intl/server'
 import { ApiUsage } from '@/components/api-usage'
 import { ANY } from '@/components/generator-options'
 import { HowItWorks } from '@/components/how-it-works'
 import { RecordGenerator } from '@/components/record-generator'
+import { initPage, toolMetadata } from '@/i18n/page'
 import { STATE_CHOICES } from '@/utils/states'
 
-export const metadata: Metadata = {
-  title: 'Gerador de pessoa',
-  description:
-    'Gere uma pessoa fictícia com nome, CPF, RG, data de nascimento, filiação, contato e endereço real para testes.',
-  keywords: [
-    'gerador de pessoa',
-    'gerador de pessoa fictícia',
-    'gerador de dados pessoais',
-    'gerador de nome',
-    'gerador de pessoas para teste',
-  ],
-}
+export const generateMetadata = toolMetadata('person')
 
+/** Each field of the generated person, with the message of its label */
 const PERSON_FIELDS = [
-  { key: 'name', label: 'Nome' },
-  { key: 'sex', label: 'Sexo' },
-  { key: 'cpf', label: 'CPF' },
-  { key: 'rg', label: 'RG' },
-  { key: 'birthdate', label: 'Data de nascimento' },
-  { key: 'age', label: 'Idade' },
-  { key: 'motherName', label: 'Mãe' },
-  { key: 'fatherName', label: 'Pai' },
-  { key: 'email', label: 'E-mail' },
-  { key: 'password', label: 'Senha' },
-  { key: 'mobilePhone', label: 'Celular' },
-  { key: 'landlinePhone', label: 'Telefone fixo' },
-  { key: 'cep', label: 'CEP' },
-  { key: 'street', label: 'Logradouro' },
-  { key: 'number', label: 'Número' },
-  { key: 'neighborhood', label: 'Bairro' },
-  { key: 'city', label: 'Cidade' },
-  { key: 'state', label: 'Estado' },
-  { key: 'height', label: 'Altura' },
-  { key: 'weight', label: 'Peso' },
-  { key: 'bloodType', label: 'Tipo sanguíneo' },
-]
+  'name',
+  'sex',
+  'cpf',
+  'rg',
+  'birthdate',
+  'age',
+  'motherName',
+  'fatherName',
+  'email',
+  'password',
+  'mobilePhone',
+  'landlinePhone',
+  'cep',
+  'street',
+  'number',
+  'neighborhood',
+  'city',
+  'state',
+  'height',
+  'weight',
+  'bloodType',
+] as const
 
-export default function PersonGeneratorPage() {
+export default async function PersonGeneratorPage({
+  params,
+}: PageProps<'/[locale]/brazil/fake-data/person'>) {
+  await initPage(params)
+  const t = await getTranslations('pages.person')
+  const tCommon = await getTranslations('common')
+  const tApi = await getTranslations('apiUsage')
+  const tFields = await getTranslations('fields')
+
   return (
     <div className="w-full max-w-2xl space-y-8">
       <div className="space-y-3">
-        <h1 className="text-2xl font-bold font-mono">Gerador de pessoa</h1>
+        <h1 className="text-2xl font-bold font-mono">{t('title')}</h1>
 
-        <p className="text-muted-foreground text-balance">
-          Uma pessoa fictícia é gerada ao abrir a página. Escolha o sexo e o
-          estado, ou clique em "Gerar pessoa" para criar outra.
-        </p>
+        <p className="text-muted-foreground text-balance">{t('intro')}</p>
       </div>
 
       <RecordGenerator
-        buttonLabel="Gerar pessoa"
+        buttonLabel={t('button')}
         endpoint="/api/generators/person"
         field="person"
-        fields={PERSON_FIELDS}
+        fields={PERSON_FIELDS.map((key) => ({ key, label: tFields(key) }))}
         options={[
           {
             type: 'toggle',
             name: 'sex',
-            label: 'Sexo',
+            label: t('sex'),
             defaultValue: ANY,
             choices: [
-              { value: ANY, label: 'Qualquer' },
-              { value: 'female', label: 'Feminino' },
-              { value: 'male', label: 'Masculino' },
+              { value: ANY, label: t('anySex') },
+              { value: 'female', label: t('female') },
+              { value: 'male', label: t('male') },
             ],
           },
           {
             type: 'select',
             name: 'state',
-            label: 'Estado',
+            label: tCommon('state'),
             defaultValue: ANY,
             choices: [
-              { value: ANY, label: 'Qualquer estado' },
+              { value: ANY, label: tCommon('anyState') },
               ...STATE_CHOICES,
             ],
           },
         ]}
       />
 
-      <HowItWorks
-        items={[
-          'A pessoa é gerada no servidor e não fica armazenada em lugar nenhum.',
-          'O CPF e o RG são válidos. O RG segue a regra de São Paulo.',
-          'O endereço é real: o CEP existe e corresponde à rua, ao bairro e à cidade. Os telefones usam o DDD da cidade.',
-          'Como no Brasil, o nome leva um sobrenome da mãe e depois um do pai.',
-          'O e-mail usa domínios reservados para testes (example.com), então nenhuma mensagem chega a alguém de verdade.',
-          'Os dados servem apenas para testes e não pertencem a nenhuma pessoa real.',
-        ]}
-      />
+      <HowItWorks items={t.raw('howItWorks')} />
 
       <ApiUsage
-        name="gerador de pessoa"
+        name={t('apiName')}
         method="GET"
         path="/api/generators/person"
         query={{ sex: 'female', state: 'BA' }}
         parameters={[
-          {
-            name: 'sex',
-            description:
-              'Opcional. "female" ou "male". Sem ele, o sexo é sorteado.',
-          },
-          {
-            name: 'state',
-            description:
-              'Opcional. A sigla do estado, como "SP". Sem ela, o estado é sorteado.',
-          },
+          { name: 'sex', description: t('apiSex') },
+          { name: 'state', description: tApi('stateOptional') },
         ]}
         response={{
           person: {

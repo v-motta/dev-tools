@@ -124,5 +124,707 @@
         "keywords": "random lottery raffle"
       }
     }
+  },
+  "common": {
+    "howItWorks": "How it works",
+    "result": "Result",
+    "modesLabel": "What do you want to do?",
+    "generate": "Generate",
+    "validate": "Validate",
+    "state": "State",
+    "anyState": "Any state",
+    "formatted": "With punctuation"
+  },
+  "copyButton": {
+    "copy": "Copy",
+    "copied": "Copied!",
+    "copiedLabel": "Copied"
+  },
+  "generator": {
+    "quantity": "Quantity",
+    "options": "Options",
+    "error": "Could not generate. Please try again.",
+    "generating": "Generating",
+    "tryAgain": "Try again",
+    "generate": "Generate {name}",
+    "copy": "Copy {name}",
+    "copyItem": "Copy {name} {index}",
+    "copyAll": "Copy all",
+    "history": "Previously generated",
+    "clear": "Clear",
+    "copyPrevious": "Copy previous {name} {index}",
+    "copyJson": "Copy JSON",
+    "copyJsonLabel": "Copy as JSON"
+  },
+  "recordList": {
+    "copy": "Copy {field}"
+  },
+  "fields": {
+    "companyName": "Legal name",
+    "tradeName": "Trade name",
+    "cnpj": "CNPJ",
+    "stateRegistration": "State registration",
+    "foundedAt": "Founded on",
+    "email": "Email",
+    "website": "Website",
+    "phone": "Phone",
+    "cep": "CEP",
+    "street": "Street",
+    "number": "Number",
+    "complement": "Complement",
+    "neighborhood": "Neighborhood",
+    "city": "City",
+    "state": "State",
+    "ddd": "Area code (DDD)",
+    "name": "Name",
+    "sex": "Sex",
+    "cpf": "CPF",
+    "rg": "RG",
+    "birthdate": "Date of birth",
+    "age": "Age",
+    "motherName": "Mother",
+    "fatherName": "Father",
+    "password": "Password",
+    "mobilePhone": "Mobile phone",
+    "landlinePhone": "Landline",
+    "height": "Height",
+    "weight": "Weight",
+    "bloodType": "Blood type",
+    "cardNumber": "Number",
+    "brand": "Brand",
+    "holder": "Cardholder name",
+    "expiry": "Expiry date",
+    "cvv": "CVV"
+  },
+  "apiUsage": {
+    "title": "How to use the API",
+    "intro": "You can integrate {name} into your app through our REST API.",
+    "endpoint": "Endpoint",
+    "queryParameters": "Query parameters",
+    "requestBody": "Request body",
+    "curlExample": "curl example",
+    "exampleBody": "Example body",
+    "response": "Response",
+    "copy": "Copy {label}",
+    "quantity": "Optional. From 1 to 50. When set, the response has the \"{list}\" list instead of \"{single}\".",
+    "formatted": "Optional. \"false\" generates digits only. Default: \"true\".",
+    "stateOptional": "Optional. The state abbreviation, such as \"SP\". Without it, the state is picked at random.",
+    "stateRequired": "Required. The state abbreviation, such as \"SP\".",
+    "documentRequired": "Required. The number, with or without punctuation."
+  },
+  "documentValidator": {
+    "validating": "Validating",
+    "cpf": {
+      "label": "Enter the CPF",
+      "valid": "Valid CPF",
+      "invalid": "Invalid CPF",
+      "error": "Could not validate the CPF. Please try again.",
+      "button": "Validate CPF"
+    },
+    "cnpj": {
+      "label": "Enter the CNPJ",
+      "valid": "Valid CNPJ",
+      "invalid": "Invalid CNPJ",
+      "error": "Could not validate the CNPJ. Please try again.",
+      "button": "Validate CNPJ"
+    },
+    "rg": {
+      "label": "Enter the RG",
+      "valid": "Valid RG",
+      "invalid": "Invalid RG",
+      "error": "Could not validate the RG. Please try again.",
+      "button": "Validate RG"
+    },
+    "cnh": {
+      "label": "Enter the CNH",
+      "valid": "Valid CNH",
+      "invalid": "Invalid CNH",
+      "error": "Could not validate the CNH. Please try again.",
+      "button": "Validate CNH"
+    },
+    "state-registration": {
+      "label": "Enter the state registration",
+      "valid": "Valid state registration",
+      "invalid": "Invalid state registration",
+      "error": "Could not validate the state registration. Please try again.",
+      "button": "Validate state registration",
+      "placeholder": "With or without punctuation"
+    }
+  },
+  "cepLookup": {
+    "label": "Enter the CEP",
+    "searching": "Looking up",
+    "button": "Look up CEP",
+    "notFound": "CEP not found.",
+    "error": "Could not look up the CEP. Please try again."
+  },
+  "bodyMeasurements": {
+    "units": "Units",
+    "metric": "Metric (kg, cm)",
+    "imperial": "Imperial (lb, ft)",
+    "weight": "Weight ({unit})",
+    "height": "Height",
+    "heightCm": "Height (cm)",
+    "heightFt": "Height in feet",
+    "heightIn": "Height in inches",
+    "weightRange": "Weight must be between {min} and {max} {unit}.",
+    "heightRangeMetric": "Height must be between {min} and {max} cm.",
+    "heightRangeImperial": "Height must be between 3 ft 4 in and 8 ft 2 in."
+  },
+  "pages": {
+    "cpf": {
+      "metadata": {
+        "title": "CPF generator and validator",
+        "description": "Generate valid Brazilian CPF numbers for testing, with or without punctuation, or check right away whether a CPF is valid.",
+        "keywords": [
+          "cpf generator",
+          "brazilian cpf generator",
+          "valid cpf generator",
+          "cpf validator",
+          "cpf validator online",
+          "cpf number for testing"
+        ]
+      },
+      "title": "CPF generator and validator",
+      "intro": "Generate valid CPFs to use in tests or check whether a CPF is valid.",
+      "generate": {
+        "intro": "A valid CPF is generated when the page opens. Choose the quantity and the format, or click \"Generate CPF\" to create another one.",
+        "label": "Generated CPF",
+        "pluralLabel": "Generated CPFs",
+        "howItWorks": [
+          "The CPF is generated on the server and is not stored anywhere.",
+          "The number follows the rules of Brazil's Federal Revenue Service (Receita Federal).",
+          "The check digits are calculated correctly.",
+          "The number is for testing only and does not belong to any real person.",
+          "The latest generated values are listed below the button until you leave the page."
+        ],
+        "apiName": "the CPF generator"
+      },
+      "validate": {
+        "intro": "Enter a CPF and click \"Validate CPF\" to find out whether it is valid.",
+        "howItWorks": [
+          "Validation runs on the server and nothing is stored.",
+          "The validator checks whether the CPF follows the rules of the Federal Revenue Service.",
+          "Both the format and the check digits are verified.",
+          "The CPF can be entered with or without punctuation (123.456.789-10 or 12345678910).",
+          "The result shows up right below the field."
+        ],
+        "apiName": "the CPF validator"
+      }
+    },
+    "cnpj": {
+      "metadata": {
+        "title": "CNPJ and company generator, and CNPJ validator",
+        "description": "Generate valid Brazilian CNPJ numbers or complete companies for testing, with legal name, state registration and address, or check whether a CNPJ is valid.",
+        "keywords": [
+          "cnpj generator",
+          "brazilian cnpj generator",
+          "valid cnpj generator",
+          "fake company generator",
+          "brazilian company generator",
+          "cnpj validator",
+          "cnpj validator online"
+        ]
+      },
+      "title": "CNPJ generator and validator",
+      "intro": "Generate just a CNPJ or a complete company to use in tests, or check whether a CNPJ is valid.",
+      "generate": {
+        "mode": "CNPJ only",
+        "intro": "A valid CNPJ is generated when the page opens. Choose the quantity and the format, or click \"Generate CNPJ\" to create another one.",
+        "label": "Generated CNPJ",
+        "pluralLabel": "Generated CNPJs",
+        "howItWorks": [
+          "The CNPJ is generated on the server and is not stored anywhere.",
+          "The number follows the rules of Brazil's Federal Revenue Service (Receita Federal).",
+          "The check digits are calculated correctly.",
+          "The number is for testing only and does not belong to any real company.",
+          "The latest generated values are listed below the button until you leave the page."
+        ],
+        "apiName": "the CNPJ generator"
+      },
+      "company": {
+        "mode": "Complete company",
+        "intro": "A fake company with CNPJ, state registration, contact details and address. Choose the state or leave it on \"Any state\".",
+        "button": "Generate company",
+        "howItWorks": [
+          "The company is generated on the server and is not stored anywhere.",
+          "The CNPJ and the state registration are valid, and the registration follows the rules of the company's state.",
+          "The address is real: the CEP exists and matches the street, neighborhood and city. The phone number uses the city's area code.",
+          "The email uses domains reserved for testing (example.com), so no message ever reaches a real person.",
+          "The data is for testing only and does not belong to any real company."
+        ],
+        "apiName": "the company generator"
+      },
+      "validate": {
+        "intro": "Enter a CNPJ and click \"Validate CNPJ\" to find out whether it is valid.",
+        "howItWorks": [
+          "Validation runs on the server and nothing is stored.",
+          "The validator checks whether the CNPJ follows the rules of the Federal Revenue Service.",
+          "Both the format and the check digits are verified.",
+          "The CNPJ can be entered with or without punctuation (00.000.000/0001-00 or 00000000000100).",
+          "The result shows up right below the field."
+        ],
+        "apiName": "the CNPJ validator"
+      }
+    },
+    "rg": {
+      "metadata": {
+        "title": "RG generator and validator",
+        "description": "Generate valid Brazilian RG numbers for testing, with or without punctuation, or check right away whether an RG is valid.",
+        "keywords": [
+          "rg generator",
+          "brazilian rg generator",
+          "valid rg generator",
+          "rg validator",
+          "rg validator online"
+        ]
+      },
+      "title": "RG generator and validator",
+      "intro": "Generate valid RGs to use in tests or check whether an RG is valid.",
+      "generate": {
+        "intro": "A valid RG is generated when the page opens. Choose the quantity and the format, or click \"Generate RG\" to create another one.",
+        "label": "Generated RG",
+        "pluralLabel": "Generated RGs",
+        "howItWorks": [
+          "The RG is generated on the server and is not stored anywhere.",
+          "Each state issues the RG its own way, so the generator follows the São Paulo rule, the one most systems use: 8 digits and a check digit.",
+          "The check digit can be an X, which stands for 10.",
+          "The number is for testing only and does not belong to any real person.",
+          "The latest generated values are listed below the button until you leave the page."
+        ],
+        "apiName": "the RG generator",
+        "apiFormatted": "Optional. \"false\" generates it without punctuation. Default: \"true\"."
+      },
+      "validate": {
+        "intro": "Enter an RG and click \"Validate RG\" to find out whether it is valid.",
+        "howItWorks": [
+          "Validation runs on the server and nothing is stored.",
+          "The validator checks the check digit using the São Paulo rule. RGs from other states may have a different format and show up as invalid.",
+          "The RG can be entered with or without punctuation (12.345.678-X or 12345678X).",
+          "The result shows up right below the field."
+        ],
+        "apiName": "the RG validator"
+      }
+    },
+    "cnh": {
+      "metadata": {
+        "title": "CNH generator and validator",
+        "description": "Generate valid Brazilian driver's license (CNH) numbers for testing or check right away whether a CNH is valid.",
+        "keywords": [
+          "cnh generator",
+          "brazilian driver license generator",
+          "valid cnh generator",
+          "cnh validator",
+          "cnh validator online"
+        ]
+      },
+      "title": "CNH generator and validator",
+      "intro": "Generate valid CNH numbers to use in tests or check whether a CNH is valid.",
+      "generate": {
+        "intro": "A valid CNH is generated when the page opens. Choose the quantity or click \"Generate CNH\" to create another one.",
+        "label": "Generated CNH",
+        "pluralLabel": "Generated CNHs",
+        "howItWorks": [
+          "The CNH is generated on the server and is not stored anywhere.",
+          "The generated number is the 11-digit registration number, the one systems ask for.",
+          "The two check digits follow the Denatran rule.",
+          "The number is for testing only and does not belong to any real person.",
+          "The latest generated values are listed below the button until you leave the page."
+        ],
+        "apiName": "the CNH generator"
+      },
+      "validate": {
+        "intro": "Enter the CNH registration number and click \"Validate CNH\" to find out whether it is valid.",
+        "howItWorks": [
+          "Validation runs on the server and nothing is stored.",
+          "The 11 digits and the two check digits are verified.",
+          "The registration number is in the \"Nº Registro\" field of the CNH.",
+          "The result shows up right below the field."
+        ],
+        "apiName": "the CNH validator",
+        "apiCnh": "Required. The 11 digits of the registration number."
+      }
+    },
+    "stateRegistration": {
+      "metadata": {
+        "title": "State registration generator and validator",
+        "description": "Generate valid Brazilian state registrations (inscrição estadual) for testing in any state, or check whether a state registration is valid.",
+        "keywords": [
+          "state registration generator",
+          "inscrição estadual generator",
+          "brazilian state registration generator",
+          "state registration validator",
+          "inscrição estadual validator"
+        ]
+      },
+      "title": "State registration generator and validator",
+      "intro": "Generate valid state registrations (inscrição estadual) to use in tests or check whether one is valid, in any state.",
+      "generate": {
+        "intro": "A São Paulo state registration is generated when the page opens. Choose the state, the quantity and the format, or click \"Generate state registration\" to create another one.",
+        "name": "state registration",
+        "label": "Generated state registration",
+        "pluralLabel": "Generated state registrations",
+        "howItWorks": [
+          "The registration is generated on the server and is not stored anywhere.",
+          "Each state has its own length, prefix and check digit calculation, and the generator follows each state's SINTEGRA specification.",
+          "In São Paulo, the generator creates the 12-digit industry and commerce registration.",
+          "The number is for testing only and does not belong to any real company.",
+          "The latest generated values are listed below the button until you leave the page."
+        ],
+        "apiName": "the state registration generator"
+      },
+      "validate": {
+        "intro": "Choose the state, enter the registration and click \"Validate state registration\" to find out whether it is valid.",
+        "howItWorks": [
+          "Validation runs on the server and nothing is stored.",
+          "The length, prefix and check digits required by the chosen state are verified.",
+          "The registration can be entered with or without punctuation.",
+          "In São Paulo, only the industry and commerce registration is accepted; the rural producer one, which starts with P, is not.",
+          "The result shows up right below the field."
+        ],
+        "apiName": "the state registration validator"
+      }
+    },
+    "person": {
+      "metadata": {
+        "title": "Person generator",
+        "description": "Generate a fake Brazilian person with name, CPF, RG, date of birth, parents, contact details and a real address for testing.",
+        "keywords": [
+          "person generator",
+          "fake person generator",
+          "brazilian fake person generator",
+          "fake identity generator",
+          "test data generator"
+        ]
+      },
+      "title": "Person generator",
+      "intro": "A fake person is generated when the page opens. Choose the sex and the state, or click \"Generate person\" to create another one.",
+      "button": "Generate person",
+      "sex": "Sex",
+      "anySex": "Any",
+      "female": "Female",
+      "male": "Male",
+      "howItWorks": [
+        "The person is generated on the server and is not stored anywhere.",
+        "The CPF and the RG are valid. The RG follows the São Paulo rule.",
+        "The address is real: the CEP exists and matches the street, neighborhood and city. The phone numbers use the city's area code.",
+        "As in Brazil, the name takes a surname from the mother followed by one from the father.",
+        "The email uses domains reserved for testing (example.com), so no message ever reaches a real person.",
+        "The data is for testing only and does not belong to any real person."
+      ],
+      "apiName": "the person generator",
+      "apiSex": "Optional. \"female\" or \"male\". Without it, the sex is picked at random."
+    },
+    "cep": {
+      "metadata": {
+        "title": "CEP generator and lookup",
+        "description": "Generate real Brazilian postal codes (CEP) with the full address for testing, from any state, or look up the address of a CEP.",
+        "keywords": [
+          "cep generator",
+          "brazilian zip code generator",
+          "brazilian address generator",
+          "cep lookup",
+          "brazilian postal code lookup"
+        ]
+      },
+      "title": "CEP generator and lookup",
+      "intro": "Generate a real CEP with its address to use in tests, or find out the address of a CEP.",
+      "generate": {
+        "intro": "A CEP is generated when the page opens. Choose the state or click \"Generate CEP\" to create another one.",
+        "button": "Generate CEP",
+        "howItWorks": [
+          "The CEPs are real and come from Correios, through ViaCEP: each one exists and matches the street, neighborhood and city shown.",
+          "They are picked from streets in the capital and in another large city of each state, so they work in forms that fill in the address from the CEP.",
+          "CEPs reserved for companies and government offices are left out."
+        ],
+        "apiName": "the CEP generator",
+        "apiFormatted": "Optional. \"false\" generates the CEP with digits only. Default: \"true\"."
+      },
+      "lookup": {
+        "mode": "Look up",
+        "intro": "Enter a CEP and click \"Look up CEP\" to see the address.",
+        "howItWorks": [
+          "The lookup uses the Correios database, through ViaCEP.",
+          "The CEP can be entered with or without the hyphen.",
+          "CEPs of small towns, which have a single CEP, come back without a street or neighborhood."
+        ],
+        "apiName": "the CEP lookup"
+      }
+    },
+    "licensePlate": {
+      "metadata": {
+        "title": "License plate generator",
+        "description": "Generate random Brazilian car and motorcycle plates in the Mercosul or the old format.",
+        "keywords": [
+          "license plate generator",
+          "brazilian license plate generator",
+          "mercosul plate generator",
+          "random license plate generator"
+        ]
+      },
+      "title": "License plate generator",
+      "intro": "A Mercosul plate is generated when the page opens. Choose the quantity and the format, or click \"Generate plate\" to create another one.",
+      "name": "plate",
+      "label": "Generated plate",
+      "pluralLabel": "Generated plates",
+      "format": "Format",
+      "old": "Old",
+      "howItWorks": [
+        "The plate is generated on the server and is not stored anywhere.",
+        "The Mercosul format has three letters, a digit, a letter and two digits (ABC1D23).",
+        "The old format has three letters and four digits (ABC-1234).",
+        "The plate is picked at random and may match a real vehicle; use it for testing only.",
+        "The latest generated values are listed below the button until you leave the page."
+      ],
+      "apiName": "the license plate generator",
+      "apiFormat": "Optional. \"mercosul\" (ABC1D23) or \"old\" (ABC-1234). Default: \"mercosul\"."
+    },
+    "password": {
+      "metadata": {
+        "title": "Password generator",
+        "description": "Generate secure random passwords, choosing the length and whether they have uppercase letters, numbers and symbols.",
+        "keywords": [
+          "password generator",
+          "password generator online",
+          "secure password generator",
+          "random password generator",
+          "strong password generator",
+          "password generator with symbols",
+          "password generator with numbers"
+        ]
+      },
+      "title": "Password generator",
+      "intro": "Generate an Apple-style password, easy to read and type, or choose the length and the character types. The password is generated again on every change.",
+      "name": "password",
+      "label": "Generated password",
+      "pluralLabel": "Generated passwords",
+      "style": "Style",
+      "custom": "Custom",
+      "length": "Length",
+      "uppercase": "Uppercase letters",
+      "numbers": "Numbers",
+      "symbols": "Symbols (!@#$%&*-_=+?)",
+      "howItWorks": [
+        "The password is generated on the server and is not stored anywhere.",
+        "It is created with a cryptographically secure random number generator.",
+        "The Apple style follows the format of the strong passwords suggested by iPhone and Mac: three groups of six lowercase letters separated by hyphens, with exactly one uppercase letter and one digit.",
+        "In the custom style, lowercase letters are always included and the password has at least one character of each chosen type. Symbols leave out quotes, backslashes and spaces, which tend to break when pasted into config files or the terminal.",
+        "The latest generated values are listed below the button until you leave the page."
+      ],
+      "apiName": "the password generator",
+      "apiStyle": "Optional. \"apple\" (abcdef-ghiJkl-mn4opq) or \"custom\". Default: \"apple\".",
+      "apiLength": "Only with style=custom. From {min} to {max}. Default: 16.",
+      "apiUppercase": "Only with style=custom. Includes uppercase letters. Default: \"true\".",
+      "apiNumbers": "Only with style=custom. Includes numbers. Default: \"true\".",
+      "apiSymbols": "Only with style=custom. Includes symbols. Default: \"true\"."
+    },
+    "uuid": {
+      "metadata": {
+        "title": "UUID generator",
+        "description": "Generate random v4 UUIDs instantly.",
+        "keywords": [
+          "uuid generator",
+          "uuid generator online",
+          "random uuid generator",
+          "uuid v4 generator",
+          "guid generator"
+        ]
+      },
+      "title": "UUID generator",
+      "intro": "A UUID is generated when the page opens. Choose the quantity or click \"Generate UUID\" to create another one.",
+      "label": "Generated UUID",
+      "pluralLabel": "Generated UUIDs",
+      "howItWorks": [
+        "The UUID is generated on the server and is not stored anywhere.",
+        "The generator creates a version 4 UUID, based on random numbers.",
+        "The UUID follows the 8-4-4-4-12 format, with hexadecimal characters.",
+        "The chance of generating the same UUID twice is, in practice, zero.",
+        "The latest generated values are listed below the button until you leave the page."
+      ],
+      "apiName": "the UUID generator"
+    },
+    "creditCard": {
+      "metadata": {
+        "title": "Credit card generator",
+        "description": "Generate valid credit card numbers for testing, with brand, cardholder name, expiry date and CVV.",
+        "keywords": [
+          "credit card generator",
+          "valid credit card generator",
+          "test credit card generator",
+          "visa card generator",
+          "mastercard generator",
+          "luhn card generator"
+        ]
+      },
+      "title": "Credit card generator",
+      "intro": "A Visa card is generated when the page opens. Choose the brand and the format, or click \"Generate card\" to create another one.",
+      "button": "Generate card",
+      "brand": "Brand",
+      "formatted": "Number with spaces",
+      "howItWorks": [
+        "The card is generated on the server and is not stored anywhere.",
+        "The number starts with the brand's prefix and passes the Luhn algorithm, the check that forms and gateways run before charging.",
+        "The expiry date is 1 to 5 years in the future. The CVV has 4 digits on American Express and 3 on the other brands.",
+        "The number is random and only meant for testing forms. To test payments, use your gateway's test cards."
+      ],
+      "apiName": "the credit card generator",
+      "apiBrand": "Optional. {brands}. Default: \"visa\".",
+      "apiFormatted": "Optional. \"false\" generates the number without spaces. Default: \"true\"."
+    },
+    "numbers": {
+      "metadata": {
+        "title": "Number picker",
+        "description": "Draw one or more random numbers within a range.",
+        "keywords": [
+          "random number picker",
+          "random number generator",
+          "number draw online"
+        ]
+      },
+      "title": "Number picker",
+      "intro": "Choose how many numbers to draw and the range of the draw.",
+      "quantity": "Quantity",
+      "min": "Minimum",
+      "max": "Maximum",
+      "drawing": "Drawing",
+      "draw": "Draw",
+      "minAboveMax": "The minimum must be less than or equal to the maximum.",
+      "error": "Could not draw. Please try again.",
+      "result": "{count, plural, one {Number drawn} other {Numbers drawn}}",
+      "howItWorks": [
+        "The numbers are drawn on the server and are not stored.",
+        "The minimum and the maximum are part of the range, and negative numbers are accepted.",
+        "You can draw up to 1000 numbers at once.",
+        "Each number is drawn independently, so numbers can repeat.",
+        "The draw is not cryptographically secure: do not use it for passwords, security tokens or draws with real prizes."
+      ],
+      "apiName": "the number picker",
+      "apiCount": "Required. How many numbers to draw, from 1 to 1000.",
+      "apiMin": "Required. The lowest possible number (included).",
+      "apiMax": "Required. The highest possible number (included)."
+    },
+    "bmi": {
+      "metadata": {
+        "title": "BMI calculator",
+        "description": "Calculate your Body Mass Index (BMI) and see which range it falls in.",
+        "keywords": [
+          "bmi calculator",
+          "bmi calculator online",
+          "free bmi calculator",
+          "body mass index calculator",
+          "bmi calculator with weight and height"
+        ]
+      },
+      "title": "BMI calculator",
+      "intro": "Find out your Body Mass Index from your weight and height.",
+      "ranges": {
+        "underweight": "Underweight",
+        "normal": "Normal weight",
+        "overweight": "Overweight",
+        "obesity1": "Obesity class I",
+        "obesity2": "Obesity class II",
+        "obesity3": "Obesity class III"
+      },
+      "howItWorks": [
+        "BMI is the weight (kg) divided by the height (m) squared.",
+        "The ranges follow the World Health Organization classification for adults.",
+        "BMI does not tell muscle from fat and does not apply to children, pregnant women or older adults. For a full assessment, see a health professional.",
+        "The calculation runs in your browser: no data is sent or stored."
+      ]
+    },
+    "bmr": {
+      "metadata": {
+        "title": "BMR calculator",
+        "description": "Calculate your Basal Metabolic Rate (BMR) and your daily calorie needs.",
+        "keywords": [
+          "bmr calculator",
+          "bmr calculator online",
+          "free bmr calculator",
+          "tdee calculator"
+        ]
+      },
+      "title": "BMR calculator",
+      "intro": "Find out your Basal Metabolic Rate (BMR) and your Total Daily Energy Expenditure (TDEE).",
+      "age": "Age",
+      "ageRange": "Age must be between {min} and {max} years.",
+      "sex": "Sex",
+      "male": "Male",
+      "female": "Female",
+      "select": "Select",
+      "activity": "Activity level",
+      "activityLevels": {
+        "sedentary": "Sedentary (little or no exercise)",
+        "light": "Light (exercise 1 to 3 times a week)",
+        "moderate": "Moderate (exercise 3 to 5 times a week)",
+        "active": "Active (exercise 6 to 7 times a week)",
+        "veryActive": "Very active (intense exercise every day)"
+      },
+      "bmr": "Basal Metabolic Rate",
+      "tdee": "Total Energy Expenditure",
+      "calories": "{calories} kcal/day",
+      "howItWorks": [
+        "BMR is the energy the body burns at rest. It is calculated with the Mifflin-St Jeor equation, which uses weight, height, age and sex.",
+        "TDEE is the BMR multiplied by a factor that depends on your level of physical activity.",
+        "The values are estimates. For a meal plan, see a nutritionist.",
+        "The calculation runs in your browser: no data is sent or stored."
+      ]
+    },
+    "age": {
+      "metadata": {
+        "title": "Age calculator",
+        "description": "Calculate the exact age in years, months and days from a date of birth.",
+        "keywords": [
+          "age calculator",
+          "age calculator online",
+          "free age calculator",
+          "age calculator by date of birth",
+          "exact age calculator"
+        ]
+      },
+      "title": "Age calculator",
+      "intro": "Find out the exact age from a date of birth.",
+      "birthdate": "Date of birth",
+      "future": "The date of birth cannot be in the future.",
+      "result": "{years, plural, one {# year} other {# years}}, {months, plural, one {# month} other {# months}} and {days, plural, one {# day} other {# days}}",
+      "howItWorks": [
+        "The age is the difference between the date of birth and today's date.",
+        "The result shows the exact years, months and days.",
+        "Leap years and months of different lengths are taken into account.",
+        "The calculation runs in your browser: the date is not sent or stored."
+      ]
+    },
+    "discount": {
+      "metadata": {
+        "title": "Discount calculator",
+        "description": "Calculate the discount amount and the final price of a product.",
+        "keywords": [
+          "discount calculator",
+          "discount calculator online",
+          "free discount calculator",
+          "percentage discount calculator",
+          "sale price calculator"
+        ]
+      },
+      "title": "Discount calculator",
+      "intro": "Calculate the discount amount and the final price after applying it.",
+      "price": "Price",
+      "discount": "Discount",
+      "discountAmount": "Discount amount",
+      "finalPrice": "Final price",
+      "howItWorks": {
+        "inputs": "Enter the original price and the discount percentage.",
+        "cents": "For the price, type digits only: they fill in from the cents (1050 becomes {example}).",
+        "percentage": "The percentage accepts values from 0 to 100, with up to two decimal places.",
+        "rounding": "The discount is the price multiplied by the percentage and divided by 100, rounded to the cent.",
+        "finalPrice": "The final price is the original price minus the discount."
+      }
+    }
+  },
+  "ui": {
+    "menu": "Menu",
+    "menuDescription": "Navigation between the tools.",
+    "toggleMenu": "Open or close the menu",
+    "close": "Close",
+    "more": "More"
   }
 }

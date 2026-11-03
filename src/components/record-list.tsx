@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl'
 import { CopyButton } from '@/components/copy-button'
 
 export interface RecordField {
@@ -12,6 +13,8 @@ interface RecordListProps {
 
 /** Each field of a generated or looked-up record, with its own copy button. */
 export function RecordList({ fields, record }: RecordListProps) {
+  const t = useTranslations('recordList')
+
   return (
     <dl className="divide-y rounded-md border">
       {fields.map(({ key, label }) => {
@@ -29,7 +32,7 @@ export function RecordList({ fields, record }: RecordListProps) {
             <dd className="break-all font-mono">{value}</dd>
             <CopyButton
               value={value}
-              label={`Copiar ${label.toLowerCase()}`}
+              label={t('copy', { field: label })}
               className="size-7 border-0 shadow-none"
             />
           </div>

@@ -2,6 +2,7 @@
 
 import ky from 'ky'
 import { LoaderCircle } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 import { useFormStatus } from 'react-dom'
 import { ResultCard } from '@/components/result-card'
@@ -18,20 +19,22 @@ const MAX_ABSOLUTE_VALUE = 1_000_000_000
 // useFormStatus only reads the status of a parent <form>, so the button
 // needs to be its own component
 function SubmitButton() {
+  const t = useTranslations('pages.numbers')
   const { pending } = useFormStatus()
 
   return (
     <Button className="w-full" disabled={pending}>
       {pending ? (
-        <LoaderCircle className="animate-spin" aria-label="Sorteando" />
+        <LoaderCircle className="animate-spin" aria-label={t('drawing')} />
       ) : (
-        'Sortear'
+        t('draw')
       )}
     </Button>
   )
 }
 
 export function RandomPicker() {
+  const t = useTranslations('pages.numbers')
   const [drawnNumbers, setDrawnNumbers] = useState<number[]>([])
   const [errorMessage, setErrorMessage] = useState('')
 
@@ -42,7 +45,7 @@ export function RandomPicker() {
     // the page come from the page itself
     if (Number(rawFormData.random_min) > Number(rawFormData.random_max)) {
       setDrawnNumbers([])
-      setErrorMessage('O mínimo deve ser menor ou igual ao máximo.')
+      setErrorMessage(t('minAboveMax'))
       return
     }
 
@@ -57,7 +60,7 @@ export function RandomPicker() {
       setErrorMessage('')
     } catch {
       setDrawnNumbers([])
-      setErrorMessage('Não foi possível sortear. Tente novamente.')
+      setErrorMessage(t('error'))
     }
   }
 
@@ -67,7 +70,7 @@ export function RandomPicker() {
         <div className="space-y-1">
           <div className="grid grid-cols-3 gap-3">
             <div className="space-y-1">
-              <Label htmlFor="random_count">Quantidade</Label>
+              <Label htmlFor="random_count">{t('quantity')}</Label>
               <Input
                 id="random_count"
                 name="random_count"
@@ -80,7 +83,7 @@ export function RandomPicker() {
               />
             </div>
             <div className="space-y-1">
-              <Label htmlFor="random_min">Mínimo</Label>
+              <Label htmlFor="random_min">{t('min')}</Label>
               <Input
                 id="random_min"
                 name="random_min"
@@ -93,7 +96,7 @@ export function RandomPicker() {
               />
             </div>
             <div className="space-y-1">
-              <Label htmlFor="random_max">Máximo</Label>
+              <Label htmlFor="random_max">{t('max')}</Label>
               <Input
                 id="random_max"
                 name="random_max"
@@ -119,11 +122,7 @@ export function RandomPicker() {
         <SubmitButton />
       </form>
 
-      <ResultCard
-        title={
-          drawnNumbers.length > 1 ? 'Números sorteados' : 'Número sorteado'
-        }
-      >
+      <ResultCard title={t('result', { count: drawnNumbers.length })}>
         {drawnNumbers.length > 0 && (
           <p className="text-2xl font-mono wrap-break-word">
             {drawnNumbers.map((number) => formatNumber(number)).join(', ')}

@@ -124,5 +124,712 @@
         "keywords": "aleatório loteria rifa"
       }
     }
+  },
+  "common": {
+    "howItWorks": "Como funciona",
+    "result": "Resultado",
+    "modesLabel": "O que você quer fazer?",
+    "generate": "Gerar",
+    "validate": "Validar",
+    "state": "Estado",
+    "anyState": "Qualquer estado",
+    "formatted": "Com pontuação"
+  },
+  "copyButton": {
+    "copy": "Copiar",
+    "copied": "Copiado!",
+    "copiedLabel": "Copiado"
+  },
+  "generator": {
+    "quantity": "Quantidade",
+    "options": "Opções",
+    "error": "Não foi possível gerar. Tente novamente.",
+    "generating": "Gerando",
+    "tryAgain": "Tentar novamente",
+    "generate": "Gerar {name}",
+    "copy": "Copiar {name}",
+    "copyItem": "Copiar {name} {index}",
+    "copyAll": "Copiar todos",
+    "history": "Gerados anteriormente",
+    "clear": "Limpar",
+    "copyPrevious": "Copiar {name} anterior {index}",
+    "copyJson": "Copiar JSON",
+    "copyJsonLabel": "Copiar como JSON"
+  },
+  "recordList": {
+    "copy": "Copiar {field}"
+  },
+  "fields": {
+    "companyName": "Razão social",
+    "tradeName": "Nome fantasia",
+    "cnpj": "CNPJ",
+    "stateRegistration": "Inscrição estadual",
+    "foundedAt": "Data de abertura",
+    "email": "E-mail",
+    "website": "Site",
+    "phone": "Telefone",
+    "cep": "CEP",
+    "street": "Logradouro",
+    "number": "Número",
+    "complement": "Complemento",
+    "neighborhood": "Bairro",
+    "city": "Cidade",
+    "state": "Estado",
+    "ddd": "DDD",
+    "name": "Nome",
+    "sex": "Sexo",
+    "cpf": "CPF",
+    "rg": "RG",
+    "birthdate": "Data de nascimento",
+    "age": "Idade",
+    "motherName": "Mãe",
+    "fatherName": "Pai",
+    "password": "Senha",
+    "mobilePhone": "Celular",
+    "landlinePhone": "Telefone fixo",
+    "height": "Altura",
+    "weight": "Peso",
+    "bloodType": "Tipo sanguíneo",
+    "cardNumber": "Número",
+    "brand": "Bandeira",
+    "holder": "Nome impresso",
+    "expiry": "Validade",
+    "cvv": "CVV"
+  },
+  "apiUsage": {
+    "title": "Como usar a API",
+    "intro": "Você pode integrar {name} à sua aplicação pela nossa API REST.",
+    "endpoint": "Endpoint",
+    "queryParameters": "Parâmetros de query",
+    "requestBody": "Corpo da requisição",
+    "curlExample": "Exemplo com curl",
+    "exampleBody": "Corpo de exemplo",
+    "response": "Resposta",
+    "copy": "Copiar {label}",
+    "quantity": "Opcional. De 1 a 50. Quando informado, a resposta traz a lista \"{list}\" em vez de \"{single}\".",
+    "formatted": "Opcional. \"false\" gera só os números. Padrão: \"true\".",
+    "stateOptional": "Opcional. A sigla do estado, como \"SP\". Sem ela, o estado é sorteado.",
+    "stateRequired": "Obrigatório. A sigla do estado, como \"SP\".",
+    "documentRequired": "Obrigatório. O número com ou sem pontuação."
+  },
+  "documentValidator": {
+    "validating": "Validando",
+    "cpf": {
+      "label": "Digite o CPF",
+      "valid": "CPF válido",
+      "invalid": "CPF inválido",
+      "error": "Não foi possível validar o CPF. Tente novamente.",
+      "button": "Validar CPF"
+    },
+    "cnpj": {
+      "label": "Digite o CNPJ",
+      "valid": "CNPJ válido",
+      "invalid": "CNPJ inválido",
+      "error": "Não foi possível validar o CNPJ. Tente novamente.",
+      "button": "Validar CNPJ"
+    },
+    "rg": {
+      "label": "Digite o RG",
+      "valid": "RG válido",
+      "invalid": "RG inválido",
+      "error": "Não foi possível validar o RG. Tente novamente.",
+      "button": "Validar RG"
+    },
+    "cnh": {
+      "label": "Digite a CNH",
+      "valid": "CNH válida",
+      "invalid": "CNH inválida",
+      "error": "Não foi possível validar a CNH. Tente novamente.",
+      "button": "Validar CNH"
+    },
+    "state-registration": {
+      "label": "Digite a inscrição estadual",
+      "valid": "Inscrição estadual válida",
+      "invalid": "Inscrição estadual inválida",
+      "error": "Não foi possível validar a inscrição estadual. Tente novamente.",
+      "button": "Validar inscrição estadual",
+      "placeholder": "Com ou sem pontuação"
+    }
+  },
+  "cepLookup": {
+    "label": "Digite o CEP",
+    "searching": "Consultando",
+    "button": "Consultar CEP",
+    "notFound": "CEP não encontrado.",
+    "error": "Não foi possível consultar o CEP. Tente novamente."
+  },
+  "bodyMeasurements": {
+    "units": "Unidades",
+    "metric": "Métrico (kg, cm)",
+    "imperial": "Imperial (lb, ft)",
+    "weight": "Peso ({unit})",
+    "height": "Altura",
+    "heightCm": "Altura (cm)",
+    "heightFt": "Altura em pés",
+    "heightIn": "Altura em polegadas",
+    "weightRange": "O peso deve estar entre {min} e {max} {unit}.",
+    "heightRangeMetric": "A altura deve estar entre {min} e {max} cm.",
+    "heightRangeImperial": "A altura deve estar entre 3 ft 4 in e 8 ft 2 in."
+  },
+  "pages": {
+    "cpf": {
+      "metadata": {
+        "title": "Gerador e validador de CPF",
+        "description": "Gere CPFs válidos para testes, com ou sem pontuação, ou confira na hora se um CPF é válido.",
+        "keywords": [
+          "gerador de cpf",
+          "gerador de cpf online",
+          "gerador de cpf válido",
+          "validador de cpf",
+          "validador de cpf online",
+          "validador de cpf com pontuação"
+        ]
+      },
+      "title": "Gerador e validador de CPF",
+      "intro": "Gere CPFs válidos para usar em testes ou confira se um CPF é válido.",
+      "generate": {
+        "intro": "Um CPF válido é gerado ao abrir a página. Escolha a quantidade e o formato, ou clique em \"Gerar CPF\" para criar outro.",
+        "label": "CPF gerado",
+        "pluralLabel": "CPFs gerados",
+        "howItWorks": [
+          "O CPF é gerado no servidor e não fica armazenado em lugar nenhum.",
+          "O número segue as regras da Receita Federal.",
+          "Os dígitos verificadores são calculados corretamente.",
+          "O número serve apenas para testes e não pertence a nenhuma pessoa real.",
+          "Os últimos valores gerados ficam listados abaixo do botão até você sair da página."
+        ],
+        "apiName": "o gerador de CPF"
+      },
+      "validate": {
+        "intro": "Digite um CPF e clique em \"Validar CPF\" para saber se ele é válido.",
+        "howItWorks": [
+          "A validação é feita no servidor e nada fica armazenado.",
+          "O validador confere se o CPF segue as regras da Receita Federal.",
+          "São verificados o formato e os dígitos verificadores.",
+          "O CPF pode ser digitado com ou sem pontuação (123.456.789-10 ou 12345678910).",
+          "O resultado aparece logo abaixo do campo."
+        ],
+        "apiName": "o validador de CPF"
+      }
+    },
+    "cnpj": {
+      "metadata": {
+        "title": "Gerador de CNPJ e de empresa, e validador de CNPJ",
+        "description": "Gere CNPJs válidos ou empresas completas para testes, com razão social, inscrição estadual e endereço, ou confira se um CNPJ é válido.",
+        "keywords": [
+          "gerador de cnpj",
+          "gerador de cnpj online",
+          "gerador de cnpj válido",
+          "gerador de cnpj com máscara",
+          "gerador de empresa",
+          "gerador de empresa fictícia",
+          "validador de cnpj",
+          "validador de cnpj online"
+        ]
+      },
+      "title": "Gerador e validador de CNPJ",
+      "intro": "Gere só um CNPJ ou uma empresa completa para usar em testes, ou confira se um CNPJ é válido.",
+      "generate": {
+        "mode": "Só o CNPJ",
+        "intro": "Um CNPJ válido é gerado ao abrir a página. Escolha a quantidade e o formato, ou clique em \"Gerar CNPJ\" para criar outro.",
+        "label": "CNPJ gerado",
+        "pluralLabel": "CNPJs gerados",
+        "howItWorks": [
+          "O CNPJ é gerado no servidor e não fica armazenado em lugar nenhum.",
+          "O número segue as regras da Receita Federal.",
+          "Os dígitos verificadores são calculados corretamente.",
+          "O número serve apenas para testes e não pertence a nenhuma empresa real.",
+          "Os últimos valores gerados ficam listados abaixo do botão até você sair da página."
+        ],
+        "apiName": "o gerador de CNPJ"
+      },
+      "company": {
+        "mode": "Empresa completa",
+        "intro": "Uma empresa fictícia com CNPJ, inscrição estadual, contato e endereço. Escolha o estado ou deixe em \"Qualquer estado\".",
+        "button": "Gerar empresa",
+        "howItWorks": [
+          "A empresa é gerada no servidor e não fica armazenada em lugar nenhum.",
+          "O CNPJ e a inscrição estadual são válidos, e a inscrição segue as regras do estado da empresa.",
+          "O endereço é real: o CEP existe e corresponde à rua, ao bairro e à cidade. O telefone usa o DDD da cidade.",
+          "O e-mail usa domínios reservados para testes (example.com), então nenhuma mensagem chega a alguém de verdade.",
+          "Os dados servem apenas para testes e não pertencem a nenhuma empresa real."
+        ],
+        "apiName": "o gerador de empresa"
+      },
+      "validate": {
+        "intro": "Digite um CNPJ e clique em \"Validar CNPJ\" para saber se ele é válido.",
+        "howItWorks": [
+          "A validação é feita no servidor e nada fica armazenado.",
+          "O validador confere se o CNPJ segue as regras da Receita Federal.",
+          "São verificados o formato e os dígitos verificadores.",
+          "O CNPJ pode ser digitado com ou sem pontuação (00.000.000/0001-00 ou 00000000000100).",
+          "O resultado aparece logo abaixo do campo."
+        ],
+        "apiName": "o validador de CNPJ"
+      }
+    },
+    "rg": {
+      "metadata": {
+        "title": "Gerador e validador de RG",
+        "description": "Gere RGs válidos para testes, com ou sem pontuação, ou confira na hora se um RG é válido.",
+        "keywords": [
+          "gerador de rg",
+          "gerador de rg online",
+          "gerador de rg válido",
+          "validador de rg",
+          "validador de rg online"
+        ]
+      },
+      "title": "Gerador e validador de RG",
+      "intro": "Gere RGs válidos para usar em testes ou confira se um RG é válido.",
+      "generate": {
+        "intro": "Um RG válido é gerado ao abrir a página. Escolha a quantidade e o formato, ou clique em \"Gerar RG\" para criar outro.",
+        "label": "RG gerado",
+        "pluralLabel": "RGs gerados",
+        "howItWorks": [
+          "O RG é gerado no servidor e não fica armazenado em lugar nenhum.",
+          "Cada estado emite o RG do seu jeito, então o gerador segue a regra de São Paulo, a mais usada pelos sistemas: 8 números e um dígito verificador.",
+          "O dígito verificador pode ser um X, que vale 10.",
+          "O número serve apenas para testes e não pertence a nenhuma pessoa real.",
+          "Os últimos valores gerados ficam listados abaixo do botão até você sair da página."
+        ],
+        "apiName": "o gerador de RG",
+        "apiFormatted": "Opcional. \"false\" gera sem pontuação. Padrão: \"true\"."
+      },
+      "validate": {
+        "intro": "Digite um RG e clique em \"Validar RG\" para saber se ele é válido.",
+        "howItWorks": [
+          "A validação é feita no servidor e nada fica armazenado.",
+          "O validador confere o dígito verificador pela regra de São Paulo. RGs de outros estados podem ter outro formato e aparecer como inválidos.",
+          "O RG pode ser digitado com ou sem pontuação (12.345.678-X ou 12345678X).",
+          "O resultado aparece logo abaixo do campo."
+        ],
+        "apiName": "o validador de RG"
+      }
+    },
+    "cnh": {
+      "metadata": {
+        "title": "Gerador e validador de CNH",
+        "description": "Gere números de CNH válidos para testes ou confira na hora se uma CNH é válida.",
+        "keywords": [
+          "gerador de cnh",
+          "gerador de cnh online",
+          "gerador de cnh válida",
+          "validador de cnh",
+          "validador de cnh online"
+        ]
+      },
+      "title": "Gerador e validador de CNH",
+      "intro": "Gere números de CNH válidos para usar em testes ou confira se uma CNH é válida.",
+      "generate": {
+        "intro": "Uma CNH válida é gerada ao abrir a página. Escolha a quantidade ou clique em \"Gerar CNH\" para criar outra.",
+        "label": "CNH gerada",
+        "pluralLabel": "CNHs geradas",
+        "howItWorks": [
+          "A CNH é gerada no servidor e não fica armazenada em lugar nenhum.",
+          "O número gerado é o número de registro, com 11 dígitos, o mesmo que os sistemas pedem.",
+          "Os dois dígitos verificadores seguem a regra do Denatran.",
+          "O número serve apenas para testes e não pertence a nenhuma pessoa real.",
+          "Os últimos valores gerados ficam listados abaixo do botão até você sair da página."
+        ],
+        "apiName": "o gerador de CNH"
+      },
+      "validate": {
+        "intro": "Digite o número de registro da CNH e clique em \"Validar CNH\" para saber se ele é válido.",
+        "howItWorks": [
+          "A validação é feita no servidor e nada fica armazenado.",
+          "São verificados os 11 dígitos e os dois dígitos verificadores.",
+          "O número de registro fica no campo \"Nº Registro\" da CNH.",
+          "O resultado aparece logo abaixo do campo."
+        ],
+        "apiName": "o validador de CNH",
+        "apiCnh": "Obrigatório. Os 11 dígitos do número de registro."
+      }
+    },
+    "stateRegistration": {
+      "metadata": {
+        "title": "Gerador e validador de inscrição estadual",
+        "description": "Gere inscrições estaduais válidas para testes em qualquer estado ou confira se uma inscrição estadual é válida.",
+        "keywords": [
+          "gerador de inscrição estadual",
+          "gerador de inscrição estadual online",
+          "gerador de ie",
+          "validador de inscrição estadual",
+          "validador de ie"
+        ]
+      },
+      "title": "Gerador e validador de inscrição estadual",
+      "intro": "Gere inscrições estaduais válidas para usar em testes ou confira se uma inscrição é válida, em qualquer estado.",
+      "generate": {
+        "intro": "Uma inscrição estadual de São Paulo é gerada ao abrir a página. Escolha o estado, a quantidade e o formato, ou clique em \"Gerar inscrição estadual\" para criar outra.",
+        "name": "inscrição estadual",
+        "label": "Inscrição estadual gerada",
+        "pluralLabel": "Inscrições estaduais geradas",
+        "howItWorks": [
+          "A inscrição é gerada no servidor e não fica armazenada em lugar nenhum.",
+          "Cada estado tem o próprio tamanho, prefixo e cálculo dos dígitos verificadores, e o gerador segue a especificação do SINTEGRA de cada um.",
+          "Em São Paulo, o gerador cria a inscrição de indústria e comércio, de 12 dígitos.",
+          "O número serve apenas para testes e não pertence a nenhuma empresa real.",
+          "Os últimos valores gerados ficam listados abaixo do botão até você sair da página."
+        ],
+        "apiName": "o gerador de inscrição estadual"
+      },
+      "validate": {
+        "intro": "Escolha o estado, digite a inscrição e clique em \"Validar inscrição estadual\" para saber se ela é válida.",
+        "howItWorks": [
+          "A validação é feita no servidor e nada fica armazenado.",
+          "São verificados o tamanho, o prefixo e os dígitos verificadores que o estado escolhido exige.",
+          "A inscrição pode ser digitada com ou sem pontuação.",
+          "Em São Paulo, só a inscrição de indústria e comércio é aceita; a de produtor rural, que começa com P, não.",
+          "O resultado aparece logo abaixo do campo."
+        ],
+        "apiName": "o validador de inscrição estadual"
+      }
+    },
+    "person": {
+      "metadata": {
+        "title": "Gerador de pessoa",
+        "description": "Gere uma pessoa fictícia com nome, CPF, RG, data de nascimento, filiação, contato e endereço real para testes.",
+        "keywords": [
+          "gerador de pessoa",
+          "gerador de pessoa fictícia",
+          "gerador de dados pessoais",
+          "gerador de nome",
+          "gerador de pessoas para teste"
+        ]
+      },
+      "title": "Gerador de pessoa",
+      "intro": "Uma pessoa fictícia é gerada ao abrir a página. Escolha o sexo e o estado, ou clique em \"Gerar pessoa\" para criar outra.",
+      "button": "Gerar pessoa",
+      "sex": "Sexo",
+      "anySex": "Qualquer",
+      "female": "Feminino",
+      "male": "Masculino",
+      "howItWorks": [
+        "A pessoa é gerada no servidor e não fica armazenada em lugar nenhum.",
+        "O CPF e o RG são válidos. O RG segue a regra de São Paulo.",
+        "O endereço é real: o CEP existe e corresponde à rua, ao bairro e à cidade. Os telefones usam o DDD da cidade.",
+        "Como no Brasil, o nome leva um sobrenome da mãe e depois um do pai.",
+        "O e-mail usa domínios reservados para testes (example.com), então nenhuma mensagem chega a alguém de verdade.",
+        "Os dados servem apenas para testes e não pertencem a nenhuma pessoa real."
+      ],
+      "apiName": "o gerador de pessoa",
+      "apiSex": "Opcional. \"female\" ou \"male\". Sem ele, o sexo é sorteado."
+    },
+    "cep": {
+      "metadata": {
+        "title": "Gerador e consulta de CEP",
+        "description": "Gere CEPs reais com o endereço completo para testes, de qualquer estado, ou consulte o endereço de um CEP.",
+        "keywords": [
+          "gerador de cep",
+          "gerador de cep válido",
+          "gerador de endereço",
+          "consulta de cep",
+          "buscar cep"
+        ]
+      },
+      "title": "Gerador e consulta de CEP",
+      "intro": "Gere um CEP real com o endereço para usar em testes ou descubra o endereço de um CEP.",
+      "generate": {
+        "intro": "Um CEP é gerado ao abrir a página. Escolha o estado ou clique em \"Gerar CEP\" para criar outro.",
+        "button": "Gerar CEP",
+        "howItWorks": [
+          "Os CEPs são reais e vêm dos Correios, pela ViaCEP: cada um existe e corresponde à rua, ao bairro e à cidade mostrados.",
+          "São sorteados entre ruas da capital e de outra cidade grande de cada estado, então funcionam em formulários que preenchem o endereço pelo CEP.",
+          "CEPs exclusivos de empresas e órgãos públicos ficam de fora."
+        ],
+        "apiName": "o gerador de CEP",
+        "apiFormatted": "Opcional. \"false\" gera o CEP só com números. Padrão: \"true\"."
+      },
+      "lookup": {
+        "mode": "Consultar",
+        "intro": "Digite um CEP e clique em \"Consultar CEP\" para ver o endereço.",
+        "howItWorks": [
+          "A consulta usa a base dos Correios, pela ViaCEP.",
+          "O CEP pode ser digitado com ou sem hífen.",
+          "CEPs de cidades pequenas, que têm um CEP só, voltam sem rua e sem bairro."
+        ],
+        "apiName": "a consulta de CEP"
+      }
+    },
+    "licensePlate": {
+      "metadata": {
+        "title": "Gerador de placa de veículo",
+        "description": "Gere placas de carro e moto aleatórias no padrão Mercosul ou no modelo antigo.",
+        "keywords": [
+          "gerador de placa",
+          "gerador de placa de carro",
+          "gerador de placa mercosul",
+          "gerador de placa de veículo"
+        ]
+      },
+      "title": "Gerador de placa de veículo",
+      "intro": "Uma placa no padrão Mercosul é gerada ao abrir a página. Escolha a quantidade e o padrão, ou clique em \"Gerar placa\" para criar outra.",
+      "name": "placa",
+      "label": "Placa gerada",
+      "pluralLabel": "Placas geradas",
+      "format": "Padrão",
+      "old": "Antigo",
+      "howItWorks": [
+        "A placa é gerada no servidor e não fica armazenada em lugar nenhum.",
+        "O padrão Mercosul tem três letras, um número, uma letra e dois números (ABC1D23).",
+        "O modelo antigo tem três letras e quatro números (ABC-1234).",
+        "A placa é sorteada e pode coincidir com a de um veículo real; use só para testes.",
+        "Os últimos valores gerados ficam listados abaixo do botão até você sair da página."
+      ],
+      "apiName": "o gerador de placa",
+      "apiFormat": "Opcional. \"mercosul\" (ABC1D23) ou \"old\" (ABC-1234). Padrão: \"mercosul\"."
+    },
+    "password": {
+      "metadata": {
+        "title": "Gerador de senha",
+        "description": "Gere senhas seguras e aleatórias, escolhendo o tamanho e se terá letras maiúsculas, números e símbolos.",
+        "keywords": [
+          "gerador de senha",
+          "gerador de senha online",
+          "gerador de senha segura",
+          "gerador de senha aleatória",
+          "gerador de senha forte",
+          "gerador de senha com letras e números",
+          "gerador de senha com letras maiúsculas",
+          "gerador de senha com letras minúsculas",
+          "gerador de senha com números",
+          "gerador de senha com símbolos",
+          "gerador de senha com caracteres especiais"
+        ]
+      },
+      "title": "Gerador de senha",
+      "intro": "Gere uma senha no estilo da Apple, fácil de ler e digitar, ou escolha o tamanho e os tipos de caractere. A senha é gerada de novo a cada mudança.",
+      "name": "senha",
+      "label": "Senha gerada",
+      "pluralLabel": "Senhas geradas",
+      "style": "Estilo",
+      "custom": "Personalizado",
+      "length": "Tamanho",
+      "uppercase": "Letras maiúsculas",
+      "numbers": "Números",
+      "symbols": "Símbolos (!@#$%&*-_=+?)",
+      "howItWorks": [
+        "A senha é gerada no servidor e não fica armazenada em lugar nenhum.",
+        "Ela é criada com um gerador de números aleatórios criptograficamente seguro.",
+        "O estilo Apple segue o formato das senhas fortes sugeridas pelo iPhone e pelo Mac: três grupos de seis letras minúsculas separados por hífens, com exatamente uma letra maiúscula e um número.",
+        "No estilo personalizado, letras minúsculas sempre entram e a senha tem pelo menos um caractere de cada tipo escolhido. Os símbolos não incluem aspas, barras invertidas nem espaços, que costumam quebrar ao colar em arquivos de configuração ou no terminal.",
+        "Os últimos valores gerados ficam listados abaixo do botão até você sair da página."
+      ],
+      "apiName": "o gerador de senha",
+      "apiStyle": "Opcional. \"apple\" (abcdef-ghiJkl-mn4opq) ou \"custom\". Padrão: \"apple\".",
+      "apiLength": "Só com style=custom. De {min} a {max}. Padrão: 16.",
+      "apiUppercase": "Só com style=custom. Inclui letras maiúsculas. Padrão: \"true\".",
+      "apiNumbers": "Só com style=custom. Inclui números. Padrão: \"true\".",
+      "apiSymbols": "Só com style=custom. Inclui símbolos. Padrão: \"true\"."
+    },
+    "uuid": {
+      "metadata": {
+        "title": "Gerador de UUID",
+        "description": "Gere UUIDs v4 aleatórios na hora.",
+        "keywords": [
+          "gerador de UUID",
+          "gerador de UUID online",
+          "gerador de UUID aleatório"
+        ]
+      },
+      "title": "Gerador de UUID",
+      "intro": "Um UUID é gerado ao abrir a página. Escolha a quantidade ou clique em \"Gerar UUID\" para criar outro.",
+      "label": "UUID gerado",
+      "pluralLabel": "UUIDs gerados",
+      "howItWorks": [
+        "O UUID é gerado no servidor e não fica armazenado em lugar nenhum.",
+        "O gerador cria um UUID versão 4, baseado em números aleatórios.",
+        "O UUID segue o formato 8-4-4-4-12, com caracteres hexadecimais.",
+        "A chance de gerar dois UUIDs iguais é, na prática, nula.",
+        "Os últimos valores gerados ficam listados abaixo do botão até você sair da página."
+      ],
+      "apiName": "o gerador de UUID"
+    },
+    "creditCard": {
+      "metadata": {
+        "title": "Gerador de cartão de crédito",
+        "description": "Gere números de cartão de crédito válidos para testes, com bandeira, nome, validade e CVV.",
+        "keywords": [
+          "gerador de cartão de crédito",
+          "gerador de cartão de crédito válido",
+          "gerador de cartão para teste",
+          "gerador de cartão visa",
+          "gerador de cartão mastercard",
+          "gerador de cartão elo"
+        ]
+      },
+      "title": "Gerador de cartão de crédito",
+      "intro": "Um cartão Visa é gerado ao abrir a página. Escolha a bandeira e o formato, ou clique em \"Gerar cartão\" para criar outro.",
+      "button": "Gerar cartão",
+      "brand": "Bandeira",
+      "formatted": "Número com espaços",
+      "howItWorks": [
+        "O cartão é gerado no servidor e não fica armazenado em lugar nenhum.",
+        "O número começa com o prefixo da bandeira e passa no algoritmo de Luhn, a verificação que formulários e gateways fazem antes de cobrar.",
+        "A validade fica entre 1 e 5 anos no futuro. O CVV tem 4 dígitos na American Express e 3 nas outras bandeiras.",
+        "O número é sorteado e serve só para testar formulários. Para testar pagamentos, use os cartões de teste do seu gateway."
+      ],
+      "apiName": "o gerador de cartão de crédito",
+      "apiBrand": "Opcional. {brands}. Padrão: \"visa\".",
+      "apiFormatted": "Opcional. \"false\" gera o número sem espaços. Padrão: \"true\"."
+    },
+    "numbers": {
+      "metadata": {
+        "title": "Sorteador de números",
+        "description": "Sorteie um ou mais números aleatórios dentro de um intervalo.",
+        "keywords": [
+          "sorteador de números",
+          "sorteador de números online",
+          "sortear números aleatórios"
+        ]
+      },
+      "title": "Sorteador de números",
+      "intro": "Escolha quantos números quer sortear e o intervalo do sorteio.",
+      "quantity": "Quantidade",
+      "min": "Mínimo",
+      "max": "Máximo",
+      "drawing": "Sorteando",
+      "draw": "Sortear",
+      "minAboveMax": "O mínimo deve ser menor ou igual ao máximo.",
+      "error": "Não foi possível sortear. Tente novamente.",
+      "result": "{count, plural, one {Número sorteado} other {Números sorteados}}",
+      "howItWorks": [
+        "Os números são sorteados no servidor e não ficam armazenados.",
+        "O mínimo e o máximo fazem parte do intervalo, e números negativos são aceitos.",
+        "Você pode sortear até 1000 números de uma vez.",
+        "Cada número é sorteado de forma independente, então pode repetir.",
+        "O sorteio não é criptograficamente seguro: não use para senhas, tokens de segurança ou sorteios com prêmios de verdade."
+      ],
+      "apiName": "o sorteador de números",
+      "apiCount": "Obrigatório. Quantos números sortear, de 1 a 1000.",
+      "apiMin": "Obrigatório. O menor número possível (incluído).",
+      "apiMax": "Obrigatório. O maior número possível (incluído)."
+    },
+    "bmi": {
+      "metadata": {
+        "title": "Calculadora de IMC",
+        "description": "Calcule seu Índice de Massa Corporal (IMC) e veja em que faixa ele está.",
+        "keywords": [
+          "calculador de imc",
+          "calculador de imc online",
+          "calculador de imc grátis",
+          "calculador de imc com peso",
+          "calculador de imc com altura",
+          "calculador de imc com peso e altura"
+        ]
+      },
+      "title": "Calculadora de IMC",
+      "intro": "Descubra seu Índice de Massa Corporal a partir do peso e da altura.",
+      "ranges": {
+        "underweight": "Abaixo do peso",
+        "normal": "Peso normal",
+        "overweight": "Sobrepeso",
+        "obesity1": "Obesidade grau I",
+        "obesity2": "Obesidade grau II",
+        "obesity3": "Obesidade grau III"
+      },
+      "howItWorks": [
+        "O IMC é o peso (kg) dividido pela altura (m) ao quadrado.",
+        "As faixas seguem a classificação da Organização Mundial da Saúde para adultos.",
+        "O IMC não diferencia massa muscular de gordura nem vale para crianças, gestantes e idosos. Para uma avaliação completa, consulte um profissional de saúde.",
+        "O cálculo é feito no seu navegador: nenhum dado é enviado ou armazenado."
+      ]
+    },
+    "bmr": {
+      "metadata": {
+        "title": "Calculadora de TMB",
+        "description": "Calcule sua Taxa Metabólica Basal (TMB) e seu gasto calórico diário.",
+        "keywords": [
+          "calculador de tmb",
+          "calculador de tmb online",
+          "calculador de tmb grátis"
+        ]
+      },
+      "title": "Calculadora de TMB",
+      "intro": "Descubra sua Taxa Metabólica Basal (TMB) e seu Gasto Energético Total Diário (GET).",
+      "age": "Idade",
+      "ageRange": "A idade deve estar entre {min} e {max} anos.",
+      "sex": "Sexo",
+      "male": "Masculino",
+      "female": "Feminino",
+      "select": "Selecione",
+      "activity": "Nível de atividade",
+      "activityLevels": {
+        "sedentary": "Sedentário (pouco ou nenhum exercício)",
+        "light": "Leve (exercício 1 a 3 vezes por semana)",
+        "moderate": "Moderado (exercício 3 a 5 vezes por semana)",
+        "active": "Ativo (exercício 6 a 7 vezes por semana)",
+        "veryActive": "Muito ativo (exercício intenso todos os dias)"
+      },
+      "bmr": "Taxa Metabólica Basal",
+      "tdee": "Gasto Energético Total",
+      "calories": "{calories} kcal/dia",
+      "howItWorks": [
+        "A TMB é a energia que o corpo gasta em repouso. Ela é calculada pela equação de Mifflin-St Jeor, que usa peso, altura, idade e sexo.",
+        "O GET é a TMB multiplicada por um fator que depende do seu nível de atividade física.",
+        "Os valores são estimativas. Para um plano alimentar, consulte um nutricionista.",
+        "O cálculo é feito no seu navegador: nenhum dado é enviado ou armazenado."
+      ]
+    },
+    "age": {
+      "metadata": {
+        "title": "Calculadora de idade",
+        "description": "Calcule a idade exata em anos, meses e dias a partir da data de nascimento.",
+        "keywords": [
+          "calculador de idade",
+          "calculador de idade online",
+          "calculador de idade grátis",
+          "calculador de idade com data de nascimento",
+          "calculador de idade com data de nascimento online",
+          "calculador de idade com data de nascimento grátis"
+        ]
+      },
+      "title": "Calculadora de idade",
+      "intro": "Descubra a idade exata a partir da data de nascimento.",
+      "birthdate": "Data de nascimento",
+      "future": "A data de nascimento não pode estar no futuro.",
+      "result": "{years, plural, one {# ano} other {# anos}}, {months, plural, one {# mês} other {# meses}} e {days, plural, one {# dia} other {# dias}}",
+      "howItWorks": [
+        "A idade é a diferença entre a data de nascimento e a data de hoje.",
+        "O resultado mostra os anos, meses e dias exatos.",
+        "Anos bissextos e meses de tamanhos diferentes são considerados.",
+        "O cálculo é feito no seu navegador: a data não é enviada nem armazenada."
+      ]
+    },
+    "discount": {
+      "metadata": {
+        "title": "Calculadora de desconto",
+        "description": "Calcule o valor do desconto e o preço final de um produto.",
+        "keywords": [
+          "calculador de desconto",
+          "calculador de desconto online",
+          "calculador de desconto grátis",
+          "calculador de desconto com porcentagem",
+          "calculador de desconto com porcentagem online",
+          "calculador de desconto com porcentagem grátis"
+        ]
+      },
+      "title": "Calculadora de desconto",
+      "intro": "Calcule o valor do desconto e o preço final depois de aplicá-lo.",
+      "price": "Preço",
+      "discount": "Desconto",
+      "discountAmount": "Valor do desconto",
+      "finalPrice": "Preço final",
+      "howItWorks": {
+        "inputs": "Digite o preço original e a porcentagem do desconto.",
+        "cents": "No preço, digite só os números: eles preenchem a partir dos centavos (1050 vira {example}).",
+        "percentage": "A porcentagem aceita valores de 0 a 100, com até duas casas decimais.",
+        "rounding": "O desconto é o preço multiplicado pela porcentagem e dividido por 100, arredondado para centavos.",
+        "finalPrice": "O preço final é o preço original menos o desconto."
+      }
+    }
+  },
+  "ui": {
+    "menu": "Menu",
+    "menuDescription": "Navegação entre as ferramentas.",
+    "toggleMenu": "Abrir ou fechar o menu",
+    "close": "Fechar",
+    "more": "Mais"
   }
 }

@@ -1,9 +1,12 @@
+import { useTranslations } from 'next-intl'
+import { SITE_URL } from '@/lib/site'
 import { CopyButton } from './copy-button'
 
-const API_BASE_URL = 'https://devtools.vmotta.dev'
-
 interface ApiUsageProps {
-  /** Name of the tool, e.g. "validador de CPF" */
+  /**
+   * Name of the tool as it fits the intro sentence, with its article and
+   * case, e.g. "o validador de CPF" or "den CPF-Validator"
+   */
   name: string
   method: 'GET' | 'POST'
   /** e.g. "/api/validators/cpf" */
@@ -17,6 +20,8 @@ interface ApiUsageProps {
 }
 
 function CodeBlock({ label, code }: { label: string; code: string }) {
+  const t = useTranslations('apiUsage')
+
   return (
     <div className="space-y-2">
       <p className="text-sm font-medium">{label}</p>
@@ -26,7 +31,7 @@ function CodeBlock({ label, code }: { label: string; code: string }) {
         </pre>
         <CopyButton
           value={code}
-          label={`Copiar ${label.toLowerCase()}`}
+          label={t('copy', { label })}
           className="absolute right-2 top-2 size-8"
         />
       </div>
@@ -36,7 +41,7 @@ function CodeBlock({ label, code }: { label: string; code: string }) {
 
 function buildCurl({ method, path, query, body }: ApiUsageProps) {
   const search = query ? `?${new URLSearchParams(query)}` : ''
-  const url = `${API_BASE_URL}${path}${search}`
+  const url = `${SITE_URL}${path}${search}`
 
   if (method === 'GET') return `curl "${url}"`
 
@@ -49,22 +54,23 @@ function buildCurl({ method, path, query, body }: ApiUsageProps) {
 
 export function ApiUsage(props: ApiUsageProps) {
   const { name, method, path, body, response, parameters } = props
+  const t = useTranslations('apiUsage')
 
   return (
     <div className="space-y-4">
       <div className="space-y-2">
-        <h2 className="text-xl font-bold font-mono">Como usar a API</h2>
+        <h2 className="text-xl font-bold font-mono">{t('title')}</h2>
         <p className="text-muted-foreground text-balance">
-          Você pode integrar o {name} à sua aplicação pela nossa API REST.
+          {t('intro', { name })}
         </p>
       </div>
 
-      <CodeBlock label="Endpoint" code={`${method} ${path}`} />
+      <CodeBlock label={t('endpoint')} code={`${method} ${path}`} />
 
       {parameters && parameters.length > 0 && (
         <div className="space-y-2">
           <p className="text-sm font-medium">
-            {method === 'GET' ? 'Parâmetros de query' : 'Corpo da requisição'}
+            {method === 'GET' ? t('queryParameters') : t('requestBody')}
           </p>
           <dl className="divide-y rounded-lg border text-sm">
             {parameters.map((parameter) => (
@@ -82,16 +88,19 @@ export function ApiUsage(props: ApiUsageProps) {
         </div>
       )}
 
-      <CodeBlock label="Exemplo com curl" code={buildCurl(props)} />
+      <CodeBlock label={t('curlExample')} code={buildCurl(props)} />
 
       {body !== undefined && (
         <CodeBlock
-          label="Corpo de exemplo"
+          label={t('exampleBody')}
           code={JSON.stringify(body, null, 2)}
         />
       )}
 
-      <CodeBlock label="Resposta" code={JSON.stringify(response, null, 2)} />
+      <CodeBlock
+        label={t('response')}
+        code={JSON.stringify(response, null, 2)}
+      />
     </div>
   )
 }

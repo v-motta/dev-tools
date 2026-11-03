@@ -3,6 +3,7 @@
 import { keepPreviousData, useQuery } from '@tanstack/react-query'
 import ky from 'ky'
 import { LoaderCircle } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 import { CopyButton } from '@/components/copy-button'
 import {
   type GeneratorOption,
@@ -13,7 +14,7 @@ import { type RecordField, RecordList } from '@/components/record-list'
 import { Button } from '@/components/ui/button'
 
 interface RecordGeneratorProps {
-  /** Button text, e.g. "Gerar pessoa" */
+  /** Button text, e.g. "Generate person" */
   buttonLabel: string
   /** API route that responds with `{ [field]: { ... } }` */
   endpoint: string
@@ -33,6 +34,7 @@ export function RecordGenerator({
   fields,
   options = [],
 }: RecordGeneratorProps) {
+  const t = useTranslations('generator')
   const { values, setOption, visibleOptions, paramsKey } =
     useGeneratorOptions(options)
 
@@ -71,13 +73,13 @@ export function RecordGenerator({
           <RecordList fields={fields} record={data} />
         ) : isError && !isFetching ? (
           <p className="rounded-md border px-3 py-2 text-red-500">
-            Não foi possível gerar. Tente novamente.
+            {t('error')}
           </p>
         ) : (
           <div className="flex h-40 items-center justify-center rounded-md border">
             <LoaderCircle
               className="animate-spin text-muted-foreground"
-              aria-label="Gerando"
+              aria-label={t('generating')}
             />
           </div>
         )}
@@ -90,9 +92,12 @@ export function RecordGenerator({
           onClick={() => refetch()}
         >
           {isFetching ? (
-            <LoaderCircle className="animate-spin" aria-label="Gerando" />
+            <LoaderCircle
+              className="animate-spin"
+              aria-label={t('generating')}
+            />
           ) : isError ? (
-            'Tentar novamente'
+            t('tryAgain')
           ) : (
             buttonLabel
           )}
@@ -101,8 +106,8 @@ export function RecordGenerator({
         {isSuccess && (
           <CopyButton
             value={JSON.stringify(data, null, 2)}
-            label="Copiar como JSON"
-            text="Copiar JSON"
+            label={t('copyJsonLabel')}
+            text={t('copyJson')}
             showText
           />
         )}

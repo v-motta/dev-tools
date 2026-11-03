@@ -1,19 +1,24 @@
 import { TrendingUp } from 'lucide-react'
-import { getTranslations, setRequestLocale } from 'next-intl/server'
+import type { Metadata } from 'next'
+import { getTranslations } from 'next-intl/server'
 import { tools } from '@/app/tools'
 import { RecentTools } from '@/components/recent-tools'
 import { SectionHeading } from '@/components/section-heading'
 import { TOOL_GRID, ToolCard } from '@/components/tool-card'
-import type { Locale } from '@/i18n/routing'
+import { initPage, localizedAlternates } from '@/i18n/page'
 import { getPopularTools } from '@/lib/popular-tools'
 
 // Keep in sync with POPULAR_TOOLS_REVALIDATE; segment config must be a literal
 export const revalidate = 3600
 
+export async function generateMetadata({
+  params,
+}: PageProps<'/[locale]'>): Promise<Metadata> {
+  return { alternates: localizedAlternates(await initPage(params), '/') }
+}
+
 export default async function Home({ params }: PageProps<'/[locale]'>) {
-  const { locale } = await params
-  // The layout already checked that the locale is supported
-  setRequestLocale(locale as Locale)
+  await initPage(params)
 
   const t = await getTranslations()
   const popularTools = await getPopularTools()

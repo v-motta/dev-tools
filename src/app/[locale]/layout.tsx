@@ -6,6 +6,7 @@ import { notFound } from 'next/navigation'
 import { hasLocale, NextIntlClientProvider } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
+import { SITE_URL } from '@/lib/site'
 import { Providers } from '../providers'
 
 const geistSans = Geist({
@@ -32,6 +33,7 @@ export async function generateMetadata({
   })
 
   return {
+    metadataBase: new URL(SITE_URL),
     title: {
       template: '%s | Dev Tools',
       default: 'Dev Tools',

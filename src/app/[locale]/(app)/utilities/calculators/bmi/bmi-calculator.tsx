@@ -1,25 +1,24 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
 import {
   BodyMeasurementsFields,
   useBodyMeasurements,
 } from '@/components/body-measurements'
+import { HowItWorks } from '@/components/how-it-works'
 import { ResultCard } from '@/components/result-card'
 import { formatNumber } from '@/lib/locale'
 
-// WHO adult classification; `max` is exclusive
+// WHO adult classification; `max` is exclusive. `id` names the label in
+// `pages.bmi.ranges`
 const bmiRanges = [
-  { label: 'Abaixo do peso', max: 18.5, color: 'bg-sky-400' },
-  { label: 'Peso normal', max: 25, color: 'bg-emerald-500' },
-  { label: 'Sobrepeso', max: 30, color: 'bg-amber-400' },
-  { label: 'Obesidade grau I', max: 35, color: 'bg-orange-500' },
-  { label: 'Obesidade grau II', max: 40, color: 'bg-rose-500' },
-  {
-    label: 'Obesidade grau III',
-    max: Number.POSITIVE_INFINITY,
-    color: 'bg-red-600',
-  },
-]
+  { id: 'underweight', max: 18.5, color: 'bg-sky-400' },
+  { id: 'normal', max: 25, color: 'bg-emerald-500' },
+  { id: 'overweight', max: 30, color: 'bg-amber-400' },
+  { id: 'obesity1', max: 35, color: 'bg-orange-500' },
+  { id: 'obesity2', max: 40, color: 'bg-rose-500' },
+  { id: 'obesity3', max: Number.POSITIVE_INFINITY, color: 'bg-red-600' },
+] as const
 
 // Values shown on the scale; a BMI outside them sticks to the edges
 const SCALE_MIN = 15
@@ -48,7 +47,7 @@ function BmiScale({ bmi }: { bmi: number }) {
 
             return (
               <div
-                key={range.label}
+                key={range.id}
                 className={range.color}
                 style={{
                   width: `${toScalePosition(max) - toScalePosition(min)}%`,
@@ -80,6 +79,7 @@ function BmiScale({ bmi }: { bmi: number }) {
 }
 
 export function BMICalculator() {
+  const t = useTranslations('pages.bmi')
   const body = useBodyMeasurements()
 
   const bmi = body.values
@@ -91,11 +91,9 @@ export function BMICalculator() {
   return (
     <div className="w-full max-w-2xl space-y-8">
       <div className="space-y-3">
-        <h1 className="text-2xl font-bold font-mono">Calculadora de IMC</h1>
+        <h1 className="text-2xl font-bold font-mono">{t('title')}</h1>
 
-        <p className="text-muted-foreground text-balance">
-          Descubra seu Índice de Massa Corporal a partir do peso e da altura.
-        </p>
+        <p className="text-muted-foreground text-balance">{t('intro')}</p>
       </div>
 
       <div className="space-y-4">
@@ -109,7 +107,7 @@ export function BMICalculator() {
               <p>
                 <span className="text-2xl font-mono">{formatBmi(bmi)}</span>{' '}
                 <span className="text-muted-foreground">·</span>{' '}
-                <span className="font-medium">{range.label}</span>
+                <span className="font-medium">{t(`ranges.${range.id}`)}</span>
               </p>
               <BmiScale bmi={bmi} />
             </>
@@ -117,26 +115,7 @@ export function BMICalculator() {
         </ResultCard>
       </div>
 
-      <div>
-        <h2 className="text-lg font-medium mb-2">Como funciona</h2>
-
-        <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-          <li>O IMC é o peso (kg) dividido pela altura (m) ao quadrado.</li>
-          <li>
-            As faixas seguem a classificação da Organização Mundial da Saúde
-            para adultos.
-          </li>
-          <li>
-            O IMC não diferencia massa muscular de gordura nem vale para
-            crianças, gestantes e idosos. Para uma avaliação completa, consulte
-            um profissional de saúde.
-          </li>
-          <li>
-            O cálculo é feito no seu navegador: nenhum dado é enviado ou
-            armazenado.
-          </li>
-        </ul>
-      </div>
+      <HowItWorks items={t.raw('howItWorks')} />
     </div>
   )
 }
