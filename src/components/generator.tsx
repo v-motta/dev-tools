@@ -8,30 +8,42 @@ import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 
 interface GeneratorProps {
-  /** Name of the generated value, e.g. "CPF" */
+  /** Name of the generated value, e.g. "CPF" or "senha" */
   name: string
+  /** Label of the output, e.g. "CPF gerado" (Portuguese inflects it by gender) */
+  label: string
   /** API route that responds with `{ [field]: string }` */
   endpoint: string
   /** Response field that holds the generated value */
   field: string
 }
 
-export function Generator({ name, endpoint, field }: GeneratorProps) {
+export function Generator({ name, label, endpoint, field }: GeneratorProps) {
   const id = useId()
   const [isCopied, setIsCopied] = useState(false)
 
-  const { data, isFetching, isSuccess, refetch } = useQuery({
+  const { data, isError, isFetching, isSuccess, refetch } = useQuery({
     queryKey: ['generator', endpoint],
     queryFn: async () => {
       const response = await ky.get(endpoint).json<Record<string, string>>()
       return response[field]
     },
+    // Every visit should show a new value instead of the cached one
+    staleTime: 0,
+    gcTime: 0,
+    retry: 1,
   })
 
   async function handleCopy() {
     if (!isSuccess) return
 
-    await navigator.clipboard.writeText(data)
+    try {
+      await navigator.clipboard.writeText(data)
+    } catch {
+      // Clipboard access can be denied; the value is still selectable
+      return
+    }
+
     setIsCopied(true)
     setTimeout(() => setIsCopied(false), 2000)
   }
@@ -39,7 +51,7 @@ export function Generator({ name, endpoint, field }: GeneratorProps) {
   return (
     <div className="flex flex-col gap-y-4">
       <div className="space-y-1">
-        <Label htmlFor={id}>Generated {name}</Label>
+        <Label htmlFor={id}>{label}</Label>
         <div className="flex gap-2">
           <output
             id={id}
@@ -47,8 +59,15 @@ export function Generator({ name, endpoint, field }: GeneratorProps) {
           >
             {isSuccess ? (
               <p className="break-all">{data}</p>
+            ) : isError && !isFetching ? (
+              <p className="text-base font-sans text-red-500">
+                Não foi possível gerar. Tente novamente.
+              </p>
             ) : (
-              <LoaderCircle className="animate-spin text-muted-foreground" />
+              <LoaderCircle
+                className="animate-spin text-muted-foreground"
+                aria-label="Gerando"
+              />
             )}
           </output>
 
@@ -58,7 +77,7 @@ export function Generator({ name, endpoint, field }: GeneratorProps) {
               variant="outline"
               type="button"
               className="[&_svg]:size-5 text-muted-foreground"
-              aria-label={`Copy ${name}`}
+              aria-label={isCopied ? 'Copiado' : `Copiar ${name}`}
               onClick={handleCopy}
             >
               {isCopied ? <Check className="text-emerald-500" /> : <Copy />}
@@ -73,9 +92,11 @@ export function Generator({ name, endpoint, field }: GeneratorProps) {
         onClick={() => refetch()}
       >
         {isFetching ? (
-          <LoaderCircle className="animate-spin" />
+          <LoaderCircle className="animate-spin" aria-label="Gerando" />
+        ) : isError ? (
+          'Tentar novamente'
         ) : (
-          `Generate ${name}`
+          `Gerar ${name}`
         )}
       </Button>
     </div>

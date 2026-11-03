@@ -22,7 +22,7 @@ export function useBreadcrumb() {
     })
   }, [pathname])
 
-  const homeItem = { title: 'Home', icon: House, url: '/' }
+  const homeItem = { title: 'Início', icon: House, url: '/' }
 
   return { breadcrumb: [{ menuItem: homeItem }, ...breadcrumb] }
 }

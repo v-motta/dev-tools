@@ -86,7 +86,7 @@ bun dev            # start the dev server at http://localhost:3000
 ```
 dev-tools/
 ├─ scripts/                  # Standalone scripts (benchmarks)
-├─ public/                   # Tool preview images and logo
+├─ public/                   # Logo
 └─ src/
    ├─ app/
    │  ├─ (app)/              # Pages rendered inside the sidebar layout

@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import { BMICalculator } from './bmi-calculator'
 
 export const metadata: Metadata = {
-  title: 'BMI Calculator',
+  title: 'Calculadora de IMC',
   description:
-    'Calculate your body mass index (BMI) with this free online tool.',
+    'Calcule seu Índice de Massa Corporal (IMC) e veja em que faixa ele está.',
   keywords: [
     'calculador de imc',
     'calculador de imc online',

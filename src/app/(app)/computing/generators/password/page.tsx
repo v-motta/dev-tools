@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import { Generator } from '@/components/generator'
 
 export const metadata: Metadata = {
-  title: 'Password Generator',
+  title: 'Gerador de senha',
   description:
-    'Generate secure and random passwords with different combinations of characters, including uppercase letters, numbers, and special symbols.',
+    'Gere senhas seguras e aleatórias, com letras maiúsculas, minúsculas e números.',
   keywords: [
     'gerador de senha',
     'gerador de senha online',
@@ -24,43 +24,40 @@ export default function PasswordGeneratorPage() {
   return (
     <div className="space-y-8 w-full lg:w-1/2 2xl:w-1/3">
       <div className="space-y-3">
-        <h1 className="text-2xl font-bold font-mono">Password Generator</h1>
+        <h1 className="text-2xl font-bold font-mono">Gerador de senha</h1>
 
         <p className="text-muted-foreground text-balance">
-          Use our password generator to create a secure password.
+          Crie uma senha segura com um clique.
         </p>
       </div>
 
       <Generator
-        name="password"
+        name="senha"
+        label="Senha gerada"
         endpoint="/api/generators/password"
         field="password"
       />
 
       <div>
-        <h2 className="text-lg font-medium mb-2">How it works</h2>
+        <h2 className="text-lg font-medium mb-2">Como funciona</h2>
 
         <ul className="list-disc list-inside space-y-2 text-muted-foreground">
           <li>
-            The password is generated on the server and is not stored anywhere.
+            A senha é gerada no servidor e não fica armazenada em lugar nenhum.
           </li>
           <li>
-            The password is generated with a cryptographically secure random
-            number generator.
+            Ela é criada com um gerador de números aleatórios criptograficamente
+            seguro.
           </li>
           <li>
-            It has 18 characters split into three groups of six separated by
-            hyphens (e.g. abcdef-ghiJkl-mn4opq), which makes it easy to read and
-            type.
+            Tem 18 caracteres em três grupos de seis, separados por hífens (por
+            exemplo, abcdef-ghiJkl-mn4opq), o que facilita ler e digitar.
           </li>
           <li>
-            It always contains exactly one uppercase letter and one number; the
-            other characters are lowercase letters.
+            Sempre tem exatamente uma letra maiúscula e um número; os demais
+            caracteres são letras minúsculas.
           </li>
-          <li>
-            You can copy the generated password by clicking the copy icon next
-            to it.
-          </li>
+          <li>Para copiar a senha, clique no ícone ao lado dela.</li>
         </ul>
       </div>
     </div>

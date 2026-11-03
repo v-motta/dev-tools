@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import { AgeCalculator } from './age-calculator'
 
 export const metadata: Metadata = {
-  title: 'Age Calculator',
-  description: 'Calculate your age with this free online tool.',
+  title: 'Calculadora de idade',
+  description:
+    'Calcule a idade exata em anos, meses e dias a partir da data de nascimento.',
   keywords: [
     'calculador de idade',
     'calculador de idade online',
