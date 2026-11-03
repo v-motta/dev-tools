@@ -17,31 +17,38 @@ export function AppBreadcrumb() {
   return (
     <Breadcrumb>
       <BreadcrumbList>
-        {breadcrumb.map(({ menuItem }) => {
-          const isLast = breadcrumb[breadcrumb.length - 1].menuItem === menuItem
-          if (isLast) {
-            return (
-              <BreadcrumbItem key={menuItem.url}>
-                <BreadcrumbPage className="flex items-center gap-2">
-                  <menuItem.icon className="size-4" />
+        {breadcrumb.map((entry, index) => {
+          const content = (
+            <>
+              <entry.icon className="size-4" />
 
-                  {menuItem.title}
+              {entry.title}
+            </>
+          )
+
+          if (index === breadcrumb.length - 1) {
+            return (
+              <BreadcrumbItem key={entry.title}>
+                <BreadcrumbPage className="flex items-center gap-2">
+                  {content}
                 </BreadcrumbPage>
               </BreadcrumbItem>
             )
           }
 
           return (
-            <Fragment key={menuItem.url}>
+            <Fragment key={entry.title}>
               <BreadcrumbItem>
-                <BreadcrumbLink
-                  href={menuItem.url}
-                  className="flex items-center gap-2"
-                >
-                  <menuItem.icon className="size-4" />
-
-                  {menuItem.title}
-                </BreadcrumbLink>
+                {entry.url ? (
+                  <BreadcrumbLink
+                    href={entry.url}
+                    className="flex items-center gap-2"
+                  >
+                    {content}
+                  </BreadcrumbLink>
+                ) : (
+                  <span className="flex items-center gap-2">{content}</span>
+                )}
               </BreadcrumbItem>
 
               <BreadcrumbSeparator />

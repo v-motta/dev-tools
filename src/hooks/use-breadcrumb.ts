@@ -1,28 +1,34 @@
 'use client'
 
-import { House } from 'lucide-react'
+import { House, type LucideIcon } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 import { useMemo } from 'react'
-import { findNavItemByUrl } from '@/app/tools'
+import { findToolByUrl } from '@/app/tools'
+
+export interface BreadcrumbEntry {
+  title: string
+  icon: LucideIcon
+  /** Missing for sidebar sections, which have no page of their own */
+  url?: string
+}
+
+const homeEntry: BreadcrumbEntry = { title: 'Início', icon: House, url: '/' }
 
 export function useBreadcrumb() {
   const pathname = usePathname()
 
   const breadcrumb = useMemo(() => {
-    const segments = pathname.split('/').filter(Boolean)
+    const match = findToolByUrl(pathname)
+    if (!match) return [homeEntry]
 
-    // Match each cumulative URL (/a, /a/b, /a/b/c) so that segments with the
-    // same name in different sections (e.g. generators/cpf and validators/cpf)
-    // resolve to the right tool
-    return segments.flatMap((_, index) => {
-      const url = `/${segments.slice(0, index + 1).join('/')}`
-      const menuItem = findNavItemByUrl(url)
+    const { menuItem, tool } = match
 
-      return menuItem ? [{ menuItem }] : []
-    })
+    return [
+      homeEntry,
+      { title: menuItem.title, icon: menuItem.icon },
+      { title: tool.title, icon: tool.icon, url: tool.url },
+    ]
   }, [pathname])
 
-  const homeItem = { title: 'Início', icon: House, url: '/' }
-
-  return { breadcrumb: [{ menuItem: homeItem }, ...breadcrumb] }
+  return { breadcrumb }
 }
